@@ -1,0 +1,207 @@
+{
+  "metadata": {
+    "file_name": "116. Ye & Yuan. (2022). Using a machine learning approach to explore non-cognitive factors affecting reading, mathematics, and science literacy in china and the united states.pdf",
+    "title": "USING A MACHINE LEARNING APPROACH TO EXPLORE NON-COGNITIVE FACTORS AFFECTING READING, MATHEMATICS, AND SCIENCE LITERACY IN CHINA AND THE UNITED STATES",
+    "authors": [
+      "Lu Ye",
+      "Yuqing Yuan"
+    ],
+    "year": 2022,
+    "doi": "10.33225/jbse/22.21.575",
+    "venue": "Journal of Baltic Science Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses OECD PISA 2018 microdata for China (Beijing, Shanghai, Jiangsu, Zhejiang) and the United States, after filtering to students with valid questionnaires and completing the ICT-related questionnaire items. The manuscript describes missing-value processing (setting missing values to 0, deleting cases with more than half missing, then applying k-nearest-neighbor interpolation) and then trains CART models on the resulting analytic samples. No PISA sampling/analysis weights (e.g., W_FSTUWT/TOTWGT) or replicate-weight procedures (e.g., BRR/jackknife) are mentioned, and the CART training is described as using a random training/test split rather than complex-survey weighted estimation. Given that CART is a standard ML algorithm and the paper does not report weight-aware estimation, the analysis is treated as unweighted for this extraction."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "knn_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 11977,
+      "countries": [
+        {
+          "country_code": "CHN",
+          "n_students": 11977
+        },
+        {
+          "country_code": "USA",
+          "n_students": 4838
+        }
+      ],
+      "sample_filtering_criteria": "Used PISA 2018 reading, mathematics, and science literacy outcomes (PV1READ, PV1MATH, PV1SCIE) and questionnaire predictors. Initial 114 variables were considered; missing values were set to 0, cases with more than half missing values were deleted, and remaining missingness was imputed via k-nearest neighbor interpolation. The analytic sample was restricted to China students from Beijing, Shanghai, Jiangsu, and Zhejiang and to United States students, with additional filtering to retain students with valid ICT familiarity and social background questionnaires; after deleting invalid questionnaires, the final sample sizes were 11,977 in China and 4,838 in the United States."
+    },
+    "ml_techniques": {
+      "primary": "Decision Tree",
+      "all_techniques": [
+        "Decision Tree"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "METASPAM",
+        "variable_name": "Meta-cognition: assess credibility",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "METASUM",
+        "variable_name": "Meta-cognition: summarizing",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "JOYREAD",
+        "variable_name": "Enjoyment of reading",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "PISADIFF",
+        "variable_name": "Perceived PISA test difficulty",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "RESILIENCE",
+        "variable_name": "Resilience",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ESCS",
+        "variable_name": "Socioeconomic status (ESCS)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "SMINS",
+        "variable_name": "Science learning time per week",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "ST059Q03TA",
+        "variable_name": "Science class periods per week",
+        "category": "school"
+      },
+      {
+        "variable_code": "ST060Q01NA",
+        "variable_name": "School lessons per week",
+        "category": "school"
+      },
+      {
+        "variable_code": "BELONG",
+        "variable_name": "Sense of belonging",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "GFOFAIL",
+        "variable_name": "General fear of failure",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EUDMO",
+        "variable_name": "Meaning in life (eudaemonia)",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "PERFEED",
+        "variable_name": "Perceived feedback",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "HEDRES",
+        "variable_name": "Home educational resources",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "PERCOOP",
+        "variable_name": "Perceived cooperation at school",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "PERCOMP",
+        "variable_name": "Perceived competitiveness at school",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "AUTICT",
+        "variable_name": "Autonomy related to ICT use",
+        "category": "ict"
+      },
+      {
+        "variable_code": "COMPICT",
+        "variable_name": "Perceived ICT competence",
+        "category": "ict"
+      },
+      {
+        "variable_code": "COMPETE",
+        "variable_name": "Competitiveness",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "WEALTH",
+        "variable_name": "Family wealth",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "TMINS",
+        "variable_name": "Total learning time per week",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "SCREADCOMP",
+        "variable_name": "Reading self-concept competence",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST059Q04HA",
+        "variable_name": "Foreign language class periods",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "ST185Q01HA",
+        "variable_name": "Clear meaning or purpose",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "HOMEPOS",
+        "variable_name": "Home possessions index",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ICTOUTSIDE",
+        "variable_name": "ICT use outside lessons",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ICTRES",
+        "variable_name": "ICT resources (ICTRES)",
+        "category": "ict"
+      },
+      {
+        "variable_code": "UNDREM",
+        "variable_name": "Metacognition (understanding, remembering)",
+        "category": "student_behavior"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 Reading (PV1READ), China and United States (15-year-olds)",
+        "target_variable": "Reading achievement (PV1READ)",
+        "top_predictors": [
+          "PISADIFF",
+          "METASPAM",
+          "METASUM",
+          "ESCS",
+          "SMINS"
+        ],
+        "performance_metrics": "Not reported (CART used; no accuracy/R²/AUC values provided).",
+        "standardized_conclusion": "Using PISA 2018 Reading the study leveraged perceived PISA test difficulty (PISADIFF), meta-cognition credibility (METASPAM), meta-cognition summarizing (METASUM), socioeconomic status (ESCS), and science learning time (SMINS) to predict reading achievement, finding that metacognitive awareness and students’ perceived difficulty were among the most influential predictors, with ESCS and school learning-time variables also contributing. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzed PISA 2018 reading, mathematics, and science literacy for 15-year-olds in China (11,977; Beijing, Shanghai, Jiangsu, Zhejiang) and the United States (4,838) using CART decision trees. Missing data were handled by deleting cases with more than half missing values and applying k-nearest-neighbor interpolation after setting other missing values to 0. The dependent variables were PV1READ, PV1MATH, and PV1SCIE, and the models identified country-specific and common non-cognitive predictors. Across both countries, metacognition indicators (METASPAM, METASUM) and perceived PISA test difficulty (PISADIFF) were among the most influential, while school learning-time variables (e.g., SMINS, ST060Q01NA) and family socioeconomic indicators (ESCS/WEALTH) also emerged. The paper does not report standard CART performance metrics (e.g., accuracy/R²), and it does not discuss complex-survey weighting or replicate-weight procedures, which limits interpretability for population-representative inference.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

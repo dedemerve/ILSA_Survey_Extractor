@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "file_name": "108. Goldman et al. (2025). Artificial Intelligence to Support Writing Outcomes for Students With Disabilities.pdf",
+    "title": "Artificial Intelligence to Support Writing Outcomes for Students With Disabilities",
+    "authors": [
+      "Samantha R. Goldman",
+      "Sean J. Smith",
+      "Adam Carreon"
+    ],
+    "year": 2025,
+    "doi": "10.1177/01626434251326328",
+    "venue": "Journal of Special Education Technology",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "review_article"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This article is a conceptual review/crosswalk paper that defines AI and maps NAEP writing criteria to examples of AI tools for supporting students with disabilities. It does not report an empirical student-level dataset, analytic sample, or any statistical estimation procedure based on NAEP microdata. Because no modeling or sampling-based inference is conducted, there is no basis to determine whether complex survey weights or replicate weights (e.g., BRR/jackknife) were applied. Accordingly, weighting variables and replicate design details are not applicable to the study’s described purpose and methods."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "This paper does not conduct an empirical predictive/analytic study on NAEP student microdata; instead, it provides a definitional overview of AI and a crosswalk between NAEP writing criteria and AI tools. Because there is no dependent variable measured from NAEP plausible values (PV-based achievement scores) and no statistical model estimated from PVs, plausible values handling is not applicable. Similarly, missing data handling is not reported because no dataset construction, imputation, or case-exclusion procedure for an analytic sample is described.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [],
+      "sample_filtering_criteria": "No student-level or country-level analytic sample is constructed or analyzed. The article synthesizes prior literature and provides a crosswalk between NAEP writing criteria and AI tools."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "ILSA literature synthesis (systematic review; no single student-level analytic micro-dataset)",
+        "target_variable": "Literature synthesis outcome (not student-level prediction)",
+        "top_predictors": [],
+        "performance_metrics": "Not reported",
+        "standardized_conclusion": "Using ILSA literature synthesis (systematic review; no single student-level analytic micro-dataset) the study leveraged the reported predictors to predict Literature synthesis outcome (not student-level prediction), finding that The article does not estimate ML models or report predictive performance metrics. Instead, it defines AI (including generative language models and other AI tool types), summarizes how AI is already integrated into educational tools, and provides a step-by-step crosswalk aligning NAEP writing criteria (development of ideas, organization of ideas, and language facility/conventions) with specific AI tools that could support each writing process stage. The paper emphasizes AI literacy, privacy/accessibility considerations, and the need for educators to teach students to use AI as a “sidekick” rather than a replacement for writing instruction. Because no empirical NAEP dataset is analyzed, there are no reported sample sizes, weighting decisions, plausible-value procedures, or model evaluation statistics. This indicates that ekick” rather than a replacement for writing instruction. Because no empirical NAEP dataset is analyzed, there are no reported sample sizes, weighting decisions, plausible-value procedures, or model evaluation statistics."
+      }
+    ],
+    "outcome_summary": "The article does not estimate ML models or report predictive performance metrics. Instead, it defines AI (including generative language models and other AI tool types), summarizes how AI is already integrated into educational tools, and provides a step-by-step crosswalk aligning NAEP writing criteria (development of ideas, organization of ideas, and language facility/conventions) with specific AI tools that could support each writing process stage. The paper emphasizes AI literacy, privacy/accessibility considerations, and the need for educators to teach students to use AI as a “sidekick” rather than a replacement for writing instruction. Because no empirical NAEP dataset is analyzed, there are no reported sample sizes, weighting decisions, plausible-value procedures, or model evaluation statistics.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "This is a non-empirical review/crosswalk paper rather than an ML study using ILSA/NAEP microdata. As a result, there is no analytic sample, no country-level breakdown, no ML algorithm training/evaluation, and no reported performance metrics. The extraction therefore leaves empirical fields (e.g., total_students, countries, ml_techniques, main_findings) unset because the manuscript’s purpose is to synthesize and map NAEP criteria to AI tools rather than to conduct an original predictive analysis."
+  }
+}

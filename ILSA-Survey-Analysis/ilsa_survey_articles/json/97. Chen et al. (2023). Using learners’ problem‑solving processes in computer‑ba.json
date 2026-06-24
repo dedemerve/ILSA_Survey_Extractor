@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "file_name": "97. Chen et al. (2023). Using learners’ problem‑solving processes in computer‑based assessments for enhanced learner modeling: A deep learning approach.pdf",
+    "title": "Using learners’ problem‑solving processes in computer‑based assessments for enhanced learner modeling: A deep learning approach",
+    "authors": [
+      "Fu Chen"
+    ],
+    "year": 2024,
+    "doi": "10.1007/s10639-023-12389-x",
+    "venue": "Education and Information Technologies",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses a real-world learner log dataset from PSLC DataShop (“Lab study 2012 (cleanedLogs)”) rather than an ILSA/PISA-style nationally representative survey. The dataset consists of 74 learners interacting with a web-based tutoring system on fraction problems, and the authors preprocess and split sequences into 20-timestep subsequences for model training/testing. The manuscript does not mention any complex survey design, sampling weights, or replicate-weight procedures (e.g., BRR/jackknife), and the modeling is performed with deep learning architectures (LSTM, attention, DNN) that are not described as incorporating survey weights. Therefore, weighting is treated as not applicable/omitted for this convenience log dataset."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "This paper does not analyze ILSA cognitive achievement scores with plausible values (PVs). The dependent variable is binary item-response correctness (correct vs incorrect) at each timestep derived from tutoring-system transactions, and the model is trained directly on logged process sequences (actions and time durations). Because the study is based on a constructed log dataset and does not report any PV-based imputation/deletion strategy, missing-data handling for the ML training data is not documented in the provided text, representing a reporting gap for how incomplete sequences/transactions were treated.",
+    "sample_details": {
+      "total_students": 74,
+      "countries": [],
+      "sample_filtering_criteria": "Used the PSLC DataShop dataset “Lab study 2012 (cleanedLogs)” from a web-based tutoring system solving fraction problems. Preprocessing included deleting system-produced and/or non-timestamped transactions; treating hint-related actions as intermediate actions; concatenating action labels with learner selections to make actions differentiable; fixing maximum action and time sequence length at six (since >90% of items used ≤6 actions); and splitting long learner-item interaction sequences (typically >200 timesteps) into multiple 20-timestep subsequences. The final modeling dataset comprised 866 item sequences, 32 unique items, and 15 unique skills, with training using the selected latent skill model “KC (DefaultFewer_corrected)”."
+    },
+    "ml_techniques": {
+      "primary": "Neural Network",
+      "all_techniques": [
+        "Neural Network",
+        "LSTM"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "process_data",
+        "variable_name": "Problem-solving action sequence",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "process_data_time",
+        "variable_name": "Time durations in actions",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "skill_id",
+        "variable_name": "Latent skill model (KC)",
+        "category": "process_data"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PSLC DataShop Lab study 2012 (cleanedLogs) — fraction tutoring (KC latent skill model)",
+        "target_variable": "Next-step item response correctness (binary)",
+        "top_predictors": [
+          "Problem-solving action sequence",
+          "Time durations in actions",
+          "Learner identity embedding",
+          "Item identity embedding",
+          "Latent skill model (KC)"
+        ],
+        "performance_metrics": "Full model vs DKT and variants (Table 1). Training ratio 0.7: ACC 0.7225, AUC 0.7400, MAE 0.3580, RMSE 0.4254. Training ratio 0.5: ACC 0.7160, AUC 0.7323, MAE 0.3578, RMSE 0.4300. Training ratio 0.3: ACC 0.7126, AUC 0.7259, MAE 0.3616, RMSE 0.4330. Attention variant slightly outperforms LSTM variant; model without process-data learning is consistently worse than full model.",
+        "standardized_conclusion": "Using PSLC DataShop Lab study 2012 (cleanedLogs) fraction tutoring the study leveraged problem-solving action sequences, action time durations, learner/item embeddings, and the KC latent skill model to predict next-step item response correctness, finding that the full deep learning model achieved higher ACC/AUC and lower MAE/RMSE than DKT and a variant without process-data learning (e.g., at training ratio 0.7: ACC 0.7225 vs 0.7037 for DKT; AUC 0.7400 vs 0.7157). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study proposes a deep learning learner-modeling framework that sequentially predicts learners’ next item-response correctness using both product information (previous correctness) and process information (logged action sequences and associated time durations) from PSLC DataShop “Lab study 2012 (cleanedLogs)”. Across training/test partition ratios (0.3/0.5/0.7), the full model consistently outperformed the DKT baseline and a model variant that excluded process-data learning, improving both classification (ACC, AUC) and regression-style error metrics (MAE, RMSE). For example, at a 0.7 training ratio, the full model reached ACC=0.7225 and AUC=0.7400 with MAE=0.3580 and RMSE=0.4254, while DKT had ACC=0.7037 and AUC=0.7157. The attention variant slightly outperformed the LSTM-only variant. The paper does not report any survey weighting (appropriate for this log dataset) and does not document missing-data handling for incomplete sequences, which limits transparency.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

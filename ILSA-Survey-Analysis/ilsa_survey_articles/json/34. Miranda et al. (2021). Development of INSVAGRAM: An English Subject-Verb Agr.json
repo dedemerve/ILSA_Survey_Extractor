@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "file_name": "34. Miranda et al. (2021). Development of INSVAGRAM: An English Subject-Verb Agreement Mobile Learning Application.pdf",
+    "title": "Development of INSVAGRAM: An English Subject-Verb Agreement Mobile Learning Application",
+    "authors": [],
+    "year": 2021,
+    "doi": "10.3991/ijet.v16i19.24071",
+    "venue": "International Journal of Emerging Technologies in Learning (iJET)",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "methodology_paper"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study is a mixed-method descriptive design focused on developing a mobile learning application (INSVAGRAM) for English subject-verb agreement. It reports surveying 132 fifth-grade students using a content-validated Likert-scale questionnaire and conducting virtual interviews with five English teachers to identify the least mastered topic. The manuscript does not describe any complex survey design, sampling weights, or replicate-weight procedures (e.g., BRR/jackknife), and it does not report any weight variable names. Given the app-development and purposive sampling approach during lockdowns, the analysis appears to be based on the collected sample without population-representative weighting."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "This paper does not analyze ILSA-style cognitive achievement outcomes with Plausible Values (PVs). Instead, it uses questionnaire Likert-scale items to profile students’ access and technology aptitude, and it uses teacher interviews to identify the least mastered English topic (subject-verb agreement) to guide application content. Because the dependent variables are non-PV measures and the study is primarily an application-development/data-collection paper, PV handling and a formal missing-data strategy for PV-based achievement are not applicable; the manuscript also does not report a missing-data handling procedure for the questionnaire responses.",
+    "sample_details": {
+      "total_students": 132,
+      "countries": [
+        {
+          "country_code": "PHL",
+          "n_students": 132
+        }
+      ],
+      "sample_filtering_criteria": "Purposive sampling was used to recruit fifth-grade students in the Philippines, justified by lockdown/quarantine constraints and the fact that most fifth graders were at home. Respondents were identified through peers and social networks involving teachers, parents, and classmates. The study reports surveying 132 fifth-grade students (age 10–12) and does not describe additional analytic exclusions (e.g., missing questionnaire items) or further subsampling beyond the purposive recruitment."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "OECD",
+        "target_variable": "Literature synthesis outcome (not student-level prediction)",
+        "top_predictors": [],
+        "performance_metrics": "Not reported",
+        "standardized_conclusion": "Using OECD the study leveraged the reported predictors to predict Literature synthesis outcome (not student-level prediction), finding that This paper reports the development of the INSVAGRAM mobile learning application for English subject-verb agreement, guided by (i) a questionnaire profiling 132 fifth-grade students’ access to technology and technology aptitude and (ii) virtual interviews with five English teachers to identify the least mastered topic. The study finds that students very often have access to technology (M=4.33) and show high technology aptitude (M=3.45), and that smartphones are the most available and preferred device for learning. It concludes that subject-verb agreement is the least mastered topic and uses this to structure the app’s Learn and Play modes with 10 lesson topics and game-based practice. No machine learning models are trained or evaluated, and the manuscript does not report any survey weighting, PV-based achievement modeling, or quantitative predictive performance metrics. This indicates that  topics and game-based practice. No machine learning models are trained or evaluated, and the manuscript does not report any survey weighting, PV-based achievement modeling, or quantitative predictive performance metrics."
+      }
+    ],
+    "outcome_summary": "This paper reports the development of the INSVAGRAM mobile learning application for English subject-verb agreement, guided by (i) a questionnaire profiling 132 fifth-grade students’ access to technology and technology aptitude and (ii) virtual interviews with five English teachers to identify the least mastered topic. The study finds that students very often have access to technology (M=4.33) and show high technology aptitude (M=3.45), and that smartphones are the most available and preferred device for learning. It concludes that subject-verb agreement is the least mastered topic and uses this to structure the app’s Learn and Play modes with 10 lesson topics and game-based practice. No machine learning models are trained or evaluated, and the manuscript does not report any survey weighting, PV-based achievement modeling, or quantitative predictive performance metrics.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "This extraction targets an official assessment framework, user guide, or technical manual without an empirical ML study. Sample sizes, ML algorithms, and predictive findings are intentionally null or empty per schema rules for non-empirical IEA/OECD documentation."
+  }
+}

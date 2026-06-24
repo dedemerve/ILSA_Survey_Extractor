@@ -1,0 +1,223 @@
+{
+  "metadata": {
+    "file_name": "43. Hu et al. (2025). Predicting adolescents’ environmental action: From individual to national-level factors using an explainable machine learning approach.pdf",
+    "title": "Predicting adolescents’ environmental action: From individual to national-level factors using an explainable machine learning approach",
+    "authors": [
+      "Bo Hu",
+      "Jing Gao",
+      "Yannuo Feng",
+      "Ziqian Xia",
+      "Kun Wang",
+      "Liuna Geng"
+    ],
+    "year": 2025,
+    "doi": "10.1016/j.jenvman.2025.126398",
+    "venue": "Journal of Environmental Management",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses the PISA 2018 dataset and describes PISA’s two-stage stratified probability-proportional-to-size sampling (schools sampled first, then up to 42 students per school). The authors report PISA response-rate targets at the school and student levels and note that systems failing to meet thresholds were excluded from the public database, but they do not report applying any PISA sampling weights (e.g., W_FSTUWT/TOTWGT) in their machine-learning analyses. Because the paper focuses on training standard ML classifiers (LightGBM, XGBoost, Random Forest, MLP) and does not mention weight-aware estimation or replicate-weight procedures, the analysis is treated as unweighted. The main preprocessing steps reported are MICE predictive mean matching imputation for missing values, SMOTE oversampling for minority classes, and a 90/10 train-test split with 10-fold cross-validation on the training set."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "multiple_imputation",
+    "handling_not_reported_explanation": "PISA 2018 is used, but the dependent variables are adolescents’ private- and public-sphere environmental actions (behavioral action items) rather than PV-based cognitive achievement scores; therefore PV handling is not applicable. Missing data handling is explicitly reported: missing values were imputed using predictive mean matching via the MICE package, which corresponds to multiple imputation.",
+    "sample_details": {
+      "total_students": 420339,
+      "countries": [],
+      "sample_filtering_criteria": "Used PISA 2018 microdata across 66 countries. The analytic sample was restricted to adolescents who answered the environmental-action items; adolescents who did not answer these items were excluded. No additional grade/school-type restrictions are reported beyond the standard PISA sampling frame."
+    },
+    "ml_techniques": {
+      "primary": "LightGBM",
+      "all_techniques": [
+        "LightGBM",
+        "XGBoost",
+        "Random Forest",
+        "Neural Network"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "gender",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "parents_education",
+        "variable_name": "Parents’ education level",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "life_satisfaction",
+        "variable_name": "Life satisfaction",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "climate_change_explanatory_capacity",
+        "variable_name": "Climate-change explanatory capacity",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "environmental_attitude",
+        "variable_name": "Environmental attitude",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "critical_thinking",
+        "variable_name": "Critical thinking",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "sense_of_life_meaning",
+        "variable_name": "Sense of life meaning",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "school_belonging",
+        "variable_name": "School belonging",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "international_event_discussion",
+        "variable_name": "International event discussion",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "school_collaboration_atmosphere",
+        "variable_name": "School collaboration atmosphere",
+        "category": "school"
+      },
+      {
+        "variable_code": "climate_change_course_presence",
+        "variable_name": "Climate-change course presence",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "environmental_club_participation",
+        "variable_name": "Environmental club participation",
+        "category": "school"
+      },
+      {
+        "variable_code": "school_location",
+        "variable_name": "School location",
+        "category": "school"
+      },
+      {
+        "variable_code": "school_type",
+        "variable_name": "School type",
+        "category": "school"
+      },
+      {
+        "variable_code": "respect_for_cultural_differences",
+        "variable_name": "Respect for cultural differences",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "power_distance",
+        "variable_name": "Power distance culture",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "indulgence",
+        "variable_name": "Indulgence culture",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "individualism",
+        "variable_name": "Individualism culture",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "uncertainty_avoidance",
+        "variable_name": "Uncertainty avoidance culture",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "long_term_orientation",
+        "variable_name": "Long-term orientation culture",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "wgi",
+        "variable_name": "World Governance Index (WGI)",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "epi",
+        "variable_name": "Environmental Performance Index (EPI)",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "vulnerability",
+        "variable_name": "ND-GAIN vulnerability",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "mean_sds",
+        "variable_name": "Mean SDG score (SDS)",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "climate_risk_index_local",
+        "variable_name": "Climate Risk Index (local)",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "2018",
+        "variable_name": "2018",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "cri_1999_2018",
+        "variable_name": "Climate Risk Index (1999–2018)",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "hdi",
+        "variable_name": "Human Development Index (HDI)",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "nd_gain_readiness",
+        "variable_name": "ND-GAIN readiness",
+        "category": "system_level"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 (15-year-olds) — private-sphere environmental actions",
+        "target_variable": "Private-sphere environmental actions (classification)",
+        "top_predictors": [
+          "Environmental attitude",
+          "Critical thinking",
+          "Climate-change explanatory capacity",
+          "School collaboration atmosphere",
+          "Sense of life meaning"
+        ],
+        "performance_metrics": "Validation set: LightGBM accuracy 0.699, F1 0.698, recall 0.699, AUC 0.762. Test set: LightGBM accuracy 0.700, F1 0.702, recall 0.702, AUC 0.767. XGBoost selected for private-sphere actions (highest accuracy/recall on private-sphere test/validation per Tables S6–S7).",
+        "standardized_conclusion": "Using PISA 2018 the study leveraged environmental attitude, critical thinking, climate-change explanatory capacity, school collaboration atmosphere, and sense of life meaning to predict private-sphere environmental actions, finding that individual and school-level factors were most influential and that LightGBM achieved the best overall validation/test performance while XGBoost was selected as the final private-action model based on accuracy/robustness. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2018 (15-year-olds) — public-sphere environmental actions",
+        "target_variable": "Public-sphere environmental actions (classification)",
+        "top_predictors": [
+          "Environmental attitude",
+          "International event discussion",
+          "School belonging",
+          "World Governance Index (WGI)",
+          "Mean SDG score (SDS)"
+        ],
+        "performance_metrics": "Validation set: LightGBM accuracy 0.699, F1 0.698, recall 0.699, AUC 0.762. Test set: LightGBM accuracy 0.700, F1 0.702, recall 0.702, AUC 0.767. For private-sphere actions, XGBoost achieved higher accuracy (0.830 validation; 0.833 test) and Random Forest achieved the highest F1 on validation (0.780).",
+        "standardized_conclusion": "Using PISA 2018 the study leveraged environmental attitude, international event discussion, school belonging, World Governance Index (WGI), and mean SDG score (SDS) to predict public-sphere environmental actions, finding that public actions were driven by a combination of individual, school, and national factors and that LightGBM provided the best predictive performance on both validation and hold-out test sets. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study uses PISA 2018 (66 countries; N=420,339 adolescents who answered environmental-action items) to predict two types of adolescent environmental actions: private-sphere and public-sphere. Four ML classifiers were trained with a 90/10 train-test split and 10-fold cross-validation on the training set, with missing values imputed via MICE predictive mean matching and class imbalance addressed using SMOTE. LightGBM achieved the best validation and test performance for public-sphere actions (validation accuracy 0.699, AUC 0.762; test accuracy 0.700, AUC 0.767), while XGBoost achieved the highest accuracy/recall for private-sphere actions (validation accuracy 0.830; test accuracy 0.833). SHAP was used for feature importance and nonlinear dependence patterns, but the paper’s cross-sectional design means associations do not establish directionality, and SHAP-based importance should not be interpreted as causal effects. The manuscript does not report applying PISA sampling weights in the ML training/evaluation, which may affect generalizability under the complex survey design.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

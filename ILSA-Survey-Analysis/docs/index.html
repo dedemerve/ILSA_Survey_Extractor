@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI &amp; ML in ILSA Research: Survey Paper</title>
+  <meta name="description" content="A survey paper covering 130 peer-reviewed studies examining how AI and ML methods are applied to international large-scale assessment data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:     #0a0e1a;
+      --ink2:    #3d4663;
+      --ink3:    #8892b0;
+      --white:   #ffffff;
+      --off:     #f7f8fc;
+      --cream:   #faf9f5;
+      --indigo:  #4338ca;
+      --indigo2: #6366f1;
+      --cyan:    #0891b2;
+      --cyan2:   #22d3ee;
+      --orange:  #c2410c;
+      --orange2: #f97316;
+      --rose:    #be123c;
+      --rose2:   #fb7185;
+      --mono:    'DM Mono', monospace;
+      --serif:   'Lora', serif;
+      --display: 'Sora', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--display); background: var(--white); color: var(--ink); font-size: 16px; line-height: 1.6; }
+    a { color: var(--indigo); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ::selection { background: rgba(99,102,241,.2); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 52px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    nav.light-nav {
+      background: rgba(247,248,252,.96); backdrop-filter: blur(14px);
+      border-bottom-color: rgba(10,14,26,.08);
+    }
+    nav.dark-nav { background: rgba(10,14,26,.9); backdrop-filter: blur(14px); }
+    .nav-brand { font-weight: 700; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+    nav.light-nav .nav-brand { color: var(--ink); }
+    nav.dark-nav  .nav-brand { color: rgba(255,255,255,.9); }
+    .nav-items { display: flex; gap: 28px; font-size: 12px; font-weight: 500; letter-spacing: .03em; }
+    nav.light-nav .nav-items a { color: var(--ink2); }
+    nav.dark-nav  .nav-items a { color: rgba(255,255,255,.5); }
+    .nav-items a:hover { text-decoration: none; }
+    nav.light-nav .nav-items a:hover { color: var(--ink); }
+    nav.dark-nav  .nav-items a:hover { color: #fff; }
+
+    .hamburger { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 20px; height: 1.5px; border-radius: 2px; transition: all .2s; }
+    nav.light-nav .hamburger span { background: var(--ink); }
+    nav.dark-nav  .hamburger span { background: rgba(255,255,255,.7); }
+    .hamburger.open span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+    .mob-menu {
+      display: none; position: fixed; inset: 52px 0 0;
+      background: var(--ink); z-index: 190; padding: 32px 40px;
+      flex-direction: column; gap: 2px;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu a { font-size: 22px; font-weight: 700; color: rgba(255,255,255,.6); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .mob-menu a:hover { color: #fff; text-decoration: none; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh; background: var(--ink);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 40px 60px; position: relative; overflow: hidden;
+    }
+    .hero-bg-text {
+      position: absolute; top: 52px; right: -20px; bottom: 0;
+      font-size: clamp(180px, 22vw, 340px); font-weight: 800;
+      color: rgba(255,255,255,.025); line-height: .9;
+      letter-spacing: -.06em; pointer-events: none; user-select: none;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 28px;
+    }
+    .hero-eyebrow-line { width: 32px; height: 1px; background: var(--cyan2); }
+    .hero-eyebrow-text {
+      font-size: 11px; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--cyan2);
+    }
+    #hero h1 {
+      font-size: clamp(26px, 3.4vw, 50px); font-weight: 800;
+      line-height: 1.1; letter-spacing: -0.03em; color: #fff;
+      max-width: 820px; margin-bottom: 28px;
+    }
+    #hero h1 .accent { color: #fff; }
+    .hero-bottom {
+      display: grid; grid-template-columns: 1fr auto; gap: 60px;
+      align-items: end; width: 100%;
+    }
+    @media (max-width: 700px) { .hero-bottom { grid-template-columns: 1fr; gap: 28px; } }
+    .hero-desc { font-size: 15px; color: rgba(255,255,255,.5); line-height: 1.7; font-weight: 400; max-width: 520px; }
+    .hero-meta { display: flex; flex-direction: column; gap: 20px; }
+    .hero-nums { display: flex; gap: 32px; }
+    .hn-item { display: flex; flex-direction: column; }
+    .hn-num {
+      font-size: clamp(40px, 6vw, 72px); font-weight: 800;
+      letter-spacing: -0.05em; line-height: 1;
+    }
+    .hn-num.c1 { color: var(--indigo2); }
+    .hn-num.c2 { color: var(--cyan2); }
+    .hn-num.c3 { color: var(--orange2); }
+    .hn-lbl { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-top: 6px; }
+    .hero-programs { display: flex; flex-wrap: wrap; gap: 6px; }
+    .prog { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.5); border-radius: 3px; }
+    .hero-cta { display: flex; gap: 10px; margin-top: 6px; }
+    .btn-hf {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px; border-radius: 4px;
+      background: var(--indigo2); color: #fff;
+      font-size: 13px; font-weight: 600; text-decoration: none; transition: background .15s;
+    }
+    .btn-hf:hover { background: #5154e0; text-decoration: none; }
+    .btn-hf svg { width: 16px; height: 16px; }
+    .hero-authors {
+      font-size: 17px; font-weight: 600; color: rgba(255,255,255,.75);
+      padding-top: 8px; border-top: 1px solid rgba(255,255,255,.1);
+    }
+    .hero-authors a { color: #fff; border-bottom: 1px solid rgba(255,255,255,.3); transition: color .15s; }
+    .hero-authors a:hover { color: var(--cyan2); text-decoration: none; }
+
+    /* ─── SECTION SHELL ─── */
+    .sec { padding: 100px 40px; max-width: 1100px; margin: 0 auto; }
+    .sec-full { padding: 100px 40px; }
+    .sec-divider { border: none; border-top: 1px solid rgba(10,14,26,.08); margin: 0; }
+    .sec-num {
+      font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--ink3); margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+    }
+    .sec-num::before { content: ''; display: block; width: 24px; height: 1px; background: currentColor; }
+    h2 {
+      font-size: clamp(28px, 4vw, 48px); font-weight: 800;
+      letter-spacing: -0.04em; line-height: 1.1; color: var(--ink); margin-bottom: 0;
+    }
+    h2 .accent-i { color: var(--indigo); }
+    h2 .accent-c { color: var(--cyan); }
+    h2 .accent-o { color: var(--orange); }
+
+    /* ─── ABSTRACT ─── */
+    #abstract { background: var(--white); }
+    .abstract-layout {
+      display: grid; grid-template-columns: 1fr 1px 340px;
+      gap: 64px; align-items: start; margin-top: 56px;
+    }
+    @media (max-width: 900px) { .abstract-layout { grid-template-columns: 1fr; gap: 40px; } .abstract-divider { display: none; } }
+    .abstract-main { }
+    .abstract-pull {
+      font-family: var(--serif); font-size: clamp(20px, 2.5vw, 26px);
+      line-height: 1.45; color: var(--ink); font-style: italic;
+      margin-bottom: 28px;
+    }
+    .abstract-pull span { color: var(--indigo); font-style: normal; }
+    .abstract-body { font-size: 15px; color: var(--ink2); line-height: 1.75; }
+    .abstract-divider { background: rgba(10,14,26,.08); }
+    .abstract-sidebar { }
+    .aside-block { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid rgba(10,14,26,.07); }
+    .aside-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .aside-label {
+      font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--ink3); margin-bottom: 10px;
+    }
+    .aside-text { font-size: 13.5px; color: var(--ink2); line-height: 1.65; }
+    .aside-tag {
+      display: inline-block; margin-top: 10px; font-size: 11px; font-weight: 600;
+      padding: 3px 9px; border-radius: 2px; font-family: var(--mono);
+    }
+    .at-ind { background: rgba(67,56,202,.1); color: var(--indigo); }
+    .at-cyn { background: rgba(8,145,178,.1); color: var(--cyan); }
+    .at-org { background: rgba(194,65,12,.1); color: var(--orange); }
+
+    /* ─── METHODOLOGY ─── */
+    #scope { background: var(--off); }
+    .scope-inner { max-width: 1100px; margin: 0 auto; padding: 100px 40px; }
+    .rq-block { margin: 48px 0; }
+    .rq-row {
+      display: grid; grid-template-columns: 80px 1fr; gap: 24px;
+      border-top: 1px solid rgba(10,14,26,.1); padding: 24px 0; align-items: start;
+    }
+    .rq-id { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink3); padding-top: 3px; font-family: var(--mono); }
+    .rq-text { font-size: 15px; color: var(--ink); line-height: 1.65; font-weight: 500; }
+    .rq-text em { color: var(--indigo); font-style: normal; }
+
+    /* PRISMA — vertical steps */
+    .prisma-vert { margin: 56px 0 0; display: flex; flex-direction: column; gap: 0; }
+    .pv-step {
+      display: grid; grid-template-columns: 120px 1px 1fr; gap: 32px; padding: 28px 0;
+      border-top: 1px solid rgba(10,14,26,.08); align-items: start;
+    }
+    .pv-num {
+      font-size: clamp(36px, 5vw, 56px); font-weight: 800;
+      letter-spacing: -0.05em; line-height: 1;
+    }
+    .pv-num.n1 { color: var(--indigo); }
+    .pv-num.n2 { color: var(--cyan); }
+    .pv-num.n3 { color: var(--orange); }
+    .pv-num.n4 { color: var(--rose); }
+    .pv-divider { background: rgba(10,14,26,.07); }
+    .pv-right { padding-top: 6px; }
+    .pv-stage { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink3); margin-bottom: 6px; }
+    .pv-title { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+    .pv-desc  { font-size: 13.5px; color: var(--ink2); line-height: 1.6; }
+
+    .criteria-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      border: 1px solid rgba(10,14,26,.1); border-radius: 6px; overflow: hidden;
+      margin-top: 48px;
+    }
+    @media (max-width: 640px) { .criteria-grid { grid-template-columns: 1fr; } }
+    .crit-cell {
+      padding: 28px 32px;
+      border-right: 1px solid rgba(10,14,26,.1);
+    }
+    .crit-cell:nth-child(2) { border-right: none; }
+    .crit-cell:nth-child(3), .crit-cell:nth-child(4) {
+      border-top: 1px solid rgba(10,14,26,.1);
+    }
+    @media (max-width: 640px) {
+      .crit-cell { border-right: none !important; }
+      .crit-cell + .crit-cell { border-top: 1px solid rgba(10,14,26,.1); }
+    }
+    .crit-head { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
+    .crit-head.inc { color: var(--indigo); }
+    .crit-head.exc { color: var(--rose); }
+    .crit-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .crit-list li { font-size: 13.5px; color: var(--ink2); line-height: 1.5; padding-left: 16px; position: relative; }
+    .crit-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 1px; background: var(--ink3); }
+
+    /* ─── DATASET ─── */
+    #dataset { background: var(--ink); }
+    .ds-inner { max-width: 1100px; margin: 0 auto; padding: 100px 40px; }
+    .ds-inner .sec-num { color: rgba(255,255,255,.25); }
+    .ds-inner .sec-num::before { background: rgba(255,255,255,.2); }
+    .ds-inner h2 { color: #fff; }
+
+    .ds-table-wrap { margin-top: 56px; overflow-x: auto; }
+    .ds-table {
+      width: 100%; border-collapse: collapse; font-size: 13px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .ds-table thead tr { border-bottom: 1px solid rgba(255,255,255,.12); }
+    .ds-table th {
+      padding: 14px 20px; text-align: left;
+      font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(255,255,255,.3); font-family: var(--mono);
+    }
+    .ds-table td {
+      padding: 18px 20px; border-bottom: 1px solid rgba(255,255,255,.06);
+      vertical-align: top;
+    }
+    .ds-table tr:last-child td { border-bottom: none; }
+    .ds-table tr:hover td { background: rgba(255,255,255,.03); }
+    .td-sheet { font-family: var(--mono); font-size: 12px; color: var(--cyan2); font-weight: 500; }
+    .td-count { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+    .td-count.ind { color: var(--indigo2); }
+    .td-count.cyn { color: var(--cyan2); }
+    .td-count.org { color: var(--orange2); }
+    .td-desc { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.6; max-width: 360px; }
+    .td-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+    .td-tag { font-size: 10px; font-weight: 500; font-family: var(--mono); padding: 2px 7px; border: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.4); border-radius: 2px; }
+
+    /* Schema preview */
+    .schema-panel { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.07); }
+    @media (max-width: 780px) { .schema-panel { grid-template-columns: 1fr; } }
+    .schema-left { padding: 36px 32px; background: rgba(255,255,255,.02); }
+    .schema-right { padding: 36px 32px; background: rgba(255,255,255,.02); }
+    .schema-caption { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 20px; font-family: var(--mono); }
+    .json-pre { font-family: var(--mono); font-size: 12px; color: rgba(255,255,255,.5); line-height: 1.7; white-space: pre-wrap; }
+    .jk { color: #93c5fd; }
+    .jv { color: #86efac; }
+    .jn { color: #fdba74; }
+    .jb { color: #f9a8d4; }
+    .tax-rows { display: flex; flex-direction: column; gap: 0; }
+    .tax-row {
+      display: grid; grid-template-columns: 140px 1fr; gap: 16px;
+      padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.07);
+      align-items: start;
+    }
+    .tax-row:last-child { border-bottom: none; }
+    .tax-field { font-family: var(--mono); font-size: 11px; color: var(--cyan2); }
+    .tax-vals { display: flex; flex-wrap: wrap; gap: 4px; }
+    .tax-val { font-size: 10px; padding: 2px 7px; border-radius: 2px; font-family: var(--mono); }
+    .tv-i { background: rgba(99,102,241,.2); color: #a5b4fc; }
+    .tv-c { background: rgba(8,145,178,.2); color: #67e8f9; }
+    .tv-o { background: rgba(249,115,22,.2); color: #fed7aa; }
+    .tv-g { background: rgba(255,255,255,.07); color: rgba(255,255,255,.4); }
+
+    /* ─── FINDINGS ─── */
+    #findings { background: var(--cream); }
+    .findings-inner { max-width: 1100px; margin: 0 auto; padding: 100px 40px; }
+    .findings-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 56px; align-items: start; }
+    @media (max-width: 820px) { .findings-split { grid-template-columns: 1fr; gap: 48px; } }
+
+    /* ML bars */
+    .ml-rows { display: flex; flex-direction: column; gap: 0; }
+    .ml-row {
+      padding: 20px 0; border-bottom: 1px solid rgba(10,14,26,.08);
+      display: grid; grid-template-columns: 1fr 64px; gap: 16px; align-items: center;
+    }
+    .ml-row:last-child { border-bottom: none; }
+    .ml-name { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .ml-detail { font-size: 12px; color: var(--ink3); }
+    .ml-bar-bg { height: 3px; background: rgba(10,14,26,.08); border-radius: 2px; margin-top: 10px; }
+    .ml-bar-fill { height: 3px; border-radius: 2px; }
+    .bf-i { background: var(--indigo); }
+    .bf-c { background: var(--cyan); }
+    .bf-o { background: var(--orange); }
+    .bf-r { background: var(--rose); }
+    .ml-pct { font-size: 22px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; text-align: right; }
+    .pct-i { color: var(--indigo); }
+    .pct-c { color: var(--cyan); }
+    .pct-o { color: var(--orange); }
+    .pct-r { color: var(--rose); }
+
+    /* Rigor rows */
+    .rigor-head { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 24px; letter-spacing: -0.01em; }
+    .rigor-rows { display: flex; flex-direction: column; gap: 0; }
+    .rigor-row {
+      display: grid; grid-template-columns: 1fr 56px; gap: 16px;
+      padding: 18px 0; border-bottom: 1px solid rgba(10,14,26,.08); align-items: center;
+    }
+    .rigor-row:last-child { border-bottom: none; }
+    .rigor-label { font-size: 13.5px; color: var(--ink2); line-height: 1.4; }
+    .rigor-score { font-size: 18px; font-weight: 800; letter-spacing: -0.03em; text-align: right; }
+    .rs-hi { color: var(--orange); }
+    .rs-md { color: var(--cyan); }
+    .rs-lo { color: var(--rose); }
+    .rigor-bar-bg { height: 2px; background: rgba(10,14,26,.08); border-radius: 1px; margin-top: 8px; }
+    .rigor-bar { height: 2px; border-radius: 1px; background: var(--ink3); }
+
+    /* Outcome domains */
+    .domains-block { margin-top: 60px; }
+    .domains-head { font-size: 18px; font-weight: 800; color: var(--ink); margin-bottom: 20px; letter-spacing: -0.02em; }
+    .domain-chips { display: flex; flex-wrap: nowrap; gap: 12px; }
+    .domain-chip {
+      display: inline-flex; flex-direction: column; align-items: flex-start;
+      padding: 18px 22px; border: 1px solid rgba(10,14,26,.1); border-radius: 6px;
+      background: var(--white); flex: 1;
+    }
+    .dchip-pct { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+    .dchip-pct.dp-i { color: var(--indigo); }
+    .dchip-pct.dp-c { color: var(--cyan); }
+    .dchip-pct.dp-o { color: var(--orange); }
+    .dchip-pct.dp-r { color: var(--rose); }
+    .dchip-pct.dp-g { color: var(--ink3); }
+    .dchip-lbl { font-size: 11px; color: var(--ink3); margin-top: 4px; font-weight: 500; }
+
+    /* ─── CONTRIBUTIONS ─── */
+    #contributions { background: var(--white); }
+    .contrib-inner { max-width: 1100px; margin: 0 auto; padding: 100px 40px; }
+    .contrib-list { margin-top: 56px; }
+    .contrib-item {
+      display: grid; grid-template-columns: 80px 1px 1fr; gap: 40px;
+      padding: 40px 0; border-top: 1px solid rgba(10,14,26,.08); align-items: start;
+    }
+    .contrib-item:last-child { border-bottom: 1px solid rgba(10,14,26,.08); }
+    @media (max-width: 640px) {
+      .contrib-item { grid-template-columns: 1fr; gap: 12px; }
+      .contrib-divv { display: none; }
+    }
+    .contrib-idx {
+      font-size: clamp(40px, 5vw, 60px); font-weight: 800;
+      letter-spacing: -0.05em; line-height: 1; color: rgba(10,14,26,.07);
+    }
+    .contrib-divv { background: rgba(10,14,26,.07); }
+    .contrib-body { }
+    .contrib-title { font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.01em; }
+    .contrib-text { font-size: 14px; color: var(--ink2); line-height: 1.7; }
+    .contrib-foot { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .cf-tag { font-size: 11px; font-family: var(--mono); padding: 3px 9px; border: 1px solid rgba(10,14,26,.1); color: var(--ink3); border-radius: 2px; }
+
+    /* ─── LIMITATIONS ─── */
+    #limitations { background: var(--off); }
+    .limit-inner { max-width: 1100px; margin: 0 auto; padding: 100px 40px; }
+    .limit-split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 48px; align-items: start; }
+    @media (max-width: 700px) { .limit-split { grid-template-columns: 1fr; } }
+    .limit-col { display: flex; flex-direction: column; gap: 0; }
+    .limit-item { padding: 24px 0; border-bottom: 1px solid rgba(10,14,26,.08); }
+    .limit-item:first-child { padding-top: 0; }
+    .limit-item:last-child { border-bottom: none; }
+    .limit-title { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+    .limit-text { font-size: 13.5px; color: var(--ink2); line-height: 1.65; }
+    .future-block { padding: 32px; background: var(--white); border: 1px solid rgba(10,14,26,.1); }
+    .future-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--indigo); margin-bottom: 16px; font-family: var(--mono); }
+    .future-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(10,14,26,.06); align-items: flex-start; }
+    .future-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .future-arrow { color: var(--indigo); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .future-text { font-size: 13.5px; color: var(--ink2); line-height: 1.6; }
+
+    /* ─── CITATION ─── */
+    #citation { background: var(--ink); }
+    .cite-inner { max-width: 1100px; margin: 0 auto; padding: 100px 40px; }
+    .cite-inner .sec-num { color: rgba(255,255,255,.25); }
+    .cite-inner .sec-num::before { background: rgba(255,255,255,.2); }
+    .cite-inner h2 { color: #fff; }
+    .cite-split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 56px; }
+    @media (max-width: 780px) { .cite-split { grid-template-columns: 1fr; } }
+    .cite-format-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 14px; font-family: var(--mono); }
+    .bibtex-block {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      padding: 20px 22px; font-family: var(--mono); font-size: 12px;
+      color: rgba(255,255,255,.5); line-height: 1.8; white-space: pre-wrap;
+      position: relative; border-radius: 2px;
+    }
+    .copy-btn {
+      position: absolute; top: 12px; right: 14px;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.4); font-size: 11px; padding: 4px 12px;
+      border-radius: 2px; cursor: pointer; font-family: var(--display); transition: all .15s;
+    }
+    .copy-btn:hover { background: rgba(255,255,255,.16); color: #fff; }
+    .apa-block {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      padding: 20px 22px; font-size: 13.5px; color: rgba(255,255,255,.5);
+      line-height: 1.75; border-radius: 2px;
+    }
+    .apa-block em { color: rgba(255,255,255,.75); font-style: italic; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink); border-top: 1px solid rgba(255,255,255,.06);
+      padding: 36px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-left { font-size: 12px; color: rgba(255,255,255,.25); }
+    .footer-left strong { color: rgba(255,255,255,.5); font-weight: 600; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 12px; color: rgba(255,255,255,.3); transition: color .15s; }
+    .footer-links a:hover { color: rgba(255,255,255,.8); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      #hero { padding: 0 24px 48px; }
+      .sec { padding: 64px 24px; }
+      .sec-full { padding: 64px 24px; }
+      nav { padding: 0 24px; }
+      .nav-items { display: none; }
+      .hamburger { display: flex; }
+      footer { padding: 28px 24px; }
+      .ds-inner { padding: 64px 24px; }
+      .findings-inner, .contrib-inner, .limit-inner, .cite-inner { padding: 64px 24px; }
+      .scope-inner { padding: 64px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="dark-nav" id="mainNav">
+  <div class="nav-brand">ILSA Survey</div>
+  <div class="nav-items">
+    <a href="#abstract">Abstract</a>
+    <a href="#scope">Methodology</a>
+    <a href="#dataset">Dataset</a>
+    <a href="#findings">Findings</a>
+    <a href="#contributions">Contributions</a>
+    <a href="#citation">Cite</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="#abstract">Abstract</a>
+  <a href="#scope">Methodology</a>
+  <a href="#dataset">Dataset</a>
+  <a href="#findings">Findings</a>
+  <a href="#contributions">Contributions</a>
+  <a href="#citation">Cite</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-text" aria-hidden="true">
+    <span>AI</span>
+    <span>ML</span>
+  </div>
+
+  <div class="hero-eyebrow">
+    <span class="hero-eyebrow-text">Survey Paper &nbsp;·&nbsp; Open Dataset</span>
+  </div>
+
+  <h1>Artificial Intelligence Applications in International Large-Scale Assessments:<br><span class="accent">A Survey with LLM-Assisted Evidence Synthesis</span></h1>
+
+  <div class="hero-bottom">
+    <div>
+      <p class="hero-desc">
+        A survey paper covering 130 peer-reviewed studies examining how AI and machine learning methods are applied across seven international large-scale assessment programs, covering methods, outcomes, and methodological rigor.
+      </p>
+      <div class="hero-programs" style="margin-top:20px;">
+        <span class="prog">PISA</span><span class="prog">TIMSS</span><span class="prog">PIRLS</span>
+        <span class="prog">TALIS</span><span class="prog">ICCS</span><span class="prog">ICILS</span>
+        <span class="prog">PIAAC</span>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-nums">
+        <div class="hn-item">
+          <div class="hn-num c1">130</div>
+          <div class="hn-lbl">Studies</div>
+        </div>
+        <div class="hn-item">
+          <div class="hn-num c2">202</div>
+          <div class="hn-lbl">Findings</div>
+        </div>
+        <div class="hn-item">
+          <div class="hn-num c3">1,907</div>
+          <div class="hn-lbl">Predictors</div>
+        </div>
+      </div>
+      <div class="hero-authors">
+        <a href="https://dedemerve.github.io" target="_blank" rel="noopener">Merve Dede</a> &amp; <a href="https://ekrcet.com/" target="_blank" rel="noopener">Ekrem Çetinkaya</a>
+      </div>
+      <div class="hero-cta">
+        <a class="btn-hf" href="https://huggingface.co/datasets/dedemerve" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#FFD21E"/><ellipse cx="12" cy="13" rx="7" ry="6" fill="#FF9D00"/><ellipse cx="12" cy="13" rx="6" ry="5" fill="#FFD21E"/><ellipse cx="9.2" cy="10.5" rx="1.2" ry="1.4" fill="#1a1a1a"/><ellipse cx="14.8" cy="10.5" rx="1.2" ry="1.4" fill="#1a1a1a"/><path d="M8.5 14.5 Q12 17.5 15.5 14.5" stroke="#1a1a1a" stroke-width="1.2" fill="none" stroke-linecap="round"/><ellipse cx="4.5" cy="15" rx="2.5" ry="1.8" fill="#FFD21E" transform="rotate(-20 4.5 15)"/><ellipse cx="19.5" cy="15" rx="2.5" ry="1.8" fill="#FFD21E" transform="rotate(20 19.5 15)"/></svg>
+          Open on HuggingFace
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sec-divider" />
+
+<!-- ABSTRACT -->
+<section id="abstract">
+  <div class="sec">
+    <div class="sec-num">01 &nbsp; Abstract</div>
+    <h2>What this <span class="accent-i">survey</span> does</h2>
+    <div class="abstract-layout">
+      <div class="abstract-main">
+        <p class="abstract-pull">
+          "The first <span>systematic map</span> of how AI and machine learning are being applied to international large-scale assessment data, and where the field stands methodologically."
+        </p>
+        <p class="abstract-body">
+          International Large-Scale Assessments have generated rich microdata across PISA, TIMSS, PIRLS, TALIS, ICCS, ICILS, and PIAAC. Over the past decade, a growing body of studies has applied artificial intelligence and machine learning methods to these datasets for purposes such as predicting student outcomes, profiling learners, scoring open-ended items, and analyzing behavioral process data.
+        </p>
+        <p class="abstract-body" style="margin-top:16px;">
+          Yet no prior work has systematically reviewed this literature across all major ILSA programs, evaluated methodological rigor, or produced an openly accessible structured evidence base. This survey fills that gap through a PRISMA-guided review of 130 peer-reviewed studies, producing a fully structured open dataset alongside the synthesis.
+        </p>
+      </div>
+      <div class="abstract-divider"></div>
+      <div class="abstract-sidebar">
+        <div class="aside-block">
+          <div class="aside-label">Motivation</div>
+          <p class="aside-text">Fragmented evidence scattered across programs, methods, and countries makes it difficult to assess the state of the field or identify methodological gaps.</p>
+          <span class="aside-tag at-ind">gap analysis</span>
+        </div>
+        <div class="aside-block">
+          <div class="aside-label">Approach</div>
+          <p class="aside-text">PRISMA-guided systematic search, dual screening, structured information extraction across 9 field categories, controlled vocabulary taxonomy.</p>
+          <span class="aside-tag at-cyn">survey paper</span>
+        </div>
+        <div class="aside-block">
+          <div class="aside-label">Output</div>
+          <p class="aside-text">130 coded studies · 202 main findings · 1,907 predictor records · open dataset under CC BY 4.0.</p>
+          <span class="aside-tag at-org">open dataset</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sec-divider" />
+
+<!-- METHODOLOGY -->
+<section id="scope">
+  <div class="scope-inner">
+    <div class="sec-num">02 &nbsp; Methodology</div>
+    <h2>Study selection &amp; <span class="accent-i">screening process</span></h2>
+
+    <div class="rq-block">
+      <div class="rq-row">
+        <div class="rq-id">RQ 1</div>
+        <div class="rq-text">How are <em>AI and machine learning methods</em> applied in international large-scale assessment research, and what methodological practices characterize this body of work?</div>
+      </div>
+      <div class="rq-row">
+        <div class="rq-id">RQ 2</div>
+        <div class="rq-text">Which ILSA programs are most studied, and what <em>ML algorithm families</em> dominate? How do studies handle plausible values and sampling weights?</div>
+      </div>
+      <div class="rq-row">
+        <div class="rq-id">RQ 3</div>
+        <div class="rq-text">What <em>outcome domains and predictor categories</em> appear most frequently, and where do critical evidence gaps remain for future research?</div>
+      </div>
+    </div>
+
+    <!-- PRISMA vertical -->
+    <div class="prisma-vert">
+      <div class="pv-step">
+        <div class="pv-num n1">874</div>
+        <div class="pv-divider"></div>
+        <div class="pv-right">
+          <div class="pv-stage">Step 01: Identification</div>
+          <div class="pv-title">Database search</div>
+          <div class="pv-desc">Full-text and keyword search across Web of Science, Scopus, ERIC, and Google Scholar using terms combining ILSA program names with AI/ML methodology keywords.</div>
+        </div>
+      </div>
+      <div class="pv-step">
+        <div class="pv-num n2">412</div>
+        <div class="pv-divider"></div>
+        <div class="pv-right">
+          <div class="pv-stage">Step 02: Deduplication and Screening</div>
+          <div class="pv-title">Title &amp; abstract review</div>
+          <div class="pv-desc">Duplicate records removed; remaining studies screened on title and abstract by two independent reviewers. Disagreements resolved by consensus.</div>
+        </div>
+      </div>
+      <div class="pv-step">
+        <div class="pv-num n3">198</div>
+        <div class="pv-divider"></div>
+        <div class="pv-right">
+          <div class="pv-stage">Step 03: Full-text eligibility</div>
+          <div class="pv-title">Full-text assessment</div>
+          <div class="pv-desc">Full texts retrieved and assessed against inclusion criteria: peer-reviewed empirical studies applying AI/ML to ILSA microdata, published 2020–April 2026.</div>
+        </div>
+      </div>
+      <div class="pv-step">
+        <div class="pv-num n4">130</div>
+        <div class="pv-divider"></div>
+        <div class="pv-right">
+          <div class="pv-stage">Step 04: Final corpus</div>
+          <div class="pv-title">Included in synthesis</div>
+          <div class="pv-desc">130 studies included in final systematic synthesis and structured extraction. Each study coded across 9 field categories using a pre-registered schema.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Criteria -->
+    <div class="criteria-grid">
+      <div class="crit-cell">
+        <div class="crit-head inc">Inclusion criteria</div>
+        <ul class="crit-list">
+          <li>Peer-reviewed journal articles or conference papers</li>
+          <li>Applies at least one AI/ML method</li>
+          <li>Uses ILSA microdata (PISA, TIMSS, PIRLS, TALIS, ICCS, ICILS, PIAAC)</li>
+          <li>Published 2020–April 2026</li>
+          <li>English-language publication</li>
+        </ul>
+      </div>
+      <div class="crit-cell">
+        <div class="crit-head exc">Exclusion criteria</div>
+        <ul class="crit-list">
+          <li>Non-ILSA datasets or aggregated country-level only</li>
+          <li>Purely theoretical or methodological framework papers</li>
+          <li>Traditional statistics only (HLM, SEM, OLS) without ML</li>
+          <li>National or technical report documents</li>
+          <li>Mobile learning apps or tool development without ILSA data</li>
+        </ul>
+      </div>
+      <div class="crit-cell">
+        <div class="crit-head inc" style="color:var(--cyan);">Extraction fields (9 categories)</div>
+        <ul class="crit-list">
+          <li>ML technique family and primary algorithm</li>
+          <li>Plausible value handling protocol</li>
+          <li>Sampling weight usage</li>
+          <li>Target outcome domain</li>
+          <li>Predictor variables with level coding</li>
+        </ul>
+      </div>
+      <div class="crit-cell">
+        <div class="crit-head" style="color:var(--orange);">Quality indicators</div>
+        <ul class="crit-list">
+          <li>PV handling documented (yes / no / partial)</li>
+          <li>Sampling weights applied</li>
+          <li>Model performance metrics reported</li>
+          <li>Sample size and country coverage stated</li>
+          <li>Replication feasibility assessment</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATASET -->
+<section id="dataset">
+  <div class="ds-inner">
+    <div class="sec-num">03 &nbsp; Dataset</div>
+    <h2 style="color:#fff;">Open structured <span style="color:var(--cyan2);">research dataset</span></h2>
+
+    <div class="ds-table-wrap">
+      <table class="ds-table">
+        <thead>
+          <tr>
+            <th>Sheet / Table</th>
+            <th>Records</th>
+            <th>Description</th>
+            <th>Key fields</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-sheet">1_Articles_Master</td>
+            <td><div class="td-count ind">130</div></td>
+            <td class="td-desc">
+              One row per article. Full article-level metadata plus structured fields for ML method, sample characteristics, plausible value handling, sampling weight usage, and controlled-vocabulary filter labels.
+              <div class="td-tags">
+                <span class="td-tag">doi</span><span class="td-tag">ml_techniques</span><span class="td-tag">pv_filter_label</span><span class="td-tag">weights_filter</span><span class="td-tag">study_filter_type</span><span class="td-tag">ml_family</span>
+              </div>
+            </td>
+            <td class="td-desc">38 columns · article unit</td>
+          </tr>
+          <tr>
+            <td class="td-sheet">2_Main_Findings</td>
+            <td><div class="td-count cyn">202</div></td>
+            <td class="td-desc">
+              One row per finding. Includes dataset used, target variable, top predictors, performance metrics, standardized conclusion text, and taxonomy labels for domain and dimension.
+              <div class="td-tags">
+                <span class="td-tag">target_variable</span><span class="td-tag">top_predictors</span><span class="td-tag">performance_metrics</span><span class="td-tag">target_domain</span>
+              </div>
+            </td>
+            <td class="td-desc">16 columns · finding unit</td>
+          </tr>
+          <tr>
+            <td class="td-sheet">3_Confounders</td>
+            <td><div class="td-count org">1,907</div></td>
+            <td class="td-desc">
+              One row per variable–study pair. Variable name, schema category, predictor level (student / school / system), and predictor category under a controlled taxonomy.
+              <div class="td-tags">
+                <span class="td-tag">variable_name</span><span class="td-tag">category</span><span class="td-tag">predictor_level</span><span class="td-tag">predictor_category</span>
+              </div>
+            </td>
+            <td class="td-desc">10 columns · variable unit</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="schema-panel">
+      <div class="schema-left">
+        <div class="schema-caption">// sample extraction record</div>
+        <div class="json-pre"><span class="jk">"metadata"</span>: {
+  <span class="jk">"title"</span>:   <span class="jv">"ML to predict science achievement TIMSS 2029"</span>,
+  <span class="jk">"year"</span>:    <span class="jn">2024</span>,
+  <span class="jk">"open_access"</span>: <span class="jb">true</span>
+},
+<span class="jk">"data"</span>: {
+  <span class="jk">"ml_techniques"</span>: {
+    <span class="jk">"primary"</span>: <span class="jv">"Random Forest"</span>,
+    <span class="jk">"all"</span>: [<span class="jv">"Random Forest"</span>, <span class="jv">"XGBoost"</span>]
+  },
+  <span class="jk">"plausible_values_handling"</span>: <span class="jv">"not_reported"</span>,
+  <span class="jk">"survey_design"</span>: {
+    <span class="jk">"student_weights_used"</span>: <span class="jb">false</span>
+  },
+  <span class="jk">"main_findings"</span>: [{
+    <span class="jk">"target_variable"</span>: <span class="jv">"Science (TIMSS 2029)"</span>,
+    <span class="jk">"performance_metrics"</span>: <span class="jv">"R² = 0.71"</span>
+  }]
+}</div>
+      </div>
+      <div class="schema-right">
+        <div class="schema-caption">// controlled vocabulary taxonomy</div>
+        <div class="tax-rows">
+          <div class="tax-row">
+            <div class="tax-field">study_filter_type</div>
+            <div class="tax-vals">
+              <span class="tax-val tv-i">Empirical ML</span>
+              <span class="tax-val tv-g">Traditional Stats</span>
+              <span class="tax-val tv-g">Framework</span>
+            </div>
+          </div>
+          <div class="tax-row">
+            <div class="tax-field">ml_family</div>
+            <div class="tax-vals">
+              <span class="tax-val tv-i">Tree-Based</span>
+              <span class="tax-val tv-o">Deep Learning</span>
+              <span class="tax-val tv-c">GLM</span>
+              <span class="tax-val tv-g">Clustering</span>
+            </div>
+          </div>
+          <div class="tax-row">
+            <div class="tax-field">target_domain</div>
+            <div class="tax-vals">
+              <span class="tax-val tv-i">Mathematics</span>
+              <span class="tax-val tv-c">Science</span>
+              <span class="tax-val tv-o">Reading</span>
+              <span class="tax-val tv-g">Non-cognitive</span>
+            </div>
+          </div>
+          <div class="tax-row">
+            <div class="tax-field">predictor_level</div>
+            <div class="tax-vals">
+              <span class="tax-val tv-i">Student</span>
+              <span class="tax-val tv-c">School</span>
+              <span class="tax-val tv-o">System</span>
+            </div>
+          </div>
+          <div class="tax-row">
+            <div class="tax-field">pv_filter_label</div>
+            <div class="tax-vals">
+              <span class="tax-val tv-i">Rubin Rules</span>
+              <span class="tax-val tv-o">Single PV</span>
+              <span class="tax-val tv-g">Not Reported</span>
+            </div>
+          </div>
+          <div class="tax-row">
+            <div class="tax-field">weights_filter</div>
+            <div class="tax-vals">
+              <span class="tax-val tv-i">True</span>
+              <span class="tax-val tv-o">False</span>
+              <span class="tax-val tv-g">Unknown</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINDINGS -->
+<section id="findings">
+  <div class="findings-inner">
+    <div class="sec-num">04 &nbsp; Key Findings</div>
+    <h2>ML landscape &amp; <span class="accent-o">methodological rigor</span></h2>
+
+    <div class="findings-split">
+      <div>
+        <div class="ml-rows">
+          <div class="ml-row">
+            <div>
+              <div class="ml-name">Tree-Based / Ensemble Learning</div>
+              <div class="ml-detail">Random Forest · XGBoost · Gradient Boosting · SHAP interpretation</div>
+              <div class="ml-bar-bg"><div class="ml-bar-fill bf-i" style="width:69%"></div></div>
+            </div>
+            <div class="ml-pct pct-i">69%</div>
+          </div>
+          <div class="ml-row">
+            <div>
+              <div class="ml-name">Clustering / Unsupervised</div>
+              <div class="ml-detail">Latent Profile Analysis · k-means · hierarchical clustering</div>
+              <div class="ml-bar-bg"><div class="ml-bar-fill bf-r" style="width:12%"></div></div>
+            </div>
+            <div class="ml-pct pct-r">12%</div>
+          </div>
+          <div class="ml-row">
+            <div>
+              <div class="ml-name">Generalized Linear Models</div>
+              <div class="ml-detail">LASSO · Ridge · Elastic Net · Logistic Regression</div>
+              <div class="ml-bar-bg"><div class="ml-bar-fill bf-o" style="width:11%"></div></div>
+            </div>
+            <div class="ml-pct pct-o">11%</div>
+          </div>
+          <div class="ml-row">
+            <div>
+              <div class="ml-name">Deep Learning</div>
+              <div class="ml-detail">Neural Networks · CNN · LSTM · Automated scoring</div>
+              <div class="ml-bar-bg"><div class="ml-bar-fill bf-c" style="width:8%"></div></div>
+            </div>
+            <div class="ml-pct pct-c">8%</div>
+          </div>
+        </div>
+
+        <div class="domains-block">
+          <div class="domains-head">Outcome domains targeted</div>
+          <div class="domain-chips">
+            <div class="domain-chip"><div class="dchip-pct dp-g">34%</div><div class="dchip-lbl">Other / Unspecified</div></div>
+            <div class="domain-chip"><div class="dchip-pct dp-i">24%</div><div class="dchip-lbl">Composite / Multi-Domain</div></div>
+            <div class="domain-chip"><div class="dchip-pct dp-c">12%</div><div class="dchip-lbl">Mathematics</div></div>
+            <div class="domain-chip"><div class="dchip-pct dp-r">11%</div><div class="dchip-lbl">Non-Cognitive</div></div>
+            <div class="domain-chip"><div class="dchip-pct dp-o">9%</div><div class="dchip-lbl">Reading</div></div>
+            <div class="domain-chip"><div class="dchip-pct dp-i" style="color:var(--indigo2)">5%</div><div class="dchip-lbl">Problem Solving</div></div>
+            <div class="domain-chip"><div class="dchip-pct dp-c" style="color:var(--cyan2)">4%</div><div class="dchip-lbl">Science</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="rigor-head">Methodological rigor indicators</div>
+        <div class="rigor-rows">
+          <div class="rigor-row">
+            <div>
+              <div class="rigor-label">Performance metrics reported</div>
+              <div class="rigor-bar-bg"><div class="rigor-bar" style="width:82%"></div></div>
+            </div>
+            <div class="rigor-score rs-hi">82%</div>
+          </div>
+          <div class="rigor-row">
+            <div>
+              <div class="rigor-label">Sampling weights applied</div>
+              <div class="rigor-bar-bg"><div class="rigor-bar" style="width:35%"></div></div>
+            </div>
+            <div class="rigor-score rs-md">35%</div>
+          </div>
+          <div class="rigor-row">
+            <div>
+              <div class="rigor-label">Plausible values correctly handled</div>
+              <div class="rigor-bar-bg"><div class="rigor-bar" style="width:28%"></div></div>
+            </div>
+            <div class="rigor-score rs-lo">28%</div>
+          </div>
+          <div class="rigor-row">
+            <div>
+              <div class="rigor-label">Sample size explicitly reported</div>
+              <div class="rigor-bar-bg"><div class="rigor-bar" style="width:76%"></div></div>
+            </div>
+            <div class="rigor-score rs-hi">76%</div>
+          </div>
+          <div class="rigor-row">
+            <div>
+              <div class="rigor-label">Countries / economies specified</div>
+              <div class="rigor-bar-bg"><div class="rigor-bar" style="width:89%"></div></div>
+            </div>
+            <div class="rigor-score rs-hi">89%</div>
+          </div>
+          <div class="rigor-row">
+            <div>
+              <div class="rigor-label">Cross-validation or test-set reported</div>
+              <div class="rigor-bar-bg"><div class="rigor-bar" style="width:61%"></div></div>
+            </div>
+            <div class="rigor-score rs-md">61%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTRIBUTIONS -->
+<section id="contributions">
+  <div class="contrib-inner">
+    <div class="sec-num">05 &nbsp; Contributions</div>
+    <h2>What this <span class="accent-i">work adds</span></h2>
+
+    <div class="contrib-list">
+      <div class="contrib-item">
+        <div class="contrib-idx">01</div>
+        <div class="contrib-divv"></div>
+        <div class="contrib-body">
+          <div class="contrib-title">First systematic survey of AI/ML in ILSA research</div>
+          <div class="contrib-text">The first comprehensive mapping of AI and ML applications across all seven major ILSA programs, covering over a decade of published research within a unified, comparable framework. Prior reviews addressed only individual programs or focused on traditional statistical methods rather than AI and ML approaches.</div>
+          <div class="contrib-foot">
+            <span class="cf-tag">7 programs</span><span class="cf-tag">2020–April 2026</span><span class="cf-tag">PRISMA</span>
+          </div>
+        </div>
+      </div>
+      <div class="contrib-item">
+        <div class="contrib-idx">02</div>
+        <div class="contrib-divv"></div>
+        <div class="contrib-body">
+          <div class="contrib-title">Open structured dataset for secondary synthesis</div>
+          <div class="contrib-text">A three-table relational dataset with controlled vocabulary taxonomy released under CC BY 4.0. Enables secondary meta-analysis, methodological comparison, and evidence-based research guidance without re-reading 130 studies.</div>
+          <div class="contrib-foot">
+            <span class="cf-tag">130 studies</span><span class="cf-tag">2,239 records</span><span class="cf-tag">CC BY 4.0</span><span class="cf-tag">HuggingFace</span>
+          </div>
+        </div>
+      </div>
+      <div class="contrib-item">
+        <div class="contrib-idx">03</div>
+        <div class="contrib-divv"></div>
+        <div class="contrib-body">
+          <div class="contrib-title">Methodological rigor audit across the corpus</div>
+          <div class="contrib-text">Systematic documentation of how studies handle plausible values, sampling weights, model validation, and reporting completeness. The review reveals that fewer than one-third of studies correctly implement ILSA-specific methodological requirements, indicating a substantial gap in the field.</div>
+          <div class="contrib-foot">
+            <span class="cf-tag">PV handling</span><span class="cf-tag">weight usage</span><span class="cf-tag">validation reporting</span>
+          </div>
+        </div>
+      </div>
+      <div class="contrib-item">
+        <div class="contrib-idx">04</div>
+        <div class="contrib-divv"></div>
+        <div class="contrib-body">
+          <div class="contrib-title">Evidence gaps and future directions</div>
+          <div class="contrib-text">Identification of which ILSA programs, outcome domains, and ML families are understudied, providing a prioritized research agenda for the next generation of ILSA-ML studies, particularly in multilingual settings, process data analysis, and causal inference contexts.</div>
+          <div class="contrib-foot">
+            <span class="cf-tag">research agenda</span><span class="cf-tag">gap analysis</span><span class="cf-tag">causal inference</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIMITATIONS -->
+<section id="limitations">
+  <div class="limit-inner">
+    <div class="sec-num">06 &nbsp; Limitations</div>
+    <h2>Known <span class="accent-o">constraints</span></h2>
+
+    <div class="limit-split">
+      <div class="limit-col">
+        <div class="limit-item">
+          <div class="limit-title">English-language restriction</div>
+          <p class="limit-text">The search was restricted to English-language publications. Studies published in Turkish, Chinese, Spanish, or other languages may represent a non-trivial share of the ILSA-ML literature and are not captured.</p>
+        </div>
+        <div class="limit-item">
+          <div class="limit-title">Search date cutoff</div>
+          <p class="limit-text">The search covers publications from 2020 to April 2026. Studies published after this date are not included; the field is evolving rapidly and the landscape will continue to shift.</p>
+        </div>
+        <div class="limit-item">
+          <div class="limit-title">Reporting incompleteness</div>
+          <p class="limit-text">Many studies do not clearly state their plausible value protocol or sampling weight decisions. Classification for these studies relies on textual inference, introducing some uncertainty into the rigor coding.</p>
+        </div>
+        <div class="limit-item">
+          <div class="limit-title">Extraction granularity</div>
+          <p class="limit-text">The extraction schema captures the primary ML method but does not code all hyperparameter choices, ensemble configurations, or secondary analytical decisions reported in the original papers.</p>
+        </div>
+      </div>
+      <div>
+        <div class="future-block">
+          <div class="future-label">Future directions</div>
+          <div class="future-item">
+            <div class="future-arrow">→</div>
+            <div class="future-text">Multilingual extension of the systematic search to capture non-English ILSA-ML studies</div>
+          </div>
+          <div class="future-item">
+            <div class="future-arrow">→</div>
+            <div class="future-text">Statistical meta-analysis of effect sizes and predictor importance for common outcome-domain pairs</div>
+          </div>
+          <div class="future-item">
+            <div class="future-arrow">→</div>
+            <div class="future-text">Formal replication study applying correct PV and weight protocols to published ML analyses</div>
+          </div>
+          <div class="future-item">
+            <div class="future-arrow">→</div>
+            <div class="future-text">Causal inference methods, a rapidly growing subfield not fully captured in the current corpus</div>
+          </div>
+          <div class="future-item">
+            <div class="future-arrow">→</div>
+            <div class="future-text">Process data and log-file applications as a dedicated sub-review, given growth in this area since PISA 2022</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITATION -->
+<section id="citation">
+  <div class="cite-inner">
+    <div class="sec-num">07 &nbsp; Citation</div>
+    <h2 style="color:#fff;">Cite this <span style="color:var(--cyan2);">work</span></h2>
+
+    <div class="cite-split">
+      <div>
+        <div class="cite-format-label">BibTeX</div>
+        <div class="bibtex-block" id="bibtexBlock">@article{dede2026ilsa_survey,
+  title   = {Artificial Intelligence Applications
+             in International Large-Scale
+             Assessments: A Survey with
+             LLM-Assisted Evidence Synthesis},
+  author  = {Dede, Merve and Çetinkaya, Ekrem},
+  year    = {2026},
+  note    = {Open dataset: HuggingFace Datasets},
+  url     = {https://huggingface.co/datasets/dedemerve}
+}<button class="copy-btn" onclick="copyBibtex(this)">Copy</button></div>
+      </div>
+      <div>
+        <div class="cite-format-label">APA 7th Edition</div>
+        <div class="apa-block">
+          Dede, M., &amp; Çetinkaya, E. (2026). <em>Artificial intelligence applications in international large-scale assessments: A survey with LLM-assisted evidence synthesis</em> [Dataset]. HuggingFace Datasets. https://huggingface.co/datasets/dedemerve
+        </div>
+        <div style="margin-top:24px;">
+          <div class="cite-format-label">Access</div>
+          <a class="btn-hf" href="https://huggingface.co/datasets/dedemerve" target="_blank" rel="noopener" style="display:inline-flex;margin-top:0;">
+            <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><circle cx="12" cy="12" r="11" fill="#FFD21E"/><ellipse cx="12" cy="13" rx="7" ry="6" fill="#FF9D00"/><ellipse cx="12" cy="13" rx="6" ry="5" fill="#FFD21E"/><ellipse cx="9.2" cy="10.5" rx="1.2" ry="1.4" fill="#1a1a1a"/><ellipse cx="14.8" cy="10.5" rx="1.2" ry="1.4" fill="#1a1a1a"/><path d="M8.5 14.5 Q12 17.5 15.5 14.5" stroke="#1a1a1a" stroke-width="1.2" fill="none" stroke-linecap="round"/><ellipse cx="4.5" cy="15" rx="2.5" ry="1.8" fill="#FFD21E" transform="rotate(-20 4.5 15)"/><ellipse cx="19.5" cy="15" rx="2.5" ry="1.8" fill="#FFD21E" transform="rotate(20 19.5 15)"/></svg>
+            Open Dataset on HuggingFace
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <strong>ILSA Survey · 2026</strong> &nbsp;·&nbsp; Merve Dede &amp; Ekrem Çetinkaya &nbsp;·&nbsp; CC BY 4.0
+  </div>
+  <div class="footer-links">
+    <a href="https://huggingface.co/datasets/dedemerve" target="_blank" rel="noopener">Dataset</a>
+    <a href="https://dedemerve.github.io" target="_blank" rel="noopener">Merve Dede</a>
+    <a href="https://ekrcet.com/" target="_blank" rel="noopener">Ekrem Çetinkaya</a>
+    <a href="#citation">Cite</a>
+  </div>
+</footer>
+
+<script>
+  /* Nav theme */
+  const nav = document.getElementById('mainNav');
+  const heroEl = document.getElementById('hero');
+  const observer = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) {
+      nav.className = 'dark-nav';
+    } else {
+      nav.className = 'light-nav';
+    }
+  }, { threshold: 0.05 });
+  observer.observe(heroEl);
+
+  /* Mobile menu */
+  const hamburger = document.getElementById('hamburger');
+  const mobMenu   = document.getElementById('mobMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobMenu.classList.toggle('open');
+  });
+  mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobMenu.classList.remove('open');
+  }));
+
+  /* Copy bibtex */
+  function copyBibtex(btn) {
+    const block = document.getElementById('bibtexBlock');
+    const text = block.textContent.replace('Copy', '').trim();
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2200);
+    });
+  }
+</script>
+</body>
+</html>

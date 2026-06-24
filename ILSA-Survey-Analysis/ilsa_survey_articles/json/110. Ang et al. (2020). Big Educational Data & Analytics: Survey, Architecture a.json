@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "file_name": "110. Ang et al. (2020). Big Educational Data & Analytics: Survey, Architecture and Challenges.pdf",
+    "title": "Big Educational Data & Analytics: Survey, Architecture and Challenges",
+    "authors": [
+      "Kenneth Li-Minn Ang",
+      "Feng Lu Ge",
+      "Kah Phooi Seng"
+    ],
+    "year": 2020,
+    "doi": "10.1109/ACCESS.2020.2994561",
+    "venue": "IEEE Access",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "review_article"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This article is a comprehensive literature review/survey of big educational data and learning analytics paradigms, architectures, data sources, and challenges. It does not analyze a student-level ILSA/NAEP/PISA-style micro-dataset with an explicit sampling frame, nor does it report an analytic sample drawn from a defined assessment cycle. Because there is no primary empirical estimation on a survey-designed student dataset, complex survey weights (e.g., W_FSTUWT/TOTWGT) and replicate-weight procedures (e.g., BRR/jackknife) are not applicable. The only empirical-like material described is an illustrative cross-institution web-scraping scenario, which is not presented as a weighted, population-representative survey analysis."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "This is a survey/review paper without an original student-level cognitive achievement outcome that would require plausible values (PVs) handling. The paper discusses learning analytics and big-data architectures conceptually and reviews prior studies; it does not report a PV-based dependent variable (e.g., PISA/TIMSS achievement scales) nor a missing-data strategy for PV estimation. Therefore, PV and missing-data handling are not applicable to the review’s own analysis, and missing-data handling is not reported because no original PV-based estimation is conducted.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [],
+      "sample_filtering_criteria": "No ILSA-style student analytic sample is constructed. The paper is a literature review; it also includes an illustrative cross-institution data collection example in Australia based on web scraping from three universities, but it is not described as a weighted, population-representative student assessment sample."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [],
+    "outcome_summary": "This paper provides a comprehensive survey of big educational data and analytics, covering data sources (e.g., LMS, MOOC, OER, social media, linked data), data collection/mining/database topics, big-data platforms/architectures (e.g., Hadoop, Spark, Samza), and analytics approaches (predictive analytics, learning analytics, recommendation systems, graph analytics, visual/immersive analytics). It does not conduct an original ML prediction study on an ILSA-style student dataset with a defined outcome, training/validation protocol, or reported performance metrics for a single unified model. Instead, it synthesizes findings from prior works and highlights technological and social challenges (privacy/ethics, interoperability, scalability). As a result, there are no extractable PV-handling, missing-data-handling, or model-performance results for the review itself.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "The record is a systematic-style literature review/survey (IEEE Access) rather than an empirical large-scale assessment analysis. Consequently, there is no original student-level dataset with a defined analytic sample size, no PV-based cognitive outcome, no missing-data strategy for an estimation model, and no single ML model trained/evaluated by the authors. The ML-related content is discussed at the level of reviewed approaches and illustrative scenarios, so fields like total_students, countries with per-country Ns, and main_findings for a predictive pipeline are not applicable."
+  }
+}

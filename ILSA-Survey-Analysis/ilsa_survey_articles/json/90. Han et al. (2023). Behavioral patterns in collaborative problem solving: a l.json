@@ -1,0 +1,143 @@
+{
+  "metadata": {
+    "file_name": "90. Han et al. (2023). Behavioral patterns in collaborative problem solving: a latent profile analysis based on response times and actions in PISA 2015.pdf",
+    "title": "Han et al. Large-scale Assessments in Education (2023) 11:35",
+    "authors": [
+      "Areum Han",
+      "Florian Krieger",
+      "Francesca Borgonovi",
+      "Samuel Greiff"
+    ],
+    "year": 2023,
+    "doi": "10.1186/s40536-023-00185-5",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": true,
+      "replicate_weights_used": null,
+      "weight_variable_name": "W_FSTUWT",
+      "weight_fields_interpretation": "The study used PISA 2015 ColPS microdata for the Xandar unit and restricted the analytic sample to students who took the assessment in English and had the Xandar unit as the first cluster. From the initial pool (3,065 students across 11 education systems), the authors excluded 539 outliers using robust Mahalanobis distance (p-value cutoff 0.01) and then removed 6 inactive students with no activity across indicators, yielding N=2,520. For estimation, they applied the final student weights (W_FSTUWT) and accounted for the hierarchical sampling structure by selecting schools first (cluster variable CNTSCHID) using Mplus with the COMPLEX MIXTURE option. Missingness on the eight indicators was handled via full information maximum likelihood (default in Mplus), and the plausible values were analyzed using Rubin’s rules across 10 PV datasets."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "multiple_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 2520,
+      "countries": [
+        {
+          "country_code": "AUS",
+          "n_students": 523
+        },
+        {
+          "country_code": "CAN",
+          "n_students": 551
+        },
+        {
+          "country_code": "HKG",
+          "n_students": 5
+        },
+        {
+          "country_code": "LUX",
+          "n_students": 9
+        },
+        {
+          "country_code": "MAC",
+          "n_students": 23
+        },
+        {
+          "country_code": "NZL",
+          "n_students": 152
+        },
+        {
+          "country_code": "SGP",
+          "n_students": 210
+        },
+        {
+          "country_code": "SWE",
+          "n_students": 2
+        },
+        {
+          "country_code": "ARE",
+          "n_students": 200
+        },
+        {
+          "country_code": "GBR",
+          "n_students": 507
+        },
+        {
+          "country_code": "USA",
+          "n_students": 338
+        }
+      ],
+      "sample_filtering_criteria": "Analytic sample drawn from PISA 2015 ColPS participants and restricted to (a) students who took the ColPS assessment in English and (b) students for whom the Xandar unit was the first cluster (to control for language, item position, and fatigue). From 3,065 students in 11 education systems, 539 outliers were excluded using robust Mahalanobis distance with a 0.01 p-value cutoff. Then 6 inactive students were excluded (no activities across the indicators). The final sample comprised 2,520 students. For the LPA indicators, four response-time indicators were log-transformed (natural log) due to high variance; action indicators were not transformed because one student had zero actions in Part 4."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "C100Q01T",
+        "variable_name": "Response time (Part 1)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "C100Q02T",
+        "variable_name": "Response time (Part 2)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "C100Q03T",
+        "variable_name": "Response time (Part 3)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "C100Q04T",
+        "variable_name": "Response time (Part 4)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "C100Q01A",
+        "variable_name": "Actions (Part 1)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "C100Q02A",
+        "variable_name": "Actions (Part 2)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "C100Q03A",
+        "variable_name": "Actions (Part 3)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "C100Q04A",
+        "variable_name": "Actions (Part 4)",
+        "category": "process_data"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2015 ColPS (Xandar unit) — process indicators and PVCLPS outcome",
+        "target_variable": "ColPS overall performance (PVCLPS)",
+        "top_predictors": [
+          "Response time (Part 1)",
+          "Actions (Part 1)",
+          "Response time (Part 2)",
+          "Actions (Part 3)",
+          "Actions (Part 2)"
+        ],
+        "performance_metrics": "Latent profile analysis (LPA) — two profiles: Profile 1 (95%, N=2,395) vs Profile 2 (5%, N=125). Mean performance gap: 129.41 (S.E.=21.66, p<.01); Profile 1 mean PVCLPS=519.11 vs Profile 2 mean PVCLPS=389.70. Model selection: entropy=0.98; average posterior classification probability=0.96 for the 2-profile solution.",
+        "standardized_conclusion": "Using PISA 2015 ColPS (Xandar unit) the study leveraged response-time and action indicators across the four parts to identify two latent behavioral profiles and then compared them on overall ColPS performance (PVCLPS), finding that Profile 1 (more efficient, fewer actions and shorter response times) outperformed Profile 2 by 129.41 PV points on average (p<.01). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This exploratory LPA used PISA 2015 ColPS process data from the Xandar unit, restricting to English test-takers with Xandar as the first cluster (N=2,520 across 11 education systems). The authors modeled four response-time indicators (log-transformed) and four action-count indicators to derive two behavioral profiles (Profile 1: 95%, N=2,395; Profile 2: 5%, N=125). Profile 2 showed more actions and longer response times in most parts, with the largest differentiation in Part 1. Overall performance differed significantly between profiles: Profile 1 had higher PVCLPS (519.11) than Profile 2 (389.70), with a mean gap of 129.41 (S.E.=21.66, p<.01). The study used complex-sample student weights (W_FSTUWT) and analyzed 10 plausible values with Rubin’s rules; however, it did not include covariates predicting profile membership and used a single task unit, limiting generalizability.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": null
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "file_name": "89. Lee et al. (2025). Uncovering Behavioral Patterns in Creative Thinking: Utilizing and Interpreting PISA 2022 Process Data.pdf",
+    "title": "Uncovering Behavioral Patterns in Creative Thinking: Utilizing and Interpreting PISA 2022 Process Data",
+    "authors": [
+      "Juyeon Lee",
+      "Sue Hyeon Paek",
+      "Yoonsun Jang"
+    ],
+    "year": 2025,
+    "doi": "10.1002/jocb.70069",
+    "venue": "The Journal of Creative Behavior",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "review_article"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This article is a review/synthesis of the PISA 2022 Creative Thinking (CT) process data and related model-based approaches. It does not report an original student-level predictive modeling analysis with an analytic sample drawn from PISA microdata, nor does it describe applying PISA complex survey weights or replicate-weight procedures. The only quantitative table (Table 1) reports descriptive ranges for released items and explicitly states values are sourced from the codebook for participating countries, not from a re-estimated weighted model. Therefore, survey-weight usage and replicate-weight usage are not applicable to the study’s presented methodology."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The paper is not an empirical predictive analysis of PISA 2022 CT achievement scores using plausible values (PVs). Instead, it reviews available PISA 2022 CT process metrics (e.g., response time, time to first action, actions, visits) and discusses descriptive and model-based approaches conceptually, including references to PVs in other contexts. Because no PV-based dependent variable is modeled in the article’s own analysis, PV handling and missing-data handling for an ML estimation pipeline are not applicable; additionally, the paper does not specify a missing-data strategy for an original dataset analysis.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [],
+      "sample_filtering_criteria": "No analytic subsample is defined because the article does not conduct an original student-level empirical analysis. Table 1 reports descriptive statistics for two released PISA 2022 CT items and notes that the values represent all students in countries that participated in the CT assessment, sourced from the codebook."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2022 Process Data",
+        "target_variable": "how PISA defines engagement/disengagement-related indicators achievement",
+        "top_predictors": [
+          "See outcome_summary (descriptive associations not coded as predictors)"
+        ],
+        "performance_metrics": "Descriptive statistics only (no ML performance metrics; see outcome_summary)",
+        "standardized_conclusion": "Using PISA 2022 Process Data, the document summarizes how PISA defines engagement/disengagement-related indicators achievement in relation to See outcome_summary (descriptive associations not coded as predictors), reporting that This article is a review of how PISA 2022 Creative Thinking process data can be used to study cognitive and affective dynamics in creative problem solving. This indicates that As a result, no ML algorithm is trained/evaluated, and no performance metrics (e.g., accuracy/AUC/R²) are reported for an empirical predictive task."
+      }
+    ],
+    "outcome_summary": "This article is a review of how PISA 2022 Creative Thinking process data can be used to study cognitive and affective dynamics in creative problem solving. It describes five process metrics (total time on item, time to first action, number of actions, number of visits, number of short visits) and explains how PISA defines engagement/disengagement-related indicators. It provides an illustrative example using descriptive statistics for two released items (Robot Story and Save the River) and discusses model-based approaches (data mining and IRT-based frameworks) conceptually rather than estimating predictive models in the paper itself. As a result, no ML algorithm is trained/evaluated, and no performance metrics (e.g., accuracy/AUC/R²) are reported for an empirical predictive task.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "The manuscript is a review/survey paper that outlines topics, theoretical foundations, and model-based approaches for analyzing PISA 2022 CT process data. It does not report an original empirical ML pipeline with a defined analytic sample, country-level sample sizes, or trained/evaluated machine learning models; consequently, total_students, countries/n_students, ML techniques, and structured predictive findings are not extractable from the provided text."
+  }
+}

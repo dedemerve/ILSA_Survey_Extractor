@@ -1,0 +1,216 @@
+{
+  "metadata": {
+    "file_name": "48. Pan & Cutumisu. (2022). Using machine learning to predict UK and Japanese secondary students' life satisfaction in PISA 2018.pdf",
+    "title": "Using machine learning to predict UK and Japanese secondary students' life satisfaction in PISA 2018",
+    "authors": [
+      "Zexuan Pan",
+      "Maria Cutumisu"
+    ],
+    "year": 2024,
+    "doi": "10.1111/bjep.12657",
+    "venue": "British Journal of Educational Psychology",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2018 student questionnaire and well-being questionnaire data for the United Kingdom and Japan, with a final analytic sample of 13,818 (UK) and 6,109 (Japan) after imputing missing values. The manuscript describes data extraction from the PISA 2018 database and preprocessing (normalization for KNN, mean imputation for missing values) but does not report applying PISA sampling weights or any replicate-weight procedure. Because the models are standard supervised ML regressors implemented in scikit-learn (Random Forest and KNN) and the paper does not mention survey-weight-aware estimation, the analysis is treated as unweighted. No weight variable name (e.g., W_FSTUWT/TOTWGT) or BRR/jackknife method is provided, so complex survey design adjustments are not documented."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "mean_imputation",
+    "handling_not_reported_explanation": "Plausible values are not applicable because the dependent variable is life satisfaction from the PISA 2018 student questionnaire (0–10 scale) rather than a cognitive achievement score for which PISA typically provides plausible values. The paper explicitly states that missing values (<10%) were handled by imputing the series mean, so missing-data handling is reported.",
+    "sample_details": {
+      "total_students": 19927,
+      "countries": [
+        {
+          "country_code": "GBR",
+          "n_students": 13818
+        },
+        {
+          "country_code": "JPN",
+          "n_students": 6109
+        }
+      ],
+      "sample_filtering_criteria": "Students were selected from PISA 2018 for the United Kingdom and Japan. The analytic sample includes students with available life satisfaction and the set of 26 individual-level questionnaire variables used as predictors; missing values in these variables were imputed (missingness <10% overall). No additional grade/school-type restrictions are described; the authors state that the UK and Japan samples were extracted from the PISA 2018 SPSS file and then normalized (for KNN) and mean-imputed before model training and evaluation."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Random Forest",
+        "k-NN"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "AGE",
+        "variable_name": "Age",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "ST004D01T",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "ESCS",
+        "variable_name": "Socioeconomic status (ESCS)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ict_resources_at_home",
+        "variable_name": "ICT resources at home",
+        "category": "ict"
+      },
+      {
+        "variable_code": "school",
+        "variable_name": "school",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "BEINGBULLIED",
+        "variable_name": "Exposure to bullying",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "EMOSUPS",
+        "variable_name": "Parents' emotional support",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "TEACHSUP",
+        "variable_name": "Teacher support",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ADAPTIVITY",
+        "variable_name": "Adaptation of instruction",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "BELONG",
+        "variable_name": "Sense of belonging",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "PERFEED",
+        "variable_name": "Perceived feedback",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "TEACHINT",
+        "variable_name": "Perceived teacher interest",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "PERCOOP",
+        "variable_name": "cooperation",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "PERCOMP",
+        "variable_name": "competition",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "COMPETE",
+        "variable_name": "Attitudes towards competition",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST185Q01HA",
+        "variable_name": "Growth mindset",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "MASTGOAL",
+        "variable_name": "Learning goals",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "WORKMAST",
+        "variable_name": "Motivation to master tasks",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ATTLNACT",
+        "variable_name": "Attitudes towards learning",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "JOYREAD",
+        "variable_name": "Joy/like reading",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "RESILIENCE",
+        "variable_name": "Self-efficacy",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "GFOFAIL",
+        "variable_name": "Fear of failure",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EUDMO",
+        "variable_name": "Meaning in life",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "SWBP",
+        "variable_name": "Positive feelings",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "DISCLIMA",
+        "variable_name": "Disciplinary climate",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "DIRINS",
+        "variable_name": "Teacher-directed instruction",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "STIMREAD",
+        "variable_name": "Teacher stimulation of reading",
+        "category": "teacher"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 (UK) — student questionnaire life satisfaction",
+        "target_variable": "Life satisfaction (0–10 scale)",
+        "top_predictors": [
+          "Meaning in life (EUDMO)",
+          "Motivation to master tasks (WORKMAST)",
+          "Student competition (PERCOMP)",
+          "ICT resources at home and school (ICTRES)",
+          "Exposure to bullying (BEINGBULLIED)"
+        ],
+        "performance_metrics": "Random Forest (RF) — Validation R²: 0.187 (mean across outer folds), Test R²: 0.187; MSE: 0.203 (validation mean), RMSE: 0.451 (test mean), MAE: 0.408 (validation mean). KNN — Validation R²: 0.103, Test R²: 0.103; MSE: 0.224 (validation mean), RMSE: 0.474 (test mean), MAE: 0.433 (validation mean).",
+        "standardized_conclusion": "Using PISA 2018 (UK) the study leveraged meaning in life, motivation to master tasks, student competition, ICT resources, and exposure to bullying to predict students' life satisfaction, finding that the Random Forest model outperformed k-NN and achieved higher predictive fit (test R² ≈ 0.187 vs. ≈ 0.103). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2018 (Japan) — student questionnaire life satisfaction",
+        "target_variable": "Life satisfaction (0–10 scale)",
+        "top_predictors": [
+          "Student cooperation (PERCOOP)",
+          "Self-efficacy (RESILIENCE)",
+          "Meaning in life (EUDMO)",
+          "Teacher support (TEACHSUP)",
+          "ICT resources at home and school (ICTRES)"
+        ],
+        "performance_metrics": "Random Forest (RF) — Validation R²: 0.138 (mean across outer folds), Test R²: 0.138; MSE: 0.215 (validation mean), RMSE: 0.464 (test mean), MAE: 0.434 (validation mean). KNN — Validation R²: 0.055, Test R²: 0.055; MSE: 0.236 (validation mean), RMSE: 0.486 (test mean), MAE: 0.451 (validation mean).",
+        "standardized_conclusion": "Using PISA 2018 (Japan) the study leveraged student cooperation, self-efficacy, meaning in life, teacher support, and ICT resources to predict students' life satisfaction, finding that the Random Forest model again outperformed k-NN and achieved higher predictive fit (test R² ≈ 0.138 vs. ≈ 0.055). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study predicts PISA 2018 students’ life satisfaction (0–10) using two supervised ML regressors—Random Forest and k-NN—trained separately on the UK and Japan samples (N=13,818 and N=6,109). Missing values (<10%) were imputed using series mean, and KNN inputs were normalized; models were evaluated with nested cross-validation (5 outer folds, 5 inner folds) using MSE, RMSE, MAE, and R². Across both countries, Random Forest performed better than k-NN: for the UK, test R² was about 0.187 (RF) versus 0.103 (KNN), and for Japan about 0.138 (RF) versus 0.055 (KNN). Feature importance rankings highlighted meaning in life, student competition/cooperation, teacher support, exposure to bullying, and ICT resources as key predictors. The paper is cross-sectional and does not claim causal effects; additionally, it does not document the use of PISA sampling weights, so results may not fully reflect complex survey design.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

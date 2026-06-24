@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "file_name": "127. Sun et al. (2023). A Theoretical Framework for a Mathematical Cognitive Model for Adaptive Learning Systems.pdf",
+    "title": "A Theoretical Framework for a Mathematical Cognitive Model for Adaptive Learning Systems",
+    "authors": [],
+    "year": 2023,
+    "doi": "10.3390/bs13050406",
+    "venue": "Behavioral Sciences",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "methodology_paper"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This paper is a theoretical/methodology study that constructs a mathematical cognitive model using interpretive structural modeling (ISM) based on expert questionnaires, expert interviews, and a small verbal-report validation with a single fourth-grade child. It does not analyze a nationally representative ILSA student micro-dataset and does not report any complex survey design features (e.g., stratification, clustering) or the use of student/sampling weights. Because no ILSA cycle microdata with PV-based achievement outcomes are analyzed, there is no weight variable (e.g., W_FSTUWT/TOTWGT) to apply. The data preparation consists of expert calibration (52 experts completing a cognitive-attribute relationship questionnaire) and subsequent qualitative verification via verbal reports and discussion, rather than weighted statistical estimation."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "Plausible values (PVs) are not applicable because the study does not estimate or predict ILSA cognitive achievement scores (e.g., TIMSS/PISA PV-based outcomes). Instead, it develops a cognitive diagnostic assessment framework by mapping and structuring cognitive attributes (TIMSS cognitive framework) using ISM and expert calibration, with validation via verbal reports. As a result, there is no PV generation/combination step and no PV-related missing-data strategy to report.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [],
+      "sample_filtering_criteria": "The study uses a two-stage expert elicitation and validation design: (1) 33 primary school mathematics teachers, 15 graduate students, and 4 mathematics education specialists in Shanghai judged pairwise relationships among 16 TIMSS-based cognitive attributes; (2) six mathematics education professors revised the preliminary model; and (3) a fourth-grade child was randomly selected to provide an oral report to verify the cognitive model’s effectiveness. The paper does not report an analytic student sample from an ILSA dataset; instead, it reports expert counts and a single child validation case."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "TIMSS",
+        "target_variable": "Literature synthesis outcome (not student-level prediction)",
+        "top_predictors": [],
+        "performance_metrics": "Not reported",
+        "standardized_conclusion": "Using TIMSS the study leveraged the reported predictors to predict Literature synthesis outcome (not student-level prediction), finding that This paper proposes a theoretical framework for constructing a mathematical cognitive model intended to support cognitive diagnostic assessment and adaptive learning systems. Using interpretive structural modeling (ISM), the authors start from 16 TIMSS cognitive attributes, derive a reachability matrix from expert judgments (52 experts), and hierarchically extract a five-level cognitive model. The final model integrates TIMSS’s three cognition domains (knowing, applying, reasoning) and revises attribute relationships to improve operability and validity. Validation is conducted through expert interviews/verbal reports and a small verbal-report check with a randomly selected fourth-grade child, rather than through predictive ML performance on student achievement outcomes. No ML algorithms, PV-based achievement targets, or quantitative predictive metrics are reported. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This paper proposes a theoretical framework for constructing a mathematical cognitive model intended to support cognitive diagnostic assessment and adaptive learning systems. Using interpretive structural modeling (ISM), the authors start from 16 TIMSS cognitive attributes, derive a reachability matrix from expert judgments (52 experts), and hierarchically extract a five-level cognitive model. The final model integrates TIMSS’s three cognition domains (knowing, applying, reasoning) and revises attribute relationships to improve operability and validity. Validation is conducted through expert interviews/verbal reports and a small verbal-report check with a randomly selected fourth-grade child, rather than through predictive ML performance on student achievement outcomes. No ML algorithms, PV-based achievement targets, or quantitative predictive metrics are reported.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "This is a non-empirical methodology/theoretical framework paper rather than an empirical large-scale assessment analysis. It does not train or evaluate machine learning models for prediction/classification, does not use PV-based achievement outcomes, and does not report an ILSA-style analytic student sample with per-country counts or predictive performance metrics. Therefore, fields such as total_students, countries/n_students, plausible-value handling, ML techniques, and main_findings are not applicable in the sense required by the extraction schema."
+  }
+}

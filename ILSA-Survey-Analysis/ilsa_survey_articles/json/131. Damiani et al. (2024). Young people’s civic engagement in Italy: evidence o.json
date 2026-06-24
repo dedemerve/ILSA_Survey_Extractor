@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "file_name": "131. Damiani et al. (2024). Young people’s civic engagement in Italy: evidence on grade 8 students from the international civic and citizenship education study (ICCS) 2016.pdf",
+    "title": "Young people’s civic engagement in Italy: evidence on grade 8 students from the international civic and citizenship education study (ICCS) 2016",
+    "authors": [
+      "V. Damiani",
+      "E. C. (not specified in provided text)",
+      "B. L. (not specified in provided text)",
+      "L. P. (not specified in provided text)",
+      "G. A. (not specified in provided text)"
+    ],
+    "year": 2024,
+    "doi": "10.1186/s40536-024-00229-4",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": true,
+      "replicate_weights_used": null,
+      "weight_variable_name": "total student weight (normalised)",
+      "weight_fields_interpretation": "The study uses ICCS 2016 Italy microdata for grade 8 students and applies student weights in all analyses. Specifically, the authors state that they conducted the analyses using the student weights and that the total student weight was normalised so that the sum of the weights equalled the student sample size. Descriptive and correlational analyses were conducted with IDB Analyzer 5.0, and the latent profile analysis (LPA) and subsequent logistic regressions were also run using ICCS-aware tooling (Mplus for LPA; IDB Analyzer 5.0 for logistic regression). The manuscript does not report replicate-weight methods (e.g., BRR/jackknife), so replicate-weight usage cannot be confirmed from the provided text."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "listwise_deletion",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 3329,
+      "countries": [
+        {
+          "country_code": "ITA",
+          "n_students": 3329
+        }
+      ],
+      "sample_filtering_criteria": "The analytic sample comprises 3329 eighth-grade students in Italy (aged 12.3–17.1; M=13.9) attending 170 schools. All participating ICCS 2016 schools in Italy were included, with an overall exclusion rate of 3%. The authors report that cases with missing values for one or more explanatory variables were excluded from the analysis (complete-case approach)."
+    },
+    "ml_techniques": {
+      "primary": "Logistic Regression",
+      "all_techniques": [
+        "Logistic Regression"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "CITEFF",
+        "variable_name": "Citizenship self-efficacy",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "SOCMED",
+        "variable_name": "Engagement with social media",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "INTRUST",
+        "variable_name": "Trust in civic institutions",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "CIVLRN",
+        "variable_name": "Civic learning at school",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "OPDISC",
+        "variable_name": "Openness in classroom discussions",
+        "category": "school"
+      },
+      {
+        "variable_code": "CIVKNOW",
+        "variable_name": "Civic knowledge",
+        "category": "prior_achievement"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "ICCS 2016 Italy Grade 8 (civic engagement profiles)",
+        "target_variable": "Civic engagement profile membership (disengaged/moderately engaged/engaged)",
+        "top_predictors": [
+          "Citizenship self-efficacy",
+          "Trust in civic institutions",
+          "Engagement with social media",
+          "Openness in classroom discussions",
+          "Civic learning at school"
+        ],
+        "performance_metrics": "Odds ratios (OR) from logistic regression; effect sizes reported as weak; no overall classification metric reported.",
+        "standardized_conclusion": "Using ICCS 2016 Italy Grade 8 the study leveraged citizenship self-efficacy, trust in civic institutions, engagement with social media, openness in classroom discussions, and civic learning at school to predict civic engagement profile membership, finding that engaged students were characterized by higher citizenship self-efficacy (and generally higher levels of the other listed predictors), while civic knowledge showed no statistically significant association. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzes ICCS 2016 Italy grade 8 students (N=3329) to identify civic engagement profiles and then examines associations between profile membership and school/context and student attitude/behavior variables. A latent profile analysis produced three groups: disengaged (7%), moderately engaged (61%), and engaged (32%). In the subsequent logistic regression models comparing disengaged vs. moderately engaged and engaged vs. moderately engaged, citizenship self-efficacy emerged as the most relevant differentiator: higher self-efficacy increased the likelihood of belonging to the engaged profile (OR≈1.5 for Group 3 vs. Group 2). Trust in civic institutions, social media engagement, perceived openness in classroom discussions, and civic learning at school also showed statistically significant but generally weak relationships. Civic knowledge (CIVKNOW) had no statistically significant association with profile membership. The analysis is cross-sectional, so causal inferences are not supported.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

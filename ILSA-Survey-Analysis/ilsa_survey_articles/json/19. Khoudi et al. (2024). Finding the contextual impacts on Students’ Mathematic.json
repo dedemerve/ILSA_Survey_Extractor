@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "file_name": "19. Khoudi et al. (2024). Finding the contextual impacts on Students’ Mathematical performance using a Machine Learning-based Approach.pdf",
+    "title": "Finding the contextual impacts on Students’ Mathematical performance using a Machine Learning-based Approach",
+    "authors": [
+      "Zakaria Khoudi",
+      "Mourad Nachaoui",
+      "Soufiane Lyaqini"
+    ],
+    "year": 2024,
+    "doi": "10.36244/ICJ.2024.5.2",
+    "venue": "Infocommunications journal",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses TIMSS 2019 Grade 8 mathematics data for Morocco, combining student, teacher, and school files via IEA IDB Analyzer (v5.0). The analytic dataset was filtered to 8,390 students after removing tie cases from the majority-vote construction of the response variable and after excluding variables with high missingness (>10%) and other non-informative fields. Although the authors mention that the original TIMSS extract contained weights (e.g., total school/class weights) and that ID/weight-related variables were removed from the explanatory pool, the manuscript does not report applying complex survey weights (e.g., W_FSTUWT/TOTWGT) or replicate-weight procedures in model estimation. Because the paper trains standard ML classifiers (SVM, Random Forest, XGBoost) without any stated weight-aware estimation, the analysis is treated as unweighted with respect to TIMSS sampling weights."
+    },
+    "plausible_values_handling": "single_pv",
+    "missing_data_handling": "mean_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 8390,
+      "countries": [
+        {
+          "country_code": "MAR",
+          "n_students": 8390
+        }
+      ],
+      "sample_filtering_criteria": "Used TIMSS 2019 Grade 8 mathematics Moroccan student data after combining student, teacher, and school files in IEA IDB Analyzer (v5.0). The response variable was constructed from TIMSS plausible-value benchmark variables (five PVs) using a majority vote, then the authors removed tie cases (68 ties) to obtain 8,390 students. The dataset was further cleaned by dropping 300 variables (IDs/weights/file maintenance/redundant variables; variables with 100% missingness; and redundant scale-score/index variables), removing 95 benchmark/PV variables except the newly generated benchmark response (BSMIBM), and deleting 74 variables with missingness rates >10%. Missing values in the remaining 400-variable dataset were imputed using SimpleImputer (mode) while retaining all 8,390 observations."
+    },
+    "ml_techniques": {
+      "primary": "XGBoost",
+      "all_techniques": [
+        "SVM",
+        "Random Forest",
+        "XGBoost"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "BSDMLOWP",
+        "variable_name": "Mathematics achievement too low",
+        "category": "prior_achievement"
+      },
+      {
+        "variable_code": "BCBG11",
+        "variable_name": "Classroom libraries",
+        "category": "school"
+      },
+      {
+        "variable_code": "BSDSLOWP",
+        "variable_name": "Science achievement too low",
+        "category": "prior_achievement"
+      },
+      {
+        "variable_code": "BSBM15",
+        "variable_name": "Work on your own frequency",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "BCDGSRS",
+        "variable_name": "Instruction affected by science shortage",
+        "category": "school"
+      },
+      {
+        "variable_code": "BCBG21B",
+        "variable_name": "Educational leadership qualification",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BSDGSCM",
+        "variable_name": "confident in mathematics",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "BSBM19C",
+        "variable_name": "Mathematics not my strength",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "BTBM14",
+        "variable_name": "Time spent math instruction",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "BCDGMRS",
+        "variable_name": "Instruction affected by math shortage",
+        "category": "school"
+      },
+      {
+        "variable_code": "BSBE27",
+        "variable_name": "Earth science experiments frequency",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "BSBB22",
+        "variable_name": "Biology experiments frequency",
+        "category": "student_behavior"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "TIMSS 2019 Grade 8 Mathematics (Morocco)",
+        "target_variable": "Low vs Others mathematics achievement (majority-vote benchmark)",
+        "top_predictors": [
+          "Mathematics achievement too low",
+          "Classroom libraries",
+          "Science achievement too low",
+          "Work on your own frequency",
+          "Student confident in mathematics"
+        ],
+        "performance_metrics": "XGBoost — Accuracy: 81.92%, F1-Score: 74.42% (AUC-ROC reported via figures; exact AUC value not stated in text).",
+        "standardized_conclusion": "Using TIMSS 2019 Grade 8 Mathematics data for Morocco, the study leveraged mathematics achievement too low, classroom libraries, science achievement too low, work on your own frequency, and student confidence in mathematics to predict low vs others mathematics achievement, finding that XGBoost achieved the best performance (Accuracy 81.92%, F1 74.42%) and identified 12 key contextual factors as most relevant. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzes TIMSS 2019 Grade 8 mathematics for Morocco (n=8,390) and frames the outcome as a binary classification: Low (coded 0) versus Others (coded 1) based on TIMSS benchmark categories derived from plausible values using a majority vote (ties removed). After extensive feature pruning (removing ID/weight variables, 100% missing variables, redundant scale/index variables, and most PV/benchmark variables), the authors imputed missing values with SimpleImputer (mode) and trained SVM, Random Forest, and XGBoost. XGBoost performed best, reaching 81.92% accuracy and an F1-score of 74.42% (with ROC/AUC shown in figures). The most influential contextual factors included student achievement indicators (too low for estimation), student confidence and self-perception about mathematics, classroom resources (classroom libraries), independent work frequency, and instructional time/resource-shortage effects. A key limitation is that the paper does not report applying TIMSS sampling/replicate weights in the ML training, and the PVs are converted into a single majority-vote benchmark rather than being combined via explicit PV multiple-analysis procedures.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

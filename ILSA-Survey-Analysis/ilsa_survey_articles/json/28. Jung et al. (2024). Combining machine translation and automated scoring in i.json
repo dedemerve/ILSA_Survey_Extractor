@@ -1,0 +1,121 @@
+{
+  "metadata": {
+    "file_name": "28. Jung et al. (2024). Combining machine translation and automated scoring in international large-scale assessments.pdf",
+    "title": "Combining machine translation and automated scoring in international large-scale assessments",
+    "authors": [
+      "Jung et al."
+    ],
+    "year": 2024,
+    "doi": "10.1186/s40536-024-00199-7",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses TIMSS 2019 constructed-response (CR) item responses from eight countries and six languages, then creates an analytic dataset by translating non-English responses into English (Google Translate and ChatGPT) and scoring them with feed-forward neural networks trained on a subset of double-scored responses. The manuscript does not report the use of TIMSS sampling/survey weights (e.g., W_FSTUWT/TOTWGT) or any replicate-weight methodology (e.g., BRR/jackknife), and it does not describe complex survey design adjustments in the ML training/evaluation. Because the models are standard ANN classifiers trained with scikit-learn and evaluated via train/test splits and cross-validation, the analysis appears to be conducted without explicit incorporation of survey weights. Preprocessing steps include tokenization, lower-casing, spelling correction, stemming, vocabulary filtering by minimum frequency in the training set, and Bag-of-Words feature construction before ANN training."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The dependent variable is dichotomous item scoring (correct=1/incorrect=0) for six TIMSS 2019 short constructed-response items, derived from human and machine classifications. Plausible Values are generated for cognitive achievement scales in ILSAs, but this study does not model PV-based achievement outcomes; instead it evaluates automated scoring agreement and psychometric item properties (e.g., item-total correlations, item difficulty) using machine vs. human item scores. The manuscript also does not describe any missing-data strategy for student responses (e.g., how incomplete/empty responses were handled), representing a reporting gap for missingness handling in the constructed-response text dataset.",
+    "sample_details": {
+      "total_students": 4517,
+      "countries": [
+        {
+          "country_code": "DEU",
+          "n_students": 535
+        },
+        {
+          "country_code": "AUT",
+          "n_students": 406
+        },
+        {
+          "country_code": "FRA",
+          "n_students": 462
+        },
+        {
+          "country_code": "TUR",
+          "n_students": 540
+        },
+        {
+          "country_code": "USA",
+          "n_students": 1204
+        },
+        {
+          "country_code": "CHN",
+          "n_students": 351
+        },
+        {
+          "country_code": "CHN",
+          "n_students": 489
+        },
+        {
+          "country_code": "KOR",
+          "n_students": 530
+        }
+      ],
+      "sample_filtering_criteria": "The study uses six short constructed-response science items from TIMSS 2019, restricted to fourth-grade students and to very short responses (after translation, ~33–36 characters). For model training, the authors use an 80/20 split: within the training set, they perform 5-fold cross-validation and reserve 20% of the training set for validation; the test set is 20% of the whole data and is independent. During splitting, they include a subset of double-scored responses: for each country and item, 200 responses were randomly selected during TIMSS 2019 data collection and scored by two independent human raters; responses with consistent scores were duplicated into the training set, while responses with conflicting scores were excluded. The final item-by-country sample sizes for the full multilingual dataset are reported in Table 1."
+    },
+    "ml_techniques": {
+      "primary": "Neural Network",
+      "all_techniques": [
+        "Neural Network"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "language_of_response",
+        "variable_name": "Response language (original)",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "MT_engine",
+        "variable_name": "Machine translation engine",
+        "category": "ict"
+      },
+      {
+        "variable_code": "item_id",
+        "variable_name": "Constructed-response item",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "country",
+        "variable_name": "Country context",
+        "category": "system_level"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "TIMSS 2019 Grade 4 Science (constructed-response items C1–C8; six short CR items)",
+        "target_variable": "Automated item scoring agreement (human vs machine)",
+        "top_predictors": [
+          "Machine translation engine",
+          "Response language (original)",
+          "Constructed-response item",
+          "Country context"
+        ],
+        "performance_metrics": "ANN with Bag-of-Words features: average F1=0.88 and average kappa=0.80 for human-machine agreement; average exact match agreement comparable with slight strictness (average SMD=-0.04). Item-level variability: Item 5 F1 ranged 0.40–0.68 and kappa 0.36–0.62; Item 6 in C6 had kappa=0.53 and SMD=-0.32 with exact match ratio 0.77.",
+        "standardized_conclusion": "Using TIMSS 2019 Grade 4 Science constructed-response the study leveraged machine translation engine choice, original response language, item identity, and country context to predict dichotomous correctness, finding that automated scoring with ANN classifiers achieved comparable human-machine agreement (average F1=0.88, kappa=0.80) with only marginal mean score differences (average SMD=-0.04), though performance was weaker for specific items/countries (notably Item 5 and Item 6 in C6). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "TIMSS 2019 Grade 4 Science (constructed-response items; psychometric checks)",
+        "target_variable": "Psychometric similarity of machine scores (AITC and item difficulty)",
+        "top_predictors": [
+          "Machine translation engine",
+          "Constructed-response item",
+          "Country context",
+          "Response language (original)"
+        ],
+        "performance_metrics": "Adjusted item-total correlation (AITC): average AITC human=0.35 vs machine=0.33 (r_human=0.35, r_machine=0.33). Item-total correlations by item and country remained generally consistent; discrepancies included Item 6 in C6 with moderate exact match (0.77) but high AITC consistency (r_human=0.44, r_machine=0.44) and large SMD (-0.32). Country-by-item difficulty patterns were largely preserved across scoring methods.",
+        "standardized_conclusion": "Using TIMSS 2019 Grade 4 Science constructed-response the study leveraged machine translation engine choice, item identity, country context, and original response language to evaluate whether machine scores preserve psychometric properties, finding that machine-derived AITC and item difficulty patterns were generally similar to human scoring (average AITC 0.33 vs 0.35) despite some item/country-specific misalignment (e.g., Item 6 in C6). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study evaluates automated scoring for six short TIMSS 2019 Grade 4 science constructed-response items across eight countries and six languages by combining machine translation (Google Translate vs ChatGPT) with Bag-of-Words features and a feed-forward neural network classifier. Using an 80/20 train/test split with 5-fold cross-validation on the training set, automated scoring achieved strong human-machine agreement: average F1=0.88 and average kappa=0.80, with only a small mean score discrepancy (average SMD=-0.04). Psychometric checks showed that machine scores generally preserved item functioning, with average adjusted item-total correlation AITC of 0.33 (vs 0.35 for human scores) and largely consistent country-by-item difficulty patterns. Performance was weaker for certain items/countries (notably Item 5 and Item 6 in C6), and the paper reports misalignment sources related to lexical diversity, human scoring subjectivity, and misspelling/phonetic similarity. The analysis does not report survey-weight use and does not describe missing-data handling for the text responses.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

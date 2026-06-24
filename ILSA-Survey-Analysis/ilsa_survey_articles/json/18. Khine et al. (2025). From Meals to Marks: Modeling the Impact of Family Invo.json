@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "file_name": "18. Khine et al. (2025). From Meals to Marks: Modeling the Impact of Family Involvement on Reading Performance with Counterfactual Explainable AI.pdf",
+    "title": "From Meals to Marks: Modeling the Impact of Family Involvement on Reading Performance with Counterfactual Explainable AI",
+    "authors": [
+      "M.S. Khine",
+      "N.A.",
+      "O.A.K."
+    ],
+    "year": 2025,
+    "doi": "10.3390/educsci15070928",
+    "venue": "Education Sciences",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2022 microdata for the United Arab Emirates (UAE), drawing on both reading achievement and student background questionnaire items. The analytic sample is described as 24,600 students in the UAE, and the dependent variable is the PISA reading plausible value (READING). The methodology reports handling missing data via listwise deletion and does not mention applying PISA sampling weights or replicate weights (e.g., BRR/jackknife) in the ML training, SHAP computation, or counterfactual simulations. Because the paper applies standard ML regressors (Random Forest, Gradient Boosting, and MLP) using scikit-learn and does not discuss complex survey design adjustments, the analysis is treated as unweighted; this is a limitation given PISA’s clustered sampling design."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "listwise_deletion",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 24600,
+      "countries": [
+        {
+          "country_code": "ARE",
+          "n_students": 24600
+        }
+      ],
+      "sample_filtering_criteria": "Used PISA 2022 UAE student microdata (15-year-olds) and modeled reading achievement using the PISA reading plausible value (READING). Missing data were handled using listwise deletion prior to exploratory analysis and model training, ensuring consistency across model training, SHAP analysis, and counterfactual simulations. No additional grade/school-type restrictions are reported beyond the PISA 2022 15-year-old sample and the inclusion of the ten family-engagement predictors."
+    },
+    "ml_techniques": {
+      "primary": "Gradient Boosting",
+      "all_techniques": [
+        "Random Forest",
+        "Gradient Boosting",
+        "Neural Network"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "EATMEAL",
+        "variable_name": "Family meal frequency",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "SPENDTALK",
+        "variable_name": "Time talking with parents",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "ASKSCHOOL",
+        "variable_name": "Parents ask about school",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "GOODMARK",
+        "variable_name": "Encouragement for good grades",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "DISSWELL",
+        "variable_name": "Discuss how school is going",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "COMPLETE",
+        "variable_name": "Importance of completing school",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "PROBLEM",
+        "variable_name": "Talk about school problems",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "GETALONG",
+        "variable_name": "Perceived getting along",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "TAKEINTER",
+        "variable_name": "Parental interest in learning",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "TALKFUTURE",
+        "variable_name": "Talk about future plans",
+        "category": "parent_home"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2022 (UAE) — Reading achievement (plausible value)",
+        "target_variable": "Reading achievement (READING plausible value)",
+        "top_predictors": [
+          "Family meal frequency",
+          "Time talking with parents",
+          "Discuss how school is going",
+          "Encouragement for good grades",
+          "Parents ask about school"
+        ],
+        "performance_metrics": "Gradient Boosting (GBR) — Test R²: 0.1879, Test MAE: 90.29, Test RMSE: 111.61; CV R² (mean): 0.1882. Random Forest — Test R²: 0.1342, Test MAE: 92.42, Test RMSE: 115.24. Neural Network — Test R²: 0.1876, Test MAE: 89.96, Test RMSE: 111.63.",
+        "standardized_conclusion": "Using PISA 2022 (UAE) reading plausible value the study leveraged family meal frequency, time talking with parents, and discussions about how school is going (plus other family-engagement items) to predict reading achievement, finding that Gradient Boosting achieved the best generalization (R² ≈ 0.188) and that counterfactual increases in SPENDTALK and EATMEAL could raise predicted reading scores by roughly 90 and 85 points respectively; however, the counterfactuals are univariate ceteris paribus simulations and SHAP-based importance is not causal evidence. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzes PISA 2022 UAE data (n=24,600) to predict reading achievement (READING plausible value) from ten family-engagement questionnaire variables. Three ML regressors were trained (Random Forest, Gradient Boosting, and an MLP neural network) using an 80/20 train-test split with 5-fold cross-validation on the training set and hyperparameter tuning via GridSearchCV. Gradient Boosting performed best, with test R² ≈ 0.1879 (MAE=90.29; RMSE=111.61) and CV R² (mean) ≈ 0.1882, while Random Forest showed lower test R² (0.1342). SHAP interpretation of the Gradient Boosting model indicated that EATMEAL, SPENDTALK, and DISSWELL were the strongest predictors. Counterfactual simulations (holding other variables at medians) suggested that increasing SPENDTALK from 1 to 5 could raise predicted reading scores by about 89.75 points (95% CI [85.2, 94.3]) and increasing EATMEAL by about 84.61 points (95% CI [80.1, 89.1]); the authors caution that these are quasi-causal simulations rather than causal identification.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

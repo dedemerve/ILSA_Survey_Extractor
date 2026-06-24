@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "file_name": "86. Pejic et al. (2022). Improving math proficiency prediction in computer- based international large-scale assessments with data augmentation.pdf",
+    "title": "Improving math proficiency prediction in computer-based international large-scale assessments with data augmentation",
+    "authors": [
+      "Aleksandar Pejić",
+      "Piroska Stanić Molcer",
+      "Dávid Fa"
+    ],
+    "year": 2022,
+    "doi": "10.1109/SISY56759.2022.10036295",
+    "venue": "2022 IEEE 20th Jubilee International Symposium on Intelligent Systems and Informatics (SISY)",
+    "publication_type": "conference",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses the publicly released PISA 2012 computer-based assessment database and constructs a tabular dataset of 17,671 student records. The authors split the dataset into training, validation, and test sets (80/20 split with 20% for testing and an additional 20% for validation) and normalize all columns. The manuscript does not report the use of PISA complex survey weights (e.g., W_FSTUWT/TOTWGT) or replicate-weight procedures, and it does not mention any weight-aware estimation tools. Because the predictive models are deep neural networks trained on augmented data, the analysis appears to be conducted without explicit incorporation of survey weights."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The dependent variable is a discretized three-class “math proficiency” outcome derived from the PISA 2012 overall mathematics result, but the paper does not describe whether this outcome is based on PISA plausible values (PVs) or on an alternative scoring/aggregation approach. The manuscript also does not report any missing-data strategy (e.g., complete-case deletion, imputation, or PV-based handling), which is a transparency gap because PISA datasets typically contain missing questionnaire responses and/or item nonresponse. As a result, the exact PV and missing-data procedures cannot be verified from the provided text.",
+    "sample_details": {
+      "total_students": 17671,
+      "countries": [],
+      "sample_filtering_criteria": "Used the publicly released PISA 2012 computer-based assessment database. The target was the overall mathematics result extracted from the PISA 2012 computer-based assessment. Background variables were taken from all three questionnaires (student, parent, school), and the final tabular dataset contained 17,671 samples. The dataset was split into training, test, and validation sets (20% test, additional 20% validation, remaining for training). All columns were normalized; no further country- or grade-specific filtering is described in the provided text."
+    },
+    "ml_techniques": {
+      "primary": "Neural Network",
+      "all_techniques": [
+        "Neural Network"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ST29Q01",
+        "variable_name": "math attitudes",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST28Q01",
+        "variable_name": "Books at home",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "MATHEFF",
+        "variable_name": "Mathematics efficacy",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST57Q02",
+        "variable_name": "Guided homework study time",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST57Q03",
+        "variable_name": "Personal tutor study time",
+        "category": "student_behavior"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2012 computer-based assessment (overall mathematics), 3-class proficiency (low/medium/high)",
+        "target_variable": "Math proficiency class (low/medium/high)",
+        "top_predictors": [
+          "Student math attitudes",
+          "Books at home",
+          "Mathematics efficacy",
+          "Guided homework study time",
+          "Personal tutor study time"
+        ],
+        "performance_metrics": "Neural Network (baseline): weighted Precision 62.99%, weighted Recall 64.79%, weighted F1 63.83%, Cohen kappa 0.31, G-mean 0.58. Best minority-class trade-off: Neural Network with CTGAN (size 32) achieved minority-class recall 66.67% (in augmented-class evaluation) and highest inverted KS distance 0.92; overall best G-mean reported as 0.63 for CTGAN (size 32). Best overall weighted precision/recall/F1 reported for VAE (latent dim=3/5 variants), with highest weighted recall/precision and highest F1 among VAE variants.",
+        "standardized_conclusion": "Using PISA 2012 computer-based assessment the study leveraged student math attitudes, books at home, mathematics efficacy, and out-of-school study time variables to predict three math proficiency classes, finding that training with synthetic data (especially CTGAN for minority-class recall and G-mean) improved minority-class prediction while majority-class performance deteriorated. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study uses PISA 2012 computer-based assessment data to predict a three-class math proficiency outcome (low/medium/high) from questionnaire-based background variables. A deep neural network baseline achieved weighted precision 62.99%, weighted recall 64.79%, weighted F1 63.83%, with Cohen’s kappa 0.31 and G-mean 0.58. After augmenting the minority (high proficiency) class using SMOTE, VAE, and CTGAN, the authors report improved minority-class performance, with the best minority-class recall (66.67%) and largest inverted KS distance (0.92) obtained for CTGAN (size 32). The best overall weighted F1/precision/recall among augmentation methods was reported for VAE, but the minority-class trade-off (G-mean) was highest for CTGAN (G-mean 0.63). The paper does not report a PV-based analysis or a missing-data handling strategy, and it does not discuss survey-weight usage, limiting interpretability and reproducibility.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

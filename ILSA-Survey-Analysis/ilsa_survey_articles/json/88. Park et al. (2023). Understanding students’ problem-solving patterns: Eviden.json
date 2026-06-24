@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "file_name": "88. Park et al. (2023). Understanding students’ problem-solving patterns: Evidence from an allotted response time in a PISA 2012 item.pdf",
+    "title": "Understanding students’ problem-solving patterns: Evidence from an allotted response time in a PISA 2012 item",
+    "authors": [
+      "Hyemin-Ju Park",
+      "Daeho Lee",
+      "Hyun Park"
+    ],
+    "year": 2023,
+    "doi": "10.3389/fpsyg.2022.1050435",
+    "venue": "Frontiers in Psychology",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study analyzed PISA 2012 computer-based assessment (CPS) log data for the Ticket item (CP038q1) from 42 countries, focusing on students who received full credit. The manuscript reports the analytic sample sizes and log-data cleaning (e.g., excluding cases without START_ITEM/END_ITEM) but does not mention applying PISA sampling weights or any complex survey design adjustments. Because the analyses are based on Elastic Net variable selection and k-medoids clustering on process-time variables (and the paper does not describe weight-aware estimation), survey weights are treated as not applied. No replicate-weight method (e.g., BRR/jackknife) is reported."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The dependent variables in this study are derived from CPS process logs (time spent on item steps and action counts) and the clustering outcomes are problem-solving patterns, not PV-based cognitive achievement scores. Although the authors exclude a small number of cases lacking START_ITEM/END_ITEM markers, they do not describe a general missing-data strategy for other variables (e.g., how missing timestamps or derived time variables were handled). Therefore, missing-data handling is not reported in a way that maps to standard PV/missing-data procedures.",
+    "sample_details": {
+      "total_students": 30453,
+      "countries": [],
+      "sample_filtering_criteria": "Used PISA 2012 CPS log data for the Ticket item CP038q1 (Vending Machine) from 42 countries. For the main analyses (RQ1/RQ2), the study restricted to students who provided the correct answer (full credit) and further excluded 4 students who lacked a start (“START_ITEM”) or end (“END_ITEM”) marker in the raw log data, leaving 7,191 students for variable generation and clustering. For RQ3, the same variable-generation and selection/clustering pipeline was applied to students with incorrect answers (partial/incorrect credit), using the corresponding cleaned log traces."
+    },
+    "ml_techniques": {
+      "primary": "Elastic Net",
+      "all_techniques": [
+        "Elastic Net",
+        "k-medoids"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "time_start",
+        "variable_name": "Time to first action",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_b1",
+        "variable_name": "Time on b1 decision path",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_b3",
+        "variable_name": "Time on b3 explore path",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_irrelevant",
+        "variable_name": "Time on irrelevant sequences",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_avg_btw_events",
+        "variable_name": "Average time between clicks",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_a",
+        "variable_name": "Time on a sequence",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_b2",
+        "variable_name": "Time on b2 decision path",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_b4",
+        "variable_name": "Time on b4 explore path",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_total",
+        "variable_name": "Total time to completion",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_answer",
+        "variable_name": "Time on answer-related steps",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_solving",
+        "variable_name": "Time spent on actions",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_ticket_explore",
+        "variable_name": "Time exploring ticket numbers",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_explore_relevant",
+        "variable_name": "Time exploring relevant sequences",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_explore_total",
+        "variable_name": "Total exploration time",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_avg_explore",
+        "variable_name": "Average exploration time",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "events_num",
+        "variable_name": "Number of logged events",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "length",
+        "variable_name": "Length of answer-related sequence",
+        "category": "process_data"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2012 CPS (Problem Solving) — Ticket item CP038q1 (Vending Machine), correct-answer subset",
+        "target_variable": "Overall problem-solving ability (PISA scale-score ratio)",
+        "top_predictors": [
+          "Time to first action",
+          "Time on b1 decision path",
+          "Time on b3 explore path",
+          "Time on irrelevant sequences",
+          "Average time between clicks"
+        ],
+        "performance_metrics": "Elastic Net variable selection (10-fold CV on training set; repeated 100 times). Test-set RMSE: 0.18.",
+        "standardized_conclusion": "Using PISA 2012 CPS Ticket item CP038q1 data for students with the correct answer, the study leveraged time_start, time_b1, time_b3, time_irrelevant, and time_avg_btw_events to predict overall problem-solving ability (PISA scale-score ratio), finding that these time-related process variables were the most consistently selected and yielded a test-set RMSE of 0.18. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study used PISA 2012 CPS log data for the Ticket item (CP038q1) and focused on students with full credit to identify problem-solving patterns from allotted response-time variables. For RQ1, Elastic Net variable selection (10-fold cross-validation, repeated 100 times) selected five time-related predictors (time_b1, time_b3, time_start, time_irrelevant, time_avg_btw_events) and achieved a test-set RMSE of 0.18 when predicting overall problem-solving ability operationalized as a PISA scale-score ratio. For RQ2, students were clustered into four k-medoids groups (curious, speedy, repetitive, strategic) based on the selected time variables, and the clusters differed in exploration vs. decision-making timing and action patterns as visualized by process maps. For RQ3, a similar Elastic Net + clustering approach on incorrect-answer students produced eight clusters that could be roughly mapped to the four correct-answer patterns. The paper does not report survey-weight usage and does not provide a general missing-data handling protocol beyond excluding cases without start/end markers.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

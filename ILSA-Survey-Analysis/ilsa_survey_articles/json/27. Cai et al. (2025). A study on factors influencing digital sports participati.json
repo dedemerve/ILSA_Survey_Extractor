@@ -1,0 +1,194 @@
+{
+  "metadata": {
+    "file_name": "27. Cai et al. (2025). A study on factors influencing digital sports participation among Chinese secondary school students based on explainable machine learning.pdf",
+    "title": "A study on factors influencing digital sports participation among Chinese secondary school students based on explainable machine learning",
+    "authors": [],
+    "year": 2025,
+    "doi": "10.1038/s41598-025-00769-x",
+    "venue": "Scientific Reports",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2018 microdata for Hong Kong, China (digital sport module in 2018). The analytic sample was created by removing 549 cases with missing outcome variables and removing 26 cases with >20% missingness in independent variables, then imputing remaining missing continuous variables with the median and categorical variables with the plurality, yielding 4,925 valid cases. The manuscript does not report applying PISA sampling weights or any replicate-weight procedure (e.g., BRR/jackknife), and it instead focuses on ML classifiers (Gaussian Naive Bayes, GBDT, KNN, Logistic Regression) and a stacking ensemble. Given the ML workflow and the absence of any stated complex-survey weighting, the analysis is treated as unweighted for population-representative inference."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "mean_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 4925,
+      "countries": [
+        {
+          "country_code": "HKG",
+          "n_students": 4925
+        }
+      ],
+      "sample_filtering_criteria": "Used PISA 2018 data for Hong Kong, China only (excluded B-S-J-Z, Macao, and Taipei due to significant missingness in ICT, well-being, and parent questionnaires). Removed 549 participants with missing outcome variables (digital sports participation items IC151Q07HA and IC150Q07HA). Removed 26 participants with >20% missingness in independent variables. Imputed remaining missing continuous predictors using the median and categorical predictors using the plurality. Final analytic sample comprised 4,925 valid cases; train/test split was 85% (n=4,186) and 15% (n=739) after standardization."
+    },
+    "ml_techniques": {
+      "primary": "Logistic Regression",
+      "all_techniques": [
+        "Gaussian Naive Bayes",
+        "Gradient Boosting",
+        "k-NN",
+        "Logistic Regression",
+        "Stacking"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ST004D01T",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "STAGE",
+        "variable_name": "Stage of secondary school",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "GRADE",
+        "variable_name": "Academic performance (PV-based)",
+        "category": "prior_achievement"
+      },
+      {
+        "variable_code": "BMI",
+        "variable_name": "BMI",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "HEALTH",
+        "variable_name": "Self-assessed physical health",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "BODYIMA",
+        "variable_name": "Body image",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "INTICT",
+        "variable_name": "Interest in ICT",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "COMPICT",
+        "variable_name": "Perceived ICT competence",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "AUTICT",
+        "variable_name": "ICT autonomy",
+        "category": "ict"
+      },
+      {
+        "variable_code": "SOIAICT",
+        "variable_name": "ICT social perception",
+        "category": "ict"
+      },
+      {
+        "variable_code": "MISCED",
+        "variable_name": "Mother’s education",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "FISCED",
+        "variable_name": "Father’s education",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "BMMJ1",
+        "variable_name": "ISEI of mother",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "BFMJ2",
+        "variable_name": "ISEI of father",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "EMOSUPP",
+        "variable_name": "Parents’ emotional support",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "PASPORT",
+        "variable_name": "Parents’ sports participation",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "CULTPOSS",
+        "variable_name": "Home cultural possessions",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "HEDRES",
+        "variable_name": "Home educational resources",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "WEALTH",
+        "variable_name": "Family wealth",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ICTHOME",
+        "variable_name": "ICT available at home",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ICTSCH",
+        "variable_name": "ICT available at school",
+        "category": "ict"
+      },
+      {
+        "variable_code": "SC156Q04HA",
+        "variable_name": "School discusses digital education",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "TRAINING",
+        "variable_name": "Teacher digital training level",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "SC013Q01TA",
+        "variable_name": "School type (public/private)",
+        "category": "school"
+      },
+      {
+        "variable_code": "MASTER",
+        "variable_name": "Proportion of master teachers",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "PEC",
+        "variable_name": "Weekly number of PE days",
+        "category": "curriculum"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 (Hong Kong, China) digital sport module",
+        "target_variable": "Digital Sports participation (binary)",
+        "top_predictors": [
+          "Academic performance (PV-based)",
+          "Weekly number of PE days",
+          "ICT available at home",
+          "ICT available at school",
+          "ICT social perception"
+        ],
+        "performance_metrics": "Test set AUC: Logistic Regression = 0.717 (Accuracy=0.813, Precision=0.727, Recall=0.056, F1=0.104). Stacking ensemble AUC=0.723 (Accuracy=0.809, F1=0.166).",
+        "standardized_conclusion": "Using PISA 2018 (Hong Kong, China) the study leveraged academic performance, weekly PE days, household ICT resources, school ICT resources, and ICT social perception to predict students’ digital sports participation, finding that weekly PE days, household ICT resources, school ICT resources, and ICT social perception were positively associated with participation, while academic performance showed a negative association. The best single-model discrimination was achieved by Logistic Regression (AUC=0.717), and the stacking ensemble slightly improved AUC (0.723) with higher F1, while SHAP was used for feature attribution (predictive importance, not causal effects). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzed PISA 2018 Hong Kong, China data to predict whether secondary students participate in digital sports (binary: 0 min vs ≥1 min per week inside/outside class). After excluding Hong Kong regions with substantial missingness and applying missing-data rules (median for continuous, plurality for categorical) plus removal of cases with missing outcomes or >20% missing predictors, 4,925 students remained. The authors trained Gaussian Naive Bayes, Gradient Boosting (GBDT), k-NN, and Logistic Regression models with GridSearchCV (5-fold CV) and evaluated on a held-out test set. Discrimination was moderate: AUC ranged from 0.641 to 0.717, with Logistic Regression best among primary models (AUC=0.717; F1=0.104). A stacking ensemble (LR meta-model with GNB and KNN base models) achieved AUC=0.723 and improved F1 to 0.166. SHAP indicated the most influential predictors were academic performance (negative), weekly PE days (positive), household ICT resources (positive), school ICT resources (positive), and ICT social perception (positive), but the paper does not report survey-weighted estimation and SHAP is used for interpretability rather than causal identification.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

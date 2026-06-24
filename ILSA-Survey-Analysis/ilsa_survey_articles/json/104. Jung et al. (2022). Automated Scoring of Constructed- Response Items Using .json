@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "file_name": "104. Jung et al. (2022). Automated Scoring of Constructed- Response Items Using Artificial Neural Networks in International Large-scale Assessment.pdf",
+    "title": "Automated Scoring of Constructed-Response Items Using Artificial Neural Networks in International Large-scale Assessment",
+    "authors": [
+      "Ji Yoon Jung",
+      "L. Tyack",
+      "M. v. Davier"
+    ],
+    "year": 2022,
+    "doi": "10.3389/feduc.2020.00149",
+    "venue": "Frontiers in Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses TIMSS 2019 constructed-response items (US English responses) and creates an analytic dataset by splitting responses into training (80%) and validation (20%) sets using simple holdout validation. The paper describes three training-data weighting/filtering approaches based on agreement between human rater scores and IRT-based expected scores (unweighted all data; weighted all data with a 2:1 match:mismatch ratio; and match-data unweighted). However, it does not report applying TIMSS sampling/survey weights (e.g., student weights or replicate weights) in the ANN training or evaluation. Because the models are supervised ANNs trained on text-derived features, the manuscript does not indicate any complex-survey weighting variables were used; the only “weighting” discussed is IRT-based reweighting of training instances for quality control."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The dependent variables are dichotomous item scores (correct vs incorrect) for four TIMSS constructed-response items, derived from human rater scoring and IRT-based expected scores (MAP thresholding). TIMSS plausible values are typically generated for cognitive achievement scales, but this study does not model PV-based achievement outcomes; instead it performs automated classification of item-level correctness. The manuscript also does not describe any missing-data strategy for student responses (e.g., how missing text responses or missing fields were handled), so the missing-data handling is not reported.",
+    "sample_details": {
+      "total_students": 1239,
+      "countries": [
+        {
+          "country_code": "USA",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Used four released TIMSS 2019 constructed-response items and analyzed student responses collected from the United States (US English responses). Each item is dichotomously scored (full credit for correct, no credit for incorrect). For model training, responses were split into training (80%) and validation (20%) sets via simple holdout, preserving class distribution within each item. Three training-data variants were created: (1) all data unweighted (raw human scores), (2) all data weighted using IRT-based expected scores with a 2:1 match:mismatch ratio (match defined as human score equals IRT-expected score), and (3) match data unweighted (only responses where human and IRT-expected scores matched)."
+    },
+    "ml_techniques": {
+      "primary": "Neural Network",
+      "all_techniques": [
+        "Neural Network"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "human_score",
+        "variable_name": "Human rater score",
+        "category": "prior_achievement"
+      },
+      {
+        "variable_code": "irt_expected_score",
+        "variable_name": "IRT-expected score (MAP)",
+        "category": "prior_achievement"
+      },
+      {
+        "variable_code": "item_difficulty",
+        "variable_name": "Item difficulty level",
+        "category": "curriculum"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "TIMSS 2019 (eTIMSS) constructed-response items, US English responses",
+        "target_variable": "SE71054 correctness (human vs ANN)",
+        "top_predictors": [
+          "Human rater score",
+          "IRT-expected score (MAP)",
+          "Item difficulty level"
+        ],
+        "performance_metrics": "ANN agreement with human scores (Pearson r): all data unweighted r=0.93; all data weighted r=0.92; match data unweighted r=0.93. Average across approaches for this item: ~0.93.",
+        "standardized_conclusion": "Using TIMSS 2019 eTIMSS constructed-response item SE71054 the study leveraged human rater scoring and IRT-expected scoring (used to weight/filter training instances) to predict item correctness with an ANN, finding that automated scores matched human scores very closely (r≈0.93) and that IRT-based weighting/filtering did not materially change performance. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study evaluates ANN-based automated scoring for four TIMSS 2019 constructed-response items using US English responses, comparing automated predictions to professional human rater scores. Using a feed-forward neural network trained on bag-of-words text features, the average agreement between human and automated scores was very high across items (average Pearson r=0.91). For the easier items (SE71054, SE71077), agreement was consistently high (r≈0.93–0.94), with the best result for SE71077 when training on responses where human and IRT-expected scores matched (r=0.96). For the more difficult items (ME72209, SE62005), agreement remained strong but more variable (r≈0.85–0.92), with IRT-based weighting improving SE62005 (r=0.87). The paper reports holdout validation (20%) and 5-fold CV within training, but it does not report a missing-data strategy and does not apply TIMSS sampling weights; the only “weighting” is IRT-based reweighting/filtering for training quality control.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

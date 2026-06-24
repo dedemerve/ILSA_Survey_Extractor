@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "file_name": "4. Zheng et al. (2023). Identifying key features of resilient students in digital reading: Insights from a machine learning approach.pdf",
+    "title": "Identifying key features of resilient students in digital reading: Insights from a machine learning approach",
+    "authors": [
+      "Jia‑qi Zheng",
+      "Kwok‑cheung Cheung",
+      "Pou‑seong Sit"
+    ],
+    "year": 2023,
+    "doi": "10.1007/s10639-023-11908-0",
+    "venue": "Education and Information Technologies",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2018 microdata for reading and background questionnaires, restricted to ESCS-disadvantaged students in seven East Asian economies and then further restricted to those in the top quarter of digital reading performance. The manuscript does not report applying PISA sampling weights or replicate-weight procedures (e.g., BRR/jackknife) in the SVM training/evaluation pipeline. Because the authors implement SVM with kNN imputation, normalization, SMOTETomek resampling, and SVM-RFE feature selection using Python/scikit-learn, the analysis appears to be conducted without explicit complex-survey weighting. The preprocessing steps described include cleaning invalid responses (e.g., Likert response=999), kNN imputation for noise values, min-max style normalization to [0,1], and SMOTETomek to address class imbalance between ARS and NRS."
+    },
+    "plausible_values_handling": "single_pv",
+    "missing_data_handling": "knn_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 11496,
+      "countries": [
+        {
+          "country_code": "CHN",
+          "n_students": 2115
+        },
+        {
+          "country_code": "HKG",
+          "n_students": 1713
+        },
+        {
+          "country_code": "MAC",
+          "n_students": 941
+        },
+        {
+          "country_code": "TWN",
+          "n_students": 1846
+        },
+        {
+          "country_code": "JPN",
+          "n_students": 1559
+        },
+        {
+          "country_code": "KOR",
+          "n_students": 1623
+        },
+        {
+          "country_code": "SGP",
+          "n_students": 1699
+        }
+      ],
+      "sample_filtering_criteria": "From PISA 2018 (computer-based testing), the authors selected seven high-performing Asian economies (B-S-J-Z/CHN, Hong Kong, Macao, Taiwan, Japan, Korea, Singapore). They first screened ESCS-disadvantaged students within each economy using the OECD operational definition of academic resilience (bottom 25% of ESCS within economy). Within these disadvantaged students, they further selected those whose digital reading performance was in the top 25% across the seven economies. The final analytic sample comprised 11,496 students classified into 1,397 academically resilient students (ARS) and 10,099 non-academically resilient students (NRS). For modeling, they cleaned invalid/missing responses (e.g., Likert response coded as 999) and imputed the resulting noise values using kNN imputation; then they normalized features to [0,1] and applied SMOTETomek to resample the imbalanced ARS/NRS classes."
+    },
+    "ml_techniques": {
+      "primary": "SVM",
+      "all_techniques": [
+        "SVM"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "METASPAM",
+        "variable_name": "Assess credibility metacognition",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "METASUM",
+        "variable_name": "Summarizing metacognition",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "JOYREAD",
+        "variable_name": "Reading enjoyment",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "REPEAT",
+        "variable_name": "Grade repetition",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "PISADIFF",
+        "variable_name": "Perceived test difficulty",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "BSMJ",
+        "variable_name": "Expected occupational status",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EUDMO",
+        "variable_name": "Meaning in life (eudaemonia)",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "BELONG",
+        "variable_name": "Sense of belonging",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ICTRES",
+        "variable_name": "ICT resources at home",
+        "category": "ict"
+      },
+      {
+        "variable_code": "AUTICT",
+        "variable_name": "ICT autonomy",
+        "category": "ict"
+      },
+      {
+        "variable_code": "SOIAICT",
+        "variable_name": "ICT as social interaction topic",
+        "category": "ict"
+      },
+      {
+        "variable_code": "HEDRES",
+        "variable_name": "Home educational resources",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "STUBEHA",
+        "variable_name": "Behavior hindering learning",
+        "category": "school"
+      },
+      {
+        "variable_code": "TCDISCLIMA",
+        "variable_name": "Teacher-rated disciplinary climate",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "DISCLIMA",
+        "variable_name": "Student-rated disciplinary climate",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "FEEDBACK",
+        "variable_name": "Teacher feedback",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "DIRINS",
+        "variable_name": "Teacher-directed instruction",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "PERCOMP",
+        "variable_name": "Perceived competitiveness at school",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "TOTAT",
+        "variable_name": "Total teachers at school",
+        "category": "school"
+      },
+      {
+        "variable_code": "UNDREM",
+        "variable_name": "Metacognition (understanding, remembering)",
+        "category": "student_behavior"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 Digital Reading (computer-based), seven East Asian economies; ESCS-disadvantaged subset",
+        "target_variable": "Academic resilience classification (ARS vs NRS; binary)",
+        "top_predictors": [
+          "Assess credibility metacognition",
+          "Summarizing metacognition",
+          "Reading enjoyment",
+          "ICT resources at home",
+          "Teacher feedback"
+        ],
+        "performance_metrics": "SVM (with SVM-RFE feature selection; class-weighting; SMOTETomek resampling; 10-fold cross-validation): Accuracy=87.51% (avg), AUC=94.86%, Recall=95.98%, Precision=83.11%, F-measure=88.63%. Optimal feature set size: top 20 features (Accuracy=84.35%, AUC=92.34%, Recall=91.51%, Precision=80.69%, F-measure=85.42%).",
+        "standardized_conclusion": "Using PISA 2018 digital reading data for ESCS-disadvantaged students across seven East Asian economies, the study leveraged metacognitive reading strategies (assessing credibility, summarizing, understanding/remembering) and reading enjoyment—along with selected ICT, school climate, and teacher-practice variables—to classify academically resilient (ARS) versus non-academically resilient (NRS) students, finding that the SVM achieved strong discrimination (AUC≈94.86%) with the top 20 contextual features. This indicates that d teacher-practice variables—to classify academically resilient (ARS) versus non-academically resilient (NRS) students, finding that the SVM achieved strong discrimination (AUC≈94.86%) with the top 20 contextual features."
+      }
+    ],
+    "outcome_summary": "The study analyzed PISA 2018 digital reading for 11,496 ESCS-disadvantaged 15-year-olds from seven high-performing Asian economies, defining ARS as bottom-25% ESCS within economy and top-25% digital reading performance across the seven economies. A supervised SVM classifier (with SVM-RFE feature selection) was trained on 105 contextual features and evaluated via 10-fold cross-validation, addressing class imbalance using class-weighting and SMOTETomek resampling. The model showed high overall performance (average Accuracy=87.51%, AUC=94.86%, Recall=95.98%, Precision=83.11%, F-measure=88.63%), and the optimal subset was the top 20 features (Accuracy=84.35%, AUC=92.34%, Recall=91.51%, Precision=80.69%, F-measure=85.42%). The most prominent predictors were metacognitive strategies in digital reading and reading enjoyment, while ICT resources/usage showed mixed effects. Limitations include cross-sectional design (no causal claims) and the use of a single plausible value (PVREAD1) rather than combining across PVs; the manuscript also does not report applying PISA complex-survey weights.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

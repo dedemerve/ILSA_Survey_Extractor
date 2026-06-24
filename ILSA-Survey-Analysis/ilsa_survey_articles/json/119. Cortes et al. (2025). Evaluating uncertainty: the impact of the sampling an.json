@@ -1,0 +1,121 @@
+{
+  "metadata": {
+    "file_name": "119. Cortes et al. (2025). Evaluating uncertainty: the impact of the sampling and assessment design on statistical inference in the context of ILSA.pdf",
+    "title": "Evaluating uncertainty: the impact of the sampling and assessment design on statistical inference in the context of ILSA",
+    "authors": [
+      "Diego Cortes",
+      "David Hastedt",
+      "Svenja M. (SM)"
+    ],
+    "year": 2025,
+    "doi": "10.1186/s40536-025-00246-x",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "methodology_paper"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The paper is a design-effect and uncertainty quantification study using PIRLS 2016 as an empirical context. It describes PIRLS’ complex sampling design (two-stage stratified sampling with clustering of students within classes within schools) and the associated estimation weights, including nonresponse adjustments, and it explains that PIRLS variance estimation uses Jackknife Repeated Replications (JRR). For the assessment design, it explains that measurement variance is quantified using the plausible values framework (random multiple imputation) and that total uncertainty is obtained by combining sampling variance and measurement variance. The manuscript does not report an ML modeling workflow or explicitly state whether the authors applied PIRLS weights/replicate weights in a specific secondary-analysis dataset extract; therefore, weight usage in the authors’ own computations cannot be confirmed from the provided text."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The study does not perform a missing-data imputation procedure for raw item responses as a modeling step; instead, it treats the assessment-design uncertainty through the plausible values framework (random multiple imputation) and uses the resulting measurement variance. Because the paper focuses on design-effect decomposition rather than reporting a concrete missing-data handling method for an ML analysis dataset, a standard missing-data handling label (e.g., listwise deletion or multiple imputation for missing covariates) is not directly applicable or explicitly reported.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [
+        {
+          "country_code": "NLD",
+          "n_students": null
+        },
+        {
+          "country_code": "BGR",
+          "n_students": null
+        },
+        {
+          "country_code": "ARE",
+          "n_students": null
+        },
+        {
+          "country_code": "MAC",
+          "n_students": null
+        },
+        {
+          "country_code": "ZAF",
+          "n_students": null
+        },
+        {
+          "country_code": "IRL",
+          "n_students": null
+        },
+        {
+          "country_code": "FRA",
+          "n_students": null
+        },
+        {
+          "country_code": "BEL",
+          "n_students": null
+        },
+        {
+          "country_code": "MLT",
+          "n_students": null
+        },
+        {
+          "country_code": "HKG",
+          "n_students": null
+        },
+        {
+          "country_code": "TWN",
+          "n_students": null
+        },
+        {
+          "country_code": "ESP",
+          "n_students": null
+        },
+        {
+          "country_code": "CAN",
+          "n_students": null
+        },
+        {
+          "country_code": "KAZ",
+          "n_students": null
+        },
+        {
+          "country_code": "ARG",
+          "n_students": null
+        },
+        {
+          "country_code": "TUR",
+          "n_students": null
+        },
+        {
+          "country_code": "USA",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "The paper uses PIRLS 2016 data to compute design effects for multiple populations (countries/participating populations) and for multiple target parameters (mean achievement, benchmark non-attainment probability, and an OLS regression coefficient). The provided text does not specify additional analytic restrictions (e.g., grade subsamples, item-response completion thresholds, or covariate missingness exclusions) beyond the standard PIRLS design-based framework. It therefore appears to use the available PIRLS 2016 study populations for the countries explicitly referenced in the figures and examples."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "PIRLS 2016 data to compute design effects for multip",
+        "target_variable": "reading achievement",
+        "top_predictors": [
+          "See outcome_summary (descriptive associations not coded as predictors)"
+        ],
+        "performance_metrics": "Descriptive statistics only (no ML performance metrics; see outcome_summary)",
+        "standardized_conclusion": "Using PIRLS 2016 data to compute design effects for multip, the document summarizes reading achievement in relation to See outcome_summary (descriptive associations not coded as predictors), reporting that This paper is not an ML prediction/classification study; it develops and applies a design-effect framework to decompose design-based uncertainty in ILSA inference. This indicates that The paper emphasizes correct variance estimation by combining sampling variance (via JRR) and measurement variance (via plausible values / random multiple imputation) rather than shortcut methods such as using a single p."
+      }
+    ],
+    "outcome_summary": "This paper is not an ML prediction/classification study; it develops and applies a design-effect framework to decompose design-based uncertainty in ILSA inference. Using PIRLS 2016, it compares sampling design effects versus assessment design effects for three parameter types: the mean of reading achievement, the probability of not reaching the intermediate benchmark (475 points), and an OLS regression coefficient for gender. The authors find that for mean achievement, the sampling design effect is often substantially larger than the assessment design effect, but this difference is context dependent (e.g., assessment design effects can exceed sampling design effects in some populations). For benchmark probabilities and regression coefficients, the relative contribution of assessment versus sampling uncertainty becomes less predictable, implying that ignoring assessment-design uncertainty can lead to incorrect confidence intervals. The paper emphasizes correct variance estimation by combining sampling variance (via JRR) and measurement variance (via plausible values / random multiple imputation) rather than shortcut methods such as using a single plausible value or ignoring complex sampling.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "This is a methodology/design paper focused on theoretical decomposition and variance estimation for ILSA inference rather than training/evaluating machine learning models. Consequently, there is no ML algorithmic pipeline, no ML performance metrics, and no student-level analytic sample size reported in the provided text. The paper also does not define a set of conceptual predictors for an ML target; instead, it studies how uncertainty components (sampling variance and measurement variance) affect confidence intervals for abstract population parameters."
+  }
+}

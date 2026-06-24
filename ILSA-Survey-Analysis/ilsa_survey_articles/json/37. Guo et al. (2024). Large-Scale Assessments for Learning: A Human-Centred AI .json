@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "file_name": "37. Guo et al. (2024). Large-Scale Assessments for Learning: A Human-Centred AI Approach to Contextualizing Test Performance.pdf",
+    "title": "Large-Scale Assessments for Learning: A Human-Centred AI Approach to Contextualizing Test Performance",
+    "authors": [
+      "Hongwen Guo",
+      "Matthew S. Johnson",
+      "Kadriye Ercikan",
+      "Luis Saldivia",
+      "Michelle Worthington"
+    ],
+    "year": 2024,
+    "doi": "10.18608/jla.2024.8007",
+    "venue": "The Journal of Learning Analytics",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses released NAEP 2017 Grade 8 mathematics digital-based assessment data (two released item blocks within one test form/booklet) for a proof-of-concept illustration. The analytic sample is created by cleaning irregular process data, resulting in about 2,500 students, and then constructing sequential input tensors from item scores, discretized response times, and discretized tool-use counts. The manuscript does not report applying NAEP complex survey weights (e.g., design/analysis weights) or replicate-weight procedures; instead, it focuses on ML-based representation learning (autoencoder) and clustering/active learning for process-profile annotation. Because the paper does not mention any weight variable or survey-weight-aware modeling, the analysis is treated as unweighted, which is common in ML pipelines that do not natively incorporate complex survey weights."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The paper does not report using NAEP plausible values (PV) or any PV-based achievement outcome; instead, it constructs process profiles from item-level response correctness, discretized response-time categories, and discretized tool-use sequences, and it discusses performance-score alignment without using reported scores as PV-based achievement outcomes. Because the dependent variables are process-profile labels derived from sequential behavioral data and human annotation, PV handling is not applicable. The manuscript also does not describe a missing-data strategy for the released process/response sequences (e.g., how missing item responses or missing log-derived features were treated), representing a reporting gap for data preprocessing transparency.",
+    "sample_details": {
+      "total_students": 2500,
+      "countries": [
+        {
+          "country_code": "USA",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Used released NAEP 2017 Grade 8 mathematics digital-based assessment data for illustration, restricted to one test form/booklet containing two released item blocks (8M9 and 8M3). The analytic sample is obtained after cleaning out irregular process data, yielding about 2,500 students (from the released booklet of about 3,000 students). Inputs were constructed per student from item score sequences (correct=1, wrong/no=0; some polytomous items), discretized item response-time categories (including rapid-responding and prolonged-duration bins), and discretized tool-use counts aggregated across available digital tools per item; sequential order across the assessment session was preserved for the autoencoder."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Autoencoder",
+        "LSTM",
+        "Gaussian Mixture Model",
+        "Random Forest",
+        "SVM",
+        "Ensemble"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "process_profile_score_level",
+        "variable_name": "Performance level (score quartiles)",
+        "category": "prior_achievement"
+      },
+      {
+        "variable_code": "item_response_sequence",
+        "variable_name": "Item response correctness sequence",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "response_time_sequence",
+        "variable_name": "Discretized response time sequence",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "tool_use_sequence",
+        "variable_name": "Discretized tool-use sequence",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "test_session_position",
+        "variable_name": "Early vs middle vs late items",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "item_block_time",
+        "variable_name": "Total time on item block",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "item_difficulty",
+        "variable_name": "Item difficulty level",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "item_type",
+        "variable_name": "Item type (MC/SR/SCR/ECR)",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "content_area",
+        "variable_name": "Content area (number/geometry/etc.)",
+        "category": "curriculum"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "NAEP 2017 Grade 8 Mathematics (digital-based assessment; released booklet with item blocks 8M9 and 8M3)",
+        "target_variable": "Process profile label (11 profiles)",
+        "top_predictors": [
+          "Item response correctness sequence",
+          "Discretized response time sequence",
+          "Discretized tool-use sequence",
+          "Early vs middle vs late items",
+          "Performance level (score quartiles)"
+        ],
+        "performance_metrics": "Not reported (proof-of-concept process-profile creation; clustering and active learning used, but no predictive accuracy/AUC/RMSE reported for the final profile labels).",
+        "standardized_conclusion": "Using NAEP 2017 Grade 8 Mathematics released digital assessment the study leveraged item response correctness, discretized response-time patterns, and discretized tool-use sequences (preserving early/middle/late context) to create and annotate 11 student process profiles, finding that profile labels largely align with raw score levels (from very low/disengaged to highest-performing) while providing additional context on engagement, rapid responding, speededness, and tool regulation. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The paper presents a human-centred AI (HAI) proof of concept using NAEP 2017 Grade 8 mathematics released digital-based assessment data (one booklet with item blocks 8M9 and 8M3). After cleaning irregular process data, the authors analyze about 2,500 students and build sequential inputs from item correctness, discretized response-time categories (including rapid responding and prolonged duration), and discretized tool-use counts. They first compress sequences with an LSTM-based autoencoder, then discover structure via Gaussian-mixture clustering in the latent code space, and finally use an active-learning loop with an ensemble of Random Forest and SVM classifiers (with pseudo-labeling) to iteratively label instances. The resulting 11 process profiles show strong alignment with performance levels (e.g., many students in low/very-low profiles), but the manuscript does not report standard predictive metrics (e.g., accuracy/AUC) for the profile-labeling model. The authors also note that the approach is not intended to establish causal effects of behaviors on achievement.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

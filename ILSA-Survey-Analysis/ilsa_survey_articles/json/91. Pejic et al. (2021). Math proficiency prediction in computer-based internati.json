@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "file_name": "91. Pejic et al. (2021). Math proficiency prediction in computer-based international large-scale assessments using a multi-class machine learning model.pdf",
+    "title": "Math proficiency prediction in computer-based international large-scale assessments using a multi-class machine learning model",
+    "authors": [
+      "Aleksandar Pejić",
+      "Piroska Stanić Molcer",
+      "Kristian Gulači"
+    ],
+    "year": 2021,
+    "doi": "10.1109/SISY52375.2021.9582522",
+    "venue": "IEEE 19th International Symposium on Intelligent Systems and Informatics (SISY)",
+    "publication_type": "conference",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2012 computer-based assessment (CBA) mathematics raw item responses combined with student, parent, and school questionnaire data, then constructs an analytic dataset of 58,753 students after initial preprocessing and data cleaning. The manuscript does not report applying PISA sampling weights or any complex survey design adjustments (e.g., design weights or replicate weights). Because the models are standard multi-class classifiers (neural network and random forest) trained on a train/test split, the authors appear to run an unweighted ML pipeline; no weight variable name (e.g., W_FSTUWT/TOTWGT) is mentioned. The main preprocessing described is dataset assembly, shuffling, and splitting (70/30), plus class-imbalance handling via SMOTE and feature selection using only training data."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The dependent variable is a three-class label (low/mediocre/high math proficiency) engineered from the scored computer-based mathematics item responses (test success coefficient) rather than from PISA plausible values (PVs). Therefore, PV handling is not applicable because the study does not use PV-based achievement scores as the outcome. The manuscript also does not describe any explicit missing-data strategy (e.g., complete-case selection, imputation, or missingness thresholds) beyond stating that initial preprocessing and data cleaning were performed before joining files and arriving at the final dataset.",
+    "sample_details": {
+      "total_students": 58753,
+      "countries": [],
+      "sample_filtering_criteria": "Used the full available PISA 2012 CBA mathematics dataset (computer-based mathematics items plus associated student, parent, and school questionnaires) rather than a country-specific subset. The authors assembled the final analytic dataset by combining the PISA 2012 CBA scored cognitive item response file with questionnaire files, then applied initial preprocessing, data cleaning, and joining, resulting in records for 58,753 students. The paper does not specify additional inclusion/exclusion rules (e.g., grade bands, specific test forms, or missingness thresholds) beyond the general preprocessing/cleaning step."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Random Forest",
+        "Neural Network"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ST29Q01–ST46Q09",
+        "variable_name": "Math attitudes",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST48Q01–ST48Q05",
+        "variable_name": "Math intentions",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST49Q01–ST49Q09",
+        "variable_name": "Math behavior",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST55Q01–ST57Q06",
+        "variable_name": "Math out-of-school lessons",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST61Q01–ST61Q09",
+        "variable_name": "Math experience",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST62Q01–ST62Q19",
+        "variable_name": "Math concepts familiarity",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST26Q07",
+        "variable_name": "Possessions - literature",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ST28Q01",
+        "variable_name": "Books at home",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "MATHEFF",
+        "variable_name": "Mathematics efficacy",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST57Q02",
+        "variable_name": "Out-of-school study time (guided)",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST57Q03",
+        "variable_name": "Out-of-school study time (tutor)",
+        "category": "student_behavior"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2012 Computer-Based Assessment (CBA) Mathematics",
+        "target_variable": "Math proficiency class (low/mediocre/high)",
+        "top_predictors": [
+          "Mathematics efficacy",
+          "Books at home",
+          "Possessions - literature",
+          "Out-of-school study time (guided)",
+          "Out-of-school study time (tutor)"
+        ],
+        "performance_metrics": "Best model: Random Forest + Recursive Feature Elimination — Accuracy: 78.39%, micro F1: 0.72, micro recall: 0.72, Cohen's Kappa: 0.46, ROC-AUC (class C): 0.88",
+        "standardized_conclusion": "Using PISA 2012 CBA Mathematics the study leveraged mathematics efficacy, books at home, literature possessions, and out-of-school study time indicators to predict students’ three-class math proficiency, finding that a Random Forest model with recursive feature elimination achieved the best overall performance (highest micro F1/recall and best Cohen’s Kappa among tested configurations). The outcome is derived from scored CBA item responses (not PV-based achievement), and the paper does not report any missing-data handling strategy. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study predicts a three-class math proficiency label (low/mediocre/high) from PISA 2012 computer-based mathematics item responses combined with student, parent, and school questionnaire variables. Two multi-class classifiers were compared: a feedforward neural network and a random forest, with four feature-selection approaches (manual selection, chi-square, recursive feature elimination, and random-forest-based selection). Across configurations, the best results were obtained by Random Forest with recursive feature elimination: Accuracy = 78.39%, micro F1 = 0.72, micro recall = 0.72, Cohen’s Kappa = 0.46, and ROC-AUC up to 0.88 for the high-proficiency class (class C). The dataset was highly imbalanced and SMOTE was used to oversample minority classes during training. The manuscript does not describe missing-data handling and does not report applying PISA sampling/replicate weights, which may affect generalizability under the complex survey design.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

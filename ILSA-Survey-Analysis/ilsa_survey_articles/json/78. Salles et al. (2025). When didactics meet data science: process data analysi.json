@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "file_name": "78. Salles et al. (2025). When didactics meet data science: process data analysis in large‑scale mathematics assessment in France.pdf",
+    "title": "When didactics meet data science: process data analysis in large‑scale mathematics assessment in France",
+    "authors": [
+      "Salles",
+      "et al."
+    ],
+    "year": 2020,
+    "doi": "10.1186/s40536-020-00085-y",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses France’s national large-scale assessment CEDRE (grade 9) interactive technology-enhanced item “Tree growth” from a pilot test in May 2017, based on students’ recorded digital traces in log files. The manuscript describes feature engineering from log data and then applies supervised (random forests) and unsupervised (DBSCAN and k-means) learning, but it does not report the use of complex survey weights or any replicate-weight procedure. Because the analysis is ML-focused and the paper does not mention survey-weight variables (e.g., W_FSTUWT/TOTWGT) or replicate designs (e.g., BRR/jackknife), weights are treated as not applied. The analytic sample is implicitly restricted to students who produced usable log data for the selected item; no additional weighting or replicate-weight handling is documented."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The dependent variable is a binary correctness label for the interactive item (“correct boolean”), derived from students’ responses in the digital task, and the study’s main predictors are engineered aggregates from log data (e.g., number of tested values, distances to target, time spent, pencil use). Plausible Values are therefore not applicable because the paper is not modeling PV-based cognitive achievement scores. The manuscript does not describe any missing-data strategy for the engineered log-derived features or for the correctness label (e.g., how incomplete logs were handled), which is a reporting gap given that log files can be noisy or partially missing.",
+    "sample_details": {
+      "total_students": 3000,
+      "countries": [
+        {
+          "country_code": "FRA",
+          "n_students": 3000
+        }
+      ],
+      "sample_filtering_criteria": "Used the CEDRE pilot-test data (May 2017) for one selected technology-enhanced interactive item (“Tree growth”) administered to grade 9 students; digital traces were recorded as log files. The analysis focuses on students’ log-derived engineered variables defined a priori from didactical task analysis (e.g., month list length, first/second/last input distances to target, time spent, pencil use). No further inclusion/exclusion rules (e.g., minimum log completeness thresholds, outlier removal beyond clustering parameter choices) are explicitly stated in the provided text; the analytic sample is therefore treated as the available pilot sample for that item."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Random Forest",
+        "DBSCAN",
+        "k-means"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "month_list_length",
+        "variable_name": "Month list length",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "first_input_between_200_600",
+        "variable_name": "First input between 200–600",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "number_of_alternations",
+        "variable_name": "Number of alternations",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_spent_on_item_seconds",
+        "variable_name": "Time spent on item",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "distance_first_input_to_target",
+        "variable_name": "Distance first input to target",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "distance_second_input_to_target",
+        "variable_name": "Distance second input to target",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "distance_last_input_to_target",
+        "variable_name": "Distance last input to target",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "std_dev_month_list_values",
+        "variable_name": "Std dev of month list",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "target_value_in_month_list",
+        "variable_name": "Target value in month list",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "pencil_use",
+        "variable_name": "Pencil use",
+        "category": "process_data"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "CEDRE (France) May 2017 pilot, Grade 9, “Tree growth” interactive mathematics item (process data)",
+        "target_variable": "Item success (correct boolean)",
+        "top_predictors": [
+          "Month list length",
+          "Std dev of month list",
+          "Distance first input to target",
+          "Distance second input to target",
+          "Number of alternations"
+        ],
+        "performance_metrics": "Random Forest — ROC AUC: 0.78 (binary classifier). Item success rate: 47.3%.",
+        "standardized_conclusion": "Using CEDRE May 2017 Grade 9 “Tree growth” process-data logs, the study leveraged month list length, variance (std dev) of tested values, and distances from early inputs to the target (plus alternation behavior) to predict item success (correct boolean), finding that these process-derived features were decisive and that the Random Forest achieved ROC AUC = 0.78. The paper does not report any survey-weighting or missing-data handling strategy for engineered log features, and the clustering-based profiling is interpreted via feature means rather than causal effects. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzes CEDRE (France) grade 9 pilot data from May 2017 for one technology-enhanced interactive mathematics item (“Tree growth”), using engineered aggregates from students’ log files. For supervised learning, the authors trained a Random Forest classifier to predict whether the student’s response was correct, reporting ROC AUC = 0.78; the item success rate was 47.3%. Feature-importance results indicate that the number of tested values and the variance of tested values around the target are the most informative, followed by distances from early inputs to the target and alternation behavior (trial-and-error vs. targeted search). In parallel, unsupervised clustering (DBSCAN, with k-means used for stability comparison) yields four student profiles that separate success/failure and two strategic approaches: an operational “trial and error” profile and a structural “pencil-assisted, concentrated inputs” profile. A key limitation is that the model cannot explain achievement beyond the item’s correctness label, and the manuscript does not document missing-data handling for log-derived features or any complex-survey weighting strategy.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

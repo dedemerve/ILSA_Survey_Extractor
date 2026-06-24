@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "file_name": "51. Jewsbury et al. (2025). Irt‑latent regression with many predictors: limits and solutions.pdf",
+    "title": "Irt‑latent regression with many predictors: limits and solutions",
+    "authors": [
+      "Paul A. Jewsbury",
+      "J. R. Lockwood",
+      "Matthew S. Johnson"
+    ],
+    "year": 2025,
+    "doi": "10.1186/s40536-025-00266-7",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "methodology_paper"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This paper is a simulation and theoretical study of IRT-latent regression and plausible values (PVs) in large-scale assessment settings. It generates synthetic item responses and contextual predictors for N=1000 simulated test takers per simulated assessment across multiple design conditions (e.g., varying number of items J, number of predictors P, and missingness mechanisms). Because the analysis is simulation-based and does not use any real ILSA microdata sampling frame, there is no application of complex survey weights or replicate-weight procedures (e.g., BRR/jackknife) to produce population-representative estimates. The study therefore does not report or require weight variables; any “weights” discussed are conceptual (e.g., PV generation and regression parameter estimation), not survey design weights."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "This document is an official IEA/OECD technical report or assessment framework. It describes sampling, scaling, and instrument design rather than student-level predictive modeling. Plausible values are therefore not applicable to the document's primary analytic purpose; any missing-data discussion refers to fieldwork or scaling procedures, not a single ML imputation strategy.",
+    "sample_details": {
+      "total_students": 1000,
+      "countries": [],
+      "sample_filtering_criteria": "Simulation study: for each of 1000 simulated assessments within each condition, the authors generated data for N=1000 test takers. Each test taker received item responses to a subset of a 40-item pool, with missingness introduced under either a No missing condition (all test takers have J observed responses) or a Missing condition (70% have J observed responses and 10% each have 1, 2, or 3 observed responses), assuming Missing Completely at Random (MCAR). No real-country sampling frame or analytic subsample filtering from an ILSA dataset is described."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "OECD",
+        "target_variable": "Literature synthesis outcome (not student-level prediction)",
+        "top_predictors": [],
+        "performance_metrics": "Not reported",
+        "standardized_conclusion": "Using OECD the study leveraged the reported predictors to predict Literature synthesis outcome (not student-level prediction), finding that This paper is a simulation/theory study of IRT-latent regression with many predictors and its impact on PV-based inferences in large-scale assessments. Across conditions, increasing the number of predictors (P) relative to the effective measurement information (small J and/or the Missing condition) produces estimation instability: mean biases become more negative in difficult 3PL and Missing settings, while variance and extreme percentiles are much more sensitive than means and moderate percentiles. The largest example reported is substantial overestimation of population variance (up to 52.7%) in the J=4 difficult 3PL with Missing condition, contrasted with near-robustness in the J=4 moderate 2PL with No missing condition (~2.4% overestimation). The study also shows that PV-based variance estimators are not consistent with plug-in variance estimators when PVs are generated using sampled regression parameters, adding positive bias tied to regression-parameter posterior uncertainty. No ML predictive modeling is trained; the focus is methodological limits of the IRT-latent regression/PV framework. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This paper is a simulation/theory study of IRT-latent regression with many predictors and its impact on PV-based inferences in large-scale assessments. Across conditions, increasing the number of predictors (P) relative to the effective measurement information (small J and/or the Missing condition) produces estimation instability: mean biases become more negative in difficult 3PL and Missing settings, while variance and extreme percentiles are much more sensitive than means and moderate percentiles. The largest example reported is substantial overestimation of population variance (up to 52.7%) in the J=4 difficult 3PL with Missing condition, contrasted with near-robustness in the J=4 moderate 2PL with No missing condition (~2.4% overestimation). The study also shows that PV-based variance estimators are not consistent with plug-in variance estimators when PVs are generated using sampled regression parameters, adding positive bias tied to regression-parameter posterior uncertainty. No ML predictive modeling is trained; the focus is methodological limits of the IRT-latent regression/PV framework.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "This extraction targets an official assessment framework, user guide, or technical manual without an empirical ML study. Sample sizes, ML algorithms, and predictive findings are intentionally null or empty per schema rules for non-empirical IEA/OECD documentation."
+  }
+}

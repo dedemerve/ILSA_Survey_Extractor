@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "file_name": "12. Gomez-Talal et al. (2025). Interpretable Machine Learning Models for PISA Results in Mathematics.pdf",
+    "title": "Interpretable Machine Learning Models for PISA Results in Mathematics",
+    "authors": [
+      "Ismael Gómez-Talal",
+      "Luis Bote-Curiel",
+      "José Luis Rojo-Álvarez"
+    ],
+    "year": 2025,
+    "doi": "10.1109/ACCESS.2025.3538585",
+    "venue": "IEEE Access",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2022 microdata for Spain (raw dataset: 30,800 students) and applies preprocessing to create an analytic dataset of 29,282 students by excluding rows with nine or more missing values. The authors then replace remaining missing values (up to nine per row) with the mean value of the entire dataset. The manuscript does not report applying PISA sampling weights or replicate weights (e.g., BRR/jackknife) during model training or evaluation. Because the analysis is based on standard ML classifiers (e.g., SVM, Random Forest, XGBoost, LightGBM) and the paper does not mention weight-aware estimation, the models were treated as unweighted; this is a limitation given PISA’s complex sampling design."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "mean_imputation",
+    "handling_not_reported_explanation": "Plausible values (PVs) are not applicable because the dependent variable is constructed by categorizing students into Low/Medium/High mathematics proficiency levels and then training binary classifiers on these categories, rather than modeling PV-based continuous mathematics achievement scores. The paper also does not describe any PV generation/combination procedure (e.g., Rubin’s rules), consistent with the outcome being a discretized proficiency class derived from PISA reporting categories rather than PV-based achievement modeling.",
+    "sample_details": {
+      "total_students": 29282,
+      "countries": [
+        {
+          "country_code": "ESP",
+          "n_students": 29282
+        }
+      ],
+      "sample_filtering_criteria": "Used PISA 2022 data for Spain. Starting from 30,800 students, the authors excluded rows with excessive missingness: any row with nine or more missing values (columns with no values) was removed, yielding 29,282 students. Remaining missing values were replaced by the mean value of the entire dataset. Categorical variables were one-hot encoded for ML, while the proficiency-level labels (Low/Medium/High) were kept in their original categorical form for the three-category classification scheme."
+    },
+    "ml_techniques": {
+      "primary": "Stacking",
+      "all_techniques": [
+        "Logistic Regression",
+        "SVM",
+        "Decision Tree",
+        "Random Forest",
+        "Gradient Boosting",
+        "XGBoost",
+        "Neural Network",
+        "LightGBM",
+        "Stacking"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "REPEAT",
+        "variable_name": "Grade repetition",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "ST253Q01JA0",
+        "variable_name": "Digital devices with screens",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ST255Q01JA",
+        "variable_name": "Number of books at home",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ST297Q09TA",
+        "variable_name": "Participation in extra math classes",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST004D01T",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "ST294Q02JA0",
+        "variable_name": "Studies/does homework before class",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "school_type",
+        "variable_name": "School type (public/private)",
+        "category": "school"
+      },
+      {
+        "variable_code": "autonomous_community",
+        "variable_name": "Autonomous community (region)",
+        "category": "system_level"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2022 Mathematics (Spain) — Low vs High proficiency classification",
+        "target_variable": "Low vs High mathematics proficiency (binary)",
+        "top_predictors": [
+          "Grade repetition",
+          "Digital devices with screens",
+          "Participation in extra math classes",
+          "Number of books at home",
+          "Studies/does homework before class"
+        ],
+        "performance_metrics": "Stacking meta-model: AUC = 0.9766 (Precision/Recall also reported as superior; other metrics listed but not numerically provided in the excerpt).",
+        "standardized_conclusion": "Using PISA 2022 Mathematics data for Spain, the study leveraged grade repetition, digital device ownership, extra mathematics class participation, number of books at home, and pre-class study/homework behavior to predict Low vs High mathematics proficiency, finding that the stacking meta-model achieved very high discrimination (AUC ≈ 0.9766) and that SHAP highlighted these factors as key drivers. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The paper analyzes PISA 2022 Mathematics for Spain (analytic sample: 29,282 students after excluding rows with ≥9 missing values and mean-imputing remaining missingness) and builds eight binary classifiers plus a stacking meta-model to distinguish Low/Medium/High mathematics proficiency categories. The stacking meta-model achieved the strongest performance, with an AUC of 0.9766 for the Low vs High task and reported superior Precision, Recall, and AUC across the other binary scenarios as well. SHAP-based interpretability consistently highlighted grade repetition, access to digital devices, number of books at home, participation in extra mathematics classes, and study/homework habits as influential predictors. The study uses stratified 5-fold cross-validation with random undersampling to address class imbalance, but it does not report using PISA sampling weights; additionally, SHAP is used for feature attribution rather than causal inference.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

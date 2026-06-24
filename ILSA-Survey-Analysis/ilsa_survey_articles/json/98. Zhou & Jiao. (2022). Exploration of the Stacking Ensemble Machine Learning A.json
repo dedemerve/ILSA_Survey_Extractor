@@ -1,0 +1,127 @@
+{
+  "metadata": {
+    "file_name": "98. Zhou & Jiao. (2022). Exploration of the Stacking Ensemble Machine Learning Algorithm for Cheating Detection in Large-Scale Assessment.pdf",
+    "title": "Exploration of the Stacking Ensemble Machine Learning Algorithm for Cheating Detection in Large-Scale Assessment",
+    "authors": [
+      "Hong Jiao",
+      "Zhou"
+    ],
+    "year": 2022,
+    "doi": "10.1177/00131644221117193",
+    "venue": "Educational and Psychological Measurement",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": false,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses a publicly available licensure-test dataset (two test forms) with item responses, response time, and number of attempts for 1,636 test-takers, with 46 flagged as likely cheaters. The manuscript does not describe any complex survey design, sampling weights, or replicate-weight procedures, and it does not report applying any weight variable (e.g., W_FSTUWT/TOTWGT) during model training or evaluation. Because the analysis is ML-based classification on a fixed test-taker dataset and the paper does not mention weighting, the most consistent interpretation is that models were trained and evaluated on an unweighted sample. Preprocessing included handling missing item-response entries coded as 0s in scored responses (while 141 'NA' values appear in raw option-level data) and applying resampling (SMOTE and/or under-sampling) only within each training fold of cross-validation."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "This paper performs cheating detection using a binary classification target (cheater vs non-cheater) derived from flagged cases in a licensure-test dataset, not from ILSA cognitive achievement scores with plausible values. The manuscript discusses 'NA' values in raw option-level responses but states that scored item responses contain no missing values (missing coded as 0s), and it does not describe a formal missing-data imputation or deletion procedure for model inputs. Therefore, plausible values are not applicable, and the missing-data handling strategy is not reported as a standard imputation/deletion method.",
+    "sample_details": {
+      "total_students": 1636,
+      "countries": [],
+      "sample_filtering_criteria": "Used the full available licensure-test dataset from Cizek and Wollack (2017) as described: two test forms with 170 dichotomously scored operational items per form; excluded 10 field-test items from analyses; included all 1,636 test-takers with 46 flagged as likely cheaters. The study treats missing option-level entries ('NA' in raw item options) as coded 0s in scored item responses (so scored responses have no missing values). For model evaluation, resampling (SMOTE and/or RandomUnderSampler) was applied only to the training set within each fold of 4-fold cross-validation, while the test set in each fold was evaluated without resampling."
+    },
+    "ml_techniques": {
+      "primary": "Discriminant Analysis",
+      "all_techniques": [
+        "Stacking",
+        "Random Forest",
+        "Gradient Boosting",
+        "Bagging",
+        "Decision Tree",
+        "SVM",
+        "Logistic Regression",
+        "Naive Bayes",
+        "Discriminant Analysis",
+        "Neural Network"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "iraw",
+        "variable_name": "Item response scores",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "idur",
+        "variable_name": "Item response time",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "OEF",
+        "variable_name": "Other effective features (OEF)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "attempts",
+        "variable_name": "Number of test attempts",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "total_test_score",
+        "variable_name": "Total test score (sum)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "total_response_time",
+        "variable_name": "Total response time (sum)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "mean_item_response_time",
+        "variable_name": "Mean item response time",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "median_item_response_time",
+        "variable_name": "Median item response time",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "max_item_response_time",
+        "variable_name": "Max item response time",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "min_item_response_time",
+        "variable_name": "Min item response time",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "resampling_method",
+        "variable_name": "Resampling method (SMOTE/under)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "resampling_ratio",
+        "variable_name": "Non-cheater:cheater ratio",
+        "category": "process_data"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "Large-scale licensure test (Cizek & Wollack), two test forms; 170 operational dichotomous items; response time; 1,636 test-takers (46 flagged cheaters)",
+        "target_variable": "Cheater detection (binary classification)",
+        "top_predictors": [
+          "Item response scores",
+          "Other effective features (OEF)",
+          "Item response time",
+          "Resampling method (SMOTE/under)",
+          "Non-cheater:cheater ratio"
+        ],
+        "performance_metrics": "Best meta-model (stacking): Discriminant Analysis as meta-model on top two base models; under-sampling ratio 10:1; Recall=0.638, Precision=0.551, F1=0.586, FP rate=0.014. Level-1 base model comparison (dual resampling 10:1, item responses + summary statistics): Random Forest Precision=0.838, F1=0.447; Gradient Boosting F1=0.573; Naive Bayes Recall=0.525.",
+        "standardized_conclusion": "Using the licensure-test dataset with item responses, response time, and augmented summary statistics (OEF), the study leveraged item response scores and OEF (with response time) together with under-sampling (10:1 non-cheater:cheater) to predict cheater status, finding that a stacking meta-model using Discriminant Analysis on the top two base models (Gradient Boosting and Random Forest) achieved the best overall balance (Recall=0.638, Precision=0.551, F1=0.586) with a relatively low false-positive rate (0.014). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study used a large licensure-test dataset (1,636 test-takers; 46 flagged cheaters) and framed cheating detection as an imbalanced binary classification problem. Across 4-fold cross-validation, resampling (SMOTE oversampling, RandomUnderSampler under-sampling, or both) was applied only to the training folds, and models were evaluated on the non-resampled test folds using Recall, Precision, F1, and false-positive rate. At the base-model level, Gradient Boosting and Random Forest were generally top performers, with Random Forest achieving the highest Precision (e.g., 0.838 under dual resampling 10:1 with item responses + summary statistics) and Gradient Boosting achieving the highest F1 (e.g., 0.573). The best overall result was a stacking meta-model using Discriminant Analysis on the top two base models, with under-sampling ratio 10:1 and item responses plus augmented summary statistics, yielding Recall=0.638, Precision=0.551, F1=0.586, and FP rate=0.014. The paper does not report a formal missing-data imputation strategy (scored responses reportedly contain no missing values because missing options are coded as 0s), and it does not discuss survey weights or hierarchical adjustments.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "metadata": {
+    "file_name": "120. Rebai et al. (2020). A graphically based machine learning approach to predict secondary schools performance in Tunisia.pdf",
+    "title": "A graphically based machine learning approach to predict secondary schools performance in Tunisia",
+    "authors": [
+      "S. Rebai",
+      "F. Ben Yahia",
+      "H. Essid"
+    ],
+    "year": 2020,
+    "doi": "10.1016/j.seps.2019.06.009",
+    "venue": "Socio-Economic Planning Sciences",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2012 school and student data for Tunisia and restricts the analysis to public secondary schools by removing private schools, yielding 105 secondary schools for the school year 2012–2013. The first stage computes school-level efficiency via a directional distance function (DEA) using school-level inputs (weekly learning time in minutes for science, language, and mathematics) and outputs (school-level averages of PISA standardized scores in mathematics, reading, and science) plus a school-level dropout proportion reported by principals. The second stage trains regression trees and random forests in R to predict the estimated school inefficiency scores from six school-level covariates (class size, school size, school location, proportion of girls, competition, parental pressure). The manuscript does not report applying PISA sampling weights or replicate-weight procedures; given the ML models (RT/RF) are trained on school-level aggregates and no weight variables (e.g., W_FSTUWT/TOTWGT) are mentioned, the analysis is treated as unweighted, and replicate-weight usage is not documented."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "listwise_deletion",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": null,
+      "countries": [
+        {
+          "country_code": "TUN",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Data are extracted from PISA 2012 (school and student dataset). Because the focus is public education, the authors eliminate private schools from the initial set of 153 secondary schools, and remove all observations with missing data. The resulting analytic sample comprises 105 Tunisian secondary schools for the school year 2012–2013. The ML stage uses school-level covariates and predicts the school inefficiency scores derived from the first-stage DEA/DDF model."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Decision Tree",
+        "Random Forest"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "SCHSIZE",
+        "variable_name": "School size (enrollment)",
+        "category": "school"
+      },
+      {
+        "variable_code": "CLSIZE",
+        "variable_name": "Class size (average)",
+        "category": "school"
+      },
+      {
+        "variable_code": "SCHLOC",
+        "variable_name": "School location (rural=1)",
+        "category": "school"
+      },
+      {
+        "variable_code": "PCGIRLS",
+        "variable_name": "Proportion of girls",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "COMP",
+        "variable_name": "Competition (dummy)",
+        "category": "school"
+      },
+      {
+        "variable_code": "PRESS",
+        "variable_name": "Parental pressure (dummy)",
+        "category": "parent_home"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2012 (Tunisia) public secondary schools, school year 2012–2013; school-level efficiency via DDF/DEA",
+        "target_variable": "School inefficiency score (DDF/DEA output)",
+        "top_predictors": [
+          "School size (enrollment)",
+          "Class size (average)",
+          "Proportion of girls",
+          "Competition (dummy)",
+          "Parental pressure (dummy)"
+        ],
+        "performance_metrics": "Regression tree: graphical splits and mean inefficiency by node; Random forest: variable importance (relative importance %): % Girls 47.773, School size 46.517, Class size 21.022, Location 10.913, Competition 10.499, Pressure 8.492. Linear robustness checks (not ML): OLS and Tobit report significance at 5% for COMP and SCHLOC only (OLS: COMP p=0.020, SCHLOC p=0.037; Tobit: COMP p=0.019, SCHLOC p=0.042).",
+        "standardized_conclusion": "Using PISA 2012 Tunisia school-level the study leveraged school size, class size, proportion of girls, competition, and parental pressure to predict school inefficiency (DDF/DEA) and found that inefficiency is most strongly associated with school characteristics—especially proportion of girls and school size—while competition and location show additional effects in linear robustness models; the authors also emphasize non-linear interactions captured by regression trees/random forests (with no causal claims beyond prediction). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The paper analyzes Tunisia’s public secondary schools using PISA 2012 data, first estimating school inefficiency with a directional distance function (DEA/DDF) that jointly considers desirable outputs (school-level averages of PISA standardized scores in mathematics, reading, and science) and an undesirable output (principal-reported dropout proportion). The mean inefficiency is 0.156, implying potential improvements of about 15.6% in achievement alongside a proportional reduction in dropout. In the second stage, regression trees and random forests are used to predict the inefficiency score from six school-level covariates (class size, school size, rural/urban location, proportion of girls, competition, and parental pressure). Random forest variable importance indicates the largest contributions come from proportion of girls (47.773%) and school size (46.517%), followed by class size (21.022%), while parental pressure has the smallest importance (8.492%). The manuscript does not report applying PISA sampling weights, and the ML models are trained on school-level aggregates, so results should be interpreted as predictive associations rather than causal effects.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

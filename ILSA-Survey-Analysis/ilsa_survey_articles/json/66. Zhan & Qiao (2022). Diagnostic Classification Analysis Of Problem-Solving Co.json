@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "file_name": "66. Zhan & Qiao (2022). Diagnostic Classification Analysis Of Problem-Solving Competence Using Process Data: An Item Expansion Method.pdf",
+    "title": "DIAGNOSTIC CLASSIFICATION ANALYSIS OF PROBLEM-SOLVING COMPETENCE USING PROCESS DATA: AN ITEM EXPANSION METHOD",
+    "authors": [
+      "Peida Zhan",
+      "Xin Qiao"
+    ],
+    "year": 2022,
+    "doi": "10.1007/s11336-022-09855-9",
+    "venue": "Psychometrika",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2012 computer-based assessment (CBA) process-log data for the TICKETS task 2 (CP038Q01) from respondents in the USA, Singapore, Austria, and Turkey. The analytic sample was obtained by excluding respondents with missing IDs and not-reached item responses, yielding 3,760 respondents; the process-data matrix was then coded as dichotomous phantom-item indicators. The manuscript does not report the use of PISA sampling weights or any complex survey design adjustments (e.g., W_FSTUWT/TOTWGT, BRR/jackknife), and the analysis is conducted within a diagnostic classification (DCM) framework using the GDINA package and PCM estimation in TAM. Because no weighting variables or replicate-weight procedures are mentioned, the analysis is treated as unweighted for the purposes of this extraction."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "multiple_imputation",
+    "handling_not_reported_explanation": "Plausible values (PVs) are not applicable because the dependent variables are not PV-based cognitive achievement scores; instead, the study models action-sequence indicators via diagnostic classification models (GDINA/HO-DINA) and estimates latent problem-solving ability (θ) from the DCM/PCM framework. Missing data handling is described for the outcome (item response) dataset using full information maximum likelihood (FIML) with an EM algorithm, which corresponds to model-based missing-data handling rather than PV-based multiple imputation; therefore, PV handling is not applicable while missing-data handling is handled via FIML/EM.",
+    "sample_details": {
+      "total_students": 3760,
+      "countries": [
+        {
+          "country_code": "USA",
+          "n_students": null
+        },
+        {
+          "country_code": "SGP",
+          "n_students": null
+        },
+        {
+          "country_code": "AUT",
+          "n_students": null
+        },
+        {
+          "country_code": "TUR",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Respondents were selected from the file CBA_cp038q01_logs12_SPSS.csv for the PISA 2012 TICKETS task 2 (CP038Q01) CBA item. The analytic sample excluded respondents with missing IDs and those with not-reached item responses, resulting in 3,760 respondents. For the process data, no missing data existed; for the outcome data (item response categories 0/1/2), missingness was handled using full information maximum likelihood (FIML) with EM estimation. The process data were further transformed into a formatted phantom-item matrix using 14 retained action sequences (phantom items) after filtering by appearance rate (5%–95%), theoretical relevance to the targeted cognitive process, and Q-matrix identifiability requirements."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "alpha_1",
+        "variable_name": "Understanding city subway network",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "alpha_2",
+        "variable_name": "Understanding concession fares",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "alpha_3",
+        "variable_name": "Understanding travel options for four trips",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "alpha_4",
+        "variable_name": "Comparing ticket prices",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "alpha_5",
+        "variable_name": "Making the buy decision",
+        "category": "process_data"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2012 Problem Solving (CBA) — TICKETS task 2 (CP038Q01) process data",
+        "target_variable": "Latent problem-solving ability (HO-DINA θ1) vs PCM θ2",
+        "top_predictors": [
+          "Understanding city subway network",
+          "Understanding concession fares",
+          "Understanding travel options for four trips",
+          "Comparing ticket prices",
+          "Making the buy decision"
+        ],
+        "performance_metrics": "Correlation between θ1 and θ2: 0.826 (p < 0.001). Average standard errors: θ1 significantly less than θ2 (one-tailed t(3759) = −115.58, p < 0.001).",
+        "standardized_conclusion": "Using PISA 2012 TICKETS task 2 (CP038Q01) process data, the study leveraged the five problem-solving skills (α1–α5) to estimate latent problem-solving ability via the higher-order HO-DINA model and compared it to a unidimensional PCM outcome-based estimate, finding that the HO-DINA ability estimates were strongly correlated with PCM (r = 0.826) and had significantly smaller standard errors, indicating more accurate and more precise ability estimation from action-level process data. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2012 Problem Solving (CBA) — TICKETS task 2 (CP038Q01) process data",
+        "target_variable": "Diagnostic classification of problem-solving skill mastery patterns",
+        "top_predictors": [
+          "Understanding city subway network",
+          "Understanding concession fares",
+          "Understanding travel options for four trips",
+          "Comparing ticket prices",
+          "Making the buy decision"
+        ],
+        "performance_metrics": "Best-fitting reduced model: HO-DINA selected over HO-GDINA/HO-DINO/HO-ACDM by AIC/BIC/CAIC/SABIC; likelihood ratio test vs HO-GDINA: no significant difference (χ2 = 63.52, df = 54, p = 0.180). Model–data fit (HO-GDINA with original Q-matrix): RMSEA2 = 0.032 [0.025, 0.041], SRMSR = 0.033. Conjunctive condensation rule supported by model comparison (HO-DINA best).",
+        "standardized_conclusion": "Using PISA 2012 TICKETS task 2 (CP038Q01) process data, the study leveraged the five problem-solving skills (α1–α5) to classify respondents into latent attribute patterns using an item-expansion approach (14 phantom items) within the HO-DINA framework, finding that the estimated latent classes provided more fine-grained diagnostic diagnoses than the observed 0/1/2 outcome categories and that the interactions among skills followed the conjunctive condensation rule (specific action sequences appeared only when all required skills were mastered). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The paper proposes an item-expansion method that converts action-level PISA 2012 process logs for the TICKETS task 2 (CP038Q01) into a phantom-item matrix and analyzes it with higher-order diagnostic classification models (HO-GDINA/HO-DINA). For 3,760 respondents from the USA, Singapore, Austria, and Turkey, the HO-DINA model was selected as best fitting (AIC/BIC/CAIC/SABIC; no significant difference vs HO-GDINA by likelihood ratio test). The diagnostic classes yielded more detailed skill mastery patterns than the observed score categories (0/1/2), and the estimated higher-order ability θ1 from HO-DINA correlated strongly with the unidimensional PCM ability θ2 (r = 0.826, p < 0.001) while having significantly smaller standard errors (t(3759) = −115.58, p < 0.001). The study also reports that skill interactions follow the conjunctive condensation rule. No survey-weighting or PV-based achievement modeling is used; missing outcome responses were handled via FIML/EM.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": null
+  }
+}

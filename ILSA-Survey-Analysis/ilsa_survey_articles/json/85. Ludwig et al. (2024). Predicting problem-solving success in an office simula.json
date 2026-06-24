@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "file_name": "85. Ludwig et al. (2024). Predicting problem-solving success in an office simulation applying N-grams and a random forest to behavioral process data.pdf",
+    "title": "Predicting problem-solving success in an office simulation applying N-grams and a random forest to behavioral process data",
+    "authors": [
+      "Sabrina Ludwig",
+      "Andreas Rausch",
+      "Viola Deutscher",
+      "Jürgen Seifried"
+    ],
+    "year": 2024,
+    "doi": "10.1016/j.compedu.2024.105093",
+    "venue": "Computers & Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses a single-sample, in-person dataset of 234 VET students who completed a browser-based office simulation (Luca). The manuscript describes preprocessing of log files (JSON export, cleaning/aggregation, early-window extraction) and then trains random-forest classifiers using train/test splits and 10-fold cross-validation for AUC. No complex survey design, sampling weights, or replicate weights (e.g., BRR/jackknife) are mentioned, and the analysis is framed as voluntary participation in a controlled study setting rather than a population-representative ILSA-style survey. Because the paper applies standard ML classifiers (random forest) without any stated weighting procedure, the analysis is treated as unweighted."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The dependent variable is a binary classification of problem-solving success derived from fine-grained rubric sum scores with a cut score (and exclusion of borderline cases), not a cognitive achievement score generated via plausible values. The paper does not describe any missing-data strategy for the log-derived features (e.g., how missing/empty early-window sequences were handled), which is a reporting gap for transparency. However, the PV framework is not applicable because the outcome is rubric-based classification rather than PV-based achievement.",
+    "sample_details": {
+      "total_students": 234,
+      "countries": [
+        {
+          "country_code": "DEU",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Analytic sample consists of 234 VET students who worked on a supplier-selection scenario in the web-based office simulation Luca. Participants were excluded if they worked outside the web-based simulation (removed during log preprocessing). For the success classification, rubric sum scores were dichotomized using a threshold of 53 points, and borderline cases (n=10) were excluded to create two classes of equal size for balanced classification."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Random Forest"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "problem_solving_success",
+        "variable_name": "Problem-solving success class",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "early_window_5min",
+        "variable_name": "Early window (first 5 min)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "early_window_10min",
+        "variable_name": "Early window (first 10 min)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "early_window_20min",
+        "variable_name": "Early window (first 20 min)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "note_taking",
+        "variable_name": "Note-taking frequency",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "relevant_document_access",
+        "variable_name": "Relevant document access",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "spreadsheet_calculation",
+        "variable_name": "Spreadsheet calculation",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "attachment_download_sequence",
+        "variable_name": "Attachment download sequence",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "irrelevant_document_access",
+        "variable_name": "Irrelevant document access",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "gender",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "age",
+        "variable_name": "Age",
+        "category": "demographic"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "Luca office simulation (VET supplier selection scenario) — early process windows (first 5/10/20 min)",
+        "target_variable": "Problem-solving success (binary class; more vs less successful)",
+        "top_predictors": [
+          "Note-taking frequency",
+          "Relevant document access",
+          "Spreadsheet calculation",
+          "Attachment download sequence",
+          "Irrelevant document access"
+        ],
+        "performance_metrics": "Random Forest (M1 <5 min, M2 <10 min, M3 <20 min): Accuracy 0.53/0.60/0.60; AUC ROC 0.61/0.63/0.67; F1 (less successful) 0.53/0.64/0.63; F1 (more successful) 0.53/0.56/0.57. With feature selection (robust models): AUC improved from 0.61→0.65 (M1robust), 0.63→0.66 (M2robust), and ~0.70 (M3robust).",
+        "standardized_conclusion": "Using Luca office-simulation log data from VET students, the study leveraged early-window process indicators captured via n-gram/bigram behavior patterns—especially note-taking, relevant document access, spreadsheet calculation, and attachment-download sequences—to predict binary problem-solving success, finding that predictive performance improves as the early window expands from 5 to 20 minutes (AUC ROC 0.61→0.67) and further improves with feature selection (up to ~0.70). The model is a predictive classifier (not causal), and the paper does not report a missing-data strategy for log-derived features. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzes log data from 234 VET students who completed a supplier-selection scenario in the browser-based office simulation Luca. Using a random-forest classifier trained on n-gram/bigram features from early processing windows (first 5, 10, and 20 minutes), the authors predict a binary problem-solving success label derived from rubric scores (borderline cases excluded). Performance is weak when predicting from the first 5 minutes (Accuracy=0.53; AUC ROC=0.61; F1≈0.53 for both classes) but improves for larger early windows (Accuracy=0.60 for both <10 and <20 min; AUC ROC=0.63 and 0.67, respectively). Feature selection using robust bigrams increases AUC further (up to ~0.70 for the <20 min window). The analysis is unweighted (no survey weights described) and the paper does not document a missing-data handling procedure for the log-derived predictors.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "metadata": {
+    "file_name": "9. Alkan et al. (2025). Educational improvement through machine learning: Strategic models for better PISA scores.pdf",
+    "title": "Educational improvement through machine learning: Strategic models for better PISA scores",
+    "authors": [
+      "Bilal Baris Alkan",
+      "Serafettin Kuzucuk",
+      "Leyla Karakus",
+      "Sevki Yetkin Odabasi"
+    ],
+    "year": 2025,
+    "doi": "10.1371/journal.pone.0326121",
+    "venue": "PLOS One",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2018 data for 37 OECD countries and constructs a country-level classification target (high-performing vs low-performing) based on OECD-average thresholds in reading, mathematics, and science. The manuscript describes extensive preprocessing (categorizing continuous variables, removing insignificant variables, and standardizing variable names) and then applies Random Forest in R via the Boruta feature-selection wrapper. No survey/replicate weighting variables (e.g., W_FSTUWT, TOTWGT, BRR/JRR) or complex survey design adjustments are reported, and the analysis is framed as ML classification/prediction rather than survey-representative estimation. Given the ML pipeline (Random Forest + Boruta) and the absence of any explicit weighting discussion, the analysis is treated as unweighted; the paper also reports that there was no missing data in the dataset."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The dependent variables are not modeled as PISA achievement plausible values (PVs) with explicit PV combining rules. Instead, the study constructs a country-level success/failure classification using standardized PISA scores relative to OECD-average thresholds, and then uses Random Forest to identify influential predictors and to produce linear-form prediction equations from selected variables. Because the paper does not describe PV generation/combining or PV-specific estimation procedures, PV handling is not applicable to the way the outcome is operationalized in this study; additionally, the manuscript states there was no missing data, so a missing-data strategy is not meaningfully documented.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [
+        {
+          "country_code": "AUS",
+          "n_students": null
+        },
+        {
+          "country_code": "AUT",
+          "n_students": null
+        },
+        {
+          "country_code": "BEL",
+          "n_students": null
+        },
+        {
+          "country_code": "CAN",
+          "n_students": null
+        },
+        {
+          "country_code": "CHE",
+          "n_students": null
+        },
+        {
+          "country_code": "CHL",
+          "n_students": null
+        },
+        {
+          "country_code": "COL",
+          "n_students": null
+        },
+        {
+          "country_code": "CRI",
+          "n_students": null
+        },
+        {
+          "country_code": "CZE",
+          "n_students": null
+        },
+        {
+          "country_code": "DEU",
+          "n_students": null
+        },
+        {
+          "country_code": "DNK",
+          "n_students": null
+        },
+        {
+          "country_code": "ESP",
+          "n_students": null
+        },
+        {
+          "country_code": "EST",
+          "n_students": null
+        },
+        {
+          "country_code": "FIN",
+          "n_students": null
+        },
+        {
+          "country_code": "FRA",
+          "n_students": null
+        },
+        {
+          "country_code": "GBR",
+          "n_students": null
+        },
+        {
+          "country_code": "GRC",
+          "n_students": null
+        },
+        {
+          "country_code": "HUN",
+          "n_students": null
+        },
+        {
+          "country_code": "IRL",
+          "n_students": null
+        },
+        {
+          "country_code": "ISL",
+          "n_students": null
+        },
+        {
+          "country_code": "ISR",
+          "n_students": null
+        },
+        {
+          "country_code": "ITA",
+          "n_students": null
+        },
+        {
+          "country_code": "JPN",
+          "n_students": null
+        },
+        {
+          "country_code": "KOR",
+          "n_students": null
+        },
+        {
+          "country_code": "LUX",
+          "n_students": null
+        },
+        {
+          "country_code": "MEX",
+          "n_students": null
+        },
+        {
+          "country_code": "NLD",
+          "n_students": null
+        },
+        {
+          "country_code": "NOR",
+          "n_students": null
+        },
+        {
+          "country_code": "NZL",
+          "n_students": null
+        },
+        {
+          "country_code": "POL",
+          "n_students": null
+        },
+        {
+          "country_code": "PRT",
+          "n_students": null
+        },
+        {
+          "country_code": "SVK",
+          "n_students": null
+        },
+        {
+          "country_code": "SWE",
+          "n_students": null
+        },
+        {
+          "country_code": "TUR",
+          "n_students": null
+        },
+        {
+          "country_code": "USA",
+          "n_students": null
+        },
+        {
+          "country_code": "ZAF",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "The dataset consists of PISA 2018 scores and associated student/context variables for 37 OECD countries. The study defines a country-level performance label by comparing each country’s standardized PISA scores to OECD-average thresholds (487 reading, 489 mathematics, 489 science): countries above the threshold are categorized as high-performing and below as low-performing. Continuous predictors are converted into meaningful categories; variables deemed necessary are coded while insignificant variables are removed; variable names are standardized to the abbreviations used in the paper. The manuscript reports that the dataset had no missing data."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Random Forest"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ICTRES",
+        "variable_name": "ICT resources",
+        "category": "ict"
+      },
+      {
+        "variable_code": "CPERFORLAN",
+        "variable_name": "Foreign language weekly lessons",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "CPERWEEK",
+        "variable_name": "Total weekly teaching load",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "METASPAM",
+        "variable_name": "Metacognition: credibility",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ESCS",
+        "variable_name": "Socioeconomic status (ESCS)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "HISEI",
+        "variable_name": "Highest parental occupational status",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "COMPETE",
+        "variable_name": "Academic competitiveness",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "PISADIFF",
+        "variable_name": "Perceived difficulty of PISA",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "JOYREAD",
+        "variable_name": "Enjoyment/attitude toward reading",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "CPERMATH",
+        "variable_name": "Math weekly lessons",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "CPERSCI",
+        "variable_name": "Science weekly lessons",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "STIMREAD",
+        "variable_name": "Teacher encourages reading",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ADAPTIVITY",
+        "variable_name": "Teacher adapts instruction",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "MASTGOAL",
+        "variable_name": "Mastery learning goals",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "reading_understanding",
+        "variable_name": "Reading understanding",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "recall",
+        "variable_name": "recall",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "METASUM",
+        "variable_name": "Text summarization ability",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "SCREADCOMP",
+        "variable_name": "Reading self-efficacy",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "SCREADDIFF",
+        "variable_name": "Reading perceived challenge",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "CPERLAN",
+        "variable_name": "Lessons in test language",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "WEALTH",
+        "variable_name": "Material well-being index",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "CULTPOSS",
+        "variable_name": "Cultural materials at home",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "HEDRES",
+        "variable_name": "Home educational resources",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "HOMEPOS",
+        "variable_name": "Home learning environment index",
+        "category": "socioeconomic"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 (OECD countries) — Reading performance classification",
+        "target_variable": "Country success in reading (high vs low)",
+        "top_predictors": [
+          "CPERWEEK",
+          "CPERFORLAN",
+          "ICTRES",
+          "ESCS",
+          "HISEI"
+        ],
+        "performance_metrics": "Random Forest + Boruta feature selection; model performance metrics not reported (importance coefficients reported).",
+        "standardized_conclusion": "Using PISA 2018 data for OECD countries, the study leveraged total weekly teaching load (CPERWEEK), foreign-language weekly lessons (CPERFORLAN), ICT resources (ICTRES), ESCS, and highest parental occupational status (HISEI) to predict country success in reading, finding that CPERWEEK and CPERFORLAN were among the strongest predictors while metacognition credibility (METASPAM) had the lowest coefficient among the selected set. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2018 (OECD countries) — Mathematics performance classification",
+        "target_variable": "Country success in mathematics (high vs low)",
+        "top_predictors": [
+          "COMPETE",
+          "HISEI",
+          "METASPAM",
+          "ESCS",
+          "ICTRES"
+        ],
+        "performance_metrics": "Random Forest + Boruta feature selection; model performance metrics not reported (importance coefficients reported).",
+        "standardized_conclusion": "Using PISA 2018 data for OECD countries, the study leveraged academic competitiveness (COMPETE), highest parental occupational status (HISEI), metacognition credibility (METASPAM), ESCS, and ICT resources (ICTRES) to predict country success in mathematics, finding that COMPETE had the highest estimation coefficient among the selected predictors while CPERWEEK had the lowest estimation coefficient. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2018 (OECD countries) — Science performance classification",
+        "target_variable": "Country success in science (high vs low)",
+        "top_predictors": [
+          "METASPAM",
+          "ICTRES",
+          "CPERWEEK",
+          "PISADIFF",
+          "COMPETE"
+        ],
+        "performance_metrics": "Random Forest + Boruta feature selection; model performance metrics not reported (importance coefficients reported).",
+        "standardized_conclusion": "Using PISA 2018 data for OECD countries, the study leveraged metacognition credibility (METASPAM), ICT resources (ICTRES), total weekly teaching load (CPERWEEK), perceived difficulty of PISA (PISADIFF), and academic competitiveness (COMPETE) to predict country success in science, finding that METASPAM and ICTRES were the most influential while COMPETE had the smallest estimation coefficient. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study uses PISA 2018 data from 37 OECD countries and applies Random Forest with Boruta-based feature selection to identify predictors of country success (high vs low) in reading, mathematics, and science relative to OECD-average thresholds. Across domains, ICT resources (ICTRES) and weekly instructional time (captured via CPERWEEK and domain-specific lesson variables) emerge as consistently important, alongside socioeconomic/cultural status (ESCS) and parents’ occupational status (HISEI). Metacognition credibility (METASPAM) is a key predictor in all three domains, while domain-specific factors include foreign-language weekly lessons for reading, competitiveness (COMPETE) for mathematics (and also science), and perceived difficulty of PISA (PISADIFF) plus reading enjoyment (JOYREAD) for science. The paper reports variable importance and coefficient estimates but does not provide standard predictive performance metrics (e.g., accuracy/AUC/R²). It also cautions that Random Forest does not establish causal relationships, and the manuscript does not report any survey-weighting or PV-combining procedures for achievement outcomes.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

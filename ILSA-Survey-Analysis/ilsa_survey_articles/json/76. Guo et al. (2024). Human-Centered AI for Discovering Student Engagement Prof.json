@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "file_name": "76. Guo et al. (2024). Human-Centered AI for Discovering Student Engagement Profiles on Large-Scale Educational Assessments.pdf",
+    "title": "Human-Centered AI for Discovering Student Engagement Profiles on Large-Scale Educational Assessments",
+    "authors": [
+      "Guo, H.",
+      "Johnson, M.",
+      "Saldivia, L.",
+      "Worthington, M.",
+      "Ercikan, K."
+    ],
+    "year": 2024,
+    "doi": "10.21031/epod.1532846",
+    "venue": "Journal of Measurement and Evaluation in Education and Psychology",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses NAEP Grade 8 Mathematics digital assessment data (2022 item block) and reports an analytic sample size after excluding students with irregular response time and abnormal completion on the selected item block (N=14,008). The manuscript does not mention applying NAEP sampling/survey weights or any replicate-weight methodology (e.g., BRR/jackknife) in the ML pipeline. Because the analysis is based on deep learning (autoencoder with LSTM) and supervised ensemble learning (random forest + SVC) for profile prediction, the authors do not describe any weight-aware estimation; thus weights are treated as not applied. No explicit weighting variable name (e.g., W_FSTUWT/TOTWGT) is provided, and the paper focuses on preprocessing, representation learning, clustering for human annotation, and active learning for scaling."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The paper does not report any plausible-value (PV) generation/combining strategy because the dependent variable is not a PV-based cognitive achievement score. Instead, the study creates engagement profiles from process/log-derived sequences and uses performance scores on a specific NAEP item block as part of the profiling/labeling context. The manuscript also does not describe a missing-data strategy (e.g., how incomplete log sequences or missing item responses were handled), representing a reporting gap for the preprocessing stage.",
+    "sample_details": {
+      "total_students": 14008,
+      "countries": [
+        {
+          "country_code": "USA",
+          "n_students": 14008
+        }
+      ],
+      "sample_filtering_criteria": "Used NAEP Grade 8 Mathematics digital assessment data (2022) for illustration, selecting one released item block containing 14 items with a 30-minute time limit. The analytic sample was restricted to students who completed the selected item block with regular response-time behavior; students with irregular response time and abnormal completion on the selected item block were removed. The final sample size after these exclusions is N=14,008."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Autoencoder",
+        "LSTM",
+        "K-means",
+        "t-SNE",
+        "Random Forest",
+        "SVM",
+        "Ensemble voting classifier (soft voting)",
+        "Active learning",
+        "Semi-supervised learning"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "total_score",
+        "variable_name": "Total block score",
+        "category": "prior_achievement"
+      },
+      {
+        "variable_code": "total_time",
+        "variable_name": "Total time on block",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "total_visits",
+        "variable_name": "Total number of visits",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_category",
+        "variable_name": "Item response time category",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "navigation_sequence",
+        "variable_name": "Item navigation sequence",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "item_score_sequence",
+        "variable_name": "Item score sequence",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "race_group",
+        "variable_name": "Race/ethnicity group",
+        "category": "demographic"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "NAEP 2022 Grade 8 Mathematics (released item block; 14 items)",
+        "target_variable": "Engagement profile label (10-profile classification)",
+        "top_predictors": [
+          "Total block score",
+          "Total time on block",
+          "Total number of visits",
+          "Item response time category",
+          "Item navigation sequence"
+        ],
+        "performance_metrics": "Not reported (the paper reports profile frequencies/proportions and qualitative descriptions; no accuracy/AUC/F1/RMSE metrics are provided for the Step-3 classifier).",
+        "standardized_conclusion": "Using NAEP 2022 Grade 8 Mathematics item-block the study leveraged total block score, total time on block, total number of visits, item response time category, and item navigation sequence to predict engagement profile membership across ten preliminary profiles, finding that the resulting profiles were differentiable and that about 60% of students fell into low/very-low-score profiles while about 40% fell into medium-or-higher-score profiles. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study proposes a human-centered AI (HAI) framework to create student engagement profiles by integrating NAEP Grade 8 Mathematics digital process/log data with response information from a single 2022 released item block (14 items). After excluding students with irregular response time and abnormal completion, the analytic sample comprised 14,008 students from the USA. In Step 2, an autoencoder with LSTM compresses sequential navigation/response-time information into a latent space, and K-means clustering supports human annotation of ten preliminary engagement profiles. In Step 3, an active learning semi-supervised loop trains an ensemble voting classifier combining a random forest and an SVC to assign profiles to unlabeled students, using pseudo-label confidence thresholds (e.g., >0.75). The paper reports profile proportions and qualitative descriptors but does not provide standard predictive performance metrics (e.g., accuracy/AUC), and it does not describe a missing-data handling strategy or PV-based achievement handling.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

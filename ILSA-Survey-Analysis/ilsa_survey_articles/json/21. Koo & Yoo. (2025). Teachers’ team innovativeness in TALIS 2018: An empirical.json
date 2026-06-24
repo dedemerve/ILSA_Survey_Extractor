@@ -1,0 +1,205 @@
+{
+  "metadata": {
+    "file_name": "21. Koo & Yoo. (2025). Teachers’ team innovativeness in TALIS 2018: An empirical and simulation study using glmmLasso for multilevel data.pdf",
+    "title": "Teachers’ team innovativeness in TALIS 2018: An empirical and simulation study using glmmLasso for multilevel data",
+    "authors": [
+      "Miryeong Koo",
+      "Jin Eun Yoo"
+    ],
+    "year": 2025,
+    "doi": "10.1186/s40536-025-00254-x",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses TALIS 2018 teacher and principal survey data from Korea, with teachers nested within schools (multilevel structure). In data preparation, the authors explicitly removed weighting-related variables (including SCHWGT) from the predictor set (along with IDs, standardized scores, and administration variables). The manuscript does not report applying TALIS sampling weights or any replicate-weight procedure; instead, it fits penalized multilevel regression (glmmLasso) to account for clustering via random effects rather than survey-weighted estimation. Missingness was handled via k-nearest neighbors imputation using Gower distance, after excluding variables with ≥20% missingness."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "knn_imputation",
+    "handling_not_reported_explanation": "The dependent variable is teachers’ team innovativeness (T3TEAM), a TALIS scale score derived from Likert-type questionnaire items via confirmatory factor analysis, not a cognitive achievement score generated with plausible values. Therefore, plausible values handling is not applicable to this study’s outcome. Missing data handling is reported: the authors used k-nearest neighbors imputation with Gower distance (k=25) after removing variables with ≥20% missingness.",
+    "sample_details": {
+      "total_students": 2895,
+      "countries": [
+        {
+          "country_code": "KOR",
+          "n_students": 2895
+        }
+      ],
+      "sample_filtering_criteria": "Used TALIS 2018 Korea teacher and principal responses. The analytic dataset was constructed by removing irrelevant variables (including IDs, weighting variables, standardized scores, and administration variables such as IDTEACH, PISASCHOOLID, IDLANG, IDCNTRY, SCHWGT, VERSION), excluding questionnaire variables with ≥20% missingness, dummy-coding categorical predictors (and treating multi-category items as grouped dummy sets), and merging teacher and principal datasets. The final modeling dataset comprised 571 explanatory variables and included 2895 middle school teachers and 163 principals. Missing values in predictors were imputed using k-nearest neighbors with Gower distance (k=25) based on 644 complete observations."
+    },
+    "ml_techniques": {
+      "primary": "glmmLasso",
+      "all_techniques": [
+        "glmmLasso",
+        "LASSO",
+        "Elastic Net"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "TC3G12",
+        "variable_name": "School type (public/private)",
+        "category": "school"
+      },
+      {
+        "variable_code": "TT3G05",
+        "variable_name": "Teacher education qualification year",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "TT3G26J",
+        "variable_name": "Professional development: most colleagues involved",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "TT3G28C",
+        "variable_name": "Professional development barriers (lack of support)",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "TT3G29A3",
+        "variable_name": "Observation of teaching: other colleagues",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "TT3G29C3",
+        "variable_name": "Assessment of content knowledge: other colleagues",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "TT3G30",
+        "variable_name": "Positive impact of feedback on practice",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "TT3G33A",
+        "variable_name": "Joint teaching in same class",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "TT3G33C",
+        "variable_name": "Joint activities across classes/ages",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "TT3G33F",
+        "variable_name": "Work with other teachers on common standards",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "TT3G33G",
+        "variable_name": "Attend team conferences",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "TT3G33H",
+        "variable_name": "Collaborative professional learning participation",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "TT3G34E",
+        "variable_name": "Self-efficacy: motivate low-interest students",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "TT3G34J",
+        "variable_name": "Self-efficacy: use variety of assessment strategies",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "TT3G40E",
+        "variable_name": "Control over homework amount",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "TT3G48C",
+        "variable_name": "participate in school decisions",
+        "category": "school"
+      },
+      {
+        "variable_code": "TT3G48D",
+        "variable_name": "Shared responsibility for school issues",
+        "category": "school"
+      },
+      {
+        "variable_code": "TT3G48E",
+        "variable_name": "Collaborative culture: mutual support",
+        "category": "school"
+      },
+      {
+        "variable_code": "shared_beliefs_about_teaching",
+        "variable_name": "Shared beliefs about teaching",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "learning",
+        "variable_name": "learning",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "TT3G48G",
+        "variable_name": "Consistent enforcement of student behavior rules",
+        "category": "school"
+      },
+      {
+        "variable_code": "TT3G48H",
+        "variable_name": "School encourages staff to lead initiatives",
+        "category": "school"
+      },
+      {
+        "variable_code": "TT3G49C",
+        "variable_name": "Teachers interested in what students say",
+        "category": "school"
+      },
+      {
+        "variable_code": "TT3G49D",
+        "variable_name": "School provides extra assistance",
+        "category": "school"
+      },
+      {
+        "variable_code": "TT3G49E",
+        "variable_name": "Teachers can rely on each other",
+        "category": "school"
+      },
+      {
+        "variable_code": "TT3G53C",
+        "variable_name": "Willingness to change to another school",
+        "category": "school"
+      },
+      {
+        "variable_code": "TT3G53G",
+        "variable_name": "Recommendation of school as workplace",
+        "category": "school"
+      },
+      {
+        "variable_code": "TT3G54A",
+        "variable_name": "Job satisfaction: salary satisfaction",
+        "category": "school"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "TALIS 2018 (Korea) — teachers nested in schools; outcome T3TEAM",
+        "target_variable": "Teachers’ team innovativeness (T3TEAM)",
+        "top_predictors": [
+          "Joint activities across classes/ages (TT3G33C)",
+          "Work with other teachers on common standards (TT3G33F)",
+          "Attend team conferences (TT3G33G)",
+          "Self-efficacy: motivate low-interest students (TT3G34E)",
+          "Shared responsibility for school issues (TT3G48D)"
+        ],
+        "performance_metrics": "Empirical Study I (1000 iterations, 7:3 train/test split): RMSE — glmmLasso mean 1.775 (SD 0.055), Group LASSO mean 1.771 (SD 0.081), Group Enet mean 1.771 (SD 0.094). Variable selection: glmmLasso selected ~30.48 variables on average (SD 9.98) vs LASSO ~92.41 (SD 133.82) and Enet ~111.01 (SD 190.61).",
+        "standardized_conclusion": "Using TALIS 2018 Korea the study leveraged teacher collaboration indicators (e.g., joint activities across classes/ages, common standards work, team conferences) and teacher self-efficacy to predict teachers’ team innovativeness (T3TEAM), finding that most key predictors had positive associations while the school climate item on shared responsibility for school issues (TT3G48D) showed a negative association; glmmLasso achieved comparable predictive error to LASSO/Enet but selected a substantially smaller, more stable set of predictors. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzed TALIS 2018 Korea teacher and principal data (2895 teachers nested in schools) to predict teachers’ team innovativeness (T3TEAM) using penalized multilevel regression. Across 1000 repeated 7:3 train/test splits, glmmLasso produced RMSE values comparable to group LASSO and group elastic net (empirical Study I mean RMSE ≈1.775 vs ≈1.771), but it selected far fewer predictors with greater stability (average selected variables ≈30.48 for glmmLasso vs ≈92.41 for LASSO and ≈111.01 for Enet). The 14 key glmmLasso predictors were mostly positively associated with team innovativeness, including teacher collaboration behaviors and teacher self-efficacy, while the school climate item “shared responsibility for school issues” (TT3G48D) was negatively associated. A simulation study mirroring TALIS’ multilevel structure supported glmmLasso’s superior variable selection (fewer false positives), with similar predictive accuracy across methods. The analysis does not report applying TALIS sampling weights; instead, it relies on random effects to address nesting.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

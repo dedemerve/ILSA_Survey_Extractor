@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "file_name": "113. Tyack et al. (2024). Using convolutional neural networks to automatically score eight TIMSS 2019 graphical response items.pdf",
+    "title": "Using convolutional neural networks to automatically score eight TIMSS 2019 graphical response items",
+    "authors": [
+      "Lillian Tyack",
+      "Lale Khorramdel",
+      "Matthias von Davier"
+    ],
+    "year": 2024,
+    "doi": "10.1016/j.caeai.2024.100249",
+    "venue": "Computers and Education: Artificial Intelligence",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses TIMSS 2019 eTIMSS graphical response item data (student image responses with human rater classifications) and trains CNN classifiers to reproduce/validate rater scoring. The manuscript reports sample sizes by grade and the use of stratified random splits for training/validation and five-fold cross-validation, but it does not report applying TIMSS complex survey weights (e.g., student sampling weights) or replicate-weight procedures (e.g., BRR/jackknife). Because the modeling is a deep-learning image classification pipeline implemented in R/keras, the authors do not describe any weight-aware estimation; thus the analysis is treated as unweighted. Data preparation includes image preprocessing (greyscale conversion, resizing, pixelation, contrast/saturation adjustments), label encoding from human raters, and manual removal of responses identified as incorrectly or inconsistently scored during the cleaning stages."
+    },
+    "plausible_values_handling": "irt_theta",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The paper does not describe a missing-data strategy for student-level image responses or labels (e.g., how incomplete/failed image captures or missing covariates were handled). Instead, the study focuses on constructing clean training/validation sets by (i) splitting responses for hold-out and cross-validation, (ii) using IRT-based expected scores (ES) derived from TIMSS item parameters and student proficiency estimates to define matching vs non-matching subsets, and (iii) manually reviewing and removing responses with incorrect or inconsistent human scoring. Given the absence of explicit missingness handling documentation, the missing-data approach is treated as not reported.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [
+        {
+          "country_code": "USA",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "The study analyzes eight TIMSS 2019 eTIMSS graphical response items (five Grade 4 and three Grade 8; one Grade 8 item is trichotomous with partial credit). For each item, responses were collected from countries participating in eTIMSS 2019; the paper reports response counts by grade (Grade 4: 20,571–22,444 responses across 30 countries plus one benchmarking participant; Grade 8: 16,904–17,083 responses across 22 countries plus three benchmarking participants). For modeling, each item’s response set was split into training and validation samples using stratified random sampling by country and by score category. The data cleaning stage further removed responses that were (a) incorrectly scored by human raters relative to the scoring guide or (b) inconsistently scored across raters (“borderline” cases), and it used an additional IRT-based expected-score (ES) matching criterion to create Tmatch/Vmatch vs Vno_match subsets. For the trichotomous item ME62300, the final training set used augmentation (including rotated/mirrored copies) to increase representation of partial-credit responses."
+    },
+    "ml_techniques": {
+      "primary": "Neural Network",
+      "all_techniques": [
+        "Neural Network"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "human_rater_score_category",
+        "variable_name": "Human rater score category",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "item_id",
+        "variable_name": "TIMSS item (ME code)",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "grade_level",
+        "variable_name": "Grade level (4 vs 8)",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "content_domain",
+        "variable_name": "Geometry/Measurement content domain",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "task_complexity",
+        "variable_name": "Item complexity (response variability)",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "irt_based_expected_score_es",
+        "variable_name": "IRT-based expected score (ES)",
+        "category": "prior_achievement"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "TIMSS 2019 eTIMSS Grade 4 Mathematics (graphical response items ME61081A/ME61081B/ME61224/ME71177/ME71181)",
+        "target_variable": "Automated CNN score classification vs human rater (dichotomous/partial credit as applicable)",
+        "top_predictors": [
+          "Human rater score category",
+          "TIMSS item (ME code)",
+          "Grade level (4 vs 8)",
+          "Geometry/Measurement content domain",
+          "Item complexity (response variability)"
+        ],
+        "performance_metrics": "Best CNNs: dichotomous items average accuracy 99.37%–99.92% with F1-scores 0.9948–0.9992; losses very low (e.g., 0.0063–0.0298 in the clean validation stage).",
+        "standardized_conclusion": "Using TIMSS 2019 eTIMSS Grade 4 graphical response item the study leveraged human rater score category, item identity, grade level, content domain, and item complexity to predict the human rater classification from student images, finding that CNN-based automated scoring achieved near-perfect agreement (≈99%+ accuracy and F1 ≈0.995–0.999) for dichotomous items. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The paper trains convolutional neural networks (CNNs) in keras to automatically classify TIMSS 2019 eTIMSS graphical responses into human rater score categories for eight selected items (five Grade 4, three Grade 8; one trichotomous item with partial credit). Across five cross-validation samples, the best CNNs achieved extremely high agreement with human raters: for the seven dichotomous items, average accuracy was about 99.37%–99.92% with F1-scores between 0.9948 and 0.9992, while the trichotomous item ME62300 reached 97.99% accuracy and F1=0.9766. CNNs also performed well on responses that human raters had scored incorrectly or inconsistently, correctly reclassifying most such cases for dichotomous items (often >94.8% accuracy), though performance was lower for ME62300 (88.81% on incorrectly human-scored responses). Methodologically, the study uses stratified splits and five-fold cross-validation, but it does not report a missing-data handling protocol; additionally, the IRT-based expected-score (ES) approach is used for data cleaning rather than causal inference, so model agreement should not be interpreted as causal effects.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

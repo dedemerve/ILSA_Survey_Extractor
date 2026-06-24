@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "file_name": "77. Shin et al. (2024). An engagement‑aware predictive model to evaluate problem‑solving performance from the study of adult skills’ (PIAAC 2012) process data.pdf",
+    "title": "An engagement‑aware predictive model to evaluate problem‑solving performance from the study of adult skills’ (PIAAC 2012) process data",
+    "authors": [
+      "Jinnie Shin",
+      "Wenjie Park",
+      "B. W. (as listed in author contributions)",
+      "M. G. (as listed in author contributions)"
+    ],
+    "year": 2024,
+    "doi": "10.1186/s40536-024-00194-y",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses OECD PIAAC 2012 PS-TRE process-log data from the first round of the PIAAC Main Study (Aug 2011–Nov 2012) and restricts the analysis to a specific PS-TRE booklet (PS1) and to three countries (United States, South Korea, United Kingdom). The manuscript reports the analytic sample sizes per country (US: 1,329 units; SK: 1,434; UK: 2,358) and describes how engagement labels were created from response-time thresholds (T-disengagement) for training. No survey or sampling weights (e.g., W_FSTUWT/TOTWGT) and no replicate-weight procedures (BRR/jackknife) are mentioned, and the deep-learning models are trained/evaluated via threefold cross-validation. Given the ML-focused modeling of process sequences, the paper appears to proceed without explicit complex-survey weighting; the manuscript does not provide a weighting variable name or a weighting procedure."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The dependent variables are (i) task performance scores (categorical scores) and (ii) a binary engagement status derived from response-time thresholds (T-disengagement). The paper does not describe any plausible-values (PV) generation/combining procedure because the outcomes are modeled directly from process-log-derived labels rather than PV-based cognitive achievement scores. Additionally, the manuscript does not report a missing-data strategy for either the process-log sequences (e.g., handling incomplete sequences) or for any missingness in derived engagement/performance labels, which is a reporting gap for reproducibility.",
+    "sample_details": {
+      "total_students": 5123,
+      "countries": [
+        {
+          "country_code": "USA",
+          "n_students": 1329
+        },
+        {
+          "country_code": "KOR",
+          "n_students": 1434
+        },
+        {
+          "country_code": "GBR",
+          "n_students": 2358
+        }
+      ],
+      "sample_filtering_criteria": "Used PIAAC 2012 PS-TRE process-log data from the first round of the OECD PIAAC Main Study, restricted to the cognitive domain PS-TRE and specifically to the PS-TRE booklet PS1. The analysis focuses on 14 PS-TRE tasks, but the reported predictive experiments are conducted at the task level for five tasks (Task 1–Task 5) and evaluate overall and item/task-specific prediction. Engagement labels were created using the T-disengagement method (task-specific response-time thresholds) to produce a binary engagement indicator for each examinee-task instance in the training set. The analytic dataset is further restricted to three countries (United States, South Korea, United Kingdom) and to the available PS1 restricted-use files for the United States."
+    },
+    "ml_techniques": {
+      "primary": "LSTM",
+      "all_techniques": [
+        "LSTM",
+        "Attention mechanism"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "task_engagement_binary",
+        "variable_name": "Engagement status (engaged/disengaged)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "response_time",
+        "variable_name": "Response time on task",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "directed_graph_network_stats",
+        "variable_name": "Network statistics of navigation",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "age",
+        "variable_name": "Age",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "gender",
+        "variable_name": "Gender",
+        "category": "demographic"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PIAAC 2012 PS-TRE (Booklet PS1) — United States, South Korea, United Kingdom (Task 1–Task 5)",
+        "target_variable": "Problem-solving performance (categorical score)",
+        "top_predictors": [
+          "Engagement status (engaged/disengaged)",
+          "Network statistics of navigation",
+          "Response time on task"
+        ],
+        "performance_metrics": "Effort-Aware Attention-LSTM vs Attention-LSTM (overall average across tasks): US ACC 0.802 vs 0.779; AUC 0.821 vs 0.751; F1 0.875 vs 0.824. SK ACC 0.859 vs 0.751; AUC 0.824 vs 0.700; F1 0.886 vs 0.828. UK ACC 0.883 vs 0.778; AUC 0.835 vs 0.771; F1 0.900 vs 0.816.",
+        "standardized_conclusion": "Using PIAAC 2012 PS-TRE (Booklet PS1) process-log the study leveraged engagement status, navigation network statistics, and response time to predict problem-solving performance, finding that the Effort-Aware Attention-LSTM improved performance across all three countries and all three metrics (accuracy, AUC, and F1) relative to the non-engagement-aware Attention-LSTM. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PIAAC 2012 PS-TRE (Booklet PS1) — United States, South Korea, United Kingdom (Task 1–Task 5)",
+        "target_variable": "Task engagement (binary engaged/disengaged)",
+        "top_predictors": [
+          "Network statistics of navigation",
+          "Response time on task",
+          "Engagement status (engaged/disengaged)"
+        ],
+        "performance_metrics": "Effort-Aware Attention-LSTM (overall average across tasks): US ACC 0.872; AUC 0.878; F1 0.937. SK ACC 0.845; AUC 0.857; F1 0.881. UK ACC 0.844; AUC 0.858; F1 0.920. Task-level F1 improvements were largest for Task 5 (F1 +0.21 to +0.28; accuracy +0.20 to +0.23).",
+        "standardized_conclusion": "Using PIAAC 2012 PS-TRE (Booklet PS1) process-log the study leveraged navigation network statistics and response-time-derived engagement information to predict binary task engagement, finding high classification performance for engagement/disengagement (F1 roughly 0.88–0.94) and showing that jointly modeling engagement with performance improved the prediction of problem-solving performance. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study uses PIAAC 2012 PS-TRE (Booklet PS1) process-log data from the United States (n=1,329), South Korea (n=1,434), and the United Kingdom (n=2,358) to predict both problem-solving performance and binary task engagement across Tasks 1–5. It compares an Attention-LSTM model to an Effort-Aware Attention-LSTM that simultaneously models engagement to reduce low-stakes disengagement effects. Across countries, the engagement-aware model improved performance prediction, with overall accuracy rising from about 0.75–0.78 (Attention-LSTM) to about 0.80–0.88 (Effort-Aware Attention-LSTM), and F1 increasing to about 0.88–0.90. Engagement prediction itself achieved high F1 (about 0.88–0.94). The paper does not report a missing-data handling strategy and does not discuss survey-weight application; additionally, interpretability is supported via attention-layer PCA, but this is not causal inference.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

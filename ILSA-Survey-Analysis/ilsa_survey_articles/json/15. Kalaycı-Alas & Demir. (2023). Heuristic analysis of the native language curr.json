@@ -1,0 +1,137 @@
+{
+  "metadata": {
+    "file_name": "15. Kalaycı-Alas & Demir. (2023). Heuristic analysis of the native language curriculum of  successful countries in pisa and turkey by using anfis.pdf",
+    "title": "HEURISTIC ANALYSIS OF THE NATIVE LANGUAGE CURRICULUM OF SUCCESSFUL COUNTRIES IN PISA AND TURKEY BY USING ANFIS",
+    "authors": [
+      "Dilan Kalaycı Alas",
+      "Necati Demir"
+    ],
+    "year": 2023,
+    "doi": "10.24200/jonus.vol8iss2pp95-122",
+    "venue": "Journal of Nusantara Studies",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This study does not analyze student microdata from PISA; instead, it performs document analysis of native language curricula from selected countries and then models the relationship between curriculum-derived counts (number of learning outcomes and number of codes) and PISA 2018 reading scores. Because the unit of analysis is country-level curriculum content and PISA summary scores (not a student survey sample), complex survey weights and replicate weights are not applicable. The manuscript does not mention any use of PISA sampling weights (e.g., W_FSTUWT/TOTWGT) or replicate-weight procedures (e.g., BRR/jackknife). The data preparation consists of extracting curriculum elements from official ministry documents, coding skills into categories, constructing four ANFIS input combinations, and evaluating model fit using RMSE and R²."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "Plausible values (PVs) are not applicable because the dependent variable is not an ILSA cognitive achievement PV at the student level; the study uses country-level PISA 2018 reading scores as the ANFIS output. The paper also does not describe any missing-data procedure for the curriculum coding counts or the PISA score inputs, which is a reporting gap given that some curriculum components (e.g., writing outcomes for Finland) are coded as zero.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [
+        {
+          "country_code": "SGP",
+          "n_students": null
+        },
+        {
+          "country_code": "HKG",
+          "n_students": null
+        },
+        {
+          "country_code": "KOR",
+          "n_students": null
+        },
+        {
+          "country_code": "IRL",
+          "n_students": null
+        },
+        {
+          "country_code": "FIN",
+          "n_students": null
+        },
+        {
+          "country_code": "CAN",
+          "n_students": null
+        },
+        {
+          "country_code": "SWE",
+          "n_students": null
+        },
+        {
+          "country_code": "USA",
+          "n_students": null
+        },
+        {
+          "country_code": "TUR",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "The study selects nine countries (Singapore, Hong Kong, South Korea, Ireland, Finland, Canada, Sweden, the United States) as consistently high performers in PISA reading across 2012/2015/2018, and includes Turkey for comparison. For each country, the authors use the native language curriculum program(s) obtained from official education ministries; where multiple native language programs exist, only one program is examined. The analytic inputs are derived from document review by counting (i) the number of learning outcomes and (ii) the number of codes/themes associated with listening, speaking, reading, and writing skills, and then forming four ANFIS models using combinations of reading with listening, speaking, writing, and all four skills."
+    },
+    "ml_techniques": {
+      "primary": "ANFIS",
+      "all_techniques": [
+        "ANFIS"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "reading",
+        "variable_name": "Reading",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "listening_outcomes",
+        "variable_name": "listening outcomes",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "listening_codes",
+        "variable_name": "listening codes",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "speaking_outcomes",
+        "variable_name": "speaking outcomes",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "speaking_codes",
+        "variable_name": "speaking codes",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "writing_outcomes",
+        "variable_name": "writing outcomes",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "writing_codes",
+        "variable_name": "writing codes",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "reading_listening_speaking_writing_learning_outcomes",
+        "variable_name": "All-skills outcomes",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "reading_listening_speaking_writing_codes",
+        "variable_name": "All-skills codes",
+        "category": "curriculum"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 Reading (country-level) + native language curriculum documents (Singapore, Hong Kong, South Korea, Ireland, Finland, Canada, Sweden, United States, Turkey)",
+        "target_variable": "PISA 2018 reading score (country-level)",
+        "top_predictors": [
+          "Reading & listening outcomes",
+          "Reading & listening codes"
+        ],
+        "performance_metrics": "Model 1: RMSE = 20.5737; R² = 0.780652",
+        "standardized_conclusion": "Using PISA 2018 Reading (country-level) together with native language curriculum document counts, the study leveraged Reading & listening outcomes and Reading & listening codes to predict the PISA 2018 reading score, finding a moderately strong and significant relationship (R²≈0.78) with RMSE≈20.57. This indicates that m document counts, the study leveraged Reading & listening outcomes and Reading & listening codes to predict the PISA 2018 reading score, finding a moderately strong and significant relationship (R²≈0.78) with RMSE≈20.57."
+      }
+    ],
+    "outcome_summary": "The paper uses document analysis of native language curricula from nine countries and models their relationship to PISA 2018 reading scores using ANFIS. Four country-level ANFIS models are estimated: (1) reading+listening, (2) reading+speaking, (3) reading+writing, and (4) reading+listening+speaking+writing. Model fit is assessed with RMSE and R². The strongest predictive relationship is observed for Model 2 (R²=0.851708, RMSE=13.5731) and Model 3 (R²=0.844698, RMSE=8.7802), while the integrated all-skills model is weaker (Model 4: R²=0.683623, RMSE=17.3951). The authors conclude that coupled skills (especially reading with speaking/writing) relate more strongly to PISA performance than including all skills simultaneously; however, the study is country-level and does not use PV-based student achievement, and it does not report a missing-data strategy for the curriculum coding inputs.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": null
+  }
+}

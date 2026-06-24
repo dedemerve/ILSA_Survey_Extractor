@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "file_name": "94. Robitzsch & Lüdtke. (2022). Some thoughts on analytical choices in the scaling model for test scores in international large‑scale assessment studies.pdf",
+    "title": "Some thoughts on analytical choices in the scaling model for test scores in international large‑scale assessment studies",
+    "authors": [
+      "Robitzsch",
+      "Lüdtke"
+    ],
+    "year": 2022,
+    "doi": "10.1186/s42409-022-00039-w",
+    "venue": "Measurement Instruments for the Social Sciences",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "methodology_paper"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This is a methodological survey paper that discusses design-based versus model-based inference in international large-scale assessments (e.g., PISA) rather than estimating an empirical ML model on a student dataset. The article explains that LSA sampling typically uses stratified multi-stage designs (schools sampled first, then students within schools) and that student weights wP,n are used as inverse sampling probabilities for design-based inference. It also describes that standard errors can be computed via resampling methods such as jackknife or balanced repeated replication to accommodate clustered sampling. However, the paper does not report an analytic sample, a specific dataset/cycle used for estimation, or an implemented weighting/replicate-weight procedure for an ML analysis."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "This paper is a methodological discussion of scaling-model choices (IRT functional form, local dependence, test-taking behavior, country DIF, and trend estimation) and does not train or evaluate predictive ML models on an empirical student-level dataset. While it describes plausible values (PV) and latent background models conceptually as part of LSA scaling, it does not implement a PV-based analysis with a documented PV-combining strategy or a concrete missing-data handling procedure for an empirical study. Therefore, PV handling and missing-data handling are not applicable/not reported in the sense required for an ML empirical extraction.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [],
+      "sample_filtering_criteria": "No analytic sample is defined because the article is a methodological survey/discussion. It provides conceptual examples referencing PISA and other LSAs (e.g., PIRLS, TIMSS) but does not specify a restricted dataset or an inclusion/exclusion pipeline for an empirical analysis."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "PISA",
+        "target_variable": "Literature synthesis outcome (not student-level prediction)",
+        "top_predictors": [],
+        "performance_metrics": "Not reported",
+        "standardized_conclusion": "Using PISA the study leveraged the reported predictors to predict Literature synthesis outcome (not student-level prediction), finding that This is not an empirical ML study; it is a methodological paper arguing for design-based inference as the preferred basis for official reporting in international large-scale assessments. The authors discuss how analytical choices in scaling models—such as the IRT functional form (1PL vs 2PL vs 3PL/4PL), handling local dependence and multidimensionality, incorporating test-taking behavior (speed/omission models), and treating country DIF (including partial invariance)—can change the meaning of estimated ability and thus affect country comparisons and trend estimates. The paper emphasizes that model-based approaches can redefine target estimands and that likelihood-based standard errors under misspecified models may be incorrect, advocating resampling-based inference for persons and items. No predictive performance metrics (e.g., accuracy/RMSE/AUC) are reported because no ML models are trained or evaluated on a dataset. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This is not an empirical ML study; it is a methodological paper arguing for design-based inference as the preferred basis for official reporting in international large-scale assessments. The authors discuss how analytical choices in scaling models—such as the IRT functional form (1PL vs 2PL vs 3PL/4PL), handling local dependence and multidimensionality, incorporating test-taking behavior (speed/omission models), and treating country DIF (including partial invariance)—can change the meaning of estimated ability and thus affect country comparisons and trend estimates. The paper emphasizes that model-based approaches can redefine target estimands and that likelihood-based standard errors under misspecified models may be incorrect, advocating resampling-based inference for persons and items. No predictive performance metrics (e.g., accuracy/RMSE/AUC) are reported because no ML models are trained or evaluated on a dataset.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "The paper is a methodological discussion of scaling-model specification and inferential frameworks in LSAs, not an empirical study that trains/evaluates ML algorithms on student microdata. Consequently, there is no analytic sample size, no country-level sample breakdown, no implemented ML technique list, and no predictive target/outcome performance to extract."
+  }
+}

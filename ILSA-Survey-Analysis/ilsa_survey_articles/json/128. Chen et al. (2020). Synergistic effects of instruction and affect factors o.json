@@ -1,0 +1,215 @@
+{
+  "metadata": {
+    "file_name": "128. Chen et al. (2020). Synergistic effects of instruction and affect factors on high‑ and low‑ability disparities in elementary students’ reading literacy.pdf",
+    "title": "Synergistic effects of instruction and affect factors on high- and low-ability disparities in elementary students’ reading literacy",
+    "authors": [
+      "Jie Chen",
+      "Jie Hu"
+    ],
+    "year": 2020,
+    "doi": "10.1007/s11145-020-10070-0",
+    "venue": null,
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PIRLS 2016 international database microdata for Grade 4 reading literacy, restricted to English-instruction students in four English-speaking education systems (USA, England, Northern Ireland, Australia) and to Chinese-instruction systems (Hong Kong, Macao, Chinese Taipei). The analytic sample is further restricted to only high and low achievers based on PIRLS benchmark cut-points (advanced ≥625 vs intermediate <475), and invalid responses (e.g., 99 on 4-point Likert items) are treated as missing and imputed. The manuscript does not report applying PIRLS sampling weights or any complex survey design adjustments (e.g., no BRR/jackknife mention and no weight variable names such as W_FSTUWT/TOTWGT). Because the models are standard ML classifiers (logistic regression, linear SVM, decision tree, XGBoost) implemented in scikit-learn, the analysis appears to be conducted without explicit survey-weight incorporation."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "knn_imputation",
+    "handling_not_reported_explanation": "Plausible values handling is not applicable because the dependent variable is not modeled as PIRLS achievement plausible values; instead, the outcome is a binary class label (high vs low achiever) derived from PIRLS benchmark thresholds (advanced ≥625 and below intermediate <475). Missing data handling is reported: invalid Likert responses are deleted and counted as missing, cases with a large proportion of missing values are removed, and remaining missing values are imputed using nearest-neighbor averaging.",
+    "sample_details": {
+      "total_students": 9748,
+      "countries": [
+        {
+          "country_code": "AUS",
+          "n_students": 1103
+        },
+        {
+          "country_code": "USA",
+          "n_students": 756
+        },
+        {
+          "country_code": "GBR",
+          "n_students": 981
+        },
+        {
+          "country_code": "GBR",
+          "n_students": 851
+        },
+        {
+          "country_code": "HKG",
+          "n_students": 662
+        },
+        {
+          "country_code": "MAC",
+          "n_students": 673
+        },
+        {
+          "country_code": "TWN",
+          "n_students": 367
+        }
+      ],
+      "sample_filtering_criteria": "PIRLS 2016 Grade 4 reading literacy microdata were restricted to (1) English-speaking education systems: USA, England, Northern Ireland, and Australia, and (2) Chinese-speaking education systems: Hong Kong, Macao, and Chinese Taipei. Within each system, students’ reading subject language (ITLANG) had to match the instruction language (English for the English-speaking group). The outcome was binarized by PIRLS benchmarks: high achievers were those scoring at or above the advanced benchmark (≥625) and low achievers were those below the intermediate benchmark (<475). Only these high/low achiever students were included (binary labels 1 vs 0). Data cleaning included reversing Likert scales, deleting invalid responses (e.g., 99 on 4-point items) and treating them as missing, removing observations with a large proportion of missing values, and imputing remaining missing values via nearest-neighbor averaging."
+    },
+    "ml_techniques": {
+      "primary": "XGBoost",
+      "all_techniques": [
+        "Logistic Regression",
+        "SVM",
+        "Decision Tree",
+        "XGBoost"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ATBR08B",
+        "variable_name": "Same-ability groups",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ATBR09AB",
+        "variable_name": "Longer fiction books",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ATBR10A",
+        "variable_name": "Read aloud to students",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "decode_sounds",
+        "variable_name": "Decode sounds",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "words",
+        "variable_name": "words",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ATBR12B",
+        "variable_name": "Identify main ideas",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "generalize",
+        "variable_name": "Generalize",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "infer",
+        "variable_name": "infer",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ATBR13B",
+        "variable_name": "Oral questions or summaries",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ATBR13D",
+        "variable_name": "Written quiz or test",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ATBR19B",
+        "variable_name": "Discuss homework in class",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ASBR01D",
+        "variable_name": "Teacher easy to understand",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ASBR01G",
+        "variable_name": "Teacher lets show learning",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ASBR01H",
+        "variable_name": "Teacher variety to help learn",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ASBR06B",
+        "variable_name": "Book as a present",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ASBR06C",
+        "variable_name": "Reading is boring",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ASBR06E",
+        "variable_name": "Enjoy reading",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ASBR06F",
+        "variable_name": "Learn a lot from reading",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ASBR06G",
+        "variable_name": "Read to make me think",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ASBR06H",
+        "variable_name": "Book helps imagine worlds",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ASBR07A",
+        "variable_name": "Usually do well in reading",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ASBR07B",
+        "variable_name": "Reading is easy for me",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ASBR07D",
+        "variable_name": "Harder than classmates",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ASBR07E",
+        "variable_name": "Harder than any subject",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ASBR07F",
+        "variable_name": "Not good at reading",
+        "category": "student_attitude"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PIRLS 2016 Grade 4 Reading (English-instruction systems: USA, England, Northern Ireland, Australia)",
+        "target_variable": "High vs low reading proficiency (benchmark-based)",
+        "top_predictors": [
+          "Reading self-concepts",
+          "Reading attitudes",
+          "Teacher lets show learning",
+          "Generalize and infer",
+          "Same-ability groups"
+        ],
+        "performance_metrics": "Binary classification (high=1, low=0). XGBoost testing: Accuracy 88.19%, Precision 88.99%, Recall 88.60%, F-score 88.19%, AUC 0.?? (AUC reported via ROC curves; exact AUC values not numerically listed). Best-performing model overall: XGBoost (highest testing accuracy and strong recall).",
+        "standardized_conclusion": "Using PIRLS 2016 Grade 4 Reading data from English-instruction systems, the study leveraged reading self-concepts, reading attitudes, and selected teacher instructional practices (e.g., same-ability grouping and comprehension strategy instruction) to predict high vs low reading proficiency, finding that affective constructs—especially reading self-concepts—were the predominant and most influential factors for discriminating high from low achievers. This indicates that egy instruction) to predict high vs low reading proficiency, finding that affective constructs—especially reading self-concepts—were the predominant and most influential factors for discriminating high from low achievers."
+      }
+    ],
+    "outcome_summary": "The study analyzed PIRLS 2016 Grade 4 reading literacy by binarizing students into high vs low achievers using PIRLS benchmark thresholds (advanced ≥625 vs below intermediate <475), yielding 9,748 students across four English-speaking and three Chinese-speaking education systems. Four ML classifiers—logistic regression, linear SVM, decision tree, and XGBoost—were trained with a 80/20 train-test split and 5-fold cross-validation grid search, evaluating accuracy, precision, recall, F-score, and AUC. Across both system groups, classification performance was satisfactory and XGBoost was consistently strongest (English systems testing accuracy 88.19%; Chinese systems testing accuracy 88.01%, with high recall for XGBoost in the Chinese group at 91.72%). Feature selection based on top-ranked predictors showed that affective variables (especially reading self-concepts) dominated over instructional practices. The paper frames results as predictive associations rather than causal effects, and it does not report applying PIRLS sampling weights; additionally, missing values were imputed via nearest-neighbor averaging after removing cases with high missingness.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

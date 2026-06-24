@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "file_name": "111. Bernardo et al. (2023). Profiling low-proficiency science students in the Philippines using machine learning.pdf",
+    "title": "Profiling low-proficiency science students in the Philippines using machine learning",
+    "authors": [
+      "Bernardo",
+      "et al."
+    ],
+    "year": 2023,
+    "doi": "10.1057/s41599-023-01705-y",
+    "venue": "Humanities and Social Sciences Communications",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses the Philippines sample from PISA 2018, which is obtained via a two-stage stratified sampling design (random selection of 187 schools from 17 regions, then random selection of students within schools). The analytic sample is further restricted by dropping students with >50% missingness across the candidate predictor variables, removing variables with 100% missingness, imputing remaining missing values, and then creating a train/test split with an 80–20 split. The manuscript does not report applying PISA sampling weights or replicate weights (e.g., BRR/jackknife) in the machine-learning training/evaluation. Because the models are standard ML classifiers (Random Forest, plus other algorithms in grid search) and the paper does not mention weight-aware estimation, the analysis is treated as unweighted for population-representativeness."
+    },
+    "plausible_values_handling": "single_pv",
+    "missing_data_handling": "knn_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 7233,
+      "countries": [
+        {
+          "country_code": "PHL",
+          "n_students": 7233
+        }
+      ],
+      "sample_filtering_criteria": "Used the Philippines PISA 2018 student sample (nationally representative; 7233 15-year-olds). For model training, the target was defined using PV1SCIE: poor-performing students were those at science proficiency Level 1b and below, and better-performing students were those at Levels 1a and above. Data preparation trimmed the dataset by dropping students with >50% missing values across the 85 candidate questionnaire variables; variables with 100% missingness were removed; remaining missing entries were imputed using k-nearest neighbors with k=7. The final feature set comprised 72 questionnaire variables plus PV1SCIE. The dataset was then split into training and test sets using an 80–20 random split, and class imbalance was addressed in training via SMOTE oversampling for the poor class and Tomek Links undersampling for the better class (final training size per class: 3214)."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Random Forest",
+        "SVM",
+        "Logistic Regression",
+        "Neural Network",
+        "Decision Tree"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ST164Q05IA",
+        "variable_name": "Summarize text in own words",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST164Q04IA",
+        "variable_name": "Underline important text parts",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST164Q02IA",
+        "variable_name": "Quickly read text twice",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST164Q01IA",
+        "variable_name": "Focus on easy-to-understand parts",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST164Q03IA",
+        "variable_name": "Discuss text with other people",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "BELONG",
+        "variable_name": "Sense of belonging",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "PERCOOP",
+        "variable_name": "Perceived student cooperation",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "BEINGBULLIED",
+        "variable_name": "Experienced bullying",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST097Q01TA",
+        "variable_name": "do not listen to teacher",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "WORKMAST",
+        "variable_name": "Work mastery motivation",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "BSMJ",
+        "variable_name": "Expected occupational status",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST188Q02HA",
+        "variable_name": "Proud of accomplishments",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST012Q05NA",
+        "variable_name": "Smartphones with internet at home",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ST005Q01TA",
+        "variable_name": "Mother's education level",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "HISEI",
+        "variable_name": "Parents' occupational status",
+        "category": "socioeconomic"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 (Philippines) Science proficiency (PV1SCIE), 15-year-olds",
+        "target_variable": "Poor vs better science proficiency (Level ≤1b vs ≥1a)",
+        "top_predictors": [
+          "Sense of belonging (BELONG)",
+          "Perceived student cooperation (PERCOOP)",
+          "Experienced bullying (BEINGBULLIED)",
+          "Work mastery motivation (WORKMAST)",
+          "Smartphones with internet at home (ST012Q05NA)"
+        ],
+        "performance_metrics": "Random Forest (best model): Training precision 0.74, recall 0.79; Test precision 0.73, recall 0.66, accuracy 0.74; AUC = 0.83. Other models were evaluated via grid search (SVM, logistic regression, MLP, decision tree), but RF achieved the highest accuracy.",
+        "standardized_conclusion": "Using PISA 2018 Philippines science the study leveraged sense of belonging, perceived student cooperation, experienced bullying, work mastery motivation, and access to smartphones with internet at home to predict poor science proficiency (Level ≤1b vs ≥1a), finding that the Random Forest classifier achieved test accuracy of 0.74 and AUC of 0.83; SHAP was used to interpret the top 15 predictors, but the approach is predictive rather than causal and the manuscript does not report applying PISA sampling weights. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study used PISA 2018 Philippines science proficiency (PV1SCIE) to train a binary classifier distinguishing poor performers (Level 1b and below) from better performers (Level 1a and above) among 7233 15-year-olds. After trimming students with >50% missingness, imputing remaining missing values with k=7 nearest neighbors, and balancing the training set using SMOTE (poor class) and Tomek Links (better class), the Random Forest model was selected as best via grid search. On the held-out test set, it achieved accuracy 0.74 with precision 0.73 and recall 0.66, and AUC of 0.83. SHAP interpretation highlighted 15 key variables, including reading metacognitive strategies, social experiences (belonging, cooperation, bullying), motivation (work mastery), and ICT access (smartphones with internet). Limitations include the predictive (not causal) nature of ML and the absence of reported survey-weight application.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "metadata": {
+    "file_name": "117. Lim et al. (2024). Exploration of Variables Predicting Sense of School Belonging Using the Machine Learning Method—Group Mnet.pdf",
+    "title": "Exploration of Variables Predicting Sense of School Belonging Using the Machine Learning Method—Group Mnet",
+    "authors": [
+      "Lim et al.",
+      "Jin Eun Yoo",
+      "Minjeong Rho"
+    ],
+    "year": 2024,
+    "doi": "10.1177/00332941221133005",
+    "venue": "Psychological Reports",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2015 microdata and begins with 5,581 Korean students, then merges four questionnaires (student background, ICT familiarity, educational career, and parent) to form a candidate predictor set. The authors explicitly removed weighting variables (e.g., W_FSTURWT) during preprocessing, and they do not report applying complex survey weights or replicate-weight procedures in the modeling stage. Because the analysis is based on group Mnet (penalized regression) with k-NN imputation and repeated random train/test splits, the manuscript does not describe any weight-aware estimation; thus the effective analysis is treated as unweighted. Additional preprocessing included retaining only the first plausible value per subject (then deleting other PVs), deleting variables with ≥30% missingness, removing near-zero-variance variables, and dummy-coding categorical items while treating Likert items as continuous."
+    },
+    "plausible_values_handling": "single_pv",
+    "missing_data_handling": "knn_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 5581,
+      "countries": [
+        {
+          "country_code": "KOR",
+          "n_students": 5581
+        }
+      ],
+      "sample_filtering_criteria": "Analytic sample starts from 5,581 Korean students participating in PISA 2015 (mostly 10th graders). The authors merged four questionnaires (student background, ICT familiarity, educational career, and parent) and removed irrelevant variables including identification (e.g., CNTSTUID), weighting (e.g., W_FSTURWT), and administration (e.g., ADMINMODE). For plausible values, they retained only the first PV of each subject and deleted the other PVs, then removed variables with ≥30% missingness (68 variables), removed near-zero-variance variables (65), and removed derived variables (e.g., ANXTEST, MOTIVA) in favor of individual items, yielding 504 predictors. For missingness in predictors, they used listwise deletion only for the initial complete cases (retaining ~8.13%, 454/5,581) and then applied k-NN imputation for the remaining variables with missing rates between 0.44% and 26.41%."
+    },
+    "ml_techniques": {
+      "primary": "Group Mnet",
+      "all_techniques": [
+        "Group Mnet",
+        "k-NN"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ST004D01T",
+        "variable_name": "gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "ST011Q05TA",
+        "variable_name": "Educational software at home",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ST012Q05NA",
+        "variable_name": "Cell phones with internet",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "books_on_art",
+        "variable_name": "Books on art",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "music",
+        "variable_name": "music",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "design",
+        "variable_name": "design",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST038Q05NA",
+        "variable_name": "Threatened by other students",
+        "category": "school"
+      },
+      {
+        "variable_code": "PA007Q04TA",
+        "variable_name": "Parent satisfied with discipline",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "ST097Q04TA",
+        "variable_name": "Class academically focused",
+        "category": "school"
+      },
+      {
+        "variable_code": "ST078Q07NA",
+        "variable_name": "Meet friends after school",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "ST076Q07NA",
+        "variable_name": "Meet friends before school",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "ST039Q06NA",
+        "variable_name": "Teachers insulted in front",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ST039Q02NA",
+        "variable_name": "Teachers graded harder",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ST123Q01NA",
+        "variable_name": "Parents interested in school activities",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "PA009Q02NA",
+        "variable_name": "Parental involvement hindered",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "ST123Q03NA",
+        "variable_name": "Parents support in difficulties",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "ST082Q02NA",
+        "variable_name": "Good listener",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST082Q03NA",
+        "variable_name": "Enjoy classmates’ success",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST082Q14NA",
+        "variable_name": "Enjoy cooperating with peers",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST082Q13NA",
+        "variable_name": "Teamwork raises own efficiency",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST082Q01NA",
+        "variable_name": "Prefer team over alone",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST118Q05NA",
+        "variable_name": "Nervous when not knowing tasks",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST118Q03NA",
+        "variable_name": "Anxious even when prepared",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST121Q01NA",
+        "variable_name": "Gives up easily on problems",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST119Q04NA",
+        "variable_name": "Sees self as ambitious",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST119Q01NA",
+        "variable_name": "Wants top grades",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "IC008Q05TA",
+        "variable_name": "Uses digital devices for social networks",
+        "category": "ict"
+      },
+      {
+        "variable_code": "IC013Q05NA",
+        "variable_name": "Social networks useful",
+        "category": "ict"
+      },
+      {
+        "variable_code": "IC013Q12NA",
+        "variable_name": "Feels bad without internet",
+        "category": "ict"
+      },
+      {
+        "variable_code": "EC003Q02NA",
+        "variable_name": "Chemistry subjects covered",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "ST131Q06NA",
+        "variable_name": "Prefers repeating experiments",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "ST071Q02NA",
+        "variable_name": "Hours learning mathematics",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST032Q02NA",
+        "variable_name": "Vigorous physical activities daily",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST016Q01NA",
+        "variable_name": "Life satisfaction",
+        "category": "student_attitude"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2015 (KOR) — school belonging (ST034, 4-point Likert)",
+        "target_variable": "Sense of school belonging",
+        "top_predictors": [
+          "Student gender",
+          "Educational software at home",
+          "Threatened by other students",
+          "Teachers graded harder",
+          "Life satisfaction"
+        ],
+        "performance_metrics": "Group Mnet — test RMSE stable across 100 iterations: 0.36–0.41 (mean 0.39, SD 0.009). Average selected variables per run: 74.55 (SD 22.14) out of 504; selection counts used to identify 32 predictors selected in ≥75 iterations.",
+        "standardized_conclusion": "Using PISA 2015 (KOR) the study leveraged student gender, home ICT/educational resources, school climate (e.g., being threatened), teacher relationship indicators, and life satisfaction to predict students’ sense of school belonging, finding that positive peer/teacher relationships, parental support, cooperation tendencies, learning/physical activities, and life satisfaction were associated with higher belonging while anxiety, unfair teacher treatment, and being threatened by peers were associated with lower belonging; predictive performance was stable (RMSE≈0.39) but the manuscript notes that ML-selected predictors are not necessarily statistically significant in a conventional inferential sense. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzed PISA 2015 data for Korean students (N=5,581) to predict students’ sense of school belonging (ST034, 4-point Likert) using group Mnet, a penalized regression ML method. After preprocessing (including retaining only the first PV per subject and applying k-NN imputation for predictor missingness), the authors repeatedly split the data and refit the model 100 times. Prediction error measured by test RMSE was stable across runs, ranging from 0.36 to 0.41 with a mean of 0.39 (SD=0.009). Using selection counts across iterations, they identified 32 predictors selected in ≥75 runs, spanning student motivation/anxiety, cooperation tendencies, ICT use, parental support, peer/teacher relationship, school climate, learning/physical activities, and life satisfaction. The paper does not report applying survey weights and emphasizes that ML variable importance/selection is not equivalent to conventional statistical significance.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

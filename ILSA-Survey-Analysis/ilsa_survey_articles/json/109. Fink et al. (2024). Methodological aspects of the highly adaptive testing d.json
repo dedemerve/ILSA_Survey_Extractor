@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "file_name": "109. Fink et al. (2024). Methodological aspects of the highly adaptive testing design for PISA.pdf",
+    "title": "Methodological aspects of the highly adaptive testing design for PISA",
+    "authors": [
+      "Fink A",
+      "König C",
+      "Frey A"
+    ],
+    "year": 2024,
+    "doi": "10.3389/fpsyg.2024.1446799",
+    "venue": "Frontiers in Psychology",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "methodology_paper"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This is a methods paper that formalizes the highly adaptive testing (HAT) design for PISA using a shadow-test approach and test-assembly optimization. It does not analyze a student micro-dataset with survey sampling weights, nor does it report applying PISA sampling weights or replicate-weight procedures (e.g., BRR/jackknife) to estimate population parameters. Instead, the paper focuses on algorithmic constraints for item/unit selection, item exposure control, and item position effects, implemented in open-source software (R packages TestDesign and mirt; linear optimization via Gurobi/alternatives). Because no empirical weighted estimation is performed in the manuscript’s described analysis, weighting variables are not applicable to the presented methodological evaluation."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "Plausible values (PVs) are not applicable because the paper is not estimating student achievement PVs from PISA responses; it is describing and formalizing an adaptive test administration and test-assembly algorithm (shadow testing) based on IRT models and constraint management. The manuscript does not present a student-level predictive modeling analysis with a PV-based cognitive outcome, so PV generation/combination rules are outside the scope of the described methodology. Missing-data handling is also not reported because the paper does not perform an empirical estimation pipeline on incomplete student response data; it specifies algorithmic steps and constraints for item selection rather than imputing missing responses.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [],
+      "sample_filtering_criteria": "No analytic student sample is defined because the paper is a methodological description of the HAT design for PISA (including constraint formulations, shadow-test assembly, item exposure control, and item position effects). The manuscript discusses that the original PISA main study data are used for item parameter estimation and scale linking, but it does not specify an analytic dataset subset, grade restriction, or exclusion/inclusion criteria for a student-level empirical analysis."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 MST design",
+        "target_variable": "Literature synthesis outcome (not student-level prediction)",
+        "top_predictors": [],
+        "performance_metrics": "Not reported",
+        "standardized_conclusion": "Using PISA 2018 MST design the study leveraged the reported predictors to predict Literature synthesis outcome (not student-level prediction), finding that This methods paper formalizes the highly adaptive testing (HAT) design for PISA as an operationally feasible extension of computerized adaptive testing with shadow testing. It specifies how unit-level within-unit adaptation is combined with multidimensional ability estimation, how PISA-specific constraints are enforced via mixed-integer programming in the shadow-test assembly, and how item exposure and item position effects are controlled. The paper also describes an adjustment to foster students’ test-taking experience by selecting items using a shifted response-probability criterion rather than purely maximum Fisher information. While it cites a simulation study showing improved test information and accuracy relative to the PISA 2018 MST design, the present article itself is methodological and does not report ML model training/evaluation metrics on student microdata. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This methods paper formalizes the highly adaptive testing (HAT) design for PISA as an operationally feasible extension of computerized adaptive testing with shadow testing. It specifies how unit-level within-unit adaptation is combined with multidimensional ability estimation, how PISA-specific constraints are enforced via mixed-integer programming in the shadow-test assembly, and how item exposure and item position effects are controlled. The paper also describes an adjustment to foster students’ test-taking experience by selecting items using a shifted response-probability criterion rather than purely maximum Fisher information. While it cites a simulation study showing improved test information and accuracy relative to the PISA 2018 MST design, the present article itself is methodological and does not report ML model training/evaluation metrics on student microdata.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "The manuscript is a methodological (non-empirical) paper that outlines the HAT algorithm and its statistical/optimization underpinnings for PISA rather than conducting an ML prediction/classification study on an extracted student dataset. Consequently, there is no reported analytic sample size, no country-level student counts, no PV-based outcome modeling, and no ML algorithm comparison with performance metrics in the article body. The only quantitative claims are about test information and simulation-based comparisons reported as background/cited evidence, not as an original ML empirical evaluation within this paper."
+  }
+}

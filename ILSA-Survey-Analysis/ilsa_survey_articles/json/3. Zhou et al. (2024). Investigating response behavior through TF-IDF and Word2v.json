@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "file_name": "3. Zhou et al. (2024). Investigating response behavior through TF-IDF and Word2vec text analysis_ A case study of PISA 2012 problem-solving process data.pdf",
+    "title": "Investigating response behavior through TF-IDF and Word2vec text analysis: A case study of PISA 2012 problem-solving process data",
+    "authors": [
+      "Jing Zhou",
+      "Zhanliang Ye",
+      "Sheng Zhang",
+      "Zhao Geng",
+      "Ning Han",
+      "Tao Yang"
+    ],
+    "year": 2024,
+    "doi": "10.1016/j.heliyon.2024.e35945",
+    "venue": "Heliyon",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses the OECD PISA 2012 computer-based assessment process data for the “climate control (CP02501)” problem-solving task, operationalized via the ProcData package. The analytic dataset consists of 16,763 preprocessed response sequences with binary scoring (correct=1, incorrect=0) and subsequent feature extraction using TF-IDF and Word2vec. The manuscript does not report applying PISA sampling/survey weights (e.g., W_FSTUWT/TOTWGT) or any replicate-weight procedure; it also does not describe complex survey design adjustments for the ML models. Because the analysis is ML-based on extracted process-sequence features and the paper provides no weighting details, the weighting strategy is treated as unweighted/unspecified for model training and evaluation."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The dependent variable is derived from PISA 2012 process-task scoring (binary correct/incorrect) for the climate control item, not from PV-based cognitive achievement scales. As a result, plausible values are not applicable to the modeled outcome. The paper also does not describe any missing-data strategy for the process sequences (e.g., exclusions for incomplete logs, handling of missing actions/fields), which is a reporting gap given that log-based sequences can be incomplete or vary in length.",
+    "sample_details": {
+      "total_students": 16763,
+      "countries": [],
+      "sample_filtering_criteria": "Used the PISA 2012 computer-based assessment process data for the specific problem-solving task “climate control (CP02501)”. The dataset comprises 16,763 preprocessed action sequences; scoring was consolidated to a binary outcome (0/1) where partially correct and non-resolving responses were treated as incorrect. The preprocessing focused on the answering process and excluded the “draw” behavior from the action sequence after preprocessing; “start” and “end” were later excluded from TF-IDF feature sets (and “end” was removed due to perfect correlation with “start”) for the TF-IDF logistic analysis."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Logistic Regression",
+        "KNN",
+        "SVM",
+        "Random Forest",
+        "k-means",
+        "TF-IDF",
+        "Word2Vec"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "VOTAT",
+        "variable_name": "VOTAT navigation behavior",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "sequence_length",
+        "variable_name": "Sequence length",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "reset_frequency",
+        "variable_name": "Reset frequency",
+        "category": "process_data"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2012 Problem Solving process data (Climate control CP02501)",
+        "target_variable": "Correct answer (binary 0/1)",
+        "top_predictors": [
+          "VOTAT navigation behavior",
+          "Sequence length",
+          "Reset frequency",
+          "0_0_0 behavior usage"
+        ],
+        "performance_metrics": "Supervised prediction (5-fold CV, grid search): Random Forest + TF-IDF best — F1: 0.8419, Accuracy: 0.8231, Precision: 0.8271, Recall: 0.8572. Baseline logistic regression (TF-IDF/Word2vec comparisons) reported via F1/Accuracy/Recall/Precision tables; exact baseline metrics not separately tabulated in the excerpt. Additional analysis (Behavior-strategy clusters (k-means groups)): Unsupervised clustering (k-means with K=3 via elbow): TF-IDF clusters — Cluster A: n=5833, correct rate=81%; Cluster B: n=8411, correct rate=42%; Cluster C: n=2519, correct rate=36%. Word2vec clusters — Cluster A: n=9245, correct rate=78%; Cluster B: n=2115, correct rate=27%; Cluster C: n=5403, correct rate=26%. Z tests: Cluster A significantly higher than B and C (p<0.001).",
+        "standardized_conclusion": "Using PISA 2012 Problem Solving process data (Climate control CP02501) the study leveraged VOTAT navigation behavior, sequence length, reset frequency, and 0_0_0 behavior usage to predict correct answer (binary 0/1), finding that Random Forest with TF-IDF features achieved the best overall performance (F1=0.8419; Accuracy=0.8231; Recall=0.8572). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzes PISA 2012 climate control (CP02501) problem-solving process sequences (n=16,763) and uses TF-IDF and Word2vec to extract behavioral features from action sequences. For predicting correct/incorrect performance, supervised models (KNN, SVM, Random Forest) were trained with 5-fold cross-validation and grid-searched hyperparameters; Random Forest with TF-IDF performed best (F1=0.8419, Accuracy=0.8231, Precision=0.8271, Recall=0.8572). Word2vec features combined with SVM were the second-best overall, with Word2vec generally improving F1/Accuracy/Recall relative to TF-IDF except for precision. For unsupervised analysis, k-means with K=3 produced three clusters with significantly different correct rates; Cluster A had the highest correct rate (TF-IDF: 81%; Word2vec: 78%). The paper does not report plausible values (DV is process-task binary scoring) and does not describe missing-data handling or any survey-weighting/replicate-weight adjustments, which limits generalizability and transparency.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

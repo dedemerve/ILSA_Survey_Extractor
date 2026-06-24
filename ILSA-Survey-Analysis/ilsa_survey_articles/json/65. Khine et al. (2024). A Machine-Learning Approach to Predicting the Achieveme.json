@@ -1,0 +1,119 @@
+{
+  "metadata": {
+    "file_name": "65. Khine et al. (2024). A Machine-Learning Approach to Predicting the Achievement of Australian Students Using School Climate; Learner Characteristics; and Economic, Social, and Cultural Status.pdf",
+    "title": "A Machine-Learning Approach to Predicting the Achievement of Australian Students Using School Climate; Learner Characteristics; and Economic, Social, and Cultural Status",
+    "authors": [
+      "M.S. Khine",
+      "Y. Liu",
+      "V.K. P",
+      "E.A."
+    ],
+    "year": 2024,
+    "doi": "10.3390/educsci14121350",
+    "venue": "Education Sciences (MDPI)",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses OECD PISA 2022 microdata for Australia (15-year-old students) and reports a total of 13,437 students in 743 schools. The analytic approach described in the Methods focuses on splitting the dataset into 70% training and 30% testing using a stratified random split, followed by hyperparameter tuning and model evaluation. The manuscript does not report applying PISA sampling weights (e.g., student/sampling weights) or any replicate-weight procedure (e.g., BRR/jackknife) in the ML training or evaluation. Because the models are standard regression learners (SVM, KNN, Decision Tree, Elastic Net, XGBoost) implemented via R/Python packages, the analysis appears to be conducted without complex-survey weighting; this omission may affect population-representativeness and uncertainty quantification under PISA’s clustered sampling design."
+    },
+    "plausible_values_handling": "average_pv",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The paper does not describe how missing values were handled (e.g., complete-case deletion, imputation, or PV-specific procedures). Given that PISA typically uses plausible values for achievement and includes missingness in questionnaire items, the absence of a documented missing-data strategy is a transparency gap that prevents assessing potential bias and the validity of the reported predictive performance.",
+    "sample_details": {
+      "total_students": 13437,
+      "countries": [
+        {
+          "country_code": "AUS",
+          "n_students": 13437
+        }
+      ],
+      "sample_filtering_criteria": "Used OECD PISA 2022 data for Australia, targeting 15-year-old students’ mathematics achievement (ACHIEVE) and questionnaire-based constructs representing school climate and learner characteristics. The manuscript does not specify additional exclusions beyond the ML train/test split; it reports a stratified random 70/30 split for modeling and evaluation."
+    },
+    "ml_techniques": {
+      "primary": "XGBoost",
+      "all_techniques": [
+        "SVM",
+        "k-NN",
+        "Decision Tree",
+        "Elastic Net",
+        "XGBoost"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "TSINTER",
+        "variable_name": "Student–teacher relationship",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BELONG",
+        "variable_name": "Sense of belonging",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "FEELSAFE",
+        "variable_name": "Feeling safe in school",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "TEACHSUP",
+        "variable_name": "Teacher support",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "DISCLIM",
+        "variable_name": "Disciplinary climate",
+        "category": "school"
+      },
+      {
+        "variable_code": "PERSEVE",
+        "variable_name": "Perseverance",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "COOPER",
+        "variable_name": "Cooperation",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "EMOCON",
+        "variable_name": "Emotional control",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "MATHEFF",
+        "variable_name": "Mathematics self-efficacy",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ESCS",
+        "variable_name": "Socioeconomic status (ESCS)",
+        "category": "socioeconomic"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2022 (Australia) Mathematics achievement (15-year-olds)",
+        "target_variable": "Mathematics achievement score (ACHIEVE)",
+        "top_predictors": [
+          "Mathematics self-efficacy",
+          "Socioeconomic status (ESCS)",
+          "Student–teacher relationship",
+          "Sense of belonging",
+          "Disciplinary climate"
+        ],
+        "performance_metrics": "Best model: XGBoost — MSE: 5227.0, RMSE: 72.776, MAE: 57.67, MAPE: 0.125, R²: 0.424 (Adjusted R²: 0.4310), correlation coefficient: 0.6577. Other models: SVM (R²: 0.403), KNN (R²: 0.396), DT (R²: 0.375), Elastic Net (R²: 0.402). Friedman test: statistic 29.49, p=0.00004922; Nemenyi CD=1.39 indicating significant differences with XGBoost outperforming.",
+        "standardized_conclusion": "Using PISA 2022 (Australia) mathematics achievement the study leveraged mathematics self-efficacy (MATHEFF), socioeconomic status (ESCS), and school-climate/learner-characteristic constructs (e.g., student–teacher relationship, sense of belonging, disciplinary climate) to predict mathematics achievement, finding that XGBoost achieved the lowest prediction errors (MSE 5227.0; RMSE 72.776) and the highest explained variance (R² 0.424) among the five regression models. SHAP was used for interpretation of feature influence, but the paper does not establish causal effects; additionally, the manuscript does not report PISA plausible-value handling or missing-data procedures and does not describe the use of PISA sampling weights. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study uses OECD PISA 2022 microdata for Australia (13,437 students in 743 schools) to predict students’ mathematics achievement (ACHIEVE) from school climate and learner characteristics. Five regression ML models were compared (SVM, KNN, Decision Tree, Elastic Net, and XGBoost) using a stratified 70/30 train/test split and hyperparameter tuning. XGBoost performed best, with MSE=5227.0, RMSE=72.776, MAE=57.67, MAPE=0.125, and R²=0.424 (correlation coefficient=0.6577), outperforming the other models across most metrics; Friedman and Nemenyi tests supported statistically significant performance differences. SHAP interpretation indicated MATHEFF (highest importance, 40.72) and ESCS (18.37) as the strongest predictors, with other constructs contributing more modestly. Key caveats are that the paper does not report missing-data handling or explicit plausible-value procedures and does not describe the use of PISA sampling weights; SHAP is interpretive rather than causal.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

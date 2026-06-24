@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "file_name": "103. Scherer et al. (2024). The potential of international large‑scale assessments for meta‑analyses in education.pdf",
+    "title": "The potential of international large-scale assessments for meta-analyses in education",
+    "authors": [
+      "Ronny Scherer",
+      "Tobias Nilsen",
+      "Fahad Siddiq"
+    ],
+    "year": 2024,
+    "doi": "10.1186/s40536-024-00191-1",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "review_article"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This is a methodological review of how meta-analysts can include international large-scale assessment (ILSA) data in education meta-analyses. The paper does not conduct an original student-level predictive modeling analysis on an ILSA micro-dataset; instead, it synthesizes and illustrates inclusion approaches (separate, indirect Bayesian, one-stage direct, two-stage direct) and reviews existing meta-analyses. Because no analytic sample of students is modeled with ML, there is no application of ILSA complex survey weights (e.g., student/school weights) or replicate-weight variance estimation (e.g., BRR/jackknife) in the sense required by the schema. Any discussion of complex survey design, plausible values, and replicate methods is conceptual guidance for effect-size extraction in primary studies rather than an implemented weighting strategy in this review."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "This is a systematic methodological review and does not estimate student-level cognitive outcomes from ILSA plausible values (PVs) or report an implemented missing-data strategy for PVs. The paper discusses PV-based achievement estimation and complex survey design as considerations for effect-size computation in primary ILSA analyses, but it does not run an empirical PV-based model on an ILSA micro-dataset within the review itself. Therefore, PV handling and missing-data handling are not applicable as implemented analysis steps in this article.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [],
+      "sample_filtering_criteria": "The study is a systematic review of existing education meta-analyses. It does not define an analytic student-level subsample from ILSA micro-data; instead, it applies screening and eligibility criteria to meta-analyses published in English (1995–2020) and restricts inclusion to correlational, observational research questions on gender differences in achievement and the relation between socioeconomic status (SES) and achievement."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "ILSA literature synthesis (systematic review; no single student-level analytic micro-dataset)",
+        "target_variable": "Literature synthesis outcome (not student-level prediction)",
+        "top_predictors": [],
+        "performance_metrics": "Not reported",
+        "standardized_conclusion": "Using ILSA literature synthesis (systematic review; no single student-level analytic micro-dataset) the study leveraged the reported predictors to predict Literature synthesis outcome (not student-level prediction), finding that This methodological review synthesizes four approaches for integrating ILSA data into education meta-analyses: separate meta-analyses, indirect inclusion via Bayesian meta-analysis, one-stage direct inclusion, and two-stage direct inclusion. It also reports the status of ILSA inclusion in existing meta-analyses on gender differences in student achievement (m=8 meta-analyses; 448 primary studies; 6428 effect sizes) and on the relation between SES and student achievement (m=10 meta-analyses; 556 studies; 1631 effect sizes). The review finds that ILSA data are not eligible for all meta-analyses and that inclusion is limited, with few meta-analyses explicitly addressing dependence structures (e.g., multilevel meta-analysis). The paper emphasizes that correct effect-size extraction from complex survey designs (including weighting, clustering, and PV-based achievement estimation) and careful handling of nested meta-analytic data structures are key challenges for meta-analysts. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This methodological review synthesizes four approaches for integrating ILSA data into education meta-analyses: separate meta-analyses, indirect inclusion via Bayesian meta-analysis, one-stage direct inclusion, and two-stage direct inclusion. It also reports the status of ILSA inclusion in existing meta-analyses on gender differences in student achievement (m=8 meta-analyses; 448 primary studies; 6428 effect sizes) and on the relation between SES and student achievement (m=10 meta-analyses; 556 studies; 1631 effect sizes). The review finds that ILSA data are not eligible for all meta-analyses and that inclusion is limited, with few meta-analyses explicitly addressing dependence structures (e.g., multilevel meta-analysis). The paper emphasizes that correct effect-size extraction from complex survey designs (including weighting, clustering, and PV-based achievement estimation) and careful handling of nested meta-analytic data structures are key challenges for meta-analysts.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "This article is a methodological systematic review rather than an empirical ML study on ILSA micro-data. It does not train or evaluate machine-learning models, does not report an analytic student sample with per-country Ns, and does not implement PV-based achievement estimation or missing-data handling as part of an original analysis. Consequently, fields such as total_students, countries, and ML techniques are not applicable in the sense required for an ILSA predictive modeling extraction."
+  }
+}

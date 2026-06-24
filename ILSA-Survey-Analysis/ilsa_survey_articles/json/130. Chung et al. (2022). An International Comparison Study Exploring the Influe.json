@@ -1,0 +1,322 @@
+{
+  "metadata": {
+    "file_name": "130. Chung et al. (2022). An International Comparison Study Exploring the Influential Variables Affecting Students’ Reading Literacy and Life Satisfaction.pdf",
+    "title": "An International Comparison Study Exploring the Influential Variables Affecting Students’ Reading Literacy and Life Satisfaction",
+    "authors": [
+      "Hyewon Chung",
+      "Jung-In Kim",
+      "Eunjin (EJ) Jung",
+      "Soyoung Park"
+    ],
+    "year": 2022,
+    "doi": "10.17583/ijep.8924",
+    "venue": "IJEP – International Journal of Educational Psychology",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": "SENWT (senate weight)",
+      "weight_fields_interpretation": "The study uses PISA 2018 microdata for U.S. students (164 schools) and South Korean students (188 schools). For the multilevel modeling stage, the authors state that they used the country weight factor SENWT (senate weight) to ensure each country contributed equally to the multilevel analysis. The manuscript does not report applying PISA student sampling weights (e.g., W_FSTUWT/TOTWGT) to the random forest prediction/variable-selection step. Because the ML component is a random forest trained on student-level data, the paper does not describe weight-aware ML estimation; thus, weighting is only explicitly discussed for the multilevel inferential stage via SENWT."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "multiple_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 11327,
+      "countries": [
+        {
+          "country_code": "USA",
+          "n_students": 4677
+        },
+        {
+          "country_code": "KOR",
+          "n_students": 6650
+        }
+      ],
+      "sample_filtering_criteria": "Used PISA 2018 student samples for the U.S. and South Korea (15-year-olds). The dependent reading literacy outcome is based on the PISA 2018 reading literacy plausible values (10 PVs). For missing data, the authors applied multiple imputation with 10 replications (mice) before training the random forest and deriving key variables; then multilevel modeling was run on the selected key predictors, excluding some highly correlated variables prior to multilevel estimation."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Random Forest"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "gender",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "ESCS",
+        "variable_name": "Socioeconomic status (ESCS)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "father_isei",
+        "variable_name": "Father ISEI",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "family_wealth",
+        "variable_name": "Family wealth",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "grade_repetition",
+        "variable_name": "Grade repetition",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "joy_liking_reading",
+        "variable_name": "Joy/liking reading",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "expected_isced_5a_6_completion",
+        "variable_name": "Expected ISCED 5A/6 completion",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "expected_occupational_status",
+        "variable_name": "Expected occupational status",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "reading_self_concept_competence",
+        "variable_name": "Reading self-concept: competence",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "reading_self_concept_difficulty",
+        "variable_name": "Reading self-concept: difficulty",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "perceived_pisa_test_difficulty",
+        "variable_name": "Perceived PISA test difficulty",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "effort_put_into_test",
+        "variable_name": "Effort put into test",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "effort_invested",
+        "variable_name": "Effort invested",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "feeling_afraid",
+        "variable_name": "Feeling afraid",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "feeling_scared",
+        "variable_name": "Feeling scared",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "feeling_lively",
+        "variable_name": "Feeling lively",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "feeling_sad",
+        "variable_name": "Feeling sad",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "feeling_proud",
+        "variable_name": "Feeling proud",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "feeling_miserable",
+        "variable_name": "Feeling miserable",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "positive_affect",
+        "variable_name": "Positive affect",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "mastery_goal_orientation",
+        "variable_name": "Mastery goal orientation",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "general_fear_of_failure",
+        "variable_name": "General fear of failure",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "meaning_in_life",
+        "variable_name": "Meaning in life",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "Resilience",
+        "variable_name": "Resilience",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "fixed_mindset",
+        "variable_name": "Fixed mindset",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "interest_in_ict",
+        "variable_name": "Interest in ICT",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ict_resources",
+        "variable_name": "ICT resources",
+        "category": "ict"
+      },
+      {
+        "variable_code": "perceived_ict_competence",
+        "variable_name": "Perceived ICT competence",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ict_autonomy",
+        "variable_name": "ICT autonomy",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ict_use_for_schoolwork",
+        "variable_name": "ICT use for schoolwork",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ict_available_at_home",
+        "variable_name": "ICT available at home",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ict_available_at_school",
+        "variable_name": "ICT available at school",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ict_usage_at_school",
+        "variable_name": "ICT usage at school",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ict_use_for_leisure",
+        "variable_name": "ICT use for leisure",
+        "category": "ict"
+      },
+      {
+        "variable_code": "parental_emotional_support",
+        "variable_name": "Parental emotional support",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "teacher_directed_instruction",
+        "variable_name": "Teacher-directed instruction",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "teacher_support_in_lessons",
+        "variable_name": "Teacher support in lessons",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "perceived_feedback",
+        "variable_name": "Perceived feedback",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "disciplinary_climate",
+        "variable_name": "Disciplinary climate",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "long_text_use_in_class",
+        "variable_name": "Long-text use in class",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "sense_of_belonging_to_school",
+        "variable_name": "Sense of belonging to school",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "perceived_cooperation_at_school",
+        "variable_name": "Perceived cooperation at school",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "attitude_toward_learning_activities",
+        "variable_name": "Attitude toward learning activities",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "text_length_in_lessons_teacher_related",
+        "variable_name": "Text length in lessons (teacher-related)",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "disruptive_student_behavior",
+        "variable_name": "Disruptive student behavior",
+        "category": "school"
+      },
+      {
+        "variable_code": "computers_per_student",
+        "variable_name": "Computers per student",
+        "category": "school"
+      },
+      {
+        "variable_code": "share_disadvantaged_homes",
+        "variable_name": "Share disadvantaged homes",
+        "category": "school"
+      },
+      {
+        "variable_code": "UNDREM",
+        "variable_name": "Metacognition (understanding, remembering)",
+        "category": "student_behavior"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 Reading literacy (10 plausible values), U.S. and South Korea (15-year-olds)",
+        "target_variable": "Reading literacy (Plausible Values)",
+        "top_predictors": [
+          "Socioeconomic status (ESCS)",
+          "Grade repetition",
+          "Metacognition: assess credibility",
+          "Interest in ICT",
+          "Long-text use in class"
+        ],
+        "performance_metrics": "Random forest variable selection followed by multilevel modeling; fixed-effect coefficients reported (no predictive accuracy metrics).",
+        "standardized_conclusion": "Using PISA 2018 reading literacy the study leveraged socioeconomic status (ESCS), grade repetition, metacognitive strategies, ICT interest, and long-text use in class to predict reading literacy, finding that ESCS and multiple metacognitive/self-concept variables were positively associated with reading literacy in both countries, while the effect of long-text use differed by country (positive in the U.S., negative in South Korea). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2018 Life satisfaction scale (0–10), U.S. and South Korea (15-year-olds)",
+        "target_variable": "Life satisfaction (0–10 scale)",
+        "top_predictors": [
+          "Gender",
+          "Socioeconomic status (ESCS)",
+          "General fear of failure",
+          "Parental emotional support",
+          "Perceived cooperation at school"
+        ],
+        "performance_metrics": "Random forest variable selection followed by multilevel modeling; fixed-effect coefficients reported (no predictive accuracy metrics).",
+        "standardized_conclusion": "Using PISA 2018 life satisfaction the study leveraged gender, ESCS, general fear of failure, parental emotional support, and perceived cooperation at school to predict life satisfaction, finding that fear of failure was negatively associated with life satisfaction in both countries, while ESCS was positively associated with life satisfaction only in the U.S. and perceived cooperation at school was positively associated only for South Korea. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study applied a Random Forest approach to PISA 2018 (U.S. n=4,677; South Korea n=6,650) to identify key predictors among 305 variables for reading literacy and life satisfaction, then tested the selected predictors using multilevel modeling to account for students nested within schools. For reading literacy, ESCS and several metacognitive/self-concept variables were positively associated with reading literacy in both countries, while the effect of long-text use in class differed: positive for U.S. students and negative for Korean students. For life satisfaction, general fear of failure showed a negative association in both countries; ESCS was positively related to life satisfaction in the U.S. only, whereas Korean students’ negative feelings (e.g., afraid/scared) and ICT interest were negatively related. The paper uses multiple imputation (10 replications) and PISA reading plausible values (10 PVs), but it does not report ML predictive performance metrics (e.g., accuracy/AUC) and only explicitly discusses SENWT for multilevel equal-country contribution rather than full PISA sampling-weight application.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

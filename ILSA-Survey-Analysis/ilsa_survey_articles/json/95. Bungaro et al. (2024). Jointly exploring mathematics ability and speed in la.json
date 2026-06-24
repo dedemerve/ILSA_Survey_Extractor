@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "file_name": "95. Bungaro et al. (2024). Jointly exploring mathematics ability and speed in large‑scale computer‑based testing.pdf",
+    "title": "Jointly exploring mathematics ability and speed in large-scale computer-based testing",
+    "authors": [
+      "L. Bungaro",
+      "Mariagiulia Matteucci"
+    ],
+    "year": 2024,
+    "doi": "10.1007/s10260-024-00762-0",
+    "venue": null,
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses INVALSI grade 10 mathematics data from the 2017–2018 school year, analyzing the INVALSI random sample (about 41,000 units) drawn via a two-stage design with stratification by Italian geographical region and school track at stage 1, and classes at stage 2. The manuscript describes the sampling procedure but does not report the use of complex survey weights (e.g., W_FSTUWT/TOTWGT) or replicate-weight methods (e.g., BRR/jackknife) in the estimation of the Bayesian joint model and the subsequent bivariate multilevel regression. Because the analysis is based on hierarchical Bayesian measurement modeling and multilevel regression (MLwiN), the paper does not provide a weight variable name or an explicit statement that sampling weights were applied. Therefore, weighting is treated as not reported for the analytic models, and the results should be interpreted as conditional on the analyzed sample rather than explicitly population-representative estimates."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "This paper does not use ILSA plausible values (PVs) for achievement as the dependent variable. Instead, it estimates latent mathematics ability and latent test-taking speed jointly from response accuracy (binary item responses) and response times using a Bayesian hierarchical joint model (LNIRT), and then uses the resulting Rasch mathematics ability and speed estimates as outcomes in a bivariate multilevel regression. Because the manuscript does not describe any missing-data procedure (e.g., listwise/pairwise deletion or imputation) for the analytic sample, missing-data handling is not reported. This is a transparency gap for a large-scale dataset where item/RT nonresponse can occur.",
+    "sample_details": {
+      "total_students": 35970,
+      "countries": [
+        {
+          "country_code": "ITA",
+          "n_students": 35970
+        }
+      ],
+      "sample_filtering_criteria": "The analysis focuses on INVALSI mathematics grade 10 students assessed at the end of the 2017–2018 school year in Italy. The authors analyze the INVALSI random sample (about 41,000 units) drawn through a two-stage stratified procedure (geographical region and school track at stage 1; classes at stage 2), and the joint modeling is based on the available item response accuracy and item-level response times across the full mathematics item set. The manuscript reports that the residual analysis issue with log-normality violation is driven by the large number of test-takers (n=35,970), which is the effective analytic sample size used for the reported person-parameter estimation and subsequent multilevel modeling. No additional exclusion rules (e.g., missing ESCS/anxiety, RT outlier trimming, or grade/school-type restrictions) are explicitly detailed beyond the use of the INVALSI grade 10 assessment sample."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "gender",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "immigrant_background",
+        "variable_name": "Immigrant background",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "student_career",
+        "variable_name": "Grade repeating status",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "ESCS",
+        "variable_name": "Socioeconomic status (ESCS)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "final_mark_first_cycle",
+        "variable_name": "Prior achievement (final mark)",
+        "category": "prior_achievement"
+      },
+      {
+        "variable_code": "math_test_anxiety",
+        "variable_name": "Math test anxiety",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "class_percent_low_prior_ach",
+        "variable_name": "Class % low prior achievement",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "class_percent_immigrant",
+        "variable_name": "Class % immigrant background",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "class_average_ESCS",
+        "variable_name": "Class average ESCS",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "class_percent_grade_repeating",
+        "variable_name": "Class % grade repeating",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "class_average_math_test_anxiety",
+        "variable_name": "Class average math anxiety",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "school_track",
+        "variable_name": "School track",
+        "category": "school"
+      },
+      {
+        "variable_code": "geographical_area",
+        "variable_name": "Geographical area",
+        "category": "school"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "INVALSI 2017–2018 Grade 10 Mathematics (Italy)",
+        "target_variable": "Mathematics ability (latent ability)",
+        "top_predictors": [
+          "Prior achievement (final mark)",
+          "Math test anxiety",
+          "Gender",
+          "Socioeconomic status (ESCS)",
+          "Class average ESCS"
+        ],
+        "performance_metrics": "Bayesian joint model: person-level correlation between ability and speed = −0.574 (p<0.001). Multilevel bivariate regression (final model M3): fixed effects estimates for ability include Math test anxiety (linear term −0.176, p<0.001; quadratic −0.007, p=0.046; cubic 0.007, p=0.010), prior achievement (low prior achievement vs average/high: −0.442, p<0.001), gender (male vs female: 0.111, p<0.001), and class average ESCS (0.226, p<0.001).",
+        "standardized_conclusion": "Using INVALSI 2017–2018 Grade 10 Mathematics the study leveraged prior achievement, math test anxiety, gender, ESCS, and class average ESCS to explain latent mathematics ability, finding that ability is negatively associated with speed and decreases substantially at higher levels of test anxiety (non-linear pattern), with lower prior achievement linked to lower ability and higher class ESCS linked to higher ability. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "INVALSI 2017–2018 Grade 10 Mathematics (Italy)",
+        "target_variable": "Test-taking speed (latent speed)",
+        "top_predictors": [
+          "Prior achievement (final mark)",
+          "Math test anxiety",
+          "Gender",
+          "Immigrant background",
+          "Class % low prior achievement"
+        ],
+        "performance_metrics": "Bayesian joint model: person-level correlation between ability and speed = −0.574 (p<0.001). Multilevel bivariate regression (final model M3): fixed effects for speed include Math test anxiety (linear −0.070, p<0.001; quadratic 0.073, p<0.001; cubic 0.011, p<0.001), prior achievement (low prior achievement vs average/high: 0.253, p<0.001), gender (male vs female: 0.091, p<0.001), immigrant background (first-generation vs native: −0.058, p=0.002; second-generation vs native: 0.006, p=0.747), and class % low prior achievement (−0.006, p<0.001).",
+        "standardized_conclusion": "Using INVALSI 2017–2018 Grade 10 Mathematics the study leveraged prior achievement, math test anxiety, gender, immigrant background, and class composition to explain latent test-taking speed, finding that speed is negatively correlated with ability (higher ability tends to be slower) and that test anxiety shows a non-linear relationship with speed (speed decreases from low to intermediate anxiety, then increases sharply at higher anxiety), while students with low prior achievement work faster and classes with higher shares of low prior achievement are associated with lower speed. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzes INVALSI grade 10 mathematics data from Italy (2017–2018) and jointly estimates latent mathematics ability and latent test-taking speed from response accuracy and response times using a Bayesian hierarchical joint model (LNIRT). It finds a significant negative between-person association between ability and speed (correlation at the person level = −0.574; and in the multilevel empty model, student-level correlation = −0.484 and class-level correlation = −0.779). In the final bivariate multilevel regression model (M3), prior achievement and math test anxiety are key predictors of both ability and speed, with test anxiety showing a non-linear pattern: ability peaks at very low anxiety and declines toward very high anxiety, while speed decreases from low to intermediate anxiety and then increases sharply at higher anxiety. Contextual effects are also significant: class average ESCS predicts higher ability and class composition variables relate to speed. The paper does not report any missing-data handling strategy and does not use PVs; results should be interpreted as conditional on the analyzed INVALSI sample and the modeling assumptions (e.g., log-normal RT structure).",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": null
+  }
+}

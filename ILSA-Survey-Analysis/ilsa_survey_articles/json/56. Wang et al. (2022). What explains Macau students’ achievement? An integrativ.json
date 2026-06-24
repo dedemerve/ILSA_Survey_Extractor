@@ -1,0 +1,239 @@
+{
+  "metadata": {
+    "file_name": "56. Wang et al. (2022). What explains Macau students’ achievement? An integrative perspective using a machine learning approach.pdf",
+    "title": "What explains Macau students’ achievement? An integrative perspective using a machine learning approach",
+    "authors": [
+      "Y. Wang",
+      "Ronnel King",
+      "Shing on Leung"
+    ],
+    "year": 2023,
+    "doi": "10.1080/02103702.2022.2149120",
+    "venue": "Journal for the Study of Education and Development / Infancia y Aprendizaje",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses the Macau 2018 PISA dataset, focusing on the reading domain and restricting the analytic sample to students who used Chinese as the test language (n = 2,979). The authors report that sampling weights were considered when running the Random Forest algorithm, but they do not provide the specific weight variable name or clarify whether weights were actually applied in the final predictive model. For missing data, they used MCMC imputation (mice package) and then retained all observations. Because the manuscript does not clearly document the final weighting implementation for the ML training/evaluation, the analysis is treated as effectively unweighted for the purposes of this extraction; the HLM supplementary analysis is described as accounting for school-level clustering."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "multiple_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 2979,
+      "countries": [
+        {
+          "country_code": "MAC",
+          "n_students": 2979
+        }
+      ],
+      "sample_filtering_criteria": "Used Macau 2018 PISA microdata (3,775 students in 45 schools) and limited the sample to participants who used Chinese as the language of the test (79.0%); Portuguese-language test-takers were removed due to very small numbers (n = 34, 0.9%). The dependent variable was reading achievement operationalized using the 10 plausible values in reading, and the authors state that MCMC imputation was applied so that all observations were used after imputation."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Random Forest"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ST004Q01TA",
+        "variable_name": "Grade repetition",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "ST004Q01TA",
+        "variable_name": "grade level",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "ESCS",
+        "variable_name": "Socioeconomic status (ESCS)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ST004Q01TA",
+        "variable_name": "gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "immigrant_status",
+        "variable_name": "Immigrant status",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "early_childhood_education",
+        "variable_name": "Early childhood education",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "student_age",
+        "variable_name": "age",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "discriminating_school_climate",
+        "variable_name": "Discriminating school climate",
+        "category": "school"
+      },
+      {
+        "variable_code": "parents_emotional_support",
+        "variable_name": "Parents’ emotional support",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "disciplinary_climate",
+        "variable_name": "Disciplinary climate",
+        "category": "school"
+      },
+      {
+        "variable_code": "being_bullied_experience",
+        "variable_name": "Experience of being bullied",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "teachers_stimulation_of_reading",
+        "variable_name": "Teachers’ stimulation of reading",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "sense_of_school_belonging",
+        "variable_name": "Sense of school belonging",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "competitiveness",
+        "variable_name": "Competitiveness",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "teachers_feedback",
+        "variable_name": "Teachers’ feedback",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "teachers_interest",
+        "variable_name": "Teachers’ interest",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "cooperation_at_school",
+        "variable_name": "Cooperation at school",
+        "category": "school"
+      },
+      {
+        "variable_code": "adaptation_of_instruction",
+        "variable_name": "Adaptation of instruction",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "teacher_directed_instruction",
+        "variable_name": "Teacher-directed instruction",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "teacher_support_in_test_language_lessons",
+        "variable_name": "Teacher support in test language",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "home_educational_resources",
+        "variable_name": "Home educational resources",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "ict_resources_available_at_home",
+        "variable_name": "ICT resources available at home",
+        "category": "ict"
+      },
+      {
+        "variable_code": "learning_time",
+        "variable_name": "Learning time",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "UNDREM",
+        "variable_name": "Metacognition (understanding, remembering)",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "enjoyment_of_reading",
+        "variable_name": "Enjoyment of reading",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "self_concept_reading_competence",
+        "variable_name": "Self-concept: reading competence",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "perceived_pisa_difficulty",
+        "variable_name": "Perceived PISA difficulty",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "effort_in_pisa",
+        "variable_name": "Effort in PISA",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "mastery_goal_orientation",
+        "variable_name": "Mastery goal orientation",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "expected_occupational_status",
+        "variable_name": "Expected occupational status",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "fear_of_failure",
+        "variable_name": "Fear of failure",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "meaning_in_life",
+        "variable_name": "Meaning in life",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "attitude_towards_school",
+        "variable_name": "Attitude towards school",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "fixed_mindset",
+        "variable_name": "Fixed mindset",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "positive_affect",
+        "variable_name": "Positive affect",
+        "category": "student_attitude"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 Reading (Macau; Chinese test-language subgroup)",
+        "target_variable": "Reading achievement (Plausible Values)",
+        "top_predictors": [
+          "Metacognition",
+          "Enjoyment of reading",
+          "Self-concept: reading competence",
+          "Grade repetition",
+          "Student grade level"
+        ],
+        "performance_metrics": "Random Forest regression — RMSE: 66.28 (full 41-variable model), R²: 0.44; final top-20 model — RMSE: 66.17, R²: 0.43; 10-fold cross-validation with five repeats; 1,000 trees; predictive performance reported as 4,366.32 (RMSE scale).",
+        "standardized_conclusion": "Using PISA 2018 Reading data for Macau students (restricted to Chinese test-language participants), the study leveraged metacognition, enjoyment of reading, reading self-concept, and demographic factors (grade repetition and grade level) to predict reading achievement (Plausible Values), finding that personal factors—especially metacognitive strategies and reading enjoyment—were the most important predictors, while school/family contexts showed lower predictive power. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzed Macau PISA 2018 reading achievement using 10 plausible values and trained a Random Forest regression model on 41 questionnaire-derived predictors, restricting the sample to students who took the test in Chinese (n = 2,979). Missing data were handled via MCMC multiple imputation (mice), and the authors used 10-fold cross-validation with five repeats to select the strongest predictors. The full Random Forest model achieved RMSE = 66.28 and R² = 0.44, while the final model using the top 20 predictors achieved RMSE = 66.17 and R² = 0.43. Variable-importance rankings indicated that personal factors (metacognitive strategies such as assessing credibility and summarizing, reading enjoyment, and reading self-concept) were the strongest predictors, with grade repetition and grade level also among the most relevant demographic predictors. The supplementary HLM analysis supported the Random Forest findings, but the study is cross-sectional, and the manuscript does not fully specify how sampling weights were applied in the final ML training/evaluation.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

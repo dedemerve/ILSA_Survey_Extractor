@@ -1,0 +1,272 @@
+{
+  "metadata": {
+    "file_name": "129. Campos & Scherer. (2024). Digital gender gaps in Students’ knowledge, attitudes and skills: an integrative data analysis across 32 Countries.pdf",
+    "title": "Digital gender gaps in Students’ knowledge, attitudes and skills: an integrative data analysis across 32 Countries",
+    "authors": [
+      "Diego G. Campos",
+      "Ronny Scherer"
+    ],
+    "year": 2024,
+    "doi": "10.1007/s10639-023-12272-9",
+    "venue": "Education and Information Technologies",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": true,
+      "replicate_weights_used": true,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses ICILS 2013 and ICILS 2018 student microdata (grade 8) and explicitly models the complex sampling survey structure in the stage-1 multigroup SEMs. The authors state that the models incorporate sampling weights and jackknife/balanced repeated replication (BRR) procedures, together with plausible values. Missing data in the effect-size generation step were handled via two-level predictive mean matching with passive imputation, producing multiple imputed datasets per plausible value and combining parameters using Rubin’s rules. The paper does not report a specific weight variable name (e.g., W_FSTUWT), but it clearly indicates that complex survey weights and replicate-weight methods were applied in the primary estimation stage."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "multiple_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 105981,
+      "countries": [
+        {
+          "country_code": "TUR",
+          "n_students": null
+        },
+        {
+          "country_code": "THA",
+          "n_students": null
+        },
+        {
+          "country_code": "RUS",
+          "n_students": null
+        },
+        {
+          "country_code": "CHE",
+          "n_students": null
+        },
+        {
+          "country_code": "CZE",
+          "n_students": null
+        },
+        {
+          "country_code": "POL",
+          "n_students": null
+        },
+        {
+          "country_code": "SVK",
+          "n_students": null
+        },
+        {
+          "country_code": "DEU",
+          "n_students": null
+        },
+        {
+          "country_code": "LTU",
+          "n_students": null
+        },
+        {
+          "country_code": "DNK",
+          "n_students": null
+        },
+        {
+          "country_code": "HRV",
+          "n_students": null
+        },
+        {
+          "country_code": "NLD",
+          "n_students": null
+        },
+        {
+          "country_code": "BAA",
+          "n_students": null
+        },
+        {
+          "country_code": "CHL",
+          "n_students": null
+        },
+        {
+          "country_code": "HKG",
+          "n_students": null
+        },
+        {
+          "country_code": "AUS",
+          "n_students": null
+        },
+        {
+          "country_code": "COT",
+          "n_students": null
+        },
+        {
+          "country_code": "NOR",
+          "n_students": null
+        },
+        {
+          "country_code": "NAL",
+          "n_students": null
+        },
+        {
+          "country_code": "SVN",
+          "n_students": null
+        },
+        {
+          "country_code": "KOR",
+          "n_students": null
+        },
+        {
+          "country_code": "NWD",
+          "n_students": null
+        },
+        {
+          "country_code": "PRT",
+          "n_students": null
+        },
+        {
+          "country_code": "URY",
+          "n_students": null
+        },
+        {
+          "country_code": "KAZ",
+          "n_students": null
+        },
+        {
+          "country_code": "FRA",
+          "n_students": null
+        },
+        {
+          "country_code": "LUX",
+          "n_students": null
+        },
+        {
+          "country_code": "USA",
+          "n_students": null
+        },
+        {
+          "country_code": "MSW",
+          "n_students": null
+        },
+        {
+          "country_code": "ITA",
+          "n_students": null
+        },
+        {
+          "country_code": "FIN",
+          "n_students": null
+        },
+        {
+          "country_code": "CZE",
+          "n_students": null
+        },
+        {
+          "country_code": "HKG",
+          "n_students": null
+        },
+        {
+          "country_code": "AUS",
+          "n_students": null
+        },
+        {
+          "country_code": "NLD",
+          "n_students": null
+        },
+        {
+          "country_code": "SVN",
+          "n_students": null
+        },
+        {
+          "country_code": "COT",
+          "n_students": null
+        },
+        {
+          "country_code": "NOR",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "The analytic sample consists of ICILS 2013 and ICILS 2018 grade-8 students from 32 participating countries (effective sample size 105,981 students). The study uses the full available country samples from the two ICILS cycles and reports that no countries or students were excluded from the final analyses. ICILS itself follows a stratified two-stage cluster sample design (schools selected with probability proportional to size; 20 students randomly sampled per selected school), and the authors incorporate this design in the stage-1 estimation. For the effect-size generation, missing data were imputed within each country independently using two-level predictive mean matching with passive imputation, and analyses were conducted across 20 imputations per plausible value (100 complete datasets per cycle), with parameters combined using Rubin’s rules."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "gender",
+        "variable_name": "Gender (girls vs boys)",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "ICT_availability_index",
+        "variable_name": "ICT availability at home",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ICT_affect",
+        "variable_name": "ICT affect (interest/enjoyment)",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ICT_belief_positive",
+        "variable_name": "ICT beliefs: positive attitudes",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ICT_belief_negative",
+        "variable_name": "ICT beliefs: negative attitudes",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ICT_future_expectations",
+        "variable_name": "Future expectations for ICT",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ICT_self_efficacy_basic",
+        "variable_name": "ICT self-efficacy: basic",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ICT_self_efficacy_advanced",
+        "variable_name": "ICT self-efficacy: advanced",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "HDI",
+        "variable_name": "Socioeconomic development (HDI)",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "GII",
+        "variable_name": "Gender inequality (GII)",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "global_innovation_index",
+        "variable_name": "Country innovation potential",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "ict_use_gender_gaps",
+        "variable_name": "Gender gaps in ICT use",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "world_region",
+        "variable_name": "World region (UNESCO)",
+        "category": "system_level"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "ICILS 2013 & 2018 Grade 8 Computer and Information Literacy (CIL) (Plausible Values)",
+        "target_variable": "Digital skills (CIL) via ICT affect mediation",
+        "top_predictors": [
+          "Gender (girls vs boys)",
+          "ICT availability at home",
+          "ICT affect (interest/enjoyment)"
+        ],
+        "performance_metrics": "Multivariate random-effects meta-analysis: direct effect c′ps = -0.29 (95% CI [-0.35, -0.23]); indirect effect abps = 0.04 (95% CI [0.03, 0.06]).",
+        "standardized_conclusion": "Using ICILS 2013 & 2018 Grade 8 CIL the study leveraged Gender, ICT availability at home, and ICT affect to estimate direct and indirect effects on digital skills, finding that girls outperformed boys (negative direct effect) and that ICT affect partially mediated the gender gap (positive indirect effect). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This integrative data analysis synthesizes ICILS 2013 and ICILS 2018 grade-8 student data across 32 countries (N=105,981) to study how attitudes toward technology mediate gender gaps in digital skills. The stage-1 estimation uses multigroup SEMs with complex survey sampling weights, jackknife/BRR replicate procedures, and plausible values; missing data were imputed via two-level predictive mean matching with passive imputation and combined using Rubin’s rules. Across models, girls outperform boys in digital skills with moderate direct effects (e.g., CIL via ICT affect: c′ps = -0.29), while mediation is strongest for ICT affect and partially for positive ICT beliefs; mediation via self-efficacy is near zero. Heterogeneity analyses show that country socioeconomic development and gender inequality moderate the gender gap, and the direction can reverse for computational thinking (CT) versus computer and information literacy (CIL). No machine-learning predictive algorithms were evaluated; results are based on SEM-based effect sizes and meta-analytic synthesis rather than ML model training.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "The study does not train or evaluate machine-learning predictive models. Instead, it generates direct and indirect effects using multigroup structural equation models with complex survey design and plausible values, then synthesizes effect sizes via random-/mixed-effects meta-analysis and meta-regression. Therefore, ML technique fields are intentionally empty and the research design is classified as exploratory (integrative synthesis of effect sizes rather than ML prediction)."
+  }
+}

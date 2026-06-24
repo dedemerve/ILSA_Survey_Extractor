@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "file_name": "80. Peters et al. (2025). Text-Based Approaches to Item Difficulty Modeling in Large-Scale Assessments: A Systematic Review.pdf",
+    "title": "Text-Based Approaches to Item Difficulty Modeling in Large-Scale Assessments: A Systematic Review",
+    "authors": [],
+    "year": 2025,
+    "doi": null,
+    "venue": null,
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "review_article"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This paper is a systematic review that synthesizes 37 articles (46 studies) on automated item difficulty prediction using text-based machine learning and language models. It does not analyze a student-level ILSA micro-dataset, and therefore does not define a sampling frame, student-level analytic sample, or complex survey design. As a result, there are no survey weights or replicate-weight procedures (e.g., BRR/jackknife) to apply or report. The review’s “data preparation” consists of literature screening, coding, and aggregation of reported study characteristics and performance metrics across heterogeneous datasets."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "This is a systematic review of text-based item difficulty modeling studies; it does not conduct original analyses on ILSA student achievement outcomes that would require plausible values (PVs). The reviewed studies predict item difficulty parameters (e.g., CTT p-values, transformed p-values, IRT b parameters) from item text and metadata, and the present paper aggregates reported performance across studies rather than imputing missing PVs. Missing-data handling is therefore not applicable to the review’s own methodology, and the manuscript does not specify a missing-data protocol for PVs or student-level records.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [],
+      "sample_filtering_criteria": "Not applicable: the study is a systematic review. It screened literature through May 2025 (initial screening: 93 articles; exclusions: 17 then 52; forward hand-search added 19 then 13), and coded 37 articles for in-depth analysis, treating each dataset/assessment difficulty-prediction task as a separate study (46 studies total)."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "ILSA literature synthesis (systematic review; no single student-level analytic micro-dataset)",
+        "target_variable": "item difficulty",
+        "top_predictors": [],
+        "performance_metrics": "Not reported",
+        "standardized_conclusion": "Using ILSA literature synthesis (systematic review; no single student-level analytic micro-dataset) the study leveraged the reported predictors to predict item difficulty, finding that This systematic review synthesizes 37 articles (46 studies) on text-based item difficulty prediction in large-scale assessment contexts. Across the reviewed literature, item difficulty was most often modeled as continuous outcomes using CTT p-values or transformed p-values, and less often using IRT b parameters or categorical difficulty levels. The review reports benchmark ranges for model performance across heterogeneous datasets and metrics: RMSE as low as 0.165 and Pearson correlation as high as 0.87, with exact accuracy up to 0.806 for classification settings. The review also finds that richer inputs (e.g., item stem plus answer and distractors) and larger training sets generally improve performance, while hand-crafted linguistic features remain competitive despite the rise of transformer-based language models. Methodological caveats include heterogeneity of datasets and evaluation criteria, overrepresentation of BEA/USMLE shared-task studies, and under-reporting of data preprocessing in many primary studies. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This systematic review synthesizes 37 articles (46 studies) on text-based item difficulty prediction in large-scale assessment contexts. Across the reviewed literature, item difficulty was most often modeled as continuous outcomes using CTT p-values or transformed p-values, and less often using IRT b parameters or categorical difficulty levels. The review reports benchmark ranges for model performance across heterogeneous datasets and metrics: RMSE as low as 0.165 and Pearson correlation as high as 0.87, with exact accuracy up to 0.806 for classification settings. The review also finds that richer inputs (e.g., item stem plus answer and distractors) and larger training sets generally improve performance, while hand-crafted linguistic features remain competitive despite the rise of transformer-based language models. Methodological caveats include heterogeneity of datasets and evaluation criteria, overrepresentation of BEA/USMLE shared-task studies, and under-reporting of data preprocessing in many primary studies.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "The record is a systematic review rather than an empirical large-scale assessment analysis. It does not report an original student sample, country-level student counts, or a fitted ML model trained on a single dataset; instead, it codes and aggregates results from previously published studies. Consequently, fields such as total_students, countries/n_students, PV handling, missing-data handling for an analytic dataset, and ML technique evaluation are not applicable to the review itself."
+  }
+}

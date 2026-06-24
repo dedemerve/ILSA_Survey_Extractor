@@ -1,0 +1,498 @@
+{
+  "metadata": {
+    "file_name": "5. Song & Cutumisu. (2024). Using machine learning to predict student science achievement based on science curriculum type in TIMSS 2019.pdf",
+    "title": "Using machine learning to predict student science achievement based on science curriculum type in TIMSS 2019",
+    "authors": [
+      "Y. Song",
+      "Maria Cutumisu"
+    ],
+    "year": 2024,
+    "doi": "10.1080/09500693.2024.2359099",
+    "venue": "International Journal of Science Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": true,
+      "replicate_weights_used": null,
+      "weight_variable_name": "SCIWGT",
+      "weight_fields_interpretation": "The study uses TIMSS 2019 Grade 8 Science microdata and extracts student, teacher, and curriculum variables using the IEA IDB Analyzer and SPSS. The analytic sample is restricted to 44 countries/regions after data cleaning, yielding 309,511 remaining entries. For weighting, the authors explicitly use the science teacher weight (SCIWGT) because the key process-dimension variables (e.g., instructional clarity, instructional strategies, homework and experiment-related items) are reported by science teachers, and the focus is on curriculum effects from an instructional perspective. The manuscript does not report the use of replicate weights (e.g., BRR/jackknife), and it does not state that student weights were applied; instead, teacher weights are used to reduce sampling bias for teacher-reported covariates."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "multiple_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 309511,
+      "countries": [
+        {
+          "country_code": "AFG",
+          "n_students": null
+        },
+        {
+          "country_code": "ALB",
+          "n_students": null
+        },
+        {
+          "country_code": "DZA",
+          "n_students": null
+        },
+        {
+          "country_code": "ARG",
+          "n_students": null
+        },
+        {
+          "country_code": "AUS",
+          "n_students": null
+        },
+        {
+          "country_code": "AUT",
+          "n_students": null
+        },
+        {
+          "country_code": "AZE",
+          "n_students": null
+        },
+        {
+          "country_code": "BHR",
+          "n_students": null
+        },
+        {
+          "country_code": "BEL",
+          "n_students": null
+        },
+        {
+          "country_code": "BWA",
+          "n_students": null
+        },
+        {
+          "country_code": "BRA",
+          "n_students": null
+        },
+        {
+          "country_code": "BGR",
+          "n_students": null
+        },
+        {
+          "country_code": "CAN",
+          "n_students": null
+        },
+        {
+          "country_code": "CHL",
+          "n_students": null
+        },
+        {
+          "country_code": "CHN",
+          "n_students": null
+        },
+        {
+          "country_code": "COL",
+          "n_students": null
+        },
+        {
+          "country_code": "CRI",
+          "n_students": null
+        },
+        {
+          "country_code": "CZE",
+          "n_students": null
+        },
+        {
+          "country_code": "DNK",
+          "n_students": null
+        },
+        {
+          "country_code": "DOM",
+          "n_students": null
+        },
+        {
+          "country_code": "EGY",
+          "n_students": null
+        },
+        {
+          "country_code": "EST",
+          "n_students": null
+        },
+        {
+          "country_code": "FIN",
+          "n_students": null
+        },
+        {
+          "country_code": "FRA",
+          "n_students": null
+        },
+        {
+          "country_code": "DEU",
+          "n_students": null
+        },
+        {
+          "country_code": "GHA",
+          "n_students": null
+        },
+        {
+          "country_code": "GRC",
+          "n_students": null
+        },
+        {
+          "country_code": "HKG",
+          "n_students": null
+        },
+        {
+          "country_code": "HUN",
+          "n_students": null
+        },
+        {
+          "country_code": "ISL",
+          "n_students": null
+        },
+        {
+          "country_code": "IND",
+          "n_students": null
+        },
+        {
+          "country_code": "IDN",
+          "n_students": null
+        },
+        {
+          "country_code": "IRN",
+          "n_students": null
+        },
+        {
+          "country_code": "IRL",
+          "n_students": null
+        },
+        {
+          "country_code": "ISR",
+          "n_students": null
+        },
+        {
+          "country_code": "ITA",
+          "n_students": null
+        },
+        {
+          "country_code": "JPN",
+          "n_students": null
+        },
+        {
+          "country_code": "JOR",
+          "n_students": null
+        },
+        {
+          "country_code": "KOR",
+          "n_students": null
+        },
+        {
+          "country_code": "KWT",
+          "n_students": null
+        },
+        {
+          "country_code": "LVA",
+          "n_students": null
+        },
+        {
+          "country_code": "LTU",
+          "n_students": null
+        },
+        {
+          "country_code": "LUX",
+          "n_students": null
+        },
+        {
+          "country_code": "MAC",
+          "n_students": null
+        },
+        {
+          "country_code": "MYS",
+          "n_students": null
+        },
+        {
+          "country_code": "MEX",
+          "n_students": null
+        },
+        {
+          "country_code": "MAR",
+          "n_students": null
+        },
+        {
+          "country_code": "NLD",
+          "n_students": null
+        },
+        {
+          "country_code": "NZL",
+          "n_students": null
+        },
+        {
+          "country_code": "NOR",
+          "n_students": null
+        },
+        {
+          "country_code": "OMN",
+          "n_students": null
+        },
+        {
+          "country_code": "PAK",
+          "n_students": null
+        },
+        {
+          "country_code": "PER",
+          "n_students": null
+        },
+        {
+          "country_code": "PHL",
+          "n_students": null
+        },
+        {
+          "country_code": "POL",
+          "n_students": null
+        },
+        {
+          "country_code": "PRT",
+          "n_students": null
+        },
+        {
+          "country_code": "QAT",
+          "n_students": null
+        },
+        {
+          "country_code": "ROU",
+          "n_students": null
+        },
+        {
+          "country_code": "RUS",
+          "n_students": null
+        },
+        {
+          "country_code": "SAU",
+          "n_students": null
+        },
+        {
+          "country_code": "SGP",
+          "n_students": null
+        },
+        {
+          "country_code": "SVK",
+          "n_students": null
+        },
+        {
+          "country_code": "SVN",
+          "n_students": null
+        },
+        {
+          "country_code": "ZAF",
+          "n_students": null
+        },
+        {
+          "country_code": "ESP",
+          "n_students": null
+        },
+        {
+          "country_code": "SWE",
+          "n_students": null
+        },
+        {
+          "country_code": "CHE",
+          "n_students": null
+        },
+        {
+          "country_code": "TWN",
+          "n_students": null
+        },
+        {
+          "country_code": "TUR",
+          "n_students": null
+        },
+        {
+          "country_code": "ARE",
+          "n_students": null
+        },
+        {
+          "country_code": "GBR",
+          "n_students": null
+        },
+        {
+          "country_code": "USA",
+          "n_students": null
+        },
+        {
+          "country_code": "VNM",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Used TIMSS 2019 Grade 8 Science data. Curriculum type was operationalized from ITCOURSE: students with ITCOURSE=6 were classified as integrated science; students with ITCOURSE in {2,3,4,5} were classified as separated science. Variables were extracted and merged using IEA IDB Analyzer and SPSS; after data cleaning, 309,511 entries from 44 countries remained. For the dependent variable, all five plausible values (BSSSCI01–BSSSCI05) were used with separate analyses per PV. The manuscript states that Appendix A details missing-data procedures, and it reports that missing data were imputed prior to model training (including in the propensity-score estimation pipeline)."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Linear Regression",
+        "LASSO",
+        "Decision Tree",
+        "Random Forest",
+        "Neural Network",
+        "KNN",
+        "Naive Bayes",
+        "Logistic Regression"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "BSBGHER",
+        "variable_name": "Socioeconomic background (SES)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ITSEX",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "IDCNTRY",
+        "variable_name": "Country identity",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "BSBGSLS",
+        "variable_name": "Like to learn science",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "BSBGSCS",
+        "variable_name": "Feel confident about science",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "BSBS21",
+        "variable_name": "Science experiment frequency",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "BSBS22H",
+        "variable_name": "Like science experiments",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "BSBGICS",
+        "variable_name": "Instructional clarity",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBS18A",
+        "variable_name": "Homework frequency assigned",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBS18B",
+        "variable_name": "Homework time",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "BTBS18CA",
+        "variable_name": "Homework feedback: correcting",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBS18CB",
+        "variable_name": "Homework feedback: student correction",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBS18CC",
+        "variable_name": "Homework feedback: discuss in class",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBS18CD",
+        "variable_name": "Homework feedback: monitor completion",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBS18CE",
+        "variable_name": "Homework feedback: contribute to grades",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBS14",
+        "variable_name": "Instructional time (principals)",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "BCBG06B",
+        "variable_name": "Instructional time (teachers)",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "BTBG09D",
+        "variable_name": "Needs more time to assist",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBG09E",
+        "variable_name": "Needs more time to prepare",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBG12A",
+        "variable_name": "Instructional strategy: link daily lives",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBG12B",
+        "variable_name": "Instructional strategy: explain answers",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBG12C",
+        "variable_name": "Instructional strategy: challenging exercises",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBG12D",
+        "variable_name": "Instructional strategy: classroom discussions",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBG12E",
+        "variable_name": "Instructional strategy: link to prior knowledge",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBG12F",
+        "variable_name": "Instructional strategy: problem-solving procedures",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBG12G",
+        "variable_name": "Instructional strategy: express ideas",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "BTBSESI",
+        "variable_name": "Teachers emphasize science investigation",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ITCOURSE",
+        "variable_name": "Curriculum type (Integrated vs Separated)",
+        "category": "curriculum"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "TIMSS 2019 Grade 8 Science (44 countries/regions)",
+        "target_variable": "Science achievement (Plausible Values BSSSCI01–BSSSCI05)",
+        "top_predictors": [
+          "Socioeconomic background (SES)",
+          "Feel confident about science",
+          "Instructional time (teachers)",
+          "Science experiment frequency",
+          "Curriculum type (Integrated vs Separated)"
+        ],
+        "performance_metrics": "Random Forest — R² (testing) averaged across PVs: 0.51; RMSE (testing) averaged across PVs: 74.92. Propensity score matching — integrated group significantly higher than separated after controlling covariates (Mann–Whitney U with Bonferroni correction); effect sizes small (Cohen’s d ≈ 0.20–0.24 across PVs).",
+        "standardized_conclusion": "Using TIMSS 2019 Grade 8 Science the study leveraged socioeconomic background, science confidence, instructional time, and science experiment frequency (with curriculum type as a key comparison variable) to predict science achievement using Random Forest, finding that Random Forest outperformed linear regression, lasso regression, decision trees, and neural networks and that curriculum type had only a weak direct predictive role while integrated curricula showed a small positive advantage after propensity score matching. This indicates that gression, lasso regression, decision trees, and neural networks and that curriculum type had only a weak direct predictive role while integrated curricula showed a small positive advantage after propensity score matching."
+      }
+    ],
+    "outcome_summary": "The study analyzes TIMSS 2019 Grade 8 Science data from 44 countries/regions (N=309,511 after cleaning) to compare integrated vs separated science curricula and to predict science achievement (PVs BSSSCI01–BSSSCI05). For the curriculum-effect comparison, propensity score matching (propensity scores estimated via stacked ensemble learning; matching via KNN) showed that the integrated curriculum group had significantly higher science achievement than the separated group for each PV, but with small effects (Cohen’s d around 0.20–0.24). For prediction, Random Forest achieved the best performance, with testing R² ≈ 0.51 and testing RMSE ≈ 74.92, outperforming linear regression (R²≈0.21), lasso (≈0.22), decision trees (≈0.29), and neural networks (≈0.22). Feature importance indicated socioeconomic background as the strongest predictor, followed by science confidence and instructional time/experiment frequency. The manuscript uses SHAP for interaction interpretation (predictive explanation, not causal proof) and does not report replicate-weight variance estimation; hierarchical sampling structure is not explicitly modeled beyond using teacher weights for teacher-reported covariates.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

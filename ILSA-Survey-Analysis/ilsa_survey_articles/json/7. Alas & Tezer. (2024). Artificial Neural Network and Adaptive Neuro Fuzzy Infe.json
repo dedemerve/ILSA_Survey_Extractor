@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "file_name": "7. Alas & Tezer. (2024). Artificial Neural Network and Adaptive Neuro Fuzzy Inference System Hybridized Models in the Sustainable Integration of Language and Mathematics Skills: The Case of Singapore and Hong Kong.pdf",
+    "title": "Artificial Neural Network and Adaptive Neuro Fuzzy Inference System Hybridized Models in the Sustainable Integration of Language and Mathematics Skills: The Case of Singaporeand Hong Kong",
+    "authors": [
+      "D.K.A. Alas",
+      "M.T. Tezer"
+    ],
+    "year": 2024,
+    "doi": "10.3390/su16177806",
+    "venue": "Sustainability",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2018 mathematics and reading scores as target outputs, but the analysis described is based on content-analysis-derived curriculum themes and then trains ANN/ANFIS models in MATLAB. The manuscript does not report using PISA complex survey weights (e.g., W_FSTUWT/TOTWGT) or replicate-weight procedures (e.g., BRR/jackknife), nor does it mention any weight-aware estimation. Because the models are trained as standard ANN/ANFIS regressors on curriculum-theme frequencies mapped to PISA scores, the authors do not provide a weighting strategy consistent with PISA’s sampling design. The only explicit data preparation steps reported are the creation of input/output combinations from curriculum content and a 70/15/15 split for training/testing/validation in the ANFIS setup."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The dependent variables used in the ANN/ANFIS models are PISA mathematics/reading scores treated as continuous outputs, but the paper does not describe plausible values (PV) generation or PV-combining procedures (e.g., Rubin’s rules) as would be required for PISA achievement PV-based inference. Instead, the study appears to use aggregated score values (e.g., country-level PISA scores shown in tables) as model targets, so PV handling is not applicable in the way it would be for student-level PV analyses. The manuscript also does not report any missing-data strategy for the curriculum-theme coding or the mapping between inputs and PISA outputs, representing a reporting gap.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [
+        {
+          "country_code": "SGP",
+          "n_students": null
+        },
+        {
+          "country_code": "HKG",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "The study does not analyze individual student microdata. Instead, it selects two countries (Singapore and Hong Kong) based on their PISA 2012/2015/2018 mathematics and reading rankings, uses PISA 2018 mathematics and reading scores as outputs, and constructs model inputs from content-analysis-derived themes/frequencies extracted from the countries’ native language and mathematics curricula. No student-level inclusion/exclusion, grade-level restriction for PISA microdata, or missing-case filtering is described."
+    },
+    "ml_techniques": {
+      "primary": "ANFIS",
+      "all_techniques": [
+        "Neural Network",
+        "ANFIS"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "verbal_skills_curriculum",
+        "variable_name": "Verbal skills (curriculum themes)",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "language_skills_curriculum",
+        "variable_name": "Language skills (native curriculum)",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "mathematics_curriculum_themes",
+        "variable_name": "Math curriculum language themes",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "country",
+        "variable_name": "Country (Singapore vs Hong Kong)",
+        "category": "system_level"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 (Mathematics and Reading scores) — Singapore and Hong Kong; curriculum content-analysis inputs",
+        "target_variable": "Language skills in native curriculum (predicted from math language themes)",
+        "top_predictors": [
+          "Verbal skills (curriculum themes)",
+          "Math curriculum language themes",
+          "Country (Singapore vs Hong Kong)"
+        ],
+        "performance_metrics": "ANN (Model 1): RMSE = 17.6385, R² = 0.353954. ANFIS (Model 2): RMSE = 12.42771, R² = 0.397867.",
+        "standardized_conclusion": "Using PISA 2018 mathematics/reading score information for Singapore and Hong Kong together with curriculum content-analysis-derived language-theme frequencies, the study leveraged verbal skills (from native-language curriculum themes) and math curriculum language themes to predict language skills in the native language teaching programs, finding an overall insufficient relationship (ANN R²≈0.35; ANFIS slightly higher R²≈0.40) with lower error for ANFIS (RMSE≈12.43 vs 17.64). This indicates that guage themes to predict language skills in the native language teaching programs, finding an overall insufficient relationship (ANN R²≈0.35; ANFIS slightly higher R²≈0.40) with lower error for ANFIS (RMSE≈12.43 vs 17.64)."
+      }
+    ],
+    "outcome_summary": "The paper investigates how language skills relate to mathematics success by combining curriculum content analysis (native language and mathematics curricula for Singapore and Hong Kong) with predictive modeling using ANN and ANFIS in MATLAB. For the ANN model (Model 1), the relationship between verbal skills and language skills mapped to PISA-based outputs shows low explanatory power (R² = 0.353954) and RMSE = 17.6385. The ANFIS model (Model 2) yields a slightly improved fit (R² = 0.397867) and a lower RMSE = 12.42771, but the authors still conclude the relationship is insufficient. The study does not report any PISA plausible-values combining procedure and does not describe a missing-data handling method, and it does not provide evidence of using PISA sampling weights or hierarchical adjustments for nested data structures.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

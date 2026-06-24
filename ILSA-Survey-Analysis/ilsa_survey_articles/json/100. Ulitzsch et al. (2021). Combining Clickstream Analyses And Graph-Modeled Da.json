@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "file_name": "100. Ulitzsch et al. (2021). Combining Clickstream Analyses And Graph-Modeled Data Clustering For Identifying Common Response Processes.pdf",
+    "title": "Combining Clickstream Analyses and Graph-Modeled Data Clustering for Identifying Common Response Processes",
+    "authors": [
+      "Esther Ulitzsch",
+      "et al."
+    ],
+    "year": 2021,
+    "doi": "10.1007/s11336-020-09743-0",
+    "venue": "Psychometrika",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PIAAC 2012 PSTRE process data (interactive task action sequences) from the US sample and analyzes a randomly selected subset of examinees (N=225) with correct responses for a single item (U01a). The manuscript does not report applying PIAAC sampling weights or any replicate-weight procedure (e.g., BRR/jackknife), nor does it name any weight variables. Because the analysis is based on constructing similarity graphs from action patterns and solving a cluster edge deletion ILP (with Gurobi) rather than fitting a survey-weighted predictive model, the paper provides no explicit weighting strategy; thus weighting is treated as not reported. The main preprocessing described is aggregation of non-essential actions into higher-level categories and dropping the initial 'start' action (time-to-action=0 by definition)."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The paper does not report a missing-data handling strategy for the analytic subset. While it uses PSTRE plausible values (PV means/SDs) descriptively to corroborate whether response-process cliques relate to proficiency, the core clustering/graph-editing procedure is not a PV-based regression/classification model, and the manuscript does not specify how missing PVs or missing covariates (e.g., age) were handled within the subset. This represents a reporting gap regarding missingness handling for the PV-based descriptive comparisons.",
+    "sample_details": {
+      "total_students": 225,
+      "countries": [
+        {
+          "country_code": "USA",
+          "n_students": 225
+        }
+      ],
+      "sample_filtering_criteria": "Used PIAAC 2012 US sample action patterns for item U01a in the PSTRE domain. Restricted to examinees with a correct response (678 correct in the full sample) and then randomly selected a subset of N=225 examinees (one third of the original correct-response sample) because the ILP could not be solved for the full sample within a reasonable time (<3 days). For action processing, dropped the initial 'start' action (time-to-action=0) and aggregated non-essential actions into higher-level categories, resulting in 36 aggregated actions total."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "age",
+        "variable_name": "Age",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "pstre_proficiency_pv_mean",
+        "variable_name": "PSTRE proficiency (PV mean)",
+        "category": "prior_achievement"
+      },
+      {
+        "variable_code": "RTT",
+        "variable_name": "Time spent on task (RTT)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "action_sequence_length",
+        "variable_name": "Action sequence length (|a|)",
+        "category": "process_data"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PIAAC 2012 PSTRE (US sample), Item U01a (process data)",
+        "target_variable": "Dominant response processes (cliques of action patterns)",
+        "top_predictors": [
+          "Time spent on task (RTT)",
+          "Action sequence length (|a|)",
+          "Age",
+          "PSTRE proficiency (PV mean)"
+        ],
+        "performance_metrics": "Not reported (clustering outputs reported as number of edges deleted and number of cliques; e.g., for N=225: action-based similarity graph had 15,385 edges with 60.57% deleted; modified time-related graph had 4,577 edges with 70.48% deleted; original similarity graph had 1,006 edges with 73.06% deleted).",
+        "standardized_conclusion": "Using PIAAC 2012 PSTRE (US sample) item U01a process data, the study leveraged action-pattern similarity (based on LCS overlap and action-level timing) and then applied cluster edge deletion to identify homogeneous cliques representing dominant response processes, finding that incorporating action-level times increased differentiation (more and smaller cliques) compared with action-only similarity. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This paper proposes a two-step exploratory framework for identifying common response processes in interactive assessment tasks by combining clickstream-style action-sequence similarity with graph-modeled clustering (cluster edge deletion). Applied to PIAAC 2012 PSTRE item U01a (US), the authors analyzed a random subset of N=225 correct-response examinees and compared three similarity measures: action-only, a modified time-related measure aggregating timing over the LCS, and the original time-sensitive measure. Incorporating action-level times produced less dense similarity graphs (more edge deletions) and more/smaller cliques, indicating finer differentiation of response processes. For external validation, the authors used PSTRE PV means descriptively: dominant processes based only on performed actions were not predictive of proficiency levels, while within strategy groups, less time on the most common LCS and age-related timing patterns aligned with higher proficiency. The study does not report survey-weight usage or a missing-data handling strategy for the PV-based descriptive comparisons.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": null
+  }
+}

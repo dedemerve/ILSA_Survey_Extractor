@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "file_name": "71. Huang et al. (2025). The Application of Machine Learning to Educational Process Data Analysis: A Systematic Review.pdf",
+    "title": "The Application of Machine Learning to Educational Process Data Analysis: A Systematic Review",
+    "authors": [
+      "J. Huang",
+      "Y. P. X.",
+      "H. H. C."
+    ],
+    "year": 2025,
+    "doi": "10.3390/educsci15070888",
+    "venue": "Education Sciences",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "review_article"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This paper is a systematic literature review (38 peer-reviewed studies, 2013–2024) and does not conduct a new student-level or assessment micro-data analysis. Therefore, there is no analytic dataset with a defined sampling frame, no student-level weighting variables, and no replicate-weight methodology to apply. The review follows PRISMA 2020 for study selection and manually extracts information from included publications rather than re-estimating models on pooled microdata. As a result, survey weights and replicate weights are not applicable to the review’s methodology."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "This is a systematic review that synthesizes findings from previously published empirical studies; it does not analyze ILSA/PISA-style student achievement outcomes with plausible values (PVs). Because no original student-level dataset is modeled in this paper, there is no PV generation/combining procedure and no missing-data imputation strategy to report at the review level. Any missing-data handling would be specific to the individual included studies, which are not reprocessed here.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [],
+      "sample_filtering_criteria": "No student-level analytic sample is constructed. The review includes 38 peer-reviewed empirical studies (English-language) that applied machine learning to educational process data, identified via Scopus searches (2013-01-01 to 2024-12-01) plus ancestry and hand searches in specified journals, following PRISMA 2020 inclusion/exclusion criteria."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [],
+    "outcome_summary": "This paper is a systematic review rather than an empirical ML study on a single dataset. It synthesizes 38 peer-reviewed publications (2013–2024) and reports descriptive findings about the types of educational process data used (clickstream most prevalent) and how ML is applied (procedural feature coding/representation learning vs. instrumental latent-trait/measurement estimation). The review also highlights recurring challenges such as feature extraction/selection and interpretability for practical educational use, and discusses issues like scalability and replicability. No model performance metrics (e.g., accuracy/AUC/RMSE) are computed by the authors in this review because they do not train or evaluate ML models on a pooled dataset.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "The record is a systematic review without original student-level microdata analysis. Consequently, there is no total student count, no country-level sample breakdown, no PV handling or missing-data imputation performed by the authors, and no primary ML model trained/evaluated in this paper. The extracted ML-related content pertains to the included studies’ methods, not to an ML pipeline implemented by the review itself."
+  }
+}

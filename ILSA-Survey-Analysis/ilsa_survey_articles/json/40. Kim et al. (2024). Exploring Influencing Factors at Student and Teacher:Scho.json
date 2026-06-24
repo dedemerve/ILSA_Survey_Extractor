@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "file_name": "40. Kim et al. (2024). Exploring Influencing Factors at Student and Teacher:School levels on Science Self-efficacy Using Machine Learning and Multilevel Latent Profile Analysis.pdf",
+    "title": "Exploring Influencing Factors at Student and Teacher/School levels on Science Self-efficacy Using Machine Learning and Multilevel Latent Profile Analysis",
+    "authors": [
+      "JiYoon Kim",
+      "Sehee Hong"
+    ],
+    "year": 2024,
+    "doi": "10.1177/21582440241284915",
+    "venue": "SAGE Open",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2015 microdata for five high-performing science countries (SGP, JPN, EST, FIN, KOR) and retains 28,886 students from 971 schools after excluding 926 students who did not respond to science self-efficacy items. Science self-efficacy is constructed using PISA WLE scores (WLE-based IRT transformation) and then standardized to an international metric, but the manuscript does not report applying PISA sampling weights (e.g., W_FSTUWT/TOTWGT) or any replicate-weight procedure in the machine-learning training/evaluation. The ML models are trained in PyCaret after preprocessing (variable deletion, MICE-based imputation, normalization) and evaluated on a random 8:2 train/test split with 10-fold CV for hyperparameter search; no complex-survey weighting is described. Because the paper does not mention survey-weight variables and uses standard ML regressors, the analysis is treated as unweighted with respect to PISA’s complex sampling design."
+    },
+    "plausible_values_handling": "wle",
+    "missing_data_handling": "multiple_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 28886,
+      "countries": [
+        {
+          "country_code": "SGP",
+          "n_students": 5999
+        },
+        {
+          "country_code": "JPN",
+          "n_students": 6489
+        },
+        {
+          "country_code": "EST",
+          "n_students": 5405
+        },
+        {
+          "country_code": "FIN",
+          "n_students": 5470
+        },
+        {
+          "country_code": "KOR",
+          "n_students": 5523
+        }
+      ],
+      "sample_filtering_criteria": "Used PISA 2015 science domain microdata and restricted the analysis to five top-performing science countries: Singapore, Japan, Estonia, Finland, and South Korea. Excluded 926 students who did not respond to items on science self-efficacy. From an initial pool of 195 candidate predictors (110 student-level, 75 teacher/school-level), deleted variables irrelevant to analysis (e.g., identification, weights, code-type/subjective response variables) and removed predictors with 50% or more missing values. For remaining variables, applied multiple imputation via MICE (Light Gradient Boosting Machine model) repeated 10 times to replace missing values; additionally removed one variable from any pair with correlation >= 0.900 to reduce multicollinearity. Final analytic sample comprised 28,886 students from 971 schools."
+    },
+    "ml_techniques": {
+      "primary": "LightGBM",
+      "all_techniques": [
+        "LightGBM",
+        "Gradient Boosting",
+        "Extra Trees",
+        "Random Forest",
+        "Bayesian Ridge",
+        "AdaBoost",
+        "Ridge Regression",
+        "Least Angle regression"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ENVAWARE",
+        "variable_name": "Environmental awareness",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "SCIEACT",
+        "variable_name": "Index science activities",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "EPIST",
+        "variable_name": "Epistemological beliefs",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "INTBRSCI",
+        "variable_name": "Interest in broad science topics",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "JOYSCIE",
+        "variable_name": "Enjoyment of science",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "INSTSCIE",
+        "variable_name": "Instrumental motivation",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ANXTEST",
+        "variable_name": "Test anxiety",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "IBTEACH",
+        "variable_name": "Inquiry-based science practices",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "MOTIVAT",
+        "variable_name": "Achieving motivation",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "AUTICT",
+        "variable_name": "Perceived autonomy in ICT use",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ST129Q01TA-ST129Q08TA",
+        "variable_name": "Science self-efficacy items",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "science_specific_resources",
+        "variable_name": "Science-specific resources",
+        "category": "school"
+      },
+      {
+        "variable_code": "LEADINST",
+        "variable_name": "Instructional leadership",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "STRATIO",
+        "variable_name": "Student-teacher ratio",
+        "category": "school"
+      },
+      {
+        "variable_code": "CLSIZE",
+        "variable_name": "Class size",
+        "category": "school"
+      },
+      {
+        "variable_code": "TOTST",
+        "variable_name": "Total science teachers at school",
+        "category": "school"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2015 Science (SGP, JPN, EST, FIN, KOR) — student-level",
+        "target_variable": "Science self-efficacy (WLE index)",
+        "top_predictors": [
+          "Environmental awareness",
+          "Index science activities",
+          "Epistemological beliefs",
+          "Interest in broad science topics",
+          "Test anxiety"
+        ],
+        "performance_metrics": "Light Gradient Boosting (LightGBM) — MAE: 0.675, MSE: 0.923, RMSE: 0.960, R²: 0.356 (top model among 20; top-5 comparison shown).",
+        "standardized_conclusion": "Using PISA 2015 Science data (SGP, JPN, EST, FIN, KOR) at the student level, the study leveraged environmental awareness, index science activities, epistemological beliefs, interest in broad science topics, and test anxiety to predict science self-efficacy (WLE), finding that LightGBM achieved the smallest prediction error (RMSE = 0.960) among the evaluated regression models. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2015 Science (SGP, JPN, EST, FIN, KOR) — teacher/school-level",
+        "target_variable": "Science self-efficacy (WLE index)",
+        "top_predictors": [
+          "Science-specific resources",
+          "Instructional leadership",
+          "Student-teacher ratio",
+          "Class size",
+          "Total science teachers at school"
+        ],
+        "performance_metrics": "Gradient Boosting regressor — MAE: 0.827, MSE: 1.374, RMSE: 1.172, R²: 0.041 (best among the teacher/school-level top-5 comparison).",
+        "standardized_conclusion": "Using PISA 2015 Science data (SGP, JPN, EST, FIN, KOR) at the teacher/school level, the study leveraged science-specific resources, instructional leadership, student-teacher ratio, class size, and total science teachers at school to predict science self-efficacy (WLE), finding that Gradient Boosting regressor produced the lowest RMSE (1.172) among the evaluated teacher/school-level regression models. This indicates that lass size, and total science teachers at school to predict science self-efficacy (WLE), finding that Gradient Boosting regressor produced the lowest RMSE (1.172) among the evaluated teacher/school-level regression models."
+      }
+    ],
+    "outcome_summary": "The study analyzed PISA 2015 science self-efficacy (WLE index) for 28,886 students from five high-performing countries (SGP, JPN, EST, FIN, KOR), after excluding 926 students with missing self-efficacy responses and applying MICE multiple imputation for remaining missing predictors. For student-level prediction, LightGBM was the best-performing model among 20 regressors, with RMSE = 0.960 and R² = 0.356 (top-5 comparison). For teacher/school-level prediction, Gradient Boosting regressor was best, with RMSE = 1.172 and R² = 0.041. The ML-selected predictors were then used in multilevel latent profile analysis to classify science self-efficacy subgroups (3 student classes; 2 teacher/school classes) and test covariate differences. A key caveat is that the manuscript does not report applying PISA sampling/replicate weights in the ML training/evaluation, and the ML importance/ranking is used to guide subgroup interpretation rather than establishing causal effects.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

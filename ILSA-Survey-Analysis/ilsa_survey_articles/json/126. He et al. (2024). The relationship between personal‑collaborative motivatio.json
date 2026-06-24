@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "file_name": "126. He et al. (2024). The relationship between personal‑collaborative motivation profiles and students’ performance in collaborative problem solving.pdf",
+    "title": "The relationship between personal-collaborative motivation profiles and students’ performance in collaborative problem solving",
+    "authors": [],
+    "year": 2024,
+    "doi": "10.1186/s40536-024-00219-6",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": true,
+      "replicate_weights_used": null,
+      "weight_variable_name": "W_FSTUWT",
+      "weight_fields_interpretation": "The study uses PISA 2015 computer-based collaborative problem solving (CPS) data from four mainland China regions (Beijing, Shanghai, Jiangsu, Guangdong; B-S-J-G), including student and school questionnaire responses. The analytic sample was restricted to students with complete data for the variables used in the models; the authors report deleting missing observations by variable because the maximum missing rate was 2.53% (overall missing rate <5%), yielding 9398 students from 264 schools. To address unequal selection probabilities and nonresponse bias, the authors applied student-level sampling weights (W_FSTUWT) and school-level weights (W_FSCHWT). The paper does not report replicate-weight methods (e.g., BRR/jackknife), and the CPS achievement outcome is modeled using multilevel linear modeling in Mplus rather than a survey-weighted ML pipeline."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "listwise_deletion",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 9398,
+      "countries": [
+        {
+          "country_code": "CHN",
+          "n_students": 9398
+        }
+      ],
+      "sample_filtering_criteria": "Used PISA 2015 CPS assessment data for students in four mainland China regions (Beijing, Shanghai, Jiangsu, Guangdong; B-S-J-G). Deleted missing observations by variable because missing rates for all variables were below 5% (maximum missing rate SOIAICT = 2.53%), resulting in a final analytic sample of 9398 students from 264 schools (valid sample rate 95.50%)."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "INSTSCIE",
+        "variable_name": "Instrumental motivation (science)",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "MOTIVAT",
+        "variable_name": "Achievement motivation",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "COOPER",
+        "variable_name": "Enjoy cooperation",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "VALUE",
+        "variable_name": "Value cooperation",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "BELONG",
+        "variable_name": "Sense of belonging",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ANXTEST",
+        "variable_name": "Test anxiety",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EMOSUPS",
+        "variable_name": "Parental emotional support",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "SOIAICT",
+        "variable_name": "ICT in daily social life",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ESCS",
+        "variable_name": "Socioeconomic status (ESCS)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "Gender",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "PROSTCE",
+        "variable_name": "Certified science teacher proportion",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ICTCLUB",
+        "variable_name": "ICT-focused club",
+        "category": "school"
+      },
+      {
+        "variable_code": "motivation_profile_lpa_classes",
+        "variable_name": "Motivation profile (LPA classes)",
+        "category": "student_attitude"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2015 Collaborative Problem Solving (CPS), China (B-S-J-G regions)",
+        "target_variable": "CPS achievement (10 plausible values)",
+        "top_predictors": [
+          "CPS motivation profile (LPA classes)",
+          "Gender",
+          "Socioeconomic status (ESCS)",
+          "ICT in daily social life (SOIAICT)",
+          "Certified science teacher proportion (PROSTCE)"
+        ],
+        "performance_metrics": "Multilevel linear model (HLM) coefficients; ICC = 0.391. Model 2 explained 2.23% of student-level variance and 70.61% of school-level variance; Model 3 reports dummy coefficients vs baseline (instrument-oriented nonteam player). Exact overall fit metrics not reported.",
+        "standardized_conclusion": "Using PISA 2015 CPS data from China (B-S-J-G regions), the study leveraged motivation profile membership along with gender, ESCS, SOIAICT, and school factors (notably PROSTCE) to predict CPS achievement (PVs). Achievement-oriented collaborators scored highest, while instrument-oriented nonteam players scored lowest; ESCS and PROSTCE were positive predictors, whereas SOIAICT at the student level was negative when controlling for other factors. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzed PISA 2015 collaborative problem solving (CPS) data from 9398 Chinese students in 264 schools (Beijing, Shanghai, Jiangsu, Guangdong). Using latent profile analysis (LPA) on CPS motivation indicators, four motivation profiles were identified: achievement-oriented cooperator (n=773), instrument-oriented cooperator (n=1539), achievement-oriented nonteam player (n=1202), and instrument-oriented nonteam player (n=5884). In multilevel modeling of CPS achievement (10 plausible values combined using Rubin’s rules), achievement-oriented collaborators had the highest CPS scores and instrument-oriented nonteam players the lowest; ESCS and the proportion of fully certified science teachers (PROSTCE) were positive predictors, while student ICT in daily social life (SOIAICT) was negative. The paper also reports significant profile differences in perceptions (belonging, test anxiety, parental emotional support) and in CPS timing/activities across six CPS items, with outlier responses excluded using 3σ guidelines. No machine-learning predictive algorithms (e.g., RF/XGBoost) were evaluated; the predictive modeling is conducted via multilevel linear models in Mplus.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "This paper is an empirical person-centered profiling study (LPA) combined with multivariate and multilevel regression modeling (MANOVA and HLM) rather than a machine-learning predictive modeling study. Consequently, no ML algorithms are evaluated, so ml_techniques.primary is left null and all_techniques is empty. The main predictive analysis is implemented with multilevel linear modeling in Mplus, not with ML learners."
+  }
+}

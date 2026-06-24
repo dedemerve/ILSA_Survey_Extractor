@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "file_name": "70. Maia et al. (2023). Applications of Artificial Intelligence Models in Educational Analytics and Decision Making: A Systematic Review.pdf",
+    "title": "Applications of Artificial Intelligence Models in Educational Analytics and Decision Making: A Systematic Review",
+    "authors": [
+      "J. de S. Z. Maia",
+      "A. P. A. Bueno",
+      "J. R. Sato",
+      "A. P. A. Bueno",
+      "J. R. Sato"
+    ],
+    "year": 2023,
+    "doi": "10.3390/world4020019",
+    "venue": "World",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "review_article"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This manuscript is a systematic review (PRISMA-based) of studies applying AI models to educational performance and decision-making. It does not analyze an ILSA/NAEP/PISA micro-dataset at the student level, and therefore no student sampling weights, replicate weights, or complex survey design variables are applicable. The review’s “sample” consists of included publications (70 full-text articles) rather than a respondent dataset. Consequently, there is no weight variable name to report and no weighting strategy for model estimation."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "This is a systematic review that synthesizes findings from previously published quantitative studies; it does not fit predictive models on student-level cognitive achievement outcomes from ILSA instruments that use plausible values (PVs). Because there is no original student-level dataset and no PV-based dependent variable estimated in this paper, PV handling is not applicable. Similarly, the paper does not report a missing-data handling protocol for an original analysis dataset, since no such dataset is constructed or modeled here.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [
+        {
+          "country_code": "PRT",
+          "n_students": null
+        },
+        {
+          "country_code": "TUR",
+          "n_students": null
+        },
+        {
+          "country_code": "BRA",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Systematic review inclusion/exclusion criteria: studies had to be published in English, between January 2000 and September 2021, related to basic education (primary/secondary/high school) and academic performance, and use at least one AI model for performance prediction/assessment. Exclusions included non-English publications, studies before 2000, work outside the broad scope (e.g., medicine/nursing), higher education/MOOCs/extracurricular courses, and studies unrelated to the review objectives (e.g., gamification, teacher training, salary forecasting, vocational tests, distance education, digital literacy, parent/teacher analysis, salary prediction, vocational testing). Screening was performed in Rayyan® using titles/abstracts, followed by full-text reading; duplicates were removed and PRISMA flow was used to document selection."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "PISA",
+        "target_variable": "Literature synthesis outcome (not student-level prediction)",
+        "top_predictors": [],
+        "performance_metrics": "Not reported",
+        "standardized_conclusion": "Using PISA the study leveraged the reported predictors to predict Literature synthesis outcome (not student-level prediction), finding that As a systematic review, the paper does not train or evaluate machine learning models on an original student-level dataset, so no predictive performance metrics (e.g., accuracy, RMSE, AUC) are reported for this review itself. Instead, it reports bibliometric and synthesis results across 70 included studies, including publication trends (peak around 2020), the most frequent dataset origins (e.g., PISA/TIMSS), the most common education levels (elementary most frequent), and the most common AI model families (classificatory models, deep learning/neural networks, regression, and decision-tree-based approaches). It also discusses interpretability concerns (black-box issue) and highlights model-interpretation techniques such as LIME and SHAP as discussed in the included literature. Methodologically, the review’s evidence base is limited by the inclusion criteria (English-only, title/abstract keyword restriction) and by the fact that it synthesizes heterogeneous studies rather than estimating a unified model. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "As a systematic review, the paper does not train or evaluate machine learning models on an original student-level dataset, so no predictive performance metrics (e.g., accuracy, RMSE, AUC) are reported for this review itself. Instead, it reports bibliometric and synthesis results across 70 included studies, including publication trends (peak around 2020), the most frequent dataset origins (e.g., PISA/TIMSS), the most common education levels (elementary most frequent), and the most common AI model families (classificatory models, deep learning/neural networks, regression, and decision-tree-based approaches). It also discusses interpretability concerns (black-box issue) and highlights model-interpretation techniques such as LIME and SHAP as discussed in the included literature. Methodologically, the review’s evidence base is limited by the inclusion criteria (English-only, title/abstract keyword restriction) and by the fact that it synthesizes heterogeneous studies rather than estimating a unified model.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "This record is a systematic review/bibliographic synthesis rather than an empirical large-scale assessment analysis. Therefore, there is no student-level analytic sample, no ILSA/PISA PV-based outcome, no missing-data handling for an estimation dataset, and no ML algorithm training/evaluation performed within the paper itself. The included studies are summarized qualitatively/quantitatively at the publication level (e.g., counts of model types and software), so fields like total_students, per-country student Ns, and ML performance metrics are not applicable."
+  }
+}

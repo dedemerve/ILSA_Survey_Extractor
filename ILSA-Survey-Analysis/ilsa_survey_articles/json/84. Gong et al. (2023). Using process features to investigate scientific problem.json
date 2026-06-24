@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "file_name": "84. Gong et al. (2023). Using process features to investigate scientific problem-solving in large-scale assessments.pdf",
+    "title": "Using process features to investigate scientific problem-solving in large-scale assessments",
+    "authors": [
+      "Tao Gong",
+      "L. Shuai",
+      "Y. Jiang",
+      "B. Arslan"
+    ],
+    "year": 2023,
+    "doi": "10.3389/fpsyg.2023.1131019",
+    "venue": "Frontiers in Psychology",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses the 2018 NAEP science pilot tasks (fair tests on grade 4 and 8; exhaustive tests on grade 12) and analyzes process timestamps and rubric-based item scores for students who completed the relevant digital tasks. The manuscript reports removing missing values and applying 98% winsorization to process features to reduce spurious outliers, but it does not describe applying NAEP complex survey weights or any replicate-weight procedure. No weight variable name (e.g., W_FSTUWT/TOTWGT) or BRR/jackknife method is mentioned, and the analysis is based on nonparametric tests (Kruskal–Wallis/Wilcoxon) and ANOVA/t-tests for cross-validation of group differences rather than ML models that would typically require weight-aware estimation. Therefore, weighting is not evidenced in the provided text and is treated as not reported/unspecified."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "listwise_deletion",
+    "handling_not_reported_explanation": "plausible_values_handling is 'not_applicable' — the study likely does not analyze cognitive achievement PVs (e.g., it may focus on affective/attitudinal outcomes, curriculum data, or non-ILSA micro-data).",
+    "sample_details": {
+      "total_students": null,
+      "countries": [
+        {
+          "country_code": "USA",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "The analytic sample comprises students from the 2018 NAEP science pilot tasks who completed the specified computer-based scientific inquiry testlets and for whom both process and response data were available. The paper reports per-testlet sample sizes (fair test 1: grade 8; fair test 2: grade 4; exhaustive test 1: grade 12; exhaustive test 2: grade 12) and notes that data were missing for some students due to early quit or data capture glitches; those missing process/response cases were excluded prior to analysis."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "PT",
+        "variable_name": "Preparation time (PT)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "ET",
+        "variable_name": "Execution time (ET)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "MET",
+        "variable_name": "Mean execution time (MET)",
+        "category": "process_data"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "NAEP 2018 Science pilot — Fair test 1 (Earth/space), Grade 8",
+        "target_variable": "Item score (rubric-based, 1–3)",
+        "top_predictors": [
+          "Preparation time (PT)",
+          "Execution time (ET)",
+          "Mean execution time (MET)"
+        ],
+        "performance_metrics": "Kruskal–Wallis: PT χ2=12.2, df=2, p<0.005; ET χ2=89.916, df=2, p<0.001; MET χ2=64.776, df=2, p<0.001. Omnibus ANOVA: PT F(2,1604)=5.943, p<0.005; ET F(2,1604)=51.7, p<0.001; MET F(2,1604)=38.93, p<0.001. Wilcoxon: higher-score groups had shorter ET; full-score had shorter PT and MET than lowest-score (partial group sometimes non-significant).",
+        "standardized_conclusion": "Using NAEP 2018 Science pilot fair test 1 (Grade 8) the study leveraged preparation time (PT), execution time (ET), and mean execution time (MET) to analyze rubric-based item scores, finding that higher-scoring students tended to spend less time executing actions and (for full-score vs lowest-score) less time preparing and executing on average. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "NAEP 2018 Science pilot — Fair test 2 (Physical), Grade 4",
+        "target_variable": "Item score (rubric-based, 1–3)",
+        "top_predictors": [
+          "Preparation time (PT)",
+          "Execution time (ET)",
+          "Mean execution time (MET)"
+        ],
+        "performance_metrics": "Kruskal–Wallis: PT χ2=7.824, df=2, p=0.02; MET χ2=6.600, df=2, p=0.037; ET χ2=78.111, df=2, p<0.001. Omnibus ANOVA: PT F(2,1987)=2.744, p=0.065; ET F(2,1987)=37.53, p<0.001; MET F(2,1987)=3.451, p=0.032. Wilcoxon: higher-score groups had shorter ET; full-score had shorter PT and MET than lowest-score, with partial-score comparisons sometimes non-significant.",
+        "standardized_conclusion": "Using NAEP 2018 Science pilot fair test 2 (Grade 4) the study leveraged PT, ET, and MET to relate process features to rubric-based item scores, finding that execution time (ET) showed the clearest separation by score group and that full-score students generally had shorter preparation and mean execution times than lowest-score students. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "NAEP 2018 Science pilot — Exhaustive test 1 (Life), Grade 12",
+        "target_variable": "Item score (rubric-based, 1–4)",
+        "top_predictors": [
+          "Preparation time (PT)",
+          "Execution time (ET)",
+          "Mean execution time (MET)"
+        ],
+        "performance_metrics": "Kruskal–Wallis: PT χ2=133.57, df=3, p<0.001; ET χ2=498.49, df=3, p<0.001; MET χ2=258.97, df=3, p<0.001. Omnibus ANOVA: PT F(3,2721)=65.4, p<0.001; ET F(3,2721)=224.5, p<0.001; MET F(3,2721)=78.4, p<0.001. Wilcoxon: full-score students had shorter PT and MET than lowest-score students, while ET patterns differed (full-score ET longer than most other groups).",
+        "standardized_conclusion": "Using NAEP 2018 Science pilot exhaustive test 1 (Grade 12) the study leveraged PT, ET, and MET to relate process features to rubric-based item scores, finding that score groups differed strongly on all three temporal measures, with full-score students showing shorter preparation and mean execution time but longer execution time consistent with completing more exhaustive conditions. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "NAEP 2018 Science pilot — Exhaustive test 2 (Earth/space), Grade 12",
+        "target_variable": "Item score (rubric-based, 1–4)",
+        "top_predictors": [
+          "Preparation time (PT)",
+          "Execution time (ET)",
+          "Mean execution time (MET)"
+        ],
+        "performance_metrics": "Kruskal–Wallis: PT χ2=10.317, df=3, p<0.017 (marginal); ET χ2=440.33, df=3, p<0.001; MET χ2=158.79, df=3, p<0.001. Omnibus ANOVA: PT F(3,2942)=3.094, p=0.026; ET F(3,2942)=185.7, p<0.001; MET F(3,2942)=45.58, p<0.001. Wilcoxon: full-score students had shorter PT and MET than other low-score students, but longer ET than most other groups.",
+        "standardized_conclusion": "Using NAEP 2018 Science pilot exhaustive test 2 (Grade 12) the study leveraged PT, ET, and MET to relate process features to rubric-based item scores, finding significant score-group differences in execution time and mean execution time and generally shorter preparation and mean execution time for full-score students, with execution time longer for full-score students than for most lower-score groups. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This open-access study analyzes NAEP 2018 science pilot computer-based scientific inquiry tasks (two fair tests and two exhaustive tests) to determine whether process timestamps relate to rubric-based item scores. The authors define three temporal process features—preparation time (PT), execution time (ET), and mean execution time per answer-related event (MET)—after excluding missing process/response cases and applying 98% winsorization to reduce outlier influence. Across all four testlets, process features significantly differed across score groups: for fair tests, higher scores generally corresponded to shorter ET (and full-score students also showed shorter PT and MET than lowest-score students), while for exhaustive tests, full-score students showed shorter PT and MET but longer ET, consistent with completing more exhaustive conditions. The study uses Kruskal–Wallis/Wilcoxon and cross-validates with omnibus ANOVA/t-tests; no machine-learning predictive models are trained, and survey weighting/replicate-weight procedures are not described in the provided text.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": null
+  }
+}

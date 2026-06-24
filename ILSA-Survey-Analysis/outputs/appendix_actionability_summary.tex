@@ -1,0 +1,29 @@
+% Requires: \usepackage{booktabs, siunitx, array}
+% siunitx provides S column for aligned decimals
+\begin{table}[H]
+\centering
+\small
+\caption{Summary of Composite Actionability Scores by Methodological Family ($N = 129$).
+  \emph{Score} ranges from 1 (descriptive/non-generalisable) to 5 (causal or near-causal
+  with generalised applicability); see Table~\ref{tab:actionability-rubric} for the full
+  rubric. \emph{High actionability} denotes studies receiving Score~4 or~5.}
+\label{tab:actionability-summary}
+\begin{tabular}{@{}lS[table-format=2.0]S[table-format=1.2]S[table-format=1.2]S[table-format=2.0]S[table-format=2.0]@{}}
+\toprule
+\textbf{Methodological Family}
+  & {\textbf{\textit{n}}}
+  & {$\bar{x}$}
+  & {\textit{SD}}
+  & {\textbf{Score 4--5 (\textit{n})}}
+  & {\textbf{Score 4--5 (\%)}} \\
+\midrule
+Ensemble Learning          & 51 & 3.61 & 0.67 & 26 & 51 \\
+Classical/Statistical      & 14 & 3.50 & 0.52 &  7 & 50 \\
+Deep Learning              & 12 & 3.42 & 0.79 &  3 & 25 \\
+Hybrid/Penalised           & 11 & 3.18 & 0.60 &  3 & 27 \\
+Review/Methodology         & 41 & 2.54 & 0.90 &  5 & 12 \\
+\midrule
+\textit{Overall}           & 129 & 3.20 & 0.87 & 44 & 34 \\
+\bottomrule
+\end{tabular}
+\end{table}

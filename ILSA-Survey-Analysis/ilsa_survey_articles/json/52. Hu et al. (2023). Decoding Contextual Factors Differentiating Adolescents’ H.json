@@ -1,0 +1,220 @@
+{
+  "metadata": {
+    "file_name": "52. Hu et al. (2023). Decoding Contextual Factors Differentiating Adolescents’ High, Average, and Low Digital Reading Performance Through Machine-Learning Methods .pdf",
+    "title": "Decoding Contextual Factors Differentiating Adolescents’ High, Average, and Low Digital Reading Performance Through Machine-Learning Methods",
+    "authors": [
+      "Jie Hu",
+      "Yi Peng",
+      "Xiao Chen"
+    ],
+    "year": 2023,
+    "doi": "10.1109/TLT.2023.3281056",
+    "venue": "IEEE Transactions on Learning Technologies",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2018 digital reading microdata from 38 OECD countries/regions, with a final analytic sample of 276,269 15-year-old students. The authors describe extensive preprocessing (removing cases with >30% missingness, imputing remaining school-level missing data within school and student-level missing data using nearest-neighbor mean, converting nominal/ordinal variables to dummies, and applying min/max scaling) and then train SVM models with 10-fold cross-validation. The manuscript does not report applying PISA sampling weights or any replicate-weight procedure (e.g., BRR/jackknife), and no weight variable name is provided. Because the models are standard SVM classifiers (and feature selection via SVM-RFE) without any stated survey-weight integration, the analysis is treated as unweighted; this may affect generalizability under PISA’s complex sampling design."
+    },
+    "plausible_values_handling": "single_pv",
+    "missing_data_handling": "multiple_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 276269,
+      "countries": [
+        {
+          "country_code": "USA",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Used PISA 2018 digital reading dataset for OECD countries/regions participating in the digital reading test (38 countries/regions). Outcomes were defined using OECD proficiency cutoffs: high performers at Levels 5–6 (>=625.61), low performers at Levels 1a–1b (<407.47), and average performers in between. For modeling, the authors performed three pairwise binary classifications (high vs low; high vs average; low vs average). In preprocessing, cases with more than 30% missing data were removed; remaining school-level missing values were imputed using information from the same school, and remaining student-level missing values were imputed using the nearest-neighbor mean value. Nominal/ordinal predictors were converted to dummy variables and interval predictors were normalized via min/max scaling."
+    },
+    "ml_techniques": {
+      "primary": "SVM",
+      "all_techniques": [
+        "SVM"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ESCS",
+        "variable_name": "Socioeconomic status (ESCS)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "JOYREAD",
+        "variable_name": "Enjoyment of reading",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EUDMO",
+        "variable_name": "Enjoyment of ICT use",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "SCREADCOPM",
+        "variable_name": "Reading competence perception",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "SCREADDIFF",
+        "variable_name": "Reading difficulty perception",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "BSMJ",
+        "variable_name": "Expected occupational status",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "AUTICT",
+        "variable_name": "Autonomy in ICT use",
+        "category": "ict"
+      },
+      {
+        "variable_code": "SOIAICT",
+        "variable_name": "ICT use for social interaction",
+        "category": "ict"
+      },
+      {
+        "variable_code": "DISCLIMA",
+        "variable_name": "Classroom disciplinary climate",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "DISCRIM",
+        "variable_name": "Perceived discrimination at school",
+        "category": "school"
+      },
+      {
+        "variable_code": "INTICT",
+        "variable_name": "Interest in ICT use",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ST176Q01IA",
+        "variable_name": "Frequency reading emails",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ST176Q02IA",
+        "variable_name": "Frequency chatting online",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ST176Q05IA",
+        "variable_name": "Searching online for topics",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ST176Q06IA",
+        "variable_name": "Online group discussions/forums",
+        "category": "ict"
+      },
+      {
+        "variable_code": "HOMESCH",
+        "variable_name": "ICT use outside school for work",
+        "category": "ict"
+      },
+      {
+        "variable_code": "USECH",
+        "variable_name": "ICT use at school",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ST154Q01HA",
+        "variable_name": "Length of reading materials",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "ST158Q04HA",
+        "variable_name": "Teaching consequences of online sharing",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ST158Q05HA",
+        "variable_name": "Teaching link descriptions in search results",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ST158Q06HA",
+        "variable_name": "Teaching to detect biased information",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "DIRINS",
+        "variable_name": "Teacher-directed instruction",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "SC037Q08TA",
+        "variable_name": "Teacher mentoring",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "PROAT5AM",
+        "variable_name": "Teacher qualification level",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "WORKMAST",
+        "variable_name": "Work mastery",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "SC061Q01TA",
+        "variable_name": "Truancy",
+        "category": "student_behavior"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 Digital Reading (OECD countries/regions), 15-year-olds",
+        "target_variable": "High vs low digital reading performance (binary classification using PV1)",
+        "top_predictors": [
+          "Socioeconomic status (ESCS)",
+          "Expected occupational status",
+          "Enjoyment of reading",
+          "Reading competence perception",
+          "Reading difficulty perception"
+        ],
+        "performance_metrics": "SVM (with SVM-RFE feature selection) — Highest ACC: 0.957 for the high–low (HL) model; other indicators reported as around 0.80 (ACC/SEN/Precision/F1/AUC range described as ~0.80); AUC shown via ROC curves (exact AUC values not numerically reported in text). 10-fold CV with hyperparameter tuning via GridSearchCV (best penalty c=0.1 for HL).",
+        "standardized_conclusion": "Using PISA 2018 Digital Reading the study leveraged socioeconomic status (ESCS), expected occupational status (BSMJ), enjoyment of reading (JOYREAD), reading competence perception (SCREADCOPM), and reading difficulty perception (SCREADDIFF) to predict high versus low digital reading performance (binary outcome based on OECD proficiency cutoffs using PV1). The high–low SVM model achieved the highest classification accuracy (ACC=0.957), indicating that contextual factors at student, classroom, and school levels jointly differentiate high from low digital readers; SHAP was used for feature attribution (predictive importance, not causal effects). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2018 Digital Reading (OECD countries/regions), 15-year-olds",
+        "target_variable": "High vs average digital reading performance (binary classification using PV1)",
+        "top_predictors": [
+          "Socioeconomic status (ESCS)",
+          "Enjoyment of reading",
+          "Reading competence perception",
+          "Autonomy in ICT use",
+          "Frequency reading emails"
+        ],
+        "performance_metrics": "SVM (with SVM-RFE feature selection) — ACC=0.846 for the high–average (HA) model; other indicators around 0.80; best penalty c=0.01 for HA; 10-fold CV with GridSearchCV for tuning.",
+        "standardized_conclusion": "Using PISA 2018 Digital Reading the study leveraged socioeconomic status (ESCS), enjoyment of reading (JOYREAD), reading competence perception (SCREADCOPM), autonomy in ICT use (AUTICT), and frequency of reading emails (ST176Q01IA) to predict high versus average digital reading performance (binary outcome based on OECD cutoffs using PV1). The HA SVM model reached ACC=0.846, showing that high performers differ from average performers through a combination of motivational reading factors and ICT-related behaviors; SHAP provided feature-level attribution for the predictive model. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2018 Digital Reading (OECD countries/regions), 15-year-olds",
+        "target_variable": "Low vs average digital reading performance (binary classification using PV1)",
+        "top_predictors": [
+          "Interest in ICT use",
+          "Reading difficulty perception",
+          "Classroom disciplinary climate",
+          "Perceived discrimination at school",
+          "Online group discussions/forums"
+        ],
+        "performance_metrics": "SVM (with SVM-RFE feature selection) — ACC=0.845 for the low–average (LA) model; other indicators around 0.80; best penalty c=0.1 for HL and c=0.01 for HA (LA best parameter not explicitly stated in text); 10-fold CV with GridSearchCV for tuning.",
+        "standardized_conclusion": "Using PISA 2018 Digital Reading the study leveraged interest in ICT use (INTICT), reading difficulty perception (SCREADDIFF), classroom disciplinary climate (DISCLIMA), perceived discrimination at school (DISCRIM), and online group discussions/forums (ST176Q06IA) to predict low versus average digital reading performance (binary outcome based on OECD cutoffs using PV1). The LA SVM model achieved ACC=0.845, suggesting that low performers are characterized by lower ICT interest and more adverse classroom/school contexts; SHAP was used to interpret predictive feature contributions. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzed PISA 2018 digital reading data for 276,269 fifteen-year-olds across 38 OECD countries/regions, using PV1 (first plausible value in reading) to represent reading performance. Three SVM classifiers (with SVM-RFE feature selection and 10-fold cross-validation) were trained for pairwise distinctions: high vs low, high vs average, and low vs average. The high–low model performed best with ACC=0.957, while the high–average and low–average models achieved ACC=0.846 and ACC=0.845, respectively, with ROC/AUC and other metrics described as around 0.80. Key predictors included ESCS, reading motivation/competence/difficulty constructs, ICT-related behaviors (e.g., email reading frequency), and classroom/school climate variables (e.g., disciplinary climate and discrimination). The paper uses SHAP for interpretability (feature attribution for prediction, not causal inference) and applies missing-data preprocessing (case removal >30% missing; school-level imputation within school; student-level nearest-neighbor mean imputation), but it does not report using PISA sampling weights.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "file_name": "112. Zhang et al. (2023). Accurate Assessment via Process Data.pdf",
+    "title": "ACCURATE ASSESSMENT VIA PROCESS DATA",
+    "authors": [
+      "Susu Zhang",
+      "Zhi Wang",
+      "Jitong Qi",
+      "Jingchen Liu",
+      "Zhiliang Ying"
+    ],
+    "year": 2023,
+    "doi": "10.1007/s11336-022-09880-8",
+    "venue": "Psychometrika",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The empirical analysis uses the 2012 PIAAC PSTRE (Problem Solving in Technology-Rich Environments) assessment, focusing on PSTRE data from five countries/regions (UK—England and Northern Ireland, Ireland, Japan, the Netherlands, and the USA) and only respondents assigned to PSTRE for both blocks. The analytic sample is restricted to individuals who responded to all 14 PSTRE items (no omissions), and item parameters are calibrated using a generalized partial credit model before applying the proposed process-incorporated Rao–Blackwellization procedure. The manuscript does not report the use of PIAAC sampling weights or replicate weights (e.g., BRR/jackknife) in the empirical estimation or evaluation steps. Because the study is a psychometric/measurement-modeling paper that does not describe complex-survey-weighted estimation, the weighting strategy is unclear from the provided text; therefore, weights are treated as not reported."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "listwise_deletion",
+    "handling_not_reported_explanation": "Plausible values are not directly used as the dependent variable in this paper’s empirical scoring framework. The study focuses on latent trait estimation for PSTRE using response-based and process-incorporated estimators, and it evaluates agreement against a reference-set latent trait estimate derived from final responses to a subset of items; the text does not describe PV generation/combining for the modeled latent trait. Missing data handling is implemented by excluding respondents who omitted any of the 14 PSTRE items, which is a complete-case restriction for the analytic sample.",
+    "sample_details": {
+      "total_students": 2304,
+      "countries": [
+        {
+          "country_code": "GBR",
+          "n_students": null
+        },
+        {
+          "country_code": "IRL",
+          "n_students": null
+        },
+        {
+          "country_code": "JPN",
+          "n_students": null
+        },
+        {
+          "country_code": "NLD",
+          "n_students": null
+        },
+        {
+          "country_code": "USA",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Uses the 2012 PIAAC PSTRE assessment and restricts to respondents assigned to PSTRE for both cognitive blocks (each block has 7 items; total 14 items). Excludes individuals who omitted any of the 14 PSTRE items (omission behavior such as taking no action and moving on), yielding an analytic sample of 2304 respondents who responded to all 14 PSTRE items. For evaluation, the 14 items are repeatedly partitioned into scoring and reference sets of 7 items (50 random partitions) to compare response-based vs process-incorporated latent trait estimators."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": [
+        "Ridge Regression",
+        "Linear Regression"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "PSTRE",
+        "variable_name": "PIAAC PSTRE latent proficiency",
+        "category": "prior_achievement"
+      },
+      {
+        "variable_code": "age_16_65",
+        "variable_name": "Age (16–65 years)",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "country",
+        "variable_name": "Country/region",
+        "category": "system_level"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PIAAC 2012 PSTRE (Problem Solving in Technology-Rich Environments), 5 countries/regions",
+        "target_variable": "PSTRE latent proficiency (process-incorporated vs response-based agreement with reference set)",
+        "top_predictors": [
+          "PIAAC PSTRE latent proficiency",
+          "Age (16–65 years)",
+          "Country/region"
+        ],
+        "performance_metrics": "Process-incorporated scoring consistently produced smaller MSE with respect to the reference-set latent trait estimate across scoring-set lengths (2–7 items) and higher Kendall’s τ; with 2 scoring items, process-incorporated median MSE was comparable to response-based scoring using 5 items, and with 4+ items process-incorporated MSE was similar or lower than response-based using all 7 items. Exact numeric values for MSE/τ are not provided in the text excerpt.",
+        "standardized_conclusion": "Using PIAAC 2012 PSTRE data from the scoring set and reference set split (7+7 items) across five countries/regions, the study leveraged process-derived features (embedded via MDS and combined through Rao–Blackwellization) together with response-based latent trait estimates to predict reference-set PSTRE proficiency, finding that process-incorporated scoring achieved consistently lower MSE and higher Kendall’s τ than response-based scoring, especially when the two estimators disagreed most. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The paper proposes a Rao–Blackwellization framework to refine latent trait estimates by incorporating problem-solving process information in addition to final item responses. In simulations, the process-incorporated estimator reduced mean squared error (MSE) and improved Kendall’s rank correlation (τ) relative to response-based estimation, with improvements growing as sample size and test length increased. In the empirical PIAAC 2012 PSTRE example (five countries/regions; N=2304 after excluding omissions), the process-incorporated latent trait estimator showed smaller MSE and larger Kendall’s τ against an external reference-set latent trait estimate across scoring-set lengths from 2 to 7 items. The authors report that with only two scoring items, process-incorporated scoring could reach agreement comparable to response-based scoring using five items, and with four or more items it matched or outperformed response-based scoring using all seven items. A key limitation is that the evaluation uses split-half agreement with a reference-set estimate rather than the true latent trait, and the excerpt does not report whether PIAAC sampling weights/replicate weights were applied.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": "The study is an empirical measurement/estimation paper with predictive regression components (conditional expectations) but the provided excerpt does not specify a single best-performing ML algorithm among multiple candidates; therefore, the primary ML technique is left null rather than inferred. The main empirical comparison is between response-based vs process-incorporated latent trait estimators, not between competing supervised ML classifiers with reported winner labels."
+  }
+}

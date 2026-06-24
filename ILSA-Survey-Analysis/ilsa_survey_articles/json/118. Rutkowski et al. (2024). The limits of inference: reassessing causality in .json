@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "file_name": "118. Rutkowski et al. (2024). The limits of inference: reassessing causality in international assessments.pdf",
+    "title": "The limits of inference: reassessing causality in international assessments",
+    "authors": [
+      "David Rutkowski",
+      "Leslie Rutkowski",
+      "Greg Thompson",
+      "Yusuf Canbolat"
+    ],
+    "year": 2024,
+    "doi": "10.1186/s40536-024-00197-9",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "review_article"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This is a conceptual/review paper that scrutinizes the methodological validity of causal claims made using international large-scale assessment (ILSA) data. The manuscript does not conduct an original student-level empirical analysis using ILSA microdata, and it does not report any analytic sample construction, weighting, or replicate-weight procedures. Because no dataset/cycle is analyzed for estimation, there is no weight variable (e.g., W_FSTUWT/TOTWGT) to extract and no indication that complex survey weights or BRR/jackknife replicate weights were applied. The discussion instead evaluates quasi-experimental design assumptions (e.g., equivalence in expectation, SUTVA/ignorability) and illustrates limitations using previously published studies."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "Plausible values (PVs) are not applicable because the paper does not estimate ILSA achievement outcomes from PV-based cognitive scales using student-level microdata. Instead, it is a methodological critique/reassessment of causal inference practices in ILSA research, discussing RCTs and quasi-experimental designs and evaluating published examples conceptually. As a result, there is no missing-data/imputation strategy to extract for PVs or other ILSA variables.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [],
+      "sample_filtering_criteria": "No original ILSA microdata sample is constructed or analyzed. The paper discusses and critiques causal inference approaches and reviews published quasi-experimental studies (e.g., school closure, private school, early tracking) without reporting an analytic student sample for the authors’ own analysis."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [],
+    "outcome_summary": "This paper does not train or evaluate machine learning models on ILSA microdata. Instead, it argues that causal inferences drawn from ILSA data are often tenuous due to challenges in meeting quasi-experimental assumptions, including issues related to cross-country heterogeneity, standardization, treatment definition, and the difficulty of establishing equivalence in expectation. The authors contrast RCTs (gold standard) with quasi-experimental designs and use published examples to illustrate where causal claims may fail. The paper concludes by proposing a framework for critically evaluating quasi-experimental designs using ILSAs and recommends caution in using ILSA data for causal policy claims.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "The manuscript is a methodological review/critical reassessment rather than an empirical ILSA analysis. It does not report an original analytic sample (total N), does not estimate PV-based achievement models, and does not evaluate any ML algorithms. Therefore, fields such as countries-by-sample-size, ML techniques, and structured predictive findings are not applicable to the authors’ own study."
+  }
+}

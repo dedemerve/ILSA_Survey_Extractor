@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "file_name": "60. Bozkuş. (2025). Predictors of reading performance of fourth-grade Turkish students.pdf",
+    "title": "Predictors of reading performance of fourth-grade Turkish students",
+    "authors": [
+      "K. Bozkuş"
+    ],
+    "year": 2025,
+    "doi": "10.19128/turje.1431545",
+    "venue": "Turkish Journal of Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PIRLS 2021 microdata for fourth-grade students in Türkiye, merged from student, teacher, home, and school questionnaires into a single R-processed file. The analytic sample was restricted to cases with <=20% missing data, after which remaining missing values were imputed and the dataset was normalized (centering and variance scaling). The manuscript does not report applying PIRLS sampling weights or any replicate-weight procedure (e.g., BRR/jackknife), and it does not name any weight variable (such as W_FSTUWT/TOTWGT). Because the predictive model is an SVM trained with caret and the paper does not discuss complex-survey weighting, the analysis is treated as unweighted; this may leave residual bias from the original clustered sampling design."
+    },
+    "plausible_values_handling": "single_pv",
+    "missing_data_handling": "knn_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 3589,
+      "countries": [
+        {
+          "country_code": "TUR",
+          "n_students": 3589
+        }
+      ],
+      "sample_filtering_criteria": "Used PIRLS 2021 fourth-grade data for Türkiye. The consolidated raw file contained 6032 students; cases with more than 20% missing data were removed, reducing the sample to 5538. Remaining missing values were imputed using k-nearest-neighbor mean imputation with k=10. The dependent variable was constructed by recoding the PIRLS benchmark score ASRIBM01 (first plausible value) into a binary success indicator: low performance combined categories below 400 and 400–<475; high performance combined categories 475–<550? (as described: categories 4 and 5: 550–<625 and >=625). The final analytic dataset for ML contained 3589 students and 406 variables (405 predictors plus the binary outcome identifier)."
+    },
+    "ml_techniques": {
+      "primary": "SVM",
+      "all_techniques": [
+        "SVM"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ACBG14B",
+        "variable_name": "Emphasis on letter-sound relationships",
+        "category": "school"
+      },
+      {
+        "variable_code": "ACBG14A",
+        "variable_name": "Emphasis on alphabet letters",
+        "category": "school"
+      },
+      {
+        "variable_code": "ATBR13E",
+        "variable_name": "Borrow books from classroom library",
+        "category": "school"
+      },
+      {
+        "variable_code": "ACBG14C",
+        "variable_name": "Emphasis on reading words",
+        "category": "school"
+      },
+      {
+        "variable_code": "ATBR18A",
+        "variable_name": "Observing students as they work",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ATBR18C",
+        "variable_name": "Short regular written assessments",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ATBR10C",
+        "variable_name": "Text-evidence explanation prompts",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ATBR08A",
+        "variable_name": "Teacher reads aloud",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ATBG12E",
+        "variable_name": "Teacher feels proud of work",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ACBG14D",
+        "variable_name": "Emphasis on reading isolated sentences",
+        "category": "school"
+      },
+      {
+        "variable_code": "ATBR18B",
+        "variable_name": "Asking students answer questions",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ATBG10G",
+        "variable_name": "Parental commitment to readiness",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "ATBG12C",
+        "variable_name": "Teacher feels enthusiastic about job",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ATBR10D",
+        "variable_name": "Comparing reading with experiences",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ATBG07AF",
+        "variable_name": "Professional development in reading",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ATBR17C",
+        "variable_name": "Monitoring homework completion",
+        "category": "teacher"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PIRLS 2021 Türkiye (Grade 4) Reading",
+        "target_variable": "Reading performance (binary high vs low; ASRIBM01 PV1 benchmark)",
+        "top_predictors": [
+          "Emphasis on letter-sound relationships",
+          "Emphasis on alphabet letters",
+          "Borrow books from classroom library",
+          "Emphasis on reading words",
+          "Observing students as they work"
+        ],
+        "performance_metrics": "SVM (linear kernel, L2-regularized) — Accuracy: 0.957 (95% CI: 0.943–0.968), Kappa: 0.914, Sensitivity: 0.956, Specificity: 0.958, Balanced Accuracy: 0.9572; P-value [Acc > NIR] < 0.001. Feature selection via RFE identified top 16 factors; model trained/tested with 70%/30% split and 5-times repeated 10-fold CV for resampling.",
+        "standardized_conclusion": "Using PIRLS 2021 Türkiye (Grade 4) Reading the study leveraged school emphasis on foundational literacy (letter-sound and alphabet letters, reading words) together with access to books (borrowing from classroom library) and teacher assessment practices to predict binary reading performance, finding that the SVM distinguished high- vs low-performing students with high accuracy (≈95.7%) and strong agreement (Kappa ≈0.914). The top predictors were dominated by school-level instructional emphasis and book access, followed by teacher assessment/teaching strategies and motivation-related factors, while only one family-level factor (parental commitment to readiness) entered the top 16. This indicates that ol-level instructional emphasis and book access, followed by teacher assessment/teaching strategies and motivation-related factors, while only one family-level factor (parental commitment to readiness) entered the top 16."
+      }
+    ],
+    "outcome_summary": "The study analyzed PIRLS 2021 Grade 4 reading data for Türkiye (final analytic sample: 3589 students) and recoded the benchmark score ASRIBM01 (first plausible value) into a binary outcome (high vs low performance). Using an L2-regularized linear-kernel SVM, trained with recursive feature elimination (RFE) over 405 candidate predictors and evaluated with 5-times repeated 10-fold cross-validation plus a 70/30 train-test split, the model achieved Accuracy = 0.957 (95% CI: 0.943–0.968), Kappa = 0.914, Sensitivity = 0.956, Specificity = 0.958, and Balanced Accuracy = 0.9572 (P < 0.001 vs no-information rate). The most influential predictors were school-level emphases on foundational literacy (letter-sound relationships, alphabet letters, reading words) and students’ ability to borrow books, with teacher-level assessment and comprehension-support strategies also prominent. A key limitation is that the paper does not report using PIRLS sampling weights/replicate weights, and the outcome is a binary classification derived from PV1 benchmark recoding rather than modeling the full achievement scale.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

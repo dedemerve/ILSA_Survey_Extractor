@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "file_name": "74. Ding et al. (2025). Evaluating test-taking motivation based on process data and its influence on academic performance.pdf",
+    "title": "Evaluating test-taking motivation based on process data and its influence on academic performance",
+    "authors": [],
+    "year": 2025,
+    "doi": "10.1016/j.actpsy.2025.105525",
+    "venue": "Acta Psychologica",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": true,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2018 science cognitive item process data (two science clusters, S01 and S02) and restricts the analytic sample to students who completed both clusters. After excluding 28 students with missing answers to the target items or with total reaction time outside the normal range (3600 s), the authors report an analytic sample of 2853 students. For the multilevel regression analyses predicting science academic performance, they incorporate the sampling weights provided by the PISA dataset into all multilevel analyses to improve population representativeness. The manuscript does not report a specific weight variable name (e.g., W_FSTUWT), and it does not mention replicate-weight methods (e.g., BRR/jackknife), so replicate-weight usage cannot be confirmed."
+    },
+    "plausible_values_handling": "single_pv",
+    "missing_data_handling": "listwise_deletion",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 2853,
+      "countries": [
+        {
+          "country_code": "CHN",
+          "n_students": 1067
+        },
+        {
+          "country_code": "SGP",
+          "n_students": null
+        },
+        {
+          "country_code": "KOR",
+          "n_students": null
+        },
+        {
+          "country_code": "JPN",
+          "n_students": null
+        },
+        {
+          "country_code": "GBR",
+          "n_students": null
+        },
+        {
+          "country_code": "USA",
+          "n_students": null
+        },
+        {
+          "country_code": "CAN",
+          "n_students": null
+        },
+        {
+          "country_code": "AUS",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Data come from PISA 2018 science cognitive items. The authors excluded adaptive testing items (reading literacy) and selected two science clusters (Form 13, S01 and S02) containing 38 items (25 MC, 13 CR) to ensure consistent process data. They further restricted the sample to representative students from Confucian and Western cultures who completed both S01 and S02. They deleted 28 students who were missing all answers to the target items or whose total reaction time exceeded 3600 seconds; the remaining analytic sample comprised 2853 students."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "SES",
+        "variable_name": "Socioeconomic status (SES)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "gender",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "competitiveness",
+        "variable_name": "Competitiveness (achievement motivation)",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "work_mastery",
+        "variable_name": "Work mastery (achievement motivation)",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "culture",
+        "variable_name": "Culture (Western vs Confucian)",
+        "category": "system_level"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 Science (clusters S01 & S02; Form 13; 15-year-olds)",
+        "target_variable": "Science academic performance (Plausible Value 1)",
+        "top_predictors": [
+          "Behavioral effort (cluster membership)",
+          "Self-reported effort",
+          "Response time effort (RTE)",
+          "Socioeconomic status (SES)",
+          "Gender"
+        ],
+        "performance_metrics": "Multilevel regression (MLM): Behavioral effort Est.=87.338, p<0.001, d=1.083; Self-reported effort Est.=17.604, p<0.001, d=0.448; RTE Est.=32.449, p<0.001, d=0.773. Cultural moderation: interaction Est.(Behavior)=-31.565, p<0.05; interaction Est.(Self-reported)=-14.768, p<0.05; interaction Est.(RTE)=-10.775, p=0.083 (not significant).",
+        "standardized_conclusion": "Using PISA 2018 Science data (clusters S01 & S02) the study leveraged behavioral effort (derived from process indicators), self-reported effort, and response time effort (RTE)—while controlling for SES, gender, competitiveness, and work mastery—to predict science academic performance (PV1). Behavioral effort showed the largest positive association with performance, and the effort–performance relationship was moderated by culture, with Western students showing a larger motivational benefit than Confucian students. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study uses PISA 2018 science process data from two fixed clusters (S01 and S02; 38 items) to construct a new “behavioral effort” indicator from eight standardized process measures (time to last visit, time to first action, number of actions, and user missingness, separated for MC and CR items). After excluding 28 students with missing target-item responses or total reaction time >3600 s, the analytic sample contained 2853 students from Confucian and Western culture groups. Behavioral effort was validated against self-reported effort and response time effort (RTE) and then used in multilevel regression models predicting science academic performance (PISA PV1). All three effort measures (behavioral effort, self-reported effort, RTE) significantly and positively predicted performance, with behavioral effort showing the largest effect (Est.=87.338, p<0.001, d=1.083). Cultural moderation was significant for behavioral effort and self-reported effort but not for RTE (p=0.083). The paper uses multilevel modeling with PISA sampling weights, but it does not evaluate ML predictive algorithms; thus, “ML techniques” are not applicable here.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "This paper does not train or evaluate machine-learning predictive models. The main analyses are (i) K-means clustering to form behavioral-effort groups and (ii) multilevel regression (MLM) to test associations with science performance; neither is a supervised ML algorithm in the schema’s allowed ML-technique list. Therefore, ml_techniques.primary is left null and all_techniques is empty, while the study remains empirical and uses clustering/regression for inference rather than ML prediction."
+  }
+}

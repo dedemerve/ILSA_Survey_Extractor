@@ -1,0 +1,271 @@
+{
+  "metadata": {
+    "file_name": "59. Schwerter et al. (2025). Metropolitan, Urban, and Rural Regions: How Regional Differences Affect Elementary School Students in Germany.pdf",
+    "title": "Metropolitan, Urban, and Rural Regions: How Regional Differences Affect Elementary School Students in Germany",
+    "authors": [
+      "Jakob Schwerter",
+      "Johannes Bleher",
+      "Philipp Doebler",
+      "Nele McElvany"
+    ],
+    "year": 2025,
+    "doi": "10.1177/23328584251331453",
+    "venue": null,
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PIRLS 2016 representative assessment data for Germany, focusing on fourth-grade students and linking student, parent, teacher, and school-principal questionnaires. The authors report that they performed school-clustered and heteroskedastic-robust standard errors including survey weights using the R survey package, but the ML component in the paper is implemented as LASSO-based variable selection and post-LASSO OLS regressions rather than a weight-aware ML learner. The analytic sample is restricted to students with non-missing outcome/regressor information after excluding constant/low-variance variables and excluding observations with only missing information; additionally, they apply a block bootstrap at the school level and then impute missing values 300 times within each bootstrap resample. Because the manuscript does not specify a weight variable name (e.g., W_FSTUWT) for the ML/selection steps, weighting is treated as applied for inference in the regression steps, while the ML selection procedure itself is not described as explicitly incorporating survey weights."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "multiple_imputation",
+    "handling_not_reported_explanation": "Plausible values are not applicable because the dependent variables are (i) a dichotomized academic track recommendation based on school-provided recommendations and (ii) latent/scale measures of enjoyment of school and reading interest derived from questionnaire items, rather than PIRLS cognitive achievement scores that are typically reported via plausible values. Missing data handling is explicitly described: the authors use multiple imputation via missRanger (chained random forests) with predictive mean matching, repeated 300 times within school-level bootstrap resamples.",
+    "sample_details": {
+      "total_students": 3959,
+      "countries": [
+        {
+          "country_code": "DEU",
+          "n_students": 3959
+        }
+      ],
+      "sample_filtering_criteria": "Used PIRLS 2016 Germany data and restricted the analysis to fourth-grade students (N=3,959). The authors merged student, parent, teacher, and school-principal questionnaires into an all-in-one student-level dataset and excluded observations with only missing information and constant/very low-variance variables. For the main estimation, they applied a school-level block bootstrap (resampling schools with replacement) and then imputed missing values 300 times within each bootstrap resample; the average number of observations across imputed datasets is reported as 3,608. Outcomes were operationalized as: academic track recommendation dichotomized to Gymnasium vs not; enjoyment of school as a latent variable from five Likert items; and reading interest as an 8-item scale."
+    },
+    "ml_techniques": {
+      "primary": "LASSO",
+      "all_techniques": [
+        "LASSO"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "gender",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "year_of_birth",
+        "variable_name": "Age (year of birth)",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "HISEI",
+        "variable_name": "Highest ISEI (HISEI)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "immigrant_background",
+        "variable_name": "Immigrant background",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "single_parent",
+        "variable_name": "Single-parent household",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "books_at_home",
+        "variable_name": "Books at home",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "parental_education",
+        "variable_name": "Parental education",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "parental_support_behavior",
+        "variable_name": "Parental support behavior",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "absenteeism",
+        "variable_name": "Absenteeism",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "library_usage",
+        "variable_name": "Library usage",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "extracurricular_reading",
+        "variable_name": "Extracurricular reading",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "reading_self_concept",
+        "variable_name": "Reading self-concept",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "cognitive_skills_test",
+        "variable_name": "Cognitive skills test",
+        "category": "prior_achievement"
+      },
+      {
+        "variable_code": "special_education_support",
+        "variable_name": "Special education support",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "classroom_reading_activities",
+        "variable_name": "Classroom reading activities",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "perceived_classroom_management",
+        "variable_name": "Perceived classroom management",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "perceived_teacher_support",
+        "variable_name": "Perceived teacher support",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "computer",
+        "variable_name": "Computer",
+        "category": "ict"
+      },
+      {
+        "variable_code": "internet_use",
+        "variable_name": "internet use",
+        "category": "ict"
+      },
+      {
+        "variable_code": "sense_of_safety",
+        "variable_name": "Sense of safety at school",
+        "category": "school"
+      },
+      {
+        "variable_code": "private_tutoring",
+        "variable_name": "Private tutoring",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "free_meals",
+        "variable_name": "Free meals at school",
+        "category": "school"
+      },
+      {
+        "variable_code": "homework_supervision",
+        "variable_name": "Homework supervision",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "school_spirit",
+        "variable_name": "School spirit",
+        "category": "school"
+      },
+      {
+        "variable_code": "teacher_experience",
+        "variable_name": "Teacher experience",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "teacher_education_attainment",
+        "variable_name": "Teacher education attainment",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "phonics_tables_use",
+        "variable_name": "Use of phonics tables",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "differentiation_in_reading",
+        "variable_name": "Differentiation in reading",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "reading_specialist_staff",
+        "variable_name": "Reading specialist(s) on staff",
+        "category": "school"
+      },
+      {
+        "variable_code": "inclusion_school",
+        "variable_name": "Inclusion school (Inklusionsschule)",
+        "category": "school"
+      },
+      {
+        "variable_code": "immigration_school",
+        "variable_name": "Immigration/refugee composition",
+        "category": "school"
+      },
+      {
+        "variable_code": "school_profile",
+        "variable_name": "School profile",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "class_profile",
+        "variable_name": "class profile",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "school_size",
+        "variable_name": "School size",
+        "category": "school"
+      },
+      {
+        "variable_code": "class_size",
+        "variable_name": "Fourth-grade class size",
+        "category": "school"
+      },
+      {
+        "variable_code": "federal_state_fixed_effects",
+        "variable_name": "Federal state fixed effects",
+        "category": "system_level"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PIRLS 2016 Germany (Grade 4) — academic track recommendation",
+        "target_variable": "Academic track recommendation (Gymnasium vs not)",
+        "top_predictors": [
+          "Parental support behavior",
+          "Cognitive skills test",
+          "Computer and internet use",
+          "Perceived teacher support",
+          "Federal state fixed effects"
+        ],
+        "performance_metrics": "OLS baseline: rural +0.109 (SE 0.045), p<.05; metropolitan +0.151 (SE 0.053), p<.01. Post-LASSO (student-level controls): rural +0.007 (SE 0.039) and metropolitan +0.065 (SE 0.041), both not significant; post-LASSO (student+outcome-selected PCs): rural +0.012 (SE 0.039) and metropolitan +0.050 (SE 0.037), both not significant. Model fit: R² increases from 0.093 to 0.551 (all-in-one, model 6) and Radj² to 0.539.",
+        "standardized_conclusion": "Using PIRLS 2016 Germany Grade 4 the study leveraged student and school characteristics selected via LASSO (notably parental support, student skills, and classroom/ICT-related factors) to predict academic track recommendation, finding that the initial rural and metropolitan advantages in the baseline model largely disappeared after controlling for the selected principal components. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PIRLS 2016 Germany (Grade 4) — enjoyment of school",
+        "target_variable": "Enjoyment of school (latent/scale score)",
+        "top_predictors": [
+          "Perceived teacher support",
+          "Classroom reading activities",
+          "Computer and internet use",
+          "Sense of safety at school",
+          "Federal state fixed effects"
+        ],
+        "performance_metrics": "OLS baseline: rural +0.302 SD (SE 0.107), p<.01; metropolitan +0.239 SD (SE 0.131), p<.001. Post-LASSO (student-level controls): rural +0.066 (SE 0.091) and metropolitan +0.056 (SE 0.104), not significant. Post-LASSO (all-in-one): rural −0.032 (SE 0.122) and metropolitan +0.030 (SE 0.126), not significant. Model fit: R² increases from 0.035 to 0.438 (all-in-one, model 7) with Radj²=0.423.",
+        "standardized_conclusion": "Using PIRLS 2016 Germany Grade 4 the study leveraged LASSO-selected student and classroom factors (including perceived teacher support, reading-related classroom practices, and ICT use) to predict enjoyment of school, finding that the baseline U-shaped regional differences attenuated and became statistically non-significant after post-LASSO controls. This indicates that ort, reading-related classroom practices, and ICT use) to predict enjoyment of school, finding that the baseline U-shaped regional differences attenuated and became statistically non-significant after post-LASSO controls."
+      },
+      {
+        "dataset_used": "PIRLS 2016 Germany (Grade 4) — reading interest",
+        "target_variable": "Reading interest (scale score)",
+        "top_predictors": [
+          "Parental support behavior",
+          "Absenteeism",
+          "Extracurricular reading",
+          "Classroom reading activities",
+          "Federal state fixed effects"
+        ],
+        "performance_metrics": "OLS baseline: rural +0.210 (SE 0.109), p<.1; metropolitan +0.253 (SE 0.138), p<.1. Post-LASSO (student-level controls): rural −0.075 (SE 0.083) and metropolitan +0.038 (SE 0.096), not significant. Post-LASSO (all-in-one): rural −0.075 (SE 0.124) and metropolitan +0.048 (SE 0.095), not significant. Model fit: R² increases from 0.024 to 0.549 (all-in-one, model 7) with Radj²=0.537.",
+        "standardized_conclusion": "Using PIRLS 2016 Germany Grade 4 the study leveraged LASSO-selected student and classroom predictors (including parental support and reading-related learning behaviors) to predict reading interest, finding that the baseline rural/metropolitan differences weakened substantially and became non-significant after post-LASSO controls, with a tendency for rural coefficients to flip sign. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzes PIRLS 2016 Germany Grade 4 data (N=3,959) to test whether regional context (metropolitan, urban, rural) is associated with academic track recommendation, enjoyment of school, and reading interest. In baseline OLS models (with federal state fixed effects), rural and metropolitan students show higher academic track recommendations (rural +0.109, p<.05; metropolitan +0.151, p<.01) and a U-shaped pattern for enjoyment of school (rural +0.302 SD, p<.01; metropolitan +0.239 SD, p<.001). After LASSO-based dimension reduction and post-LASSO regressions using selected principal components, student-level information largely overwrites the regional effects: regional coefficients become small and statistically non-significant for all three outcomes. The paper uses school-level bootstrapping and multiple imputation (missRanger with predictive mean matching) and reports regression inference with survey weights via the R survey package, but the ML selection procedure is not described as weight-aware. The authors explicitly frame results as non-causal and note limitations of their achievement proxy and regional typology.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

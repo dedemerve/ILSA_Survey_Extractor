@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "file_name": "8. Acıslı-Celik & Yesilkanat. (2023). Predicting science achievement scores with machine learning algorithms: a case study of OECD PISA 2015–2018 data.pdf",
+    "title": "Predicting science achievement scores with machine learning algorithms: a case study of OECD PISA 2015–2018 data",
+    "authors": [
+      "Sibel Acıslı-Celik",
+      "Cafer Mert Yesilkanat"
+    ],
+    "year": 2023,
+    "doi": "10.1007/s00521-023-08901-6",
+    "venue": "Neural Computing and Applications",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses OECD PISA 2015 microdata for 13 randomly selected countries (Brazil, Chinese Taipei, Dominican Republic, Estonia, Finland, Hungary, Italy, Japan, Lithuania, Luxembourg, Peru, Singapore, Türkiye) and predicts PISA 2018 science outcomes using the same set of predictors. The authors report splitting each country’s PISA-2015 science data into training (75%) and testing (25%) subsets and exclude cases with missing predictor/variable values during preprocessing. The manuscript does not mention applying PISA sampling weights (e.g., student/school weights) or replicate-weight methods, and the ML models (MLR, SVR, Random Forest, XGBoost) are trained in a standard train/test framework without any stated complex-survey adjustment. Therefore, the analysis is treated as unweighted, and the paper’s handling of the nested sampling design (students within schools/countries) is not explicitly addressed beyond country-wise splitting."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "listwise_deletion",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 67329,
+      "countries": [
+        {
+          "country_code": "BRA",
+          "n_students": 8341
+        },
+        {
+          "country_code": "TWN",
+          "n_students": 6726
+        },
+        {
+          "country_code": "DOM",
+          "n_students": 1885
+        },
+        {
+          "country_code": "EST",
+          "n_students": 4781
+        },
+        {
+          "country_code": "FIN",
+          "n_students": 4955
+        },
+        {
+          "country_code": "HUN",
+          "n_students": 3866
+        },
+        {
+          "country_code": "ITA",
+          "n_students": 9192
+        },
+        {
+          "country_code": "JPN",
+          "n_students": 4985
+        },
+        {
+          "country_code": "LTU",
+          "n_students": 5133
+        },
+        {
+          "country_code": "LUX",
+          "n_students": 3577
+        },
+        {
+          "country_code": "PER",
+          "n_students": 4482
+        },
+        {
+          "country_code": "SGP",
+          "n_students": 4727
+        },
+        {
+          "country_code": "TUR",
+          "n_students": 4679
+        }
+      ],
+      "sample_filtering_criteria": "The study starts from the full PISA 2015 population (519,334 students from 72 countries) and randomly selects 13 countries. For each selected country, the PISA-2015 science achievement outcome is PV2SCIE (PISA-2015 science plausible value score). The authors then split each country’s PISA-2015 data into training and testing sets using a random 75%/25% split of the available country data. During preprocessing, missing data are detected and directly excluded from the calculation (complete-case style), and the same predictor set (18 variables) is used for training and for estimating PISA 2018 science outcomes."
+    },
+    "ml_techniques": {
+      "primary": "XGBoost",
+      "all_techniques": [
+        "Linear Regression",
+        "SVM",
+        "Random Forest",
+        "XGBoost"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ST004Q01TA",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "ST013Q01TA",
+        "variable_name": "Books at home",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ST123Q02NA",
+        "variable_name": "Parental support",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "MISCED",
+        "variable_name": "Mother education (ISCED)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "FISCED",
+        "variable_name": "Father education (ISCED)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "HISCED",
+        "variable_name": "Highest parental education",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ST097Q03TA",
+        "variable_name": "Class discipline in science",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "SMINS",
+        "variable_name": "Science learning time (weekly)",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "TMINS",
+        "variable_name": "Total learning time (weekly)",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "BELONG",
+        "variable_name": "Sense of belonging to school",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EMOSUPS",
+        "variable_name": "Parents emotional support",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "HOMEPOS",
+        "variable_name": "Home possessions",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "WEALTH",
+        "variable_name": "Family wealth",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ESCS",
+        "variable_name": "Socioeconomic status (ESCS)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ADINST",
+        "variable_name": "Teacher adaptation",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "PERFEED",
+        "variable_name": "Received feedback",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "TEACHSUP",
+        "variable_name": "Teacher support in science",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ST011Q04TA",
+        "variable_name": "Computer for school work",
+        "category": "ict"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2015 Science (PV2SCIE) → PISA 2018 Science (PV2SCIE), 13 countries",
+        "target_variable": "PISA-2018 science achievement (PV2SCIE)",
+        "top_predictors": [
+          "Science learning time (weekly)",
+          "Socioeconomic status (ESCS)",
+          "Home possessions",
+          "Total learning time (weekly)"
+        ],
+        "performance_metrics": "Best model: XGBoost. Highest country-level correlation: Luxembourg r=0.600, RMSE=75.06, MAE=59.97; lowest: Finland r=0.467, RMSE=79.38, MAE=63.24. Reported correlation range across countries: 0.40 < r < 0.69. (Model comparison via Tukey tests: XGBoost significantly better than MLR, p<0.05.)",
+        "standardized_conclusion": "Using PISA 2015 Science (PV2SCIE) data to predict PISA 2018 Science (PV2SCIE) for 13 countries, the study leveraged science learning time (SMINS), socioeconomic status (ESCS), home possessions (HOMEPOS), and total learning time (TMINS) to predict future science achievement, finding that XGBoost achieved the best predictive performance across all countries (highest correlations and lowest RMSE/MAE relative to MLR, SVR, and Random Forest). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study trains ML models on PISA 2015 science data (PV2SCIE) from 13 randomly selected countries and predicts PISA 2018 science achievement (individual PV2SCIE scores) and country-average science scores using the same 18 predictors. Using a 75%/25% random training/testing split per country and optimizing hyperparameters via grid search with 10-fold cross-validation, XGBoost consistently outperformed MLR, SVR, and Random Forest. For PISA-2018 predictions, the best country performance was Luxembourg (r=0.600, RMSE=75.06, MAE=59.97) and the weakest was Finland (r=0.467, RMSE=79.38, MAE=63.24), with correlations generally in the moderate range (0.40<r<0.69). The authors also report that country-average science scores and the direction of change were estimated with very high accuracy. Methodologically, the paper excludes missing cases and does not report the use of PISA sampling/replicate weights; additionally, the study’s variable-importance discussion is predictive rather than causal.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

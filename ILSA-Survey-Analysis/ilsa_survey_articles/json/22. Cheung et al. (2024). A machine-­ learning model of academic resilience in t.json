@@ -1,0 +1,262 @@
+{
+  "metadata": {
+    "file_name": "22. Cheung et al. (2024). A machine-­ learning model of academic resilience in the times of the COVID-­ 19 pandemic: Evidence drawn from 79 countries:economies in the PISA 2022 mathematics study.pdf",
+    "title": "A machine‐learning model of academic resilience in the times of the COVID‐19 pandemic: Evidence drawn from 79 countries/economies in the PISA 2022 mathematics study",
+    "authors": [
+      "Kwok-cheung Cheung",
+      "Pou-seong Sit",
+      "Jia-qi Zheng",
+      "Chi-chio Lam",
+      "Soi-kei Mak",
+      "Man-kai Ieong"
+    ],
+    "year": 2024,
+    "doi": "10.1111/bjep.12715",
+    "venue": "British Journal of Educational Psychology",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2022 microdata and constructs an analytic sample of ESCS-disadvantaged students, then labels academically resilient students (ARS) vs non-academically resilient students (NRS) using an international (across 79 countries/economies) top-quartile mathematics performance criterion. The manuscript describes extensive ML preprocessing within 10-fold cross-validation modules (kNN imputation, normalization, and SMOTETomek for class imbalance), but it does not report applying PISA sampling weights or replicate-weight procedures. Because the models are standard random-forest classifiers implemented in Python (scikit-learn) and the paper does not mention weight-aware estimation, the analysis is treated as unweighted. No BRR/jackknife/Taylor replicate design details or specific PISA weight variable names (e.g., W_FSTUWT/TOTWGT) are provided."
+    },
+    "plausible_values_handling": "single_pv",
+    "missing_data_handling": "knn_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 147658,
+      "countries": [],
+      "sample_filtering_criteria": "Used PISA 2022 mathematics study data across 79 countries/economies. Followed OECD international operational definition of academic resilience: (1) selected students whose ESCS is in the bottom quarter within their own country/economy (relative adversity); (2) among these, selected students whose mathematics performance is in the top quarter across the 79 countries/economies (fixed positive adaptation); (3) coded ARS=1 and remaining ESCS-disadvantaged students as NRS=0. For mathematics performance, used the first plausible value PVMATH1 (randomly chose PV1) from the 10 PISA plausible values. Teacher questionnaire variables were largely unavailable because only 18 countries/economies completed teacher questionnaires, constraining which contextual factors could be used."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Random Forest"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "gender",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "mathematics_self_efficacy",
+        "variable_name": "Math self-efficacy",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "mathematics_anxiety",
+        "variable_name": "Math anxiety",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "familiarity_with_math_concepts",
+        "variable_name": "Familiarity with math concepts",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "truancy",
+        "variable_name": "Truancy",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "future_aspirations",
+        "variable_name": "Future aspirations",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "family_support_self_directed_learning",
+        "variable_name": "Family support for self-learning",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "remote_instruction_problems",
+        "variable_name": "Problems with remote instruction",
+        "category": "school"
+      },
+      {
+        "variable_code": "school_closure_support",
+        "variable_name": "School closure support",
+        "category": "system_level"
+      },
+      {
+        "variable_code": "school_activities_during_closure",
+        "variable_name": "School activities during closure",
+        "category": "school"
+      },
+      {
+        "variable_code": "ict_self_efficacy",
+        "variable_name": "ICT self-efficacy",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "tablet_availability_school",
+        "variable_name": "Tablet availability at school",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ict_activity_frequency",
+        "variable_name": "ICT activity frequency",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ict_availability",
+        "variable_name": "ICT availability",
+        "category": "ict"
+      },
+      {
+        "variable_code": "usage",
+        "variable_name": "usage",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "computer_availability_school",
+        "variable_name": "Computer availability at school",
+        "category": "ict"
+      },
+      {
+        "variable_code": "digital_resources_availability",
+        "variable_name": "Digital resources availability",
+        "category": "ict"
+      },
+      {
+        "variable_code": "arriving_late",
+        "variable_name": "Arriving late",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "skipping_classes_days",
+        "variable_name": "Skipping classes/days",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "grade_repetition",
+        "variable_name": "Grade repetition",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "expected_occupation_status",
+        "variable_name": "Expected occupation status",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "expected_educational_level",
+        "variable_name": "Expected educational level",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "early_childhood_education_care",
+        "variable_name": "Early childhood education/care",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "household_care_work",
+        "variable_name": "Household care/work",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "sport_practice",
+        "variable_name": "Sport practice",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "homework_study",
+        "variable_name": "Studying for homework",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "work_for_pay",
+        "variable_name": "Working for pay",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "mathematics_teacher_ratio",
+        "variable_name": "Math teacher-student ratio",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "mathematics_teacher_support",
+        "variable_name": "Math teacher support",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "cognitive_activation_in_math",
+        "variable_name": "Cognitive activation in math",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "mathematics_extra_curricular_activities",
+        "variable_name": "Math extra-curricular activities",
+        "category": "school"
+      },
+      {
+        "variable_code": "student_mathematics_teacher_ratio",
+        "variable_name": "Student-math teacher ratio",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "total_mathematics_teachers",
+        "variable_name": "Total math teachers",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ability_grouping_math",
+        "variable_name": "Ability grouping in math",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "school_responsibility_curriculum",
+        "variable_name": "School responsibility for curriculum",
+        "category": "school"
+      },
+      {
+        "variable_code": "pedagogical_support_personnel",
+        "variable_name": "Pedagogical support personnel",
+        "category": "school"
+      },
+      {
+        "variable_code": "school_responsibility_resources",
+        "variable_name": "School responsibility for resources",
+        "category": "school"
+      },
+      {
+        "variable_code": "school_selectivity",
+        "variable_name": "School selectivity",
+        "category": "school"
+      },
+      {
+        "variable_code": "class_size",
+        "variable_name": "Class size",
+        "category": "school"
+      },
+      {
+        "variable_code": "total_teachers_school",
+        "variable_name": "Total teachers at school",
+        "category": "school"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2022 Mathematics (79 countries/economies) — ESCS bottom-quarter within-country; top-quarter mathematics across countries",
+        "target_variable": "Academic resilience status (ARS=1 vs NRS=0)",
+        "top_predictors": [
+          "Math self-efficacy",
+          "Math anxiety",
+          "Familiarity with math concepts",
+          "Truancy",
+          "Future aspirations"
+        ],
+        "performance_metrics": "Random Forest (10-fold cross-validation): Accuracy=90.54%, ROC-AUC=96.79%, Precision=93.13%, Recall=87.58%, F-measure=90.26%; optimal feature subset size=35 (top 35 features).",
+        "standardized_conclusion": "Using PISA 2022 Mathematics the study leveraged math self-efficacy, math anxiety, familiarity with math concepts, truancy, and future aspirations to classify academic resilience status (ARS vs NRS), finding that the random-forest model achieved strong discrimination (ROC-AUC=96.79%) and that the top 35 features largely validated the prior resilience framework; SHAP was used to quantify feature contributions, but the paper is cross-sectional so SHAP-based importance should not be interpreted as causal effects. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzed PISA 2022 mathematics data from 79 countries/economies and defined academic resilience as ESCS bottom-quarter within-country combined with top-quarter mathematics performance across countries. Using a random-forest classifier with 10-fold cross-validation, the model distinguished academically resilient (ARS) vs non-resilient (NRS) students with Accuracy=90.54%, ROC-AUC=96.79%, Precision=93.13%, Recall=87.58%, and F-measure=90.26%. The authors selected an optimal subset of 35 features via recursive feature elimination and used SHAP to estimate each feature’s direction and magnitude of contribution. Key patterns included higher math self-efficacy and stable emotional state, lower truancy, and positive future aspirations among ARS, with additional COVID-19-related school/remote-instruction and ICT-related factors. Methodologically, the analysis used kNN imputation for missing data, PV handling via a single plausible value (PVMATH1), and did not report applying PISA sampling/replicate weights; SHAP provides predictive contributions rather than causal effects.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

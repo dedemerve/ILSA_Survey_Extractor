@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "file_name": "101. Tang et al. (2021). An exploratory analysis of the latent structure of process data via action sequence.pdf",
+    "title": "An exploratory analysis of the latent structure of process data via action sequence autoencoders",
+    "authors": [
+      "Xueying Tang",
+      "Zhi Wang",
+      "Jingchen Liu",
+      "Zhiliang Ying"
+    ],
+    "year": 2021,
+    "doi": "10.1111/bmsp.12203",
+    "venue": "British Journal of Mathematical and Statistical Psychology",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PIAAC 2012 PSTRE process data (11,464 respondents across 14 items) and constructs action-sequence representations for each respondent–item pair. The manuscript describes feature extraction via an action sequence autoencoder and subsequent prediction using (generalized) linear models, but it does not report applying PIAAC complex survey weights or any replicate-weight procedure. Because the analysis is ML-based (autoencoder feature learning followed by logistic/linear regression), the paper does not discuss weight incorporation; thus weights are treated as not applied. The analytic sample is restricted to respondents who completed the PSTRE items and, for the multi-item prediction experiment, further restricted to the 3,645 respondents who answered all 14 items; outcomes are also simplified from polytomous to binary for the case study."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The paper does not analyze PV-based cognitive achievement outcomes using PIAAC-generated plausible values. Instead, it focuses on process-data feature extraction from PSTRE action sequences and evaluates reconstruction/prediction of derived binary indicators, plus prediction of literacy and numeracy scores and background variables using features. The manuscript does not document a missing-data strategy for the process sequences or derived variables (e.g., how incomplete sequences or missing covariates were handled), representing a methodological reporting gap for reproducibility.",
+    "sample_details": {
+      "total_students": 11464,
+      "countries": [],
+      "sample_filtering_criteria": "Used PIAAC 2012 PSTRE process data for 14 PSTRE items. The dataset includes 11,464 respondents’ response processes for the PSTRE items; for the multi-item prediction experiment, the authors further restrict to the 3,645 respondents who answered all 14 PSTRE items. For each respondent–item pair, both the action sequence and the final response outcome are recorded; polytomous final outcomes are simplified into binary outcomes (fully corrected = 1, all others = 0). No additional country-level filtering is described in the provided text."
+    },
+    "ml_techniques": {
+      "primary": "Autoencoder",
+      "all_techniques": [
+        "Autoencoder",
+        "LSTM",
+        "GRU",
+        "Logistic Regression",
+        "Linear Regression"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "age",
+        "variable_name": "Age",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "gender",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "literacy_score",
+        "variable_name": "Literacy score",
+        "category": "prior_achievement"
+      },
+      {
+        "variable_code": "numeracy_score",
+        "variable_name": "Numeracy score",
+        "category": "prior_achievement"
+      },
+      {
+        "variable_code": "sequence_length",
+        "variable_name": "Sequence length",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "attentiveness_feature",
+        "variable_name": "Attentiveness (process)",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "interface_environment",
+        "variable_name": "Interface environment type",
+        "category": "process_data"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PIAAC 2012 PSTRE process data (14 items; respondent–item action sequences)",
+        "target_variable": "Derived binary variables (including item outcomes)",
+        "top_predictors": [
+          "Sequence length",
+          "Attentiveness (process)",
+          "Interface environment type"
+        ],
+        "performance_metrics": "Logistic regression using principal features from the action sequence autoencoder; prediction accuracy > 0.80 for all 93 derived variables, > 0.90 for 75 variables, and > 0.975 for 35 variables.",
+        "standardized_conclusion": "Using PIAAC 2012 PSTRE process data, the study leveraged autoencoder-derived process features—capturing sequence length/attentiveness and interface-related behavior—to predict derived binary indicators (including item outcomes), finding that the extracted features achieved high out-of-sample prediction accuracy (all >0.80; 35 nearly perfect). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This paper proposes an action sequence autoencoder to extract latent features from PIAAC 2012 PSTRE action sequences (11,464 respondents; 14 items). The autoencoder (with RNN components using LSTM or GRU) compresses variable-length categorical action sequences into fixed-dimensional features, followed by logistic/linear regression for prediction tasks. In the case study, the extracted features reconstructed 93 derived binary variables with prediction accuracy >0.80 for all variables, >0.90 for 75, and >0.975 for 35. Cross-item prediction showed that process features improved out-of-sample outcome prediction, especially for incorrect-response processes. For competency-related targets, process models outperformed baseline models for literacy and numeracy (higher OSR2) and improved gender prediction accuracy (up to ~0.63) and age prediction (about 2× baseline OSR2 with all 14 items). The manuscript does not report a missing-data strategy and does not document the use of PIAAC survey weights; additionally, the study is predictive rather than causal.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": null
+  }
+}

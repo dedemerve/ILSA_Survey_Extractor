@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "file_name": "72. Teig. (2024). Uncovering Student Strategies for Solving Scientific Inquiry Tasks: Insights from Student Process Data in PISA.pdf",
+    "title": "Uncovering Student Strategies for Solving Scientific Inquiry Tasks: Insights from Student Process Data in PISA",
+    "authors": [
+      "Nani Teig"
+    ],
+    "year": 2024,
+    "doi": "10.1007/s11165-023-10134-5",
+    "venue": "Research in Science Education",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses publicly available PISA 2015 process-log data and associated questionnaire data, focusing on two Norway-based examples: a PISA 2015 field trial task (Example 1) and a modified released field-trial task (Example 2). The analytic samples are restricted to specific grade levels and to students who participated in the relevant interactive task/unit, with further preprocessing to extract indicators from log files (e.g., action counts, time-on-task, and response accuracy) and to handle missing/no-response cases as part of the task completion structure. The manuscript does not report the use of PISA complex survey weights (e.g., W_FSTUWT/TOTWGT) or replicate-weight procedures, and the analyses are primarily process-mining visualization and latent profile analysis rather than survey-weighted predictive modeling. Therefore, weighting is treated as not applied based on the absence of any explicit weighting description."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The paper analyzes process-log indicators (e.g., time-on-task, time before first action, number of actions/trials) and response accuracy for interactive inquiry tasks, and it uses latent profile analysis (LPA) and process mining to identify strategy patterns. It does not report using PISA achievement plausible values (PV-based cognitive scores) as dependent variables, so PV handling is not applicable. The manuscript mentions that the target dataset was preprocessed to handle missing data, but it does not specify the missing-data rule (e.g., listwise deletion, imputation method) or how missingness in log-derived indicators was treated, which is a reporting gap.",
+    "sample_details": {
+      "total_students": 1303,
+      "countries": [
+        {
+          "country_code": "NOR",
+          "n_students": 1303
+        }
+      ],
+      "sample_filtering_criteria": "Example 1: PISA 2015 field trial in Norway, restricted to 10th-grade students assigned to the assessment unit 'Running in Hot Weather' and to Task 1 (second question from the unit). Of the 850 tenth-grade participants, 81 students were assigned to Task 1 and included in the process-mining analysis; students who did not conduct the simulation or skipped/answered immediately are reflected in the task outcome categories. Example 2: PISA 2015 data from Norway, restricted to Grade 9 and Grade 10 students (1222 students total) from 221 schools, and analyzed on a modified released field-trial item (Task 2) using process-log indicators and questionnaire items; the LPA is based on continuous/categorical indicators derived from the task and on the nine inquiry-based teaching/learning practice questionnaire items."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "VOTAT",
+        "variable_name": "VOTAT navigation behavior",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_on_task",
+        "variable_name": "Time on task",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_before_first_action",
+        "variable_name": "Time before first action",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "number_of_actions",
+        "variable_name": "Number of actions",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "number_of_trials",
+        "variable_name": "Number of trials",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "MC_response",
+        "variable_name": "Multiple-choice response accuracy",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "Text_response",
+        "variable_name": "Text response accuracy",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "Interactive",
+        "variable_name": "Interactive multivariable strategy",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "Explain",
+        "variable_name": "Opportunities to explain ideas",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "Lab",
+        "variable_name": "Time in laboratory experiments",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "Argue",
+        "variable_name": "Required to argue about science",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "Draw",
+        "variable_name": "Draw conclusions from experiments",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "Idea",
+        "variable_name": "Opportunities to explain ideas",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "Design",
+        "variable_name": "Allowed to design experiments",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "Debate",
+        "variable_name": "Class debate about investigations",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "Concept",
+        "variable_name": "Teacher explains relevance of concepts",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "Test",
+        "variable_name": "Investigate to test ideas",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "gender",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "grade_level",
+        "variable_name": "Grade level",
+        "category": "demographic"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2015 Field Trial (Norway) — Grade 10 — Science inquiry Task 1 (Running in Hot Weather unit)",
+        "target_variable": "Inquiry response accuracy (MC and data response)",
+        "top_predictors": [
+          "VOTAT navigation behavior",
+          "Number of actions",
+          "Number of trials",
+          "Time before first action",
+          "Time on task"
+        ],
+        "performance_metrics": "Not reported (process mining visualization; descriptive statistics only).",
+        "standardized_conclusion": "Using PISA 2015 Field Trial (Norway) Task 1 the study leveraged VOTAT navigation behavior, number of actions/trials, and response-time indicators to characterize how students’ inquiry process patterns relate to MC and data-response accuracy, finding that VOTAT-based sequences were common but only a minority solved the task correctly and that successful students showed more goal-oriented exploration patterns. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2015 (Norway) — Grade 9/10 — Science inquiry Task 2 (modified Running in Hot Weather field-trial item)",
+        "target_variable": "Inquiry performance profiles (strategic vs emergent vs disengaged)",
+        "top_predictors": [
+          "Interactive multivariable strategy",
+          "Number of actions",
+          "Number of trials",
+          "Time before first action",
+          "Time on task"
+        ],
+        "performance_metrics": "LPA fit: three-profile model selected using AIC/CAIC/BIC and VLMR/LMR-LRT; entropy and class separation/homogeneity reported as high/distinct (exact values not provided). MANOVA: significant profile mean differences across inquiry-practice items (exact F/df values reported in Table 3).",
+        "standardized_conclusion": "Using PISA 2015 Norway Task 2 the study leveraged interactive multivariable strategy indicators and process-time/exploration measures to identify three inquiry-performance profiles, finding that the strategic profile showed the highest likelihood of using the interactive strategy and the highest time-on-task/exploration, while the emergent profile showed longer solving time but low theory-evidence coordination, and the disengaged profile showed the lowest exploration and accuracy. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This paper demonstrates how PISA process-log data can be used to uncover students’ scientific inquiry strategies by combining product information (response accuracy) with process indicators (exploration behavior, inquiry strategy, and response time). In Example 1 (PISA 2015 Norway field trial, Task 1; N=81), process mining visualized distinct action sequences and showed that although many students used the VOTAT strategy, only about 40.7% of those using VOTAT solved the task correctly; successful students tended to show goal-oriented exploration with higher exploration quantity and longer time before first action and time-on-task. In Example 2 (PISA 2015 Norway, Task 2; N=1222), latent profile analysis identified three profiles (strategic, emergent, disengaged) that differed in interactive strategy use and process-time/exploration patterns, and MANOVA indicated significant associations between profile membership and several inquiry-based teaching/learning practices (notably class debate). The study does not report PV-based achievement modeling or survey-weight usage, and it does not provide explicit missing-data handling details despite stating that preprocessing addressed missingness.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": null
+  }
+}

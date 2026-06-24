@@ -1,0 +1,162 @@
+{
+  "metadata": {
+    "file_name": "44. Lezhnina & Kismihók. (2021). Combining statistical and machine learning methods to explore German students  attitudes towards ICT in PISA.pdf",
+    "title": "Combining statistical and machine learning methods to explore German students’ attitudes towards ICT",
+    "authors": [
+      "Olga Lezhnina",
+      "Gábor Kismihók"
+    ],
+    "year": 2021,
+    "doi": "10.1080/1743727X.2021.1963226",
+    "venue": "International Journal of Research & Method in Education",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses OECD PISA 2015 and PISA 2018 German student questionnaire data and the optional ICT familiarity questionnaire. The analytic samples were restricted by removing cases with 100% missing ICT responses due to the ICT questionnaire being optional in Germany (2015: 1,093 removed; 2018: 944 removed), yielding N=5,411 (2015) and N=4,507 (2018). For the multilevel HLM stage, the authors state that they used formulas for analysis with plausible values and replicate weights (Fay’s method with 80 replicates) and averaged estimates for 10 plausible values. However, the manuscript does not report applying student/sampling weights directly in the Random Forest models; the RF steps (missForest imputation and RF classification) are implemented as standard ML procedures without explicit complex-survey weight incorporation, which is consistent with common ML practice. Therefore, weighting is only explicitly discussed for the HLM plausible-values/replicate-weight framework, while RF is treated as unweighted in the absence of explicit weight application details."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "single_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 9918,
+      "countries": [
+        {
+          "country_code": "DEU",
+          "n_students": 5411
+        },
+        {
+          "country_code": "DEU",
+          "n_students": 4507
+        }
+      ],
+      "sample_filtering_criteria": "Used German subsets of PISA 2015 and PISA 2018 student questionnaire data and the optional ICT familiarity questionnaire. Removed cases with 100% missing ICT responses (because the ICT questionnaire was optional in Germany): 1,093 cases (16.81%) removed from the 2015 dataset and 944 cases (17.32%) removed from the 2018 dataset before analysis. For missingness within the remaining data, missingness patterns were checked and RF-based imputation (missForest) was applied; the imputed dataset was then used for subsequent RF classification and HLM analyses. For RF classification, the training set was 80% of the 2015 data (with oversampling of the training set due to class imbalance) and the test set was the remaining 20% of 2015 data; models were also evaluated on the full 2018 dataset."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Random Forest"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "gender",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "ESCS",
+        "variable_name": "Socioeconomic status (ESCS)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "COMPICT",
+        "variable_name": "ICT competence",
+        "category": "ict"
+      },
+      {
+        "variable_code": "INTICT",
+        "variable_name": "ICT interest",
+        "category": "ict"
+      },
+      {
+        "variable_code": "SOIAICT",
+        "variable_name": "ICT in social interaction",
+        "category": "ict"
+      },
+      {
+        "variable_code": "AUTICT",
+        "variable_name": "ICT autonomy",
+        "category": "ict"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2015 Mathematics proficiency (Levels 1b–6; below Level 2 / Levels 2–4 / Level 5+), Germany",
+        "target_variable": "Mathematics proficiency level (categorical)",
+        "top_predictors": [
+          "ICT autonomy",
+          "Socioeconomic status (ESCS)",
+          "Gender",
+          "ICT interest",
+          "ICT competence"
+        ],
+        "performance_metrics": "Random Forest classification — multiclass AUC: 67.44% on the 2015 test set (20% hold-out). Class imbalance addressed by oversampling the training set; AUC computed with pROC; variable importance via mean decrease in accuracy (permutation importance).",
+        "standardized_conclusion": "Using PISA 2015 Germany the study leveraged ICT autonomy, socioeconomic status (ESCS), gender, ICT interest, and ICT competence to predict mathematics proficiency level categories, finding that ICT autonomy was among the most important predictors and that higher autonomy increased the probability of Level 5+ while lower autonomy increased the probability of below Level 2. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2015 Science proficiency (Levels 1b–6; below Level 2 / Levels 2–4 / Level 5+), Germany",
+        "target_variable": "Science proficiency level (categorical)",
+        "top_predictors": [
+          "ICT autonomy",
+          "Socioeconomic status (ESCS)",
+          "Gender",
+          "ICT interest",
+          "ICT competence"
+        ],
+        "performance_metrics": "Random Forest classification — multiclass AUC: 71.66% on the 2015 test set (20% hold-out). Variable importance via permutation mean decrease in accuracy; partial dependence used to interpret direction and nonlinearity.",
+        "standardized_conclusion": "Using PISA 2015 Germany the study leveraged ICT autonomy, socioeconomic status (ESCS), gender, ICT interest, and ICT competence to predict science proficiency level categories, finding that ICT autonomy was more important than other ICT attitudes and that higher autonomy increased the probability of Level 5+ while higher ICT in social interaction increased the probability of below Level 2. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2015 Mathematics literacy (10 plausible values), Germany",
+        "target_variable": "Mathematical literacy (continuous; PV-based)",
+        "top_predictors": [
+          "Gender",
+          "Socioeconomic status (ESCS)",
+          "ICT competence",
+          "ICT interest",
+          "ICT in social interaction"
+        ],
+        "performance_metrics": "HLM (random intercepts; lme4; REML; grand-mean centered/standardized predictors; Fay’s method with 80 replicates; estimates averaged across 10 plausible values) — ICT autonomy positive and significant; ICT in social interaction negative and significant. Nakagawa R²: marginal .055 and conditional .444 (2015).",
+        "standardized_conclusion": "Using PISA 2015 Germany the study leveraged gender, ESCS, and the four ICT attitude indices (ICT competence, ICT interest, ICT in social interaction, ICT autonomy) to predict mathematical literacy (PV-based), finding that ICT autonomy was significantly and positively associated with literacy while ICT in social interaction was significantly and negatively associated; ICT competence and ICT interest were not significant at the stated testing threshold. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2015 Science literacy (10 plausible values), Germany",
+        "target_variable": "Scientific literacy (continuous; PV-based)",
+        "top_predictors": [
+          "Gender",
+          "Socioeconomic status (ESCS)",
+          "ICT competence",
+          "ICT interest",
+          "ICT in social interaction"
+        ],
+        "performance_metrics": "HLM (random intercepts; REML; Fay’s method with 80 replicates; averaged across 10 plausible values) — ICT autonomy positive and significant; ICT in social interaction negative and significant. Nakagawa R²: marginal .066 and conditional .444 (2015). Reported coefficient magnitude: ICT autonomy β=38.29 (strongest among predictors in 2015).",
+        "standardized_conclusion": "Using PISA 2015 Germany the study leveraged gender, ESCS, and the four ICT attitude indices to predict scientific literacy (PV-based), finding that ICT autonomy had the strongest positive association (β=38.29) and that ICT in social interaction had a significant negative association, while ICT competence and ICT interest were not significant under the .001 Wald testing approach. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2018 Mathematics literacy (10 plausible values), Germany",
+        "target_variable": "Mathematical literacy (continuous; PV-based)",
+        "top_predictors": [
+          "Gender",
+          "Socioeconomic status (ESCS)",
+          "ICT competence",
+          "ICT interest",
+          "ICT in social interaction"
+        ],
+        "performance_metrics": "HLM (random intercepts; REML; Fay’s method with 80 replicates; averaged across 10 plausible values) — ICT autonomy positive and significant; ICT in social interaction negative and significant. Nakagawa R²: marginal .055 and conditional .408 (2018). Reported coefficient magnitude: ICT autonomy β=25.99 (second strongest after ESCS in 2018).",
+        "standardized_conclusion": "Using PISA 2018 Germany the study leveraged gender, ESCS, and the four ICT attitude indices to predict mathematical literacy (PV-based), finding that ICT autonomy remained significantly and positively associated with literacy and that ICT in social interaction remained significantly negative; the overall fixed-effect patterns were similar to 2015. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2018 Science literacy (10 plausible values), Germany",
+        "target_variable": "Scientific literacy (continuous; PV-based)",
+        "top_predictors": [
+          "Gender",
+          "Socioeconomic status (ESCS)",
+          "ICT competence",
+          "ICT interest",
+          "ICT in social interaction"
+        ],
+        "performance_metrics": "HLM (random intercepts; REML; Fay’s method with 80 replicates; averaged across 10 plausible values) — ICT autonomy positive and significant; ICT in social interaction negative and significant. Nakagawa R²: marginal .057 and conditional .411 (2018).",
+        "standardized_conclusion": "Using PISA 2018 Germany the study leveraged gender, ESCS, and the four ICT attitude indices to predict scientific literacy (PV-based), finding that ICT autonomy was significantly and positively associated with literacy and that ICT in social interaction was significantly negative, with effect sizes and significance patterns broadly consistent with PISA 2015. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzes German PISA 2015 and PISA 2018 data to examine how attitudes toward ICT relate to mathematical and scientific literacy. For missing data imputation and for predicting proficiency level categories (below Level 2, Levels 2–4, Level 5+), it uses Random Forest with missForest imputation and RF classification; performance is reported via multiclass AUC (2015 test-set AUC: 67.44% for mathematics and 71.66% for science; similar AUCs on 2018: 69.19% and 68.51%). For association testing with the nested school structure, it fits multilevel HLM random-intercept models using 10 plausible values and Fay’s method (80 replicates), finding that ICT autonomy is significantly and positively associated with both mathematical and scientific literacy, while ICT in social interaction is significantly negative; ICT competence and ICT interest are not significant in the HLM results. A key caveat is that the design is cross-sectional (no causal claims), and the RF steps do not explicitly incorporate complex-survey weights.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

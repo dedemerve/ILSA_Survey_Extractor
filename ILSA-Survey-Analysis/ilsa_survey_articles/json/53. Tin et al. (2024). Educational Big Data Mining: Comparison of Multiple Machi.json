@@ -1,0 +1,332 @@
+{
+  "metadata": {
+    "file_name": "53. Tin et al. (2024). Educational Big Data Mining: Comparison of Multiple Machine Learning Algorithms in Predictive Modelling of Student Academic Performance.pdf",
+    "title": "Educational Big Data Mining: Comparison of Multiple Machine Learning Algorithms in Predictive Modelling of Student Academic Performance",
+    "authors": [
+      "Ting Tin Tin",
+      "Lee Shi Hock",
+      "Omolayo M. Ikumapayi"
+    ],
+    "year": 2024,
+    "doi": "10.1007/s11165-019-9835-y",
+    "venue": "International Journal of Advanced Computer Science and Applications (IJACSA)",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA microdata covering students aged 15 years 3 months to 16 years 2 months from 79 countries, with exclusions at both school and student levels (e.g., excluding geographically inaccessible/special needs schools and students with intellectual/functional disabilities or limited language proficiency). The manuscript does not report applying PISA sampling weights or any replicate-weight procedure (e.g., BRR/jackknife) in the ML training/evaluation pipeline. Because the authors implement multiple classification algorithms in RapidMiner and describe a standard random 80/20 train-test split, the analysis appears to be conducted without complex-survey weighting. The paper also performs data cleaning (list deletion when missingness exceeds 50%, otherwise mode imputation) and feature selection/attribute selection prior to model training."
+    },
+    "plausible_values_handling": "single_pv",
+    "missing_data_handling": "mean_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 612004,
+      "countries": [],
+      "sample_filtering_criteria": "Used PISA eligible student population aged 15y3m–16y2m enrolled in grade 7 or higher, from 79 participating countries, with exclusions at school level (geographically inaccessible schools and special needs schools) and at student level (students with intellectual/functional disabilities and students with limited language proficiency in the PISA testing environment). The analytic dataset includes 612,004 respondents from both computer-based and paper-based tests. For data cleaning, variables with missingness >50% were removed via list deletion; otherwise missing values were imputed (mode for categorical variables in the provided example)."
+    },
+    "ml_techniques": {
+      "primary": "Gradient Boosted Trees",
+      "all_techniques": [
+        "Logistic Regression",
+        "Naive Bayes",
+        "Generalized Linear Model",
+        "Fast Large Margin",
+        "Neural Network",
+        "Decision Tree",
+        "Random Forest",
+        "Gradient Boosting",
+        "Support Vector Machine"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ST004D01T",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "ST011Q01TA",
+        "variable_name": "Home learning environment item 1",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "ST011Q02TA",
+        "variable_name": "Home learning environment item 2",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "ST011Q03TA",
+        "variable_name": "Home learning environment item 3",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "ST011Q04TA",
+        "variable_name": "Home learning environment item 4",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ST011Q06TA",
+        "variable_name": "Home learning environment item 6",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "MISCED",
+        "variable_name": "Mother education level",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ST123Q02NA",
+        "variable_name": "Parental support for achievement",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "FISCED",
+        "variable_name": "Father education level",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "PA009Q09NA",
+        "variable_name": "Parental education/occupation indicator",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "EC155Q01DA",
+        "variable_name": "Family resource indicator 1",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "PA008Q09NA",
+        "variable_name": "Family resource indicator 2",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "PA008Q05TA",
+        "variable_name": "Family resource indicator 3",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "EC155Q02DA",
+        "variable_name": "Family resource indicator 4",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ST123Q04NA",
+        "variable_name": "Family resource indicator 5",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "PA008Q03TA",
+        "variable_name": "Family resource indicator 6",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ST013Q01TA",
+        "variable_name": "Number of books at home",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ST154Q01HA",
+        "variable_name": "Reading skills/habits item 1",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST161Q06HA",
+        "variable_name": "Reading skills/habits item 2",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST152Q05IA",
+        "variable_name": "Reading skills/habits item 3",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST153Q06HA",
+        "variable_name": "Reading skills/habits item 4",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST153Q09HA",
+        "variable_name": "Reading skills/habits item 5",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST160Q05IA",
+        "variable_name": "Reading skills/habits item 6",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST161Q03HA",
+        "variable_name": "Reading skills/habits item 7",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST011Q08TA",
+        "variable_name": "Reading skills/habits item 8",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST160Q04IA",
+        "variable_name": "Reading skills/habits item 9",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "EC152Q01HA",
+        "variable_name": "Career goals/mindset item 1",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC153Q02HA",
+        "variable_name": "Career goals/mindset item 2",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC150Q05WA",
+        "variable_name": "Career goals/mindset item 3",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC153Q07HA",
+        "variable_name": "Career goals/mindset item 4",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC150Q06WA",
+        "variable_name": "Career goals/mindset item 5",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC150Q07WA",
+        "variable_name": "Career goals/mindset item 6",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC153Q01HA",
+        "variable_name": "Career goals/mindset item 7",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC150Q01WA",
+        "variable_name": "Career goals/mindset item 8",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC150Q09WA",
+        "variable_name": "Career goals/mindset item 9",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC153Q04HA",
+        "variable_name": "Career goals/mindset item 10",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC153Q11HA",
+        "variable_name": "Career goals/mindset item 11",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC150Q08HA",
+        "variable_name": "Career goals/mindset item 12",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC150Q01HA",
+        "variable_name": "Career goals/mindset item 13",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC153Q05HA",
+        "variable_name": "Career goals/mindset item 14",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC153Q06HA",
+        "variable_name": "Career goals/mindset item 15",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC150Q06WA",
+        "variable_name": "Career goals/mindset item 16",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EC150Q07WA",
+        "variable_name": "Career goals/mindset item 17",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST186Q09HA",
+        "variable_name": "Mental health item 1",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST185Q01HA",
+        "variable_name": "Mental health item 2",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST186Q01HA",
+        "variable_name": "Mental health item 3",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST186Q05HA",
+        "variable_name": "Mental health item 4",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST185Q03HA",
+        "variable_name": "Mental health item 5",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST186Q02HA",
+        "variable_name": "Mental health item 6",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST186Q10HA",
+        "variable_name": "Mental health item 7",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST186Q08HA",
+        "variable_name": "Mental health item 8",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "WB171Q03HA",
+        "variable_name": "Mental health item 9",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST186Q06HA",
+        "variable_name": "Mental health item 10",
+        "category": "student_attitude"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 (ages 15y3m–16y2m), 79 countries — Reading/Math/Science/Global Competence PVs discretized to CGPA categories",
+        "target_variable": "Academic performance (AP) categories A–D (proxy for CGPA)",
+        "top_predictors": [
+          "Reading skills and habits (e.g., ST013Q01TA, ST161Q06HA, ST154Q01HA)",
+          "Home learning environment (e.g., ST011Q04TA)",
+          "Career goals and mindset (e.g., EC153Q02HA)",
+          "Family background (e.g., MISCED, FISCED, ST123Q02NA)",
+          "Mental health (e.g., ST186Q09HA, ST185Q01HA)"
+        ],
+        "performance_metrics": "Gradient Boosted Trees (GBT): Accuracy 73.7%, Precision 72.8%, Recall 88.3% (RapidMiner). Other models ranged roughly 65.7%–73.4% accuracy; Decision Tree had the lowest accuracy/recall.",
+        "standardized_conclusion": "Using PISA 2018 the study leveraged reading skills and habits, home learning environment, career goals/mindset, family background, and mental health to predict academic performance categories (A–D) derived from PISA plausible values, finding that Gradient Boosted Trees achieved the highest classification performance (Accuracy 73.7%, Recall 88.3%). The paper discretizes PV-based performance into four classes and reports train-test split performance, but it does not report complex-survey weighting or a clear PV-combination rule beyond PV-based discretization. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study uses PISA 2018 microdata (612,004 students across 79 countries) and constructs an academic performance (AP) outcome by discretizing PISA plausible values into four categories (A–D), described as a proxy for CGPA. After cleaning missing values (list deletion when missingness >50%, otherwise imputation) and selecting attributes from five conceptual domains (demographics, home learning environment, family background, reading skills/habits, career goals/mindset, and mental health), the authors train multiple classifiers in RapidMiner. Across models, Gradient Boosted Trees performed best with Accuracy 73.7%, Precision 72.8%, and Recall 88.3%, while Decision Tree performed worst on accuracy/recall. The most important predictors were reading skills/habits (e.g., number of books at home) followed by home learning environment and career goals/mindset. Limitations include the lack of reported complex-survey weighting and limited transparency on the exact PV-combination and imputation rules used for all modeled variables.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

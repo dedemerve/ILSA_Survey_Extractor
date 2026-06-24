@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "file_name": "29. Huang et al. (2024). Applying Machine Learning and SHAP Method to Identify Key Influences on Middle-School Students’ Mathematics Literacy Performance.pdf",
+    "title": "Applying Machine Learning and SHAP Method to Identify Key Influences on Middle-School Students’ Mathematics Literacy Performance",
+    "authors": [
+      "Y. Huang",
+      "Y. Zhang",
+      "J. Cao",
+      "D. Wang"
+    ],
+    "year": 2024,
+    "doi": "10.3390/jintelligence12100093",
+    "venue": "Journal of Intelligence",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2022 microdata for mathematics literacy from six East Asian education systems (Hong Kong, Macao, Taipei, Singapore, Japan, and Korea). The authors report a two-stage sampling design in PISA (PPS by school size, then random sampling of students within schools), but they do not state that PISA sampling weights or replicate weights were applied in the machine-learning analyses. Instead, the analytic dataset is created through explicit preprocessing: excluding cases with >70% missingness, removing features with >70% missingness, excluding variables with all missing data for specific countries/regions, dropping variables with moderate/strong multicollinearity, and imputing remaining missing values using KNN (K=8). Because the manuscript does not mention any weight variable (e.g., W_FSTUWT/TOTWGT) or replicate-weight procedures, the ML models are treated as unweighted; this is consistent with a common ML omission pattern where survey weights are not incorporated into tree-based regression pipelines."
+    },
+    "plausible_values_handling": "single_pv",
+    "missing_data_handling": "knn_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 34495,
+      "countries": [
+        {
+          "country_code": "HKG",
+          "n_students": null
+        },
+        {
+          "country_code": "MAC",
+          "n_students": null
+        },
+        {
+          "country_code": "TWN",
+          "n_students": null
+        },
+        {
+          "country_code": "SGP",
+          "n_students": null
+        },
+        {
+          "country_code": "JPN",
+          "n_students": null
+        },
+        {
+          "country_code": "KOR",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Start from PISA 2022 mathematics literacy data for six East Asian education systems. Exclude student records with missing rate >70%, leaving 34,495 cases from the initial 34,968. Retain 151 candidate predictors initially, then remove input features with missing rate >70%, leaving 124 features; additionally exclude variables that are entirely missing for each country/region (e.g., well-being questionnaire not administered in Japan, Korea, Singapore, and Taipei), resulting in 78 variables. Remove six predictors with moderate multicollinearity (ICTWKDY, HOMEPOS, PAREDINT, ICTAVSCH, ICTAVHOM, MCLSIZE), leaving 72 predictors. Exclude variables with all missing data per country/region separately, then impute remaining missing values using KNN with K=8. Finally, split the dataset into training (80%) and validation (20%) sets."
+    },
+    "ml_techniques": {
+      "primary": "XGBoost",
+      "all_techniques": [
+        "Multiple Linear Regression",
+        "SVR",
+        "Decision Tree",
+        "Random Forest",
+        "XGBoost"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ST004D01T",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "GRADE",
+        "variable_name": "Grade level",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "MATHEFF",
+        "variable_name": "Math self-efficacy",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "MATHEF21",
+        "variable_name": "Math self-efficacy (reasoning)",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "BSMJ",
+        "variable_name": "Expected occupational status",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ANXMAT",
+        "variable_name": "Math anxiety",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ICTWKEND",
+        "variable_name": "Weekend ICT leisure frequency",
+        "category": "ict"
+      },
+      {
+        "variable_code": "EXERPRAC",
+        "variable_name": "Exercise/practice frequency",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ICTFEED",
+        "variable_name": "ICT feedback/support frequency",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ICTOUT",
+        "variable_name": "ICT outside classroom learning",
+        "category": "ict"
+      },
+      {
+        "variable_code": "STUBEHA",
+        "variable_name": "Disruptive school behavior",
+        "category": "school"
+      },
+      {
+        "variable_code": "ESCS",
+        "variable_name": "Socioeconomic status (ESCS)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "HISEI",
+        "variable_name": "Highest parental occupation",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "PAREDINT",
+        "variable_name": "Parents’ education years",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "HOMEPOS",
+        "variable_name": "Home possessions",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "TOTMATH",
+        "variable_name": "Total math teachers",
+        "category": "school"
+      },
+      {
+        "variable_code": "ABGMATH",
+        "variable_name": "Ability grouping in math",
+        "category": "school"
+      },
+      {
+        "variable_code": "COGACMCO",
+        "variable_name": "Cognitive activation (math)",
+        "category": "teacher"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2022 Mathematics literacy (PV1MATH), six East Asian education systems",
+        "target_variable": "Mathematics literacy (PV1MATH)",
+        "top_predictors": [
+          "Math self-efficacy",
+          "Expected occupational status",
+          "Socioeconomic status (ESCS)",
+          "Weekend ICT leisure frequency",
+          "Math anxiety"
+        ],
+        "performance_metrics": "XGBoost (best): MSE=4344.98, RMSE=65.92, MAE=51.72, MAPE=10.21%, R2=0.60, PCC=0.77. Other models: MLR MAPE=11.57%, SVR MAPE=10.51%, DT MAPE=13.50%, RF MAPE=11.08%.",
+        "standardized_conclusion": "Using PISA 2022 Mathematics literacy (PV1MATH) data from Hong Kong, Macao, Taipei, Singapore, Japan, and Korea, the study leveraged Math self-efficacy, expected occupational status, ESCS, weekend ICT leisure frequency, and math anxiety to predict mathematics literacy, finding that XGBoost achieved the best validation performance (R2=0.60; PCC=0.77) and that SHAP-based global explanations identified 15 key predictors with math self-efficacy as the strongest positive influence; the authors caution that SHAP explanations do not establish causal effects. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzes PISA 2022 mathematics literacy for 34,495 middle-school students from Hong Kong, Macao, Taipei, Singapore, Japan, and Korea, using PV1MATH as the outcome. After preprocessing (case/feature exclusion with >70% missingness, country-specific variable exclusions, multicollinearity filtering, and KNN imputation with K=8), the authors compare five regression models (MLR, SVR, DT, Random Forest, XGBoost) using an 80/20 train/validation split. XGBoost is the best-performing model on the validation set, with MSE=4344.98, RMSE=65.92, MAE=51.72, MAPE=10.21%, R2=0.60, and PCC=0.77, outperforming the other four models. SHAP global explanations indicate 15 key influences, led by math self-efficacy (MATHEFF/MATHEF21) and expected occupational status (BSMJ), while math anxiety (ANXMAT) and disruptive school behavior (STUBEHA) show negative contributions. The paper uses SHAP for interpretability but does not claim causal relationships; it also does not report the use of PISA sampling/replicate weights in the ML training.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

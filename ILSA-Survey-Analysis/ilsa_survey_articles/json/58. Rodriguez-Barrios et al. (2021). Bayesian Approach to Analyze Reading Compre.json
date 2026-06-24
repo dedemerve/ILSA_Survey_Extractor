@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "file_name": "58. Rodriguez-Barrios et al. (2021). Bayesian Approach to Analyze Reading Comprehension: A Case Study in Elementary School Children in Mexico.pdf",
+    "title": "Bayesian Approach to Analyze Reading Comprehension: A Case Study in Elementary School Children in Mexico",
+    "authors": [],
+    "year": 2021,
+    "doi": "10.3390/su13084285",
+    "venue": "Sustainability",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study collected data from a single elementary school in Misantla, Veracruz, Mexico (school year 2018–2019) and administered four reading-related tests to 5th- and 6th-grade students. The manuscript reports a total sample of 107 participants and describes teacher-expert assignment of the language-and-communication achievement level, but it does not mention any complex survey design, sampling weights, or replicate-weight procedures. Because the analysis is based on a Bayesian network implemented in Netica and the paper does not discuss applying any student/sampling weights (e.g., W_FSTUWT/TOTWGT) or jackknife/BRR methods, weights are treated as not used. No additional preprocessing steps such as outlier trimming or missing-data imputation are described; the authors state they obtained complete and sufficient data for all model variables."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The dependent variable is a categorical language-and-communication achievement level (I–IV) derived from teacher evaluations and test results, not a cognitive achievement score generated via ILSA plausible values (PVs). The paper does not use PV-based outcomes (e.g., PISA reading PVs) and instead constructs a Bayesian network over discrete test-derived nodes (learning style, learning pace, reading speed, and reading comprehension). Although the authors state they obtained complete and sufficient data for all model variables, they do not explicitly document a formal missing-data handling procedure, so missing-data handling is treated as not reported.",
+    "sample_details": {
+      "total_students": 107,
+      "countries": [
+        {
+          "country_code": "MEX",
+          "n_students": 107
+        }
+      ],
+      "sample_filtering_criteria": "Participants were fifth- and sixth-grade students from the elementary school General Manuel Gutiérrez Zamora in Misantla, Veracruz, Mexico, during the 2018–2019 school year. The experiment included groups A, B, and C in each grade (with different teachers across groups) and ran over approximately six weeks. The Bayesian network inputs were the four test results (learning style, learning pace, reading speed, and reading comprehension) and the final language-and-communication level (I–IV) assigned by teachers; the authors state they obtained complete and sufficient data for all model variables. For validation, a control group of 41 students was formed from test results belonging to 5th C and 6th C."
+    },
+    "ml_techniques": {
+      "primary": "Bayesian Network",
+      "all_techniques": [
+        "Bayesian Network"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "learning_style",
+        "variable_name": "Learning style (VAK)",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "learning_pace",
+        "variable_name": "Learning pace",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "reading_speed",
+        "variable_name": "Reading speed category",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "reading_comprehension",
+        "variable_name": "Reading comprehension test",
+        "category": "student_behavior"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "Elementary school experiment (2018–2019), Mexico; Grade 5–6; Reading comprehension domain",
+        "target_variable": "Language and communication level (I–IV)",
+        "top_predictors": [
+          "Learning style (VAK)",
+          "Learning pace",
+          "Reading speed category",
+          "Reading comprehension test"
+        ],
+        "performance_metrics": "Validation (confusion matrix): precision 85.36%. Confusion matrix counts reported for Level I–IV (e.g., Level I predicted as Level I: 8; Level IV predicted as Level IV: 14).",
+        "standardized_conclusion": "Using the elementary school experiment data in Mexico (Grades 5–6) with a Bayesian network, the study leveraged learning style, learning pace, reading speed, and reading comprehension to predict the language-and-communication achievement level (I–IV), finding that the model achieved 85.36% precision in validation. The paper does not report survey-weighted estimation or PV-based achievement modeling, and the outcome levels are partly informed by teacher expertise, which may limit generalizability. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study developed a Bayesian network to classify elementary students’ language-and-communication achievement levels (I–IV) in Mexico using four test-based inputs: learning style (VAK), learning pace, reading speed, and reading comprehension. The Bayesian network was validated using a control group of 41 students (from 5th C and 6th C), and the reported precision was 85.36%, with the confusion matrix showing correct classifications across all four levels (e.g., 8 correct for Level I and 14 correct for Level IV). The authors describe the final level as a latent achievement node inferred from reading comprehension test results (with specified weighting) and influenced by the parent nodes. Methodologically, the paper does not use ILSA PVs and does not document a formal missing-data handling protocol (though it states complete data for model variables), and it does not discuss complex survey weights or hierarchical modeling beyond the school context.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": null
+  }
+}

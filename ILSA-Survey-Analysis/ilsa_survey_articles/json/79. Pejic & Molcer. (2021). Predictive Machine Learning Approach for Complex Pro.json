@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "file_name": "79. Pejic & Molcer. (2021). Predictive Machine Learning Approach for Complex Problem Solving Process Data Mining.pdf",
+    "title": "Predictive Machine Learning Approach for Complex Problem Solving Process Data Mining",
+    "authors": [
+      "A. Pejić",
+      "et al."
+    ],
+    "year": 2021,
+    "doi": "10.1080/09243453.2016.1235591",
+    "venue": "Acta Polytechnica Hungarica",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2012 computer-based assessment (CBA) problem-solving microdata for the Climate Control task (CP025Q01), combining scored cognitive item response data with problem-solving log-file data. The analytic dataset is constructed by extracting only entries relevant to the Climate Control task and then merging with the task success indicator; the authors also report data cleaning, downsampling to balance the TRUE/FALSE success classes, and removal of corrupted entries. The manuscript does not mention applying PISA sampling weights or replicate weights (e.g., BRR/jackknife) and does not report any weight variable names. Because the models are standard supervised ML classifiers (e.g., deep learning, random forest, gradient boosted trees) and the paper provides no survey-weighting procedure, the analysis is treated as unweighted; this may leave residual bias from the complex sampling design."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The dependent variable is task success for a specific PISA 2012 CBA unit (Climate Control CP025Q01), derived from the scored cognitive item response file and treated as a binary classification target (TRUE/FALSE). Plausible Values are typically generated for cognitive achievement domains in PISA, but this paper predicts success on a single process-based problem-solving item rather than PV-based achievement scores; therefore PV handling is not applicable. The manuscript describes data cleaning, downsampling for class balance, and removal of corrupted entries, but it does not explicitly document how missing values were handled (e.g., complete-case deletion vs. imputation), which is a reporting gap for reproducibility.",
+    "sample_details": {
+      "total_students": 15194,
+      "countries": [],
+      "sample_filtering_criteria": "Used PISA 2012 computer-based assessment problem-solving data and extracted only records relevant to the Climate Control task unit item CP025Q01 (first question). The initial Climate Control dataset was assembled from (i) the scored cognitive item response data file containing each student’s assessment result and (ii) the problem-solving data files containing the full log of slider positions, button clicks, and actions; sequence order numbers and timestamps were assigned per entry. The final dataset was produced after prediction preprocessing including data cleaning, downsampling to balance the TRUE/FALSE success classes, and elimination of corrupted entries, resulting in 15,194 remaining entries."
+    },
+    "ml_techniques": {
+      "primary": "Neural Network",
+      "all_techniques": [
+        "Naive Bayes",
+        "Logistic Regression",
+        "Neural Network",
+        "Decision Tree",
+        "Random Forest",
+        "Gradient Boosting"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "VOTAT_features",
+        "variable_name": "VOTAT strategy usage ratios",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "time_features",
+        "variable_name": "Time spent on task phases",
+        "category": "process_data"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2012 CBA Problem Solving (Climate Control CP025Q01, first unit item)",
+        "target_variable": "Climate Control task success (TRUE/FALSE)",
+        "top_predictors": [
+          "VOTAT strategy usage ratios",
+          "Time spent on task phases"
+        ],
+        "performance_metrics": "Deep learning (VOTAT-based features) — Accuracy: 93.9%, AUC: 0.947, Recall: 99.7%, F-measure: 94.3%; Deep learning (time-based features) — Accuracy: 77.1%, AUC: 0.847, Recall: 77.1%, F-measure: 77.1%. Best overall by F-measure: deep learning with VOTAT-based features (F-measure 94.3%); random forest and gradient boosted trees also reached 94.5% F-measure with VOTAT-based features but were lower with time-based features (F-measure 69.7% and 75.6%). Optimized deep learning via genetic algorithm — F-measure: 94.9% (VOTAT-based) and 77.9% (time-based).",
+        "standardized_conclusion": "Using PISA 2012 CBA Problem Solving (Climate Control CP025Q01) the study leveraged VOTAT strategy usage ratios and time spent on task phases to predict Climate Control task success (TRUE/FALSE), finding that deep learning achieved the highest F-measure with VOTAT-based features (94.3%, optimized 94.9%), while time-based features yielded substantially lower performance (F-measure 77.1%, optimized 77.9%). The paper reports strong predictive accuracy but does not document survey-weight usage or missing-data handling, and the nested sampling structure is not explicitly addressed in the ML pipeline. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study predicts success on the PISA 2012 computer-based Climate Control problem-solving task (CP025Q01, first unit item) using supervised ML on features engineered from raw log files. Two feature sets were compared: VOTAT-strategy action ratios and time-based paradata features. Across six classifiers (Naive Bayes, logistic regression, decision tree, random forest, gradient boosted trees, and deep learning), deep learning performed best overall: with VOTAT-based features it reached F-measure 94.3% (accuracy 93.9%, AUC 0.947), and with time-based features it reached F-measure 77.1% (accuracy 77.1%, AUC 0.847). After genetic-algorithm optimization of the neural network architecture, F-measure improved to 94.9% (VOTAT) and 77.9% (time). The manuscript does not report a survey-weighting strategy and does not explicitly document missing-data handling, limiting interpretability and reproducibility.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

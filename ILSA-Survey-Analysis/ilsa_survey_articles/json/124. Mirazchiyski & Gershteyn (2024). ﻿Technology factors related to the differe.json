@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "file_name": "124. Mirazchiyski & Gershteyn (2024). ﻿Technology factors related to the differences in paper and online reading scores in PIRLS 2016.pdf",
+    "title": "Technology factors related to the differences in paper and online reading scores in PIRLS 2016",
+    "authors": [
+      "Plamen Mirazchiyski",
+      "Vladimir Gershteyn"
+    ],
+    "year": 2024,
+    "doi": "10.1186/s40536-024-00224-9",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": true,
+      "replicate_weights_used": true,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PIRLS 2016 paper reading and ePIRLS 2016 electronic reading data from European countries that administered both modes to (mostly) the same grade 4 students. Analyses are conducted on the computed differences between corresponding plausible values (PVs) for paper vs. e-reading, which requires repeating computations across PVs and aggregating results. The authors explicitly state that all estimates use sampling weights and that standard errors are computed using full weights and replicate weights to account for unequal sampling probabilities and the complex assessment design. For student-level models, student total weights are used after merging student and school characteristics; for the teacher model, teacher total weights are used. The paper does not report the exact weight variable names, but it does follow PIRLS/ePIRLS guidance and uses the R package RALSA to obtain correct standard errors under the complex design."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The paper describes PIRLS/ePIRLS plausible values (PVs) generation as an imputation-based procedure and explains how analyses are repeated across PVs with appropriate sampling and replicate weights. However, it does not separately report a missing-data strategy for questionnaire variables (e.g., whether missing covariate responses were imputed, set to missing and excluded, or handled via specific imputation models). Given that the study relies on contextual ICT scales and constructed IRT-based scales, the missing-data handling for these predictors is not transparently documented, representing a reporting gap for covariate missingness.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [
+        {
+          "country_code": "DNK",
+          "n_students": null
+        },
+        {
+          "country_code": "ITA",
+          "n_students": null
+        },
+        {
+          "country_code": "NOR",
+          "n_students": null
+        },
+        {
+          "country_code": "PRT",
+          "n_students": null
+        },
+        {
+          "country_code": "SVN",
+          "n_students": null
+        },
+        {
+          "country_code": "SWE",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "The analysis includes only the six European countries that participated in both PIRLS 2016 paper and ePIRLS 2016 electronic modes using the same sample of students, after removing Ireland due to a low overlap between students taking PIRLS and ePIRLS (53.7%). Within each included country, only students who participated in both modes were retained in the final ePIRLS samples. The dependent variable is constructed as the difference between corresponding paper and e-reading PVs for reading for information purposes (ASRINF01–ASRINF05 vs. ASEREA01–ASEREA05), and all models are run on these PV-difference outcomes using the PIRLS complex sampling/assessment design procedures."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ASBE01",
+        "variable_name": "Time using computer daily",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ASBE02",
+        "variable_name": "Time finding reading info",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ASBG10A",
+        "variable_name": "Computer use for school reading",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ASBG10B",
+        "variable_name": "Computer use for school prep",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "device_use_in",
+        "variable_name": "Device use in",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "out_school",
+        "variable_name": "out school",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ASBGSEC",
+        "variable_name": "Computer self-efficacy",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ASBGDDH",
+        "variable_name": "Digital devices at home",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ASBGHRL",
+        "variable_name": "Home resources for learning",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "ACBG10",
+        "variable_name": "School access to digital books",
+        "category": "school"
+      },
+      {
+        "variable_code": "ACBGDRSD",
+        "variable_name": "Instruction affected by shortages",
+        "category": "school"
+      },
+      {
+        "variable_code": "COMSRAT",
+        "variable_name": "Computers to students ratio",
+        "category": "school"
+      },
+      {
+        "variable_code": "ACBG05B",
+        "variable_name": "School location",
+        "category": "school"
+      },
+      {
+        "variable_code": "HRLAGGR",
+        "variable_name": "Home resources aggregated at school",
+        "category": "school"
+      },
+      {
+        "variable_code": "FREQCLASSUSE",
+        "variable_name": "Computers in classroom reading",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "ATBG01",
+        "variable_name": "Teacher years of teaching",
+        "category": "teacher"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PIRLS 2016 Grade 4 Reading for information (paper vs. ePIRLS 2016 electronic mode), six European countries (DNK, ITA, NOR, PRT, SVN, SWE)",
+        "target_variable": "Mode difference in reading for information (e-reading PV minus paper PV)",
+        "top_predictors": [
+          "Time using computer daily",
+          "Time finding reading info",
+          "Device use in and out school",
+          "Computer self-efficacy",
+          "Digital devices at home"
+        ],
+        "performance_metrics": "OLS regression coefficients reported by country; R-squared values are small (e.g., Portugal R-squared ≈ 0.02; Slovenia R-squared ≈ 0.01). No ML metrics (e.g., accuracy/AUC) are reported because the study uses linear regression rather than ML.",
+        "standardized_conclusion": "Using PIRLS 2016 Grade 4 Reading for information (paper vs. ePIRLS 2016) the study leveraged student ICT use and home digital resources to explain the e-reading minus paper-reading PV differences, finding limited and country-specific support: device use in and out of school was related to mode differences in Italy and Portugal, computer self-efficacy was related in Portugal and Slovenia, and home digital device access was related only in Italy; effects were statistically significant but small (coefficients generally ≤ 0.10). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This study analyzes PIRLS 2016 Grade 4 reading for information by comparing paper vs. ePIRLS 2016 electronic reading using the PV-difference outcome across six European countries (DNK, ITA, NOR, PRT, SVN, SWE). The authors use OLS regression (not ML) with PIRLS complex sampling/assessment procedures, including repeating analyses across PVs and using sampling and replicate weights via RALSA. Results show limited, country-specific associations: device use in and out of school relates to mode differences in Italy and Portugal; computer self-efficacy relates in Portugal and Slovenia; and home digital device access relates only in Italy. School ICT resources matter in Denmark (computers-to-students ratio) and Italy (instruction affected by digital resource shortages), while classroom teacher ICT use shows no significant effects in any country. The study also reports weak but significant negative correlations between home resources for learning and mode differences in Denmark, Norway, and Slovenia, and it links country-level differences to DESI 2016 patterns (higher DESI aligns with higher e-reading advantage).",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": null
+  }
+}

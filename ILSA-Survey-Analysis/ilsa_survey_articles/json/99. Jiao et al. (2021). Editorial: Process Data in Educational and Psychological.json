@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "file_name": "99. Jiao et al. (2021). Editorial: Process Data in Educational and Psychological Measurement.pdf",
+    "title": "Editorial: Process Data in Educational and Psychological Measurement",
+    "authors": [
+      "Jiao",
+      "He",
+      "Veldkamp"
+    ],
+    "year": 2021,
+    "doi": "10.3389/fpsyg.2021.793399",
+    "venue": "Frontiers in Psychology",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "review_article"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This is an editorial/research-topic overview that summarizes papers in the area of process data in educational and psychological measurement rather than conducting an original student-level empirical analysis. No ILSA/NAEP/PISA/PIAAC microdata cycle, sampling frame, or analytic subsample is specified for this editorial itself. Consequently, there is no description of complex survey weighting, replicate-weight methodology, or any weight variable (e.g., W_FSTUWT/TOTWGT) to report. The editorial therefore does not apply or discuss survey weights."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "This editorial does not perform an original predictive modeling analysis on ILSA cognitive achievement outcomes; it provides an overview of papers and their statistical approaches. As a result, plausible values (PV) generation/combination and missing-data handling strategies for PV-based achievement scores are not applicable to the editorial’s own analysis. The missing-data handling field is set to not_reported because no empirical dataset, model training, or imputation/deletion protocol is described in the editorial text.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [],
+      "sample_filtering_criteria": "No analytic sample is defined because the article is an editorial overview of a research topic rather than an empirical study using a specific ILSA micro-dataset."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "PISA",
+        "target_variable": "Literature synthesis outcome (not student-level prediction)",
+        "top_predictors": [],
+        "performance_metrics": "Not reported",
+        "standardized_conclusion": "Using PISA the study leveraged the reported predictors to predict Literature synthesis outcome (not student-level prediction), finding that This editorial does not report model training, predictive performance metrics, or an empirical dataset used for analysis. Instead, it summarizes a collection of papers on process data approaches, including examples such as hidden Markov modeling, data mining with supervised algorithms (e.g., CART, gradient boosting, random forests, SVM), and other joint modeling frameworks for response accuracy and response times. Because no single study’s dataset, target variable, or evaluation results are analyzed within this editorial, there are no extractable findings or performance statistics. Survey weighting, plausible values handling, and missing-data handling are therefore not applicable to the editorial itself. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This editorial does not report model training, predictive performance metrics, or an empirical dataset used for analysis. Instead, it summarizes a collection of papers on process data approaches, including examples such as hidden Markov modeling, data mining with supervised algorithms (e.g., CART, gradient boosting, random forests, SVM), and other joint modeling frameworks for response accuracy and response times. Because no single study’s dataset, target variable, or evaluation results are analyzed within this editorial, there are no extractable findings or performance statistics. Survey weighting, plausible values handling, and missing-data handling are therefore not applicable to the editorial itself.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "The article is an editorial/research-topic overview rather than an empirical large-scale assessment analysis. It does not provide an analytic sample size, country-level sample breakdown, or a concrete ML modeling pipeline with reported metrics; therefore fields such as total_students, countries, ml_techniques, confounders_identified, and main_findings cannot be populated from the editorial text."
+  }
+}

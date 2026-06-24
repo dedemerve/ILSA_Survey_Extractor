@@ -1,0 +1,225 @@
+{
+  "metadata": {
+    "file_name": "42. Gil-Madrona et al. (2025). What Are the Best Predictors of STEM Competences in PISA 2018? An Analysis of the Spanish Context Using Data Mining.pdf",
+    "title": "What Are the Best Predictors of STEM Competences in PISA 2018? An Analysis of the Spanish Context Using Data Mining",
+    "authors": [
+      "Pedro Gil-Madrona",
+      "Ashly Mercedes Guerrero-Muguerza",
+      "Álvaro Infantes-Paniagua",
+      "María Martínez-López"
+    ],
+    "year": 2025,
+    "doi": "10.1111/ssm.18363",
+    "venue": "School Science and Mathematics",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2018 microdata for Spain, obtained from the Spanish INEE public database, and restricts the analytic sample to students with complete data for the selected predictors and the two criterion domains (mathematics and science competences). The manuscript reports sample size (35,943 students) and extensive predictor curation (recategorization, elimination of imbalanced/near-constant and high-missingness variables, correlation-based elimination, and variable-set experiments), but it does not report applying PISA sampling weights or any replicate-weight procedure. Because the models are standard data-mining learners (Random Forest, SVR, ridge) and the paper does not mention survey-weight-aware estimation, the analysis is treated as unweighted. No BRR/jackknife/Taylor replicate design details are provided."
+    },
+    "plausible_values_handling": "average_pv",
+    "missing_data_handling": "listwise_deletion",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 35943,
+      "countries": [
+        {
+          "country_code": "ESP",
+          "n_students": 35943
+        }
+      ],
+      "sample_filtering_criteria": "Used Spanish students participating in PISA 2018. The analytic dataset was restricted to cases with complete data for all variables of interest and for achievement in mathematical and scientific competences (complete-data requirement). Criterion variables were constructed by taking the average of the 10 PISA-derived variables for each competence (mathematics and science), yielding one continuous target per competence. Predictor variables were further curated: recategorization of imbalanced ordinal/nominal variables, elimination of variables with only two categories where >85% of responses fell in one category, elimination of variables with ≥70% empty records, removal of highly correlated predictors using Cramer's V, and selection of variable sets (20 up to 100) for model experiments."
+    },
+    "ml_techniques": {
+      "primary": "Ridge Regression",
+      "all_techniques": [
+        "Random Forest",
+        "SVM",
+        "Ridge Regression"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ict_access",
+        "variable_name": "ICT access",
+        "category": "ict"
+      },
+      {
+        "variable_code": "use",
+        "variable_name": "use",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ict_interest",
+        "variable_name": "ICT interest",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "perceived_competence",
+        "variable_name": "perceived competence",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ict_subject_use",
+        "variable_name": "Subject-related ICT use",
+        "category": "ict"
+      },
+      {
+        "variable_code": "well_being",
+        "variable_name": "well-being",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "supportive_school_context",
+        "variable_name": "Supportive school context",
+        "category": "school"
+      },
+      {
+        "variable_code": "school_climate",
+        "variable_name": "School climate",
+        "category": "school"
+      },
+      {
+        "variable_code": "sense_of_belonging",
+        "variable_name": "Sense of school belonging",
+        "category": "school"
+      },
+      {
+        "variable_code": "social_connection_to_parents",
+        "variable_name": "Social connection to parents",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "parental_support",
+        "variable_name": "Parental involvement/support",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "household_possessions",
+        "variable_name": "Household possessions",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "background",
+        "variable_name": "background",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "economic",
+        "variable_name": "Economic",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "cultural_parent_level",
+        "variable_name": "cultural parent level",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "UNDREM",
+        "variable_name": "Metacognition (understanding, remembering)",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "reading_education",
+        "variable_name": "Reading education",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "mother_tongue",
+        "variable_name": "Mother tongue",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "reading",
+        "variable_name": "reading",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "reading_related_attitudes",
+        "variable_name": "Reading-related attitudes",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "test_language_lessons",
+        "variable_name": "Test language lessons",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "educational_pathways",
+        "variable_name": "Educational pathways",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "grade_repetition",
+        "variable_name": "Grade repetition",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "learning_time",
+        "variable_name": "Learning time",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "early_childhood_education_care",
+        "variable_name": "Early childhood education/care",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "equity",
+        "variable_name": "Equity",
+        "category": "school"
+      },
+      {
+        "variable_code": "gender",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "grade",
+        "variable_name": "Grade",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "language_spoken_at_home",
+        "variable_name": "Language spoken at home",
+        "category": "demographic"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 (Spain) — Mathematics competence (ISCED 3 / Grade 10)",
+        "target_variable": "Mathematics achievement (averaged PISA-derived variables)",
+        "top_predictors": [
+          "ICT access and use",
+          "Student well-being",
+          "Supportive school context",
+          "Household possessions and background",
+          "Metacognition"
+        ],
+        "performance_metrics": "Prediction percentage (R² reported as prediction %): best with Ridge using 100 variables — 56.10% (SE not specified for this exact best row); across variable-set experiments, Ridge generally outperformed Random Forest and SVR, while Random Forest was lowest in the 80- and 100-variable settings.",
+        "standardized_conclusion": "Using PISA 2018 Spain the study leveraged ICT access and use, student well-being, supportive school context, household possessions/background, and metacognition to predict mathematics achievement, finding that the Ridge model achieved the highest prediction percentage (56.10%) among the three learners. The authors report cross-validation with 10 folds and variable-set experiments (up to 100 predictors), but the design is cross-sectional and the manuscript does not establish causal effects from the predictive importance patterns. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2018 (Spain) — Science competence (ISCED 3 / Grade 10)",
+        "target_variable": "Science achievement (averaged PISA-derived variables)",
+        "top_predictors": [
+          "Student well-being",
+          "Supportive school context",
+          "ICT access and use",
+          "Metacognition",
+          "Mother tongue and reading"
+        ],
+        "performance_metrics": "Prediction percentage (R² reported as prediction %): best with Ridge using 100 variables — 62.27% (SE not specified for this exact best row); SVR with 100 variables — 62.12%; Random Forest with 100 variables — 55.22%.",
+        "standardized_conclusion": "Using PISA 2018 Spain the study leveraged student well-being, supportive school context, ICT access and use, metacognition, and mother tongue/reading to predict science achievement, finding that the Ridge model produced the highest prediction percentage (62.27%) among the evaluated methods. The paper reports 10-fold cross-validation and extensive predictor curation (dropping highly imbalanced and ≥70% empty variables), but it remains a predictive, non-causal analysis based on secondary cross-sectional data. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzed Spanish PISA 2018 data (n=35,943; ages 15.25–16.17) to identify which PISA 2018 variables best predict STEM competences in mathematics and science using data mining. After predictor curation (recategorization, removal of near-constant and ≥70% empty variables, correlation-based elimination, and variable-set experiments from 20 to 100 predictors), the authors trained Random Forest, SVR, and ridge models with 10-fold cross-validation. For mathematics, the best performance came from ridge with 100 variables, reaching a prediction percentage of 56.10%. For science, ridge with 100 variables achieved the highest prediction percentage of 62.27% (slightly above SVR at 62.12%). The authors emphasize ICT-related variables, well-being, and supportive school context (and, for science, metacognition and mother tongue/reading), but the cross-sectional design prevents causal interpretation and the manuscript does not report survey-weighted estimation.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "metadata": {
+    "file_name": "123. Jewsbury & Johnson (2025). Principal component analysis on the covariance matrix for data reduction in large‑scale assessments.pdf",
+    "title": "Principal component analysis on the covariance matrix for data reduction in large-scale assessments",
+    "authors": [
+      "Paul A. Jewsbury",
+      "Matthew S. Johnson"
+    ],
+    "year": 2025,
+    "doi": "10.1186/s40536-025-00264-9",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The paper uses NAEP 2022 data as a real-data case study and also runs a simulation study that treats the 2019 NAEP mathematics grade 8 dataset as a population from which samples are drawn. The methodology describes NAEP’s operational two-step IRT-latent regression and plausible value generation, but it does not report applying NAEP sampling weights (e.g., W_FSTUWT/TOTWGT) or replicate-weight procedures (e.g., BRR/jackknife) in the estimation of the latent regression coefficients or in the PCA data-reduction step. In the simulation, the authors generate data and then evaluate PCA-COR vs PCA-COV (and hybrid variants) using fixed item parameters and PVs drawn from approximated posterior distributions; no survey-weight variable is mentioned. Because the study is methodological (PCA on covariance vs correlation for contextual-variable reduction) and does not document complex-survey weighting in the analysis pipeline, weighting is treated as not reported for the NAEP case study and not applicable/unspecified for the simulation."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The paper describes plausible values (PVs) as multiple imputations drawn from an approximation to the conditional posterior distribution and states that PV-based estimators follow Rubin’s rules (averaging estimates across M PV sets). However, it does not explicitly describe how missing data in the contextual variables (beyond NAEP’s contrast-coding and SWEEP operator removing near-zero variance/near-perfect multicollinearity variables) is handled for the NAEP case study, nor does it specify a missing-data imputation/deletion rule for contextual predictors in the real-data analysis. In the simulation, item responses are generated with missing completely at random (MCAR), but the paper does not map that to a specific missing-data handling category for the contextual-variable analysis stage in the schema.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [
+        {
+          "country_code": "USA",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Real-data case study uses NAEP 2022 reading and mathematics grade 8 data and follows operational NAEP procedures: contextual variables are converted to contrast-coded dummy variables and a SWEEP operator is applied to remove variables with near perfect multicollinearity and near-zero variances. For the COR procedure, PCA is fit to the correlation matrix of the remaining dummy variables with a component-selection rule (80% variance explained capped to keep the predictor-to-sample-size ratio at least 8). For the COV-H procedure, five congressionally mandated main constructs (gender, race/ethnicity, English learner status, disability status, and FRPL-based socioeconomic status) are included directly, and PCA is fit to the covariance matrix of residuals from regressing the remaining contextual variables on these main constructs; the number of components is selected to explain 90% of residual variance. In the simulation, the 2019 NAEP mathematics grade 8 dataset (treated as a population) is used to draw with-replacement samples of size 1000, and contextual variables are contrast-coded dichotomous variables including missing indicators; SWEEP is applied to remove zero-count/very small-variance variables, yielding 1584 contrast-coded dichotomous contextual variables."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "gender",
+        "variable_name": "Gender group indicators",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "race_ethnicity",
+        "variable_name": "Race/ethnicity group indicators",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "ell_status",
+        "variable_name": "English learner status",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "disability_status",
+        "variable_name": "Disability status",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "frpl_eligibility",
+        "variable_name": "FRPL socioeconomic eligibility",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "IEP",
+        "variable_name": "Individualized Education Plan (IEP)",
+        "category": "student_behavior"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "Simulation study based on 2019 NAEP Mathematics Grade 8 (population draw; univariate latent proficiency; 40-item 3PL item pool; MCAR item missingness)",
+        "target_variable": "Proficiency group mean estimates (PVs) bias and MSE",
+        "top_predictors": [
+          "Gender group indicators",
+          "Race/ethnicity group indicators",
+          "English learner status",
+          "Disability status",
+          "FRPL socioeconomic eligibility"
+        ],
+        "performance_metrics": "PCA-COV substantially reduces estimation bias and mean squared error (MSE) relative to PCA-COR; PCA-COV-Hybrid shows the best mean-bias performance for small groups (Asian, AI/AN, NH/PI). Exact numeric metrics are shown in simulation tables/figures (e.g., bias and MSE panels in Fig. 2; detailed values in Tables 4–7). Additional analysis (Proficiency group variance estimates bias and MSE): PCA-COV methods clearly and dramatically outperform PCA-COR methods for variance bias and variance MSE; outperformance is greatest for the smallest groups. PCA-COV-Hybrid slightly underperforms PCA-COV for variance MSE (more notable for smaller groups).",
+        "standardized_conclusion": "Using the simulation design based on 2019 NAEP Mathematics Grade 8 the study leveraged variance-weighted PCA-COV (and hybrid variants including main reporting-group dummies) to predict PV-based proficiency group means, finding that PCA-COV greatly reduces bias and MSE compared with PCA-COR, with PCA-COV-Hybrid achieving the lowest mean bias for small reporting groups. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This paper proposes PCA-COV (PCA on the covariance matrix) as a data-reduction method for contextual variables in NAEP-style IRT-latent regression models that generate plausible values (PVs). In a simulation study using contextual information drawn from 2019 NAEP Mathematics Grade 8, PCA-COV substantially reduces bias and MSE for PV-based group mean and variance estimates compared with the conventional PCA-COR (PCA on the correlation matrix), with the largest gains for small reporting groups; PCA-COV-Hybrid further improves mean bias for small groups. In the NAEP 2022 Grade 8 real-data comparison (COR vs COV-H), PV-based mean differences between procedures are under half a point and trend significance tests versus 2019 are almost always consistent, with one reported exception for ELL in mathematics. The study is methodological and does not train predictive ML models; it relies on PCA-based variable reduction within the latent regression/PV framework, and it does not document complex-survey weighting variables in the analysis pipeline.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": null
+  }
+}

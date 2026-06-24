@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "file_name": "81. Schipper et al. (2025). Identifying students’ solution strategies in digital mathematics assessment using log data.pdf",
+    "title": "Identifying students’ solution strategies in digital mathematics assessment using log data",
+    "authors": [
+      "de Schipper",
+      "EdS",
+      "RF",
+      "SK",
+      "RdS",
+      "BV"
+    ],
+    "year": 2025,
+    "doi": "10.1186/s40536-025-00259-6",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses French national low-stakes assessment CEDRE (2019) administered in ninth grade (troisième) in both public and private schools, with abilities estimated via a 2PL model and WLE. For the analytic sample, the authors filtered the log-data to students who interacted with the digital item and for whom score, estimated ability, and response time were registered, and removed cases with technical malfunctions in response-time registration (final n=802). The manuscript does not report applying complex survey weights (e.g., W_FSTUWT/TOTWGT) or replicate-weight procedures (e.g., BRR/jackknife) in the clustering/mixture-model analysis. Because the analysis is an exploratory finite mixture clustering on constructed log-derived variables and the paper does not mention survey-weight incorporation, weighting is treated as not applied."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "Plausible values are not applicable because the dependent outcome used to relate solution-strategy classes to mathematical ability is an estimated ability score derived from a 2PL model using Warm’s Weighted Likelihood Estimation (WLE), not PV-based achievement scores. The paper also does not describe any missing-data imputation strategy for the analytic variables; instead, it reports case deletion during log-data cleaning (e.g., removing students with no interaction or missing score/ability/response time). Therefore, a PV/missing-data handling strategy is either not applicable (PVs) or not fully specified (missing-data handling beyond the described exclusions).",
+    "sample_details": {
+      "total_students": 802,
+      "countries": [
+        {
+          "country_code": "FRA",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Data come from the French CEDRE 2019 digital mathematics assessment. The analyzed item (“Product Equation”) was administered to 1004 students, and the log-data were cleaned by removing students who did not interact with the assessment environment at all and students for whom no score, estimated ability, or response time was registered. Additionally, five students were removed due to a technical malfunction in the registration of response times. Interactions were further cleaned by removing construction events (typing longer character sequences) and deletion events (keystrokes registered during deletion), resulting in an analytic sample of 802 students."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "process_data",
+        "variable_name": "Total interactions with item",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "process_data",
+        "variable_name": "Longest time without interaction",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "process_data",
+        "variable_name": "Time before first interaction",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "process_data",
+        "variable_name": "Response time on item",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "process_data",
+        "variable_name": "Entered value x in input",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "process_data",
+        "variable_name": "Entered value -2/3 in input",
+        "category": "process_data"
+      },
+      {
+        "variable_code": "process_data",
+        "variable_name": "Entered value 3 in input",
+        "category": "process_data"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "CEDRE 2019 Grade 9 (troisième) Digital Mathematics — Product Equation item (France)",
+        "target_variable": "Mathematical ability (WLE theta) differences across solution-strategy classes",
+        "top_predictors": [
+          "Total interactions with item",
+          "Longest time without interaction",
+          "Time before first interaction",
+          "Response time on item",
+          "Entered value x in input"
+        ],
+        "performance_metrics": "Finite mixture clustering (5 latent classes) — ability differences: class 5 vs classes 1-4 significant (p<0.001 after Bonferroni), effect sizes d = -0.86 (vs class 1), -1.11 (vs class 2), -1.00 (vs class 3), -1.08 (vs class 4); class 1 vs class 2 also significant (p=0.014, d=-0.28).",
+        "standardized_conclusion": "Using CEDRE 2019 Grade 9 digital mathematics item the study leveraged log-derived engagement and input-behavior variables (e.g., interactions, time away, response time, and whether key values were entered) to identify five solution-strategy classes via finite mixture clustering, and found that the disengaged class (class 5) had the lowest estimated mathematical ability (WLE theta) with large, Bonferroni-adjusted effect sizes. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzes log data from the French CEDRE 2019 digital mathematics assessment for a single pre-algebra “Product Equation” item administered in ninth grade. After cleaning the log interactions, the authors used an exploratory finite mixture model to cluster 802 students into five solution-strategy classes based on engagement and input behaviors (e.g., interactions, time before interaction, longest time without interaction, response time, and whether specific values were entered). They then compared students’ estimated mathematical ability (WLE theta) across these classes using two-sided t-tests with Bonferroni adjustment. The disengaged class (class 5) showed a significantly lower mean ability than the other classes (p<0.001 after adjustment) with large effect sizes (d around -0.86 to -1.11). The paper does not report any survey-weight application and does not use sequence-based methods, which limits generalizability beyond this item and context.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "The paper’s primary analytic goal is exploratory identification of solution-strategy groups using finite mixture clustering on constructed log-derived variables, not supervised prediction with a machine-learning learner. Therefore, no ML predictive algorithm (e.g., Random Forest/XGBoost/SVM) is applicable for the ml_techniques fields, and the primary model is left null while all_techniques is empty."
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "metadata": {
+    "file_name": "47. Haw & King. (2023). Understanding Filipino students’ achievement in PISA_ The roles of personal characteristics, proximal processes, and social contexts.pdf",
+    "title": "Understanding Filipino students’ achievement in PISA: The roles of personal characteristics, proximal processes, and social contexts",
+    "authors": [
+      "Joseph Y. Haw",
+      "Ronnel B. King"
+    ],
+    "year": 2023,
+    "doi": "10.1007/s11218-023-09773-3",
+    "venue": "Social Psychology of Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": true,
+      "replicate_weights_used": true,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses the publicly available PISA 2018 Philippine dataset, which is produced using a complex two-stage sampling design (schools sampled first, then students within sampled schools). The authors state that the published PISA dataset includes sampling weights to account for this two-stage design, and they used these weights for classical statistical inferences. For the hierarchical linear modeling (HLM) step, they additionally used the 80 replicate weights included in the dataset, computing parameter estimates separately for each of the 10 plausible values and aggregating them following PISA procedures. In the random forest (RF) variable-selection step, the authors explicitly did not use replicate weights because RF does not generate parameter estimates; thus, the ML step is not described as weight-aware."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "multiple_imputation",
+    "handling_not_reported_explanation": null,
+    "sample_details": {
+      "total_students": 7233,
+      "countries": [
+        {
+          "country_code": "PHL",
+          "n_students": 7233
+        }
+      ],
+      "sample_filtering_criteria": "The analytic sample consists of 15-year-old students from the Philippines in PISA 2018 (N=7233) selected via PISA’s complex two-stage sampling (about 187 schools, then sampled students within schools). The authors excluded predictor variables with 100% missing information and removed redundant indices (e.g., indices used to derive ESCS) and variables that did not show a statistically significant correlation with reading achievement in a preliminary analysis, reducing predictors to 53. For missing data on the retained predictors, they assessed missingness per case using an 80% missingness threshold; all 7223 observations had less than 25% missingness, so all cases were retained for imputation and analysis."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Random Forest"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "SCREADDIFF",
+        "variable_name": "Self-concept of reading difficulty",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST184Q01HA",
+        "variable_name": "Fixed mindset",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "WORKMAST",
+        "variable_name": "Work mastery",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "JOYREAD",
+        "variable_name": "Reading enjoyment",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "MASTGOAL",
+        "variable_name": "Mastery goal orientation",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "RESILIENCE",
+        "variable_name": "Resilience",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EUDMO",
+        "variable_name": "Eudaimonic meaning in life",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ATTLNACT",
+        "variable_name": "Learning activities attitude",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "SCREADCOMP",
+        "variable_name": "Self-concept of reading competence",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "GFOFAIL",
+        "variable_name": "General fear of failure",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "PISADIFF",
+        "variable_name": "Perceived PISA difficulty",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "ST176",
+        "variable_name": "Time spent on online reading",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "METASUM",
+        "variable_name": "Meta-cognition: summarizing",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "EMOSUPS",
+        "variable_name": "Parents’ emotional support",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "LMINS",
+        "variable_name": "Learning time in language",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ST175",
+        "variable_name": "Time spent in leisure reading",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "ESCS",
+        "variable_name": "Socioeconomic status (ESCS)",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "REPEAT",
+        "variable_name": "Grade repetition",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "BELONG",
+        "variable_name": "School belongingness",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "DISCRIM",
+        "variable_name": "Discriminating school climate",
+        "category": "school"
+      },
+      {
+        "variable_code": "BEINGBULLIED",
+        "variable_name": "Being bullied",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "ICTRES",
+        "variable_name": "ICT resources at home",
+        "category": "ict"
+      },
+      {
+        "variable_code": "DISCLIMA",
+        "variable_name": "Disciplinary climate",
+        "category": "peer_effects"
+      },
+      {
+        "variable_code": "EDUSHORT",
+        "variable_name": "Educational material shortage",
+        "category": "school"
+      },
+      {
+        "variable_code": "RATCMP1",
+        "variable_name": "to computer ratio",
+        "category": "school"
+      },
+      {
+        "variable_code": "STIMREAD",
+        "variable_name": "Stimulation of reading",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "ST168",
+        "variable_name": "Reading books in different modes",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "ST150",
+        "variable_name": "Reading variety of text in class",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "ADAPTIVITY",
+        "variable_name": "Instructional adaptivity",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "ST153",
+        "variable_name": "Comprehension activities",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "ST167",
+        "variable_name": "Reading variety of text for leisure",
+        "category": "curriculum"
+      },
+      {
+        "variable_code": "METASPAM",
+        "variable_name": "Meta-cognition: assess credibility",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "DIRINS",
+        "variable_name": "Teacher-directed instruction",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "TEACHSUP",
+        "variable_name": "Teacher support in test language lessons",
+        "category": "teacher"
+      },
+      {
+        "variable_code": "RATCMP2",
+        "variable_name": "Computer to internet ratio",
+        "category": "ict"
+      },
+      {
+        "variable_code": "RURAL",
+        "variable_name": "School location",
+        "category": "school"
+      },
+      {
+        "variable_code": "STAFFSHORT",
+        "variable_name": "Educational staff shortage",
+        "category": "school"
+      },
+      {
+        "variable_code": "LANGFRIEND",
+        "variable_name": "Language with best friend",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "LANGSCHMATES",
+        "variable_name": "Language with school mates",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "DURECEC",
+        "variable_name": "Early childhood education duration",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "TOTAT",
+        "variable_name": "Total number of teachers",
+        "category": "school"
+      },
+      {
+        "variable_code": "LANGMOTHER",
+        "variable_name": "Language spoken with mother",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "SCHSIZE",
+        "variable_name": "School size",
+        "category": "school"
+      },
+      {
+        "variable_code": "COMPETE",
+        "variable_name": "Competitiveness",
+        "category": "student_attitude"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 Philippines (15-year-olds) — Reading achievement (10 plausible values)",
+        "target_variable": "Reading achievement (PVs)",
+        "top_predictors": [
+          "Self-concept of reading difficulty",
+          "Fixed mindset",
+          "Socioeconomic status (ESCS)",
+          "Grade repetition",
+          "School belongingness"
+        ],
+        "performance_metrics": "Random Forest (Model 2, top 26 predictors): R²=0.64 (unobserved sample), RMSE=47.75; Model 1 (all 53 predictors): R²=0.66, RMSE=47.19. Cross-validation selected 26 predictors as optimal; HLM on the same 26 predictors: R²=0.53.",
+        "standardized_conclusion": "Using PISA 2018 Philippines the study leveraged self-concept of reading difficulty, fixed mindset, socioeconomic status (ESCS), grade repetition, and school belongingness to predict reading achievement (plausible values), finding that self-concept of reading difficulty was the strongest predictor and that personal characteristics, proximal processes, and contextual factors jointly explained about 64% of variance in the unobserved sample (RF), with broadly similar but smaller effects in the follow-up HLM (R²=0.53). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzed PISA 2018 Philippines (N=7233) to predict students’ reading achievement using a two-step approach: Random Forest variable importance and selection, followed by hierarchical linear modeling for interpretability. Missing predictor data were handled via multiple imputation using MICE, and the authors used PISA’s 10 plausible values with results aggregated across PVs. In the Random Forest model, the streamlined set of 26 predictors (selected via repeated 10-fold cross-validation) achieved R²=0.64 and RMSE=47.75 on the unobserved sample; the full 53-predictor model had R²=0.66 and RMSE=47.19. The most critical predictors included reading difficulty self-concept, socioeconomic status, grade repetition, school belonging, and fixed mindset, with online reading time and summarizing metacognition also prominent. The authors emphasize that the analysis is cross-sectional (no causal claims) and that RF does not incorporate replicate weights in the ML step.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

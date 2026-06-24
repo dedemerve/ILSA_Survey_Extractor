@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "file_name": "39. Zheng et al. (2025). Unfolding key factors of resilience in ICT cognitive-motivational engagement: Global evidence from machine learning techniques.pdf",
+    "title": "Unfolding key factors of resilience in ICT cognitive-motivational engagement: Global evidence from machine learning techniques",
+    "authors": [
+      "Jia-qi Zheng",
+      "Kwok-cheung Cheung",
+      "Pou-seong Sit",
+      "Chi-chio Lam"
+    ],
+    "year": 2025,
+    "doi": "10.1016/j.ijer.2025.102607",
+    "venue": "International Journal of Educational Research",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2018 microdata (student, teacher, and school background merged) for 53 countries/economies that administered the optional ICT familiarity questionnaire. The analytic sample is defined by an OECD-based resilience operationalization: ESCS in the bottom quarter within each country/economy and ICT engagement in the top quarter across countries/economies, yielding 68,959 ESCS-disadvantaged students and then 13,418 resilient (IRS) vs 55,541 non-resilient (NRS) students. The manuscript does not report applying PISA sampling weights (e.g., W_FSTUWT/TOTWGT) or replicate-weight procedures, and the ML pipeline (kNN imputation, min-max normalization, SMOTETomek, and supervised classifiers) is implemented in Python/scikit-learn, which typically does not natively incorporate complex survey weights. Therefore, the analysis is treated as unweighted with respect to complex survey design; this may affect generalizability under PISA’s clustered sampling structure."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "knn_imputation",
+    "handling_not_reported_explanation": "Plausible values are not applicable because the dependent variable is a binary resilience classification (IRS vs NRS) constructed from ESCS quartiles and ICT engagement quartiles derived from questionnaire-based ICT engagement indicators (INTICT, COMPICT, AUTICT, SOIAICT), rather than from PV-based cognitive achievement scores. Missing data handling is reported via k-nearest neighbor (kNN) imputation, so no PV/missing-data transparency gap is present for PVs.",
+    "sample_details": {
+      "total_students": 68959,
+      "countries": [],
+      "sample_filtering_criteria": "Used PISA 2018 data for the 53 countries/economies that administered the optional ICT familiarity questionnaire. Resilience in ICT engagement was operationalized following OECD guidance: (1) select students whose ESCS is in the bottom quarter within their country/economy (ESCS-disadvantaged; N=68,959), then (2) among these, classify students as ICT engagement resilient (IRS) if their ICT engagement is in the top quarter across the 53 countries/economies; remaining ESCS-disadvantaged students are non-resilient (NRS). The dependent variable is binary (IRS=1, NRS=0). For modeling, the dataset was split into training (80%) and test (20%), then kNN imputation, min-max normalization to [0,1], and SMOTETomek resampling were applied to address class imbalance."
+    },
+    "ml_techniques": {
+      "primary": "SVM",
+      "all_techniques": [
+        "Logistic Regression",
+        "Decision Tree",
+        "Random Forest",
+        "SVM"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "ST004D01T",
+        "variable_name": "Gender",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "ENTUSE",
+        "variable_name": "ICT use outside school",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ICTRES",
+        "variable_name": "ICT resources at home",
+        "category": "ict"
+      },
+      {
+        "variable_code": "RATCMP2",
+        "variable_name": "Internet-connected computers at school",
+        "category": "ict"
+      },
+      {
+        "variable_code": "ICTSCH",
+        "variable_name": "ICT available at school",
+        "category": "ict"
+      },
+      {
+        "variable_code": "PRIVATESCH",
+        "variable_name": "School type (public/private)",
+        "category": "school"
+      },
+      {
+        "variable_code": "RESILIENCE",
+        "variable_name": "Self-efficacy",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "COGFLEX",
+        "variable_name": "Ability to adapt to new situations",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "EMOSUPS",
+        "variable_name": "Parents’ emotional support",
+        "category": "parent_home"
+      },
+      {
+        "variable_code": "METASPAM",
+        "variable_name": "Meta-cognition: assess credibility",
+        "category": "student_behavior"
+      },
+      {
+        "variable_code": "SCREADCOMP",
+        "variable_name": "Self-concept of reading competence",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "BSMJ",
+        "variable_name": "Expected occupational status",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "COMPETE",
+        "variable_name": "Attitudes towards competition",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "PISADIFF",
+        "variable_name": "Perception of PISA test difficulty",
+        "category": "student_attitude"
+      },
+      {
+        "variable_code": "GFOFAIL",
+        "variable_name": "General fear of failure",
+        "category": "student_attitude"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 (53 countries/economies) ICT familiarity questionnaire",
+        "target_variable": "Resilience in ICT engagement (IRS vs NRS)",
+        "top_predictors": [
+          "ICT use outside school",
+          "ICT resources at home",
+          "Self-efficacy",
+          "Gender",
+          "Parents’ emotional support"
+        ],
+        "performance_metrics": "Ten-fold cross-validation (imbalanced classification). Logistic Regression: AUC=74.05%, Accuracy=68.13%, Recall=72.29%, Precision=67.14%, F-measure=69.51%. Decision Tree: AUC=84.84%, Accuracy=76.57%, Recall=75.19%, Precision=76.67%, F-measure=75.07%. Random Forest: AUC=94.81%, Accuracy=86.86%, Recall=84.67%, Precision=88.18%, F-measure=84.70%. SVM: AUC=95.10%, Accuracy=86.45%, Recall=97.09%, Precision=80.27%, F-measure=87.78%.",
+        "standardized_conclusion": "Using PISA 2018 ICT familiarity questionnaire the study leveraged ICT use outside school, ICT resources at home, self-efficacy, gender, and parents’ emotional support to classify resilience in ICT engagement (IRS vs NRS), finding that SVM achieved the best overall discrimination by F-measure (87.78%) and very high recall (97.09%), while Logistic Regression was the weakest (F-measure=69.51%). The manuscript uses kNN imputation and SMOTETomek for class imbalance and does not report applying PISA complex survey weights, which may limit population-representativeness under clustered sampling. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzed PISA 2018 data from 53 countries/economies that administered the optional ICT familiarity questionnaire and focused on ESCS-disadvantaged students (N=68,959). Resilience in ICT engagement was defined as ESCS in the bottom quarter within each country/economy and ICT engagement in the top quarter across economies, yielding 13,418 IRS and 55,541 NRS. Four supervised ML classifiers (Logistic Regression, Decision Tree, Random Forest, SVM) were compared using ten-fold cross-validation with metrics including Accuracy, AUC, Recall, Precision, and F-measure. Random Forest and SVM performed best, with SVM reaching the highest F-measure (87.78%) and recall (97.09%), while Logistic Regression had the lowest performance (AUC=74.05%, Accuracy=68.13%). Key discriminators included ICT use outside school for entertainment, ICT resources at home, self-efficacy, gender, and parents’ emotional support. The analysis uses kNN imputation and SMOTETomek but does not report complex survey weighting, and the cross-sectional design precludes causal interpretation.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "file_name": "115. Rausch et al. (2024). Designing an International Large‑Scale Assessment of Professional Competencies and Employability Skills: Emerging Avenues and Challenges of OECD’s PISA‑VET.pdf",
+    "title": "Designing an International Large-Scale Assessment of Professional Competencies and Employability Skills: Emerging Avenues and Challenges of OECD’s PISA-VET",
+    "authors": [
+      "Andreas Rausch",
+      "et al."
+    ],
+    "year": 2024,
+    "doi": "10.1007/s12186-024-09347-0",
+    "venue": null,
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "methodology_paper"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This paper is a design and framework discussion of OECD’s PISA-VET assessment (development/pilot/implementation phases) and does not report an empirical student-level analysis. No dataset/cycle is analyzed and no analytic sample is constructed from PISA-VET microdata. Consequently, there is no description of complex survey weighting, replicate-weight methods, or any weight variable (e.g., W_FSTUWT, TOTWGT) being applied. The open-access article focuses on target populations, occupational areas, assessment approaches, and contextual/system-level questionnaires rather than estimation procedures."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "PISA-VET is presented as an assessment framework under development, with proposed assessment approaches (e.g., scenario-based questions, digital simulations, live/recorded demonstrations) and contextual/system-level questionnaires. The paper does not conduct an empirical analysis of cognitive achievement outcomes that would require plausible values (PVs) or report any PV generation/combining strategy. Missing-data handling is also not applicable because no model estimation on an analytic dataset is performed; the article is methodological and agenda-setting rather than an evaluation study.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [],
+      "sample_filtering_criteria": "No student analytic sample is constructed. The paper outlines the target population (learners near completion of initial VET programmes) and describes planned assessment and contextual/system-level data collection for future PISA-VET implementation phases."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "OECD",
+        "target_variable": "Literature synthesis outcome (not student-level prediction)",
+        "top_predictors": [],
+        "performance_metrics": "Not reported",
+        "standardized_conclusion": "Using OECD the study leveraged the reported predictors to predict Literature synthesis outcome (not student-level prediction), finding that This is a non-empirical methodology paper describing the design of OECD’s PISA-VET assessment framework rather than reporting predictive modeling results. It outlines target learner groups (end of initial VET programmes), selected occupational areas (automotive technicians, electricians, business and administration, healthcare/nursing assistants, hotel receptionists), and the planned assessment approaches for professional skills and employability skills. The paper also proposes system-level and contextual questionnaires to support cross-country interpretation and equity/quality analyses. Because no student-level dataset is analyzed, no ML algorithms, performance metrics, or PV/missing-data handling strategies are evaluated in this article. This indicates that  support cross-country interpretation and equity/quality analyses. Because no student-level dataset is analyzed, no ML algorithms, performance metrics, or PV/missing-data handling strategies are evaluated in this article."
+      }
+    ],
+    "outcome_summary": "This is a non-empirical methodology paper describing the design of OECD’s PISA-VET assessment framework rather than reporting predictive modeling results. It outlines target learner groups (end of initial VET programmes), selected occupational areas (automotive technicians, electricians, business and administration, healthcare/nursing assistants, hotel receptionists), and the planned assessment approaches for professional skills and employability skills. The paper also proposes system-level and contextual questionnaires to support cross-country interpretation and equity/quality analyses. Because no student-level dataset is analyzed, no ML algorithms, performance metrics, or PV/missing-data handling strategies are evaluated in this article.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "The manuscript is a framework/design discussion of PISA-VET (development/pilot/implementation phases) and does not include an empirical large-scale assessment dataset, analytic sample, or any trained/evaluated ML models. Therefore, fields such as total_students, country-level sample sizes, PV handling, missing-data handling, and ML technique performance cannot be extracted from results tables because they are not present."
+  }
+}

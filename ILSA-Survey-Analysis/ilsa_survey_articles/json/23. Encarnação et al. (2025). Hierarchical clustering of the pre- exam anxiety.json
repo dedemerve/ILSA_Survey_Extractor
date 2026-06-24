@@ -1,0 +1,308 @@
+{
+  "metadata": {
+    "file_name": "23. Encarnação et al. (2025). Hierarchical clustering of the pre- exam anxiety levels in physically inactive and active adolescent students from 56 countries: an observational study using PISA program data.pdf",
+    "title": "Hierarchical clustering of the pre-exam anxiety levels in physically inactive and active adolescent students from 56 countries: an observational study using PISA program data",
+    "authors": [
+      "SE",
+      "JT",
+      "PF",
+      "LL",
+      "AS",
+      "LB",
+      "RF",
+      "PA",
+      "PV",
+      "AM"
+    ],
+    "year": 2025,
+    "doi": "10.3389/fspor.2025.1509959",
+    "venue": "Frontiers in Sports and Active Living",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2018 data (15-year-old students) and aggregates pre-exam anxiety percentages at the country level, stratified by physical activity status (low vs high/moderate-vigorous). The manuscript does not report whether PISA sampling weights or replicate weights were applied when computing country-level anxiety percentages, nor does it name any weight variables (e.g., W_FSTUWT, TOTWGT) or replicate design methods (e.g., BRR/jackknife). Because the analysis is an unsupervised hierarchical clustering of country-level mean percentages (56 countries) rather than a student-level predictive model, the paper’s weighting strategy is unclear; the safest interpretation is that weights were not explicitly incorporated in the clustering inputs. The only described preprocessing is the construction of two country-level datasets (low-activity and high-activity groups) and the clustering validation steps (dendrogram cut at 20% height, silhouette score, WCSS/BCSS/BCSS-WCSS ratio)."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The dependent variable is country-level pre-exam anxiety percentages derived from PISA 2018, and the paper does not describe any plausible-values (PV) generation/combining procedure (e.g., Rubin’s rules) or whether PV-based anxiety scores were used. Missing-data handling is also not reported: the authors state they used publicly available PISA-derived anxiety and physical activity classifications, but they do not document any imputation, deletion rule, or PV-related missingness procedure. This is a reporting gap because PISA microdata typically require explicit handling of missing responses and PVs for cognitive/psychometric constructs.",
+    "sample_details": {
+      "total_students": 600000,
+      "countries": [
+        {
+          "country_code": "AUS",
+          "n_students": null
+        },
+        {
+          "country_code": "BRA",
+          "n_students": null
+        },
+        {
+          "country_code": "FIN",
+          "n_students": null
+        },
+        {
+          "country_code": "EST",
+          "n_students": null
+        },
+        {
+          "country_code": "CHL",
+          "n_students": null
+        },
+        {
+          "country_code": "URY",
+          "n_students": null
+        },
+        {
+          "country_code": "DOM",
+          "n_students": null
+        },
+        {
+          "country_code": "NLD",
+          "n_students": null
+        },
+        {
+          "country_code": "ISR",
+          "n_students": null
+        },
+        {
+          "country_code": "DNK",
+          "n_students": null
+        },
+        {
+          "country_code": "TWN",
+          "n_students": null
+        },
+        {
+          "country_code": "COL",
+          "n_students": null
+        },
+        {
+          "country_code": "DEU",
+          "n_students": null
+        },
+        {
+          "country_code": "LTU",
+          "n_students": null
+        },
+        {
+          "country_code": "JPN",
+          "n_students": null
+        },
+        {
+          "country_code": "MNE",
+          "n_students": null
+        },
+        {
+          "country_code": "CRI",
+          "n_students": null
+        },
+        {
+          "country_code": "SVK",
+          "n_students": null
+        },
+        {
+          "country_code": "LUX",
+          "n_students": null
+        },
+        {
+          "country_code": "TUR",
+          "n_students": null
+        },
+        {
+          "country_code": "ESP",
+          "n_students": null
+        },
+        {
+          "country_code": "MYS",
+          "n_students": null
+        },
+        {
+          "country_code": "RUS",
+          "n_students": null
+        },
+        {
+          "country_code": "FRA",
+          "n_students": null
+        },
+        {
+          "country_code": "HUN",
+          "n_students": null
+        },
+        {
+          "country_code": "IRL",
+          "n_students": null
+        },
+        {
+          "country_code": "SGP",
+          "n_students": null
+        },
+        {
+          "country_code": "LVA",
+          "n_students": null
+        },
+        {
+          "country_code": "POL",
+          "n_students": null
+        },
+        {
+          "country_code": "CYP",
+          "n_students": null
+        },
+        {
+          "country_code": "MAC",
+          "n_students": null
+        },
+        {
+          "country_code": "GBR",
+          "n_students": null
+        },
+        {
+          "country_code": "CHE",
+          "n_students": null
+        },
+        {
+          "country_code": "BEL",
+          "n_students": null
+        },
+        {
+          "country_code": "TUN",
+          "n_students": null
+        },
+        {
+          "country_code": "PER",
+          "n_students": null
+        },
+        {
+          "country_code": "USA",
+          "n_students": null
+        },
+        {
+          "country_code": "CZE",
+          "n_students": null
+        },
+        {
+          "country_code": "CHN",
+          "n_students": null
+        },
+        {
+          "country_code": "PRT",
+          "n_students": null
+        },
+        {
+          "country_code": "NZL",
+          "n_students": null
+        },
+        {
+          "country_code": "KOR",
+          "n_students": null
+        },
+        {
+          "country_code": "SVN",
+          "n_students": null
+        },
+        {
+          "country_code": "NOR",
+          "n_students": null
+        },
+        {
+          "country_code": "GRC",
+          "n_students": null
+        },
+        {
+          "country_code": "ARE",
+          "n_students": null
+        },
+        {
+          "country_code": "QAT",
+          "n_students": null
+        },
+        {
+          "country_code": "BGR",
+          "n_students": null
+        },
+        {
+          "country_code": "HKG",
+          "n_students": null
+        },
+        {
+          "country_code": "AUT",
+          "n_students": null
+        },
+        {
+          "country_code": "CAN",
+          "n_students": null
+        },
+        {
+          "country_code": "SWE",
+          "n_students": null
+        },
+        {
+          "country_code": "MEX",
+          "n_students": null
+        },
+        {
+          "country_code": "HRV",
+          "n_students": null
+        },
+        {
+          "country_code": "THA",
+          "n_students": null
+        },
+        {
+          "country_code": "ISL",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Used PISA 2018 data for 15-year-old students from 56 countries. The analysis constructs two country-level datasets based on PISA’s physical activity classification: (1) low physical activity (no regular physical activity) and (2) high physical activity (regular moderate-to-vigorous activity). For each physical-activity group, the dependent variable is the country’s mean pre-exam anxiety percentage among students who reported feeling well-prepared for their exams (to avoid exam-preparation confounding). The clustering inputs are therefore country-level anxiety percentages (one observation per country) rather than individual student records."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "physical_activity_status",
+        "variable_name": "Physical activity status",
+        "category": "student_behavior"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2018 (15-year-olds) — pre-exam anxiety (country-level), low physical activity group",
+        "target_variable": "Pre-exam anxiety percentage (country-level)",
+        "top_predictors": [
+          "Physical activity status"
+        ],
+        "performance_metrics": "Hierarchical clustering validation: best silhouette score = 0.60; WCSS = 309.27; average square distance (WCSS) = 5.52; percentual average square distance = 2.35%; BCSS = 1,367.33; explained variability = 96%; BCSS/WCSS ratio = 22.10. Cluster solution chosen by dendrogram cut at 20% height; sensitivity cutoffs 15% and 25% gave similar compositions.",
+        "standardized_conclusion": "Using PISA 2018 the study leveraged physical activity status (low activity subgroup) to cluster countries by pre-exam anxiety percentage, finding that the most anxious countries formed two high-anxiety clusters (H-1: 67%, H-2: 78%) while three lower-anxiety clusters (L-1: 41%, L-2: 52%, L-3: 60%) emerged, with Brazil and the Dominican Republic among the highest-anxiety cluster members. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2018 (15-year-olds) — pre-exam anxiety (country-level), high physical activity group",
+        "target_variable": "Pre-exam anxiety percentage (country-level)",
+        "top_predictors": [
+          "Physical activity status"
+        ],
+        "performance_metrics": "Hierarchical clustering validation: best silhouette score = 0.56; WCSS = 632.80; average square distance (WCSS) = 5.52; percentual average square distance = 11.3%; BCSS = 7,079.18; explained variability = 92%; BCSS/WCSS ratio = 11.18. Cluster solution chosen by dendrogram cut at 20% height; sensitivity cutoffs 15% and 25% gave similar compositions.",
+        "standardized_conclusion": "Using PISA 2018 the study leveraged physical activity status (high activity subgroup) to cluster countries by pre-exam anxiety percentage, finding that two high-anxiety clusters (H-1: 77%, H-2: 64%) and two low-anxiety clusters (L-1: 53%, L-2: 43%) were identified, with Malaysia, Brazil, and Costa Rica among the highest-anxiety cluster members and Switzerland among the lowest-anxiety cluster members. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2018 (15-year-olds) — pre-exam anxiety (country-level), comparison across physical activity groups",
+        "target_variable": "Difference in pre-exam anxiety percentage (low vs high activity)",
+        "top_predictors": [
+          "Physical activity status"
+        ],
+        "performance_metrics": "Country-level group comparisons reported via chi-square and Z-tests with 95% CI thresholds: significant reductions for many countries (p < 0.05) including Austria (−7), Belgium (−8), Chile (−8), France (−5), Germany (−2), Greece (−7), Hungary (−7), Israel (−9), Korea (−5), Mexico (−7), Turkey (−5), United States (−9). Exceptions: Russia (+11) and United Arab Emirates (+4) increased anxiety under high physical activity. Overall mean change across countries: −3% (p < 0.01).",
+        "standardized_conclusion": "Using PISA 2018 the study leveraged physical activity status to compare country-level pre-exam anxiety between low and high activity groups, finding an overall average reduction of about 3% in pre-exam anxiety for high-activity students, with Russia and the UAE as notable exceptions where anxiety increased. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study analyzed PISA 2018 country-level pre-exam anxiety percentages for 15-year-olds who reported feeling well-prepared, stratified by physical activity status (low vs high/moderate-vigorous). Using hierarchical clustering with Euclidean distance and a dendrogram cut at 20% height, the low-activity subgroup yielded five clusters with a best silhouette score of 0.60 and 96% explained variability (BCSS/WCSS = 22.10), separating two high-anxiety clusters (67% and 78%) from three lower-anxiety clusters (41%, 52%, 60%). The high-activity subgroup produced four clusters with a best silhouette score of 0.56 and 92% explained variability (BCSS/WCSS = 11.18), again distinguishing two high-anxiety clusters (77% and 64%) from two lower-anxiety clusters (53% and 43%). Across countries, the average anxiety percentage decreased by about 3% for high-activity students (p < 0.01), though Russia and the UAE showed increases. The paper does not report PV handling or missing-data procedures, and it does not clarify whether PISA sampling/replicate weights were applied when computing country-level percentages.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": null
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "metadata": {
+    "file_name": "45. Öz et al. (2024). Stacking: An ensemble learning approach to predict student performance in PISA 2022.pdf",
+    "title": "Stacking: An ensemble learning approach to predict student performance in pisa 2022",
+    "authors": [],
+    "year": 2025,
+    "doi": "10.1007/s10639-024-13110-2",
+    "venue": "Education and Information Technologies",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses PISA 2022 microdata (student questionnaire file plus achievement outcomes) for 80 participating countries and constructs separate subject-specific datasets (mathematics, reading, science). The authors describe extensive preprocessing (dropping ID variables, birth-month, country-specific items, non-subject-specific variables, and variables with 100% missingness; converting “valid skip/not applicable/invalid/no response” to NaN; removing variables with 100% missingness per country). They do not report applying PISA sampling weights or replicate weights (e.g., BRR/jackknife) in the ML training or evaluation. Because the paper focuses on tree-based ensemble ML (XGBoost/HGB/LightGBM) and stacking/blending with ridge meta-learning, it appears to follow an unweighted ML workflow; the manuscript does not specify any weight-aware modeling or weight variable usage."
+    },
+    "plausible_values_handling": "rubin_rules",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "The paper states that it did not impute missing observations and that stacking/blending were used without filling missing values, but it does not provide a clear, explicit missing-data handling protocol for the ML pipeline (e.g., whether missingness was handled via model-internal missing value support, whether NaNs were retained as-is for all learners, and how this interacted with cross-validation splits). Given that the authors convert multiple response codes to NaN and then train models without imputation, the missing-data strategy is only partially described; this is a reporting gap because the exact mechanism and its consistency across base learners and the meta-learner are not fully documented.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [
+        {
+          "country_code": "AUT",
+          "n_students": null
+        },
+        {
+          "country_code": "BEL",
+          "n_students": null
+        },
+        {
+          "country_code": "BGR",
+          "n_students": null
+        },
+        {
+          "country_code": "BRA",
+          "n_students": null
+        },
+        {
+          "country_code": "CAN",
+          "n_students": null
+        },
+        {
+          "country_code": "CHE",
+          "n_students": null
+        },
+        {
+          "country_code": "CHL",
+          "n_students": null
+        },
+        {
+          "country_code": "CHN",
+          "n_students": null
+        },
+        {
+          "country_code": "COL",
+          "n_students": null
+        },
+        {
+          "country_code": "CRI",
+          "n_students": null
+        },
+        {
+          "country_code": "CZE",
+          "n_students": null
+        },
+        {
+          "country_code": "DEU",
+          "n_students": null
+        },
+        {
+          "country_code": "DNK",
+          "n_students": null
+        },
+        {
+          "country_code": "ESP",
+          "n_students": null
+        },
+        {
+          "country_code": "EST",
+          "n_students": null
+        },
+        {
+          "country_code": "FIN",
+          "n_students": null
+        },
+        {
+          "country_code": "FRA",
+          "n_students": null
+        },
+        {
+          "country_code": "GBR",
+          "n_students": null
+        },
+        {
+          "country_code": "GRC",
+          "n_students": null
+        },
+        {
+          "country_code": "HKG",
+          "n_students": null
+        },
+        {
+          "country_code": "HRV",
+          "n_students": null
+        },
+        {
+          "country_code": "HUN",
+          "n_students": null
+        },
+        {
+          "country_code": "IDN",
+          "n_students": null
+        },
+        {
+          "country_code": "IRL",
+          "n_students": null
+        },
+        {
+          "country_code": "ISL",
+          "n_students": null
+        },
+        {
+          "country_code": "ISR",
+          "n_students": null
+        },
+        {
+          "country_code": "ITA",
+          "n_students": null
+        },
+        {
+          "country_code": "JPN",
+          "n_students": null
+        },
+        {
+          "country_code": "KOR",
+          "n_students": null
+        },
+        {
+          "country_code": "LTU",
+          "n_students": null
+        },
+        {
+          "country_code": "LVA",
+          "n_students": null
+        },
+        {
+          "country_code": "MAC",
+          "n_students": null
+        },
+        {
+          "country_code": "MEX",
+          "n_students": null
+        },
+        {
+          "country_code": "NLD",
+          "n_students": null
+        },
+        {
+          "country_code": "NOR",
+          "n_students": null
+        },
+        {
+          "country_code": "NZL",
+          "n_students": null
+        },
+        {
+          "country_code": "POL",
+          "n_students": null
+        },
+        {
+          "country_code": "PRT",
+          "n_students": null
+        },
+        {
+          "country_code": "QAT",
+          "n_students": null
+        },
+        {
+          "country_code": "ROU",
+          "n_students": null
+        },
+        {
+          "country_code": "SAU",
+          "n_students": null
+        },
+        {
+          "country_code": "SGP",
+          "n_students": null
+        },
+        {
+          "country_code": "SVK",
+          "n_students": null
+        },
+        {
+          "country_code": "SVN",
+          "n_students": null
+        },
+        {
+          "country_code": "SWE",
+          "n_students": null
+        },
+        {
+          "country_code": "TUR",
+          "n_students": null
+        },
+        {
+          "country_code": "TWN",
+          "n_students": null
+        },
+        {
+          "country_code": "USA",
+          "n_students": null
+        },
+        {
+          "country_code": "ZAF",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Used PISA 2022 data for all countries participating in the 2022 administration (80 countries). For each subject domain (mathematics, reading, science), the authors created a subject-specific dataset by removing irrelevant variables (student/school IDs, student birth-month, country-specific items, variables not subject-specific) and removing variables with 100% missingness. They converted response codes for “valid skip”, “not applicable”, “invalid”, and “no response” to NaN (missing). For model training/evaluation, they split each country’s subject dataset into 80% training/20% testing for stacking and 60% training/20% validation/20% testing for blending; parameter tuning used fivefold cross-validation."
+    },
+    "ml_techniques": {
+      "primary": "Stacking",
+      "all_techniques": [
+        "Stacking",
+        "XGBoost",
+        "Histogram GBR",
+        "LightGBM",
+        "Ridge Regression"
+      ]
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "PISA 2022 Mathematics (Plausible Values)",
+        "target_variable": "Mathematics achievement (PVs)",
+        "top_predictors": [],
+        "performance_metrics": "Stacking produced the lowest mean MAPE for 72/80 countries (90.00%), lowest mean MAE for 74/80 (92.50%), and lowest mean MSE for 75/80 (93.75%). Robust linear mixed-effects models indicated significantly lower MAPE, MAE, and MSE for Stacking than XGBoost/HGB/LightGBM/Blending (MAPE: β=0.10 for Stacking intercept; other algorithms significant increases vs Stacking; MAE and MSE similarly significant).",
+        "standardized_conclusion": "Using PISA 2022 mathematics PV the study leveraged stacking (with ridge regression as the level-1 meta-learner) to predict mathematics achievement, finding that stacking achieved the lowest error metrics (MAPE/MAE/MSE) for the vast majority of countries compared with XGBoost, HGB, LightGBM, and blending. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2022 Reading (Plausible Values)",
+        "target_variable": "Reading achievement (PVs)",
+        "top_predictors": [],
+        "performance_metrics": "Stacking produced the lowest mean MAPE for 64/80 countries (80.00%), lowest mean MAE for 69/80 (86.25%), and lowest mean MSE for 70/80 (87.50%). Robust linear mixed-effects models showed significantly lower MAPE/MAE/MSE for Stacking than the other algorithms (with country random effects).",
+        "standardized_conclusion": "Using PISA 2022 reading PV the study leveraged stacking to predict reading achievement, finding that stacking again delivered the lowest mean MAPE/MAE/MSE across most countries relative to the boosting and blending alternatives. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      },
+      {
+        "dataset_used": "PISA 2022 Science (Plausible Values)",
+        "target_variable": "Science achievement (PVs)",
+        "top_predictors": [],
+        "performance_metrics": "Stacking produced the lowest mean MAPE for 65/80 countries (81.25%), lowest mean MAE for 71/80 (88.75%), and lowest mean MSE for 71/80 (88.75%). Robust linear mixed-effects models indicated significantly lower MAPE/MAE/MSE for stacking compared with XGBoost, HGB, LightGBM, and blending.",
+        "standardized_conclusion": "Using PISA 2022 science PV the study leveraged stacking to predict science achievement, finding that stacking produced the lowest error metrics for most countries and significantly outperformed the boosting and blending methods in the mixed-effects comparisons. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study used PISA 2022 microdata for 80 countries to predict student achievement in mathematics, reading, and science on a continuous scale using ten plausible values per subject. For each country and subject, the authors trained stacking (level-0 base learners: XGBoost, HGB, LightGBM; level-1 meta-learner: ridge regression with alpha=1.0) and compared it with three boosting algorithms (XGBoost, HGB, LightGBM) and blending. Across countries, stacking most frequently achieved the lowest mean error metrics: for mathematics it was lowest in MAPE/MAE/MSE for 72/74/75 countries, for reading for 64/69/70, and for science for 65/71/71. Robust linear mixed-effects models with countries as random effects confirmed significantly lower MAPE, MAE, and MSE for stacking versus the other ensembles. Methodologically, the paper does not report a detailed missing-data handling protocol beyond converting multiple response codes to NaN and not imputing, and it does not discuss survey-weight application, which may affect generalizability under PISA’s complex sampling design.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}

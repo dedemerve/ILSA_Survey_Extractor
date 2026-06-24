@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "file_name": "69. Hernández‑Torrano & Courtney. (2021). Modern international large‑scale assessment in education: an integrative review and mapping of the literature.pdf",
+    "title": "Modern international large-scale assessment in education: an integrative review and mapping of the literature",
+    "authors": [
+      "Hernández‑Torrano",
+      "Courtney"
+    ],
+    "year": 2021,
+    "doi": "10.1186/s40536-021-00109-1",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": true,
+    "source_category": "review_article"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This paper is a bibliometric integrative review using publication metadata extracted from Web of Science (SCI-Expanded, SSCI, A&HCI, ESCI). It does not analyze student-level ILSA microdata, so there is no sampling frame, student-level weighting, or replicate-weighting scheme to apply. The study filters records by document type (articles and reviews only) and removes duplicates, yielding a corpus of 2,233 publications. Because the unit of analysis is bibliographic records (journals/authors/countries/keywords), survey weights and replicate weights are not applicable."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "Plausible values (PVs) are not applicable because the study does not perform predictive modeling on ILSA achievement outcomes at the student level. Instead, it conducts bibliometric and social network analyses over publication metadata (titles/abstracts/keywords, citations, and author/country affiliations). Missing-data handling therefore refers to bibliographic record filtering (e.g., duplicates and document-type restrictions) rather than imputation/deletion of PV-based outcomes.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [
+        {
+          "country_code": "USA",
+          "n_students": null
+        },
+        {
+          "country_code": "DEU",
+          "n_students": null
+        },
+        {
+          "country_code": "CHN",
+          "n_students": null
+        },
+        {
+          "country_code": "TUR",
+          "n_students": null
+        },
+        {
+          "country_code": "ESP",
+          "n_students": null
+        },
+        {
+          "country_code": "GBR",
+          "n_students": null
+        },
+        {
+          "country_code": "AUS",
+          "n_students": null
+        },
+        {
+          "country_code": "ITA",
+          "n_students": null
+        },
+        {
+          "country_code": "NLD",
+          "n_students": null
+        },
+        {
+          "country_code": "SWE",
+          "n_students": null
+        },
+        {
+          "country_code": "BEL",
+          "n_students": null
+        },
+        {
+          "country_code": "NOR",
+          "n_students": null
+        },
+        {
+          "country_code": "ZAF",
+          "n_students": null
+        },
+        {
+          "country_code": "CAN",
+          "n_students": null
+        },
+        {
+          "country_code": "FIN",
+          "n_students": null
+        },
+        {
+          "country_code": "ARG",
+          "n_students": null
+        },
+        {
+          "country_code": "COL",
+          "n_students": null
+        },
+        {
+          "country_code": "CZE",
+          "n_students": null
+        },
+        {
+          "country_code": "DNK",
+          "n_students": null
+        },
+        {
+          "country_code": "GEO",
+          "n_students": null
+        },
+        {
+          "country_code": "MLT",
+          "n_students": null
+        },
+        {
+          "country_code": "VNM",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "The corpus was built from Web of Science metadata using six complementary searches conducted on April 22, 2021. Searches targeted five ILSA programs (PISA, TIMSS, PIRLS, ICCS, ICILS) plus a general ILSA/education query. The initial retrieval yielded 2,477 publications, reduced to 2,287 after removing duplicates, and then filtered to include only document types 'articles' and 'reviews' (no language or year restrictions), resulting in 2,233 publications."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "PISA",
+        "target_variable": "Literature synthesis outcome (not student-level prediction)",
+        "top_predictors": [],
+        "performance_metrics": "Not reported",
+        "standardized_conclusion": "Using PISA the study leveraged the reported predictors to predict Literature synthesis outcome (not student-level prediction), finding that This integrative bibliometric review maps modern ILSA research in education using 2,233 Web of Science-indexed journal articles and reviews (1997–2020 coverage in the bibliometric analyses). It reports an emerging field with exponential growth in publications and citations, identifies leading authors and core journals, and characterizes collaboration networks among authors and countries using co-authorship analyses. The study finds that PISA receives the greatest attention in the literature and that research themes cluster around measurement/testing, educational policy and reform, education quality/effectiveness, equity/inequality, interpersonal relationships, and motivation/beliefs. Methodologically, it relies on bibliometric and social network mapping (Bibliometrix and VOSviewer) rather than predictive ML on student outcomes, so there are no model performance metrics (e.g., accuracy/AUC) for ML learners. This indicates that dologically, it relies on bibliometric and social network mapping (Bibliometrix and VOSviewer) rather than predictive ML on student outcomes, so there are no model performance metrics (e.g., accuracy/AUC) for ML learners."
+      }
+    ],
+    "outcome_summary": "This integrative bibliometric review maps modern ILSA research in education using 2,233 Web of Science-indexed journal articles and reviews (1997–2020 coverage in the bibliometric analyses). It reports an emerging field with exponential growth in publications and citations, identifies leading authors and core journals, and characterizes collaboration networks among authors and countries using co-authorship analyses. The study finds that PISA receives the greatest attention in the literature and that research themes cluster around measurement/testing, educational policy and reform, education quality/effectiveness, equity/inequality, interpersonal relationships, and motivation/beliefs. Methodologically, it relies on bibliometric and social network mapping (Bibliometrix and VOSviewer) rather than predictive ML on student outcomes, so there are no model performance metrics (e.g., accuracy/AUC) for ML learners.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "This is a bibliometric integrative review rather than an empirical ML study on ILSA student microdata. Consequently, there is no student-level analytic sample, no PV-based achievement outcome, no ML algorithm training/evaluation, and no per-country student counts. The extracted 'sample' refers to the number of bibliographic records (publications) in the Web of Science corpus, not to students."
+  }
+}

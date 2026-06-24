@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "file_name": "67. Anghel et al. (2024). The use of process data in large‑scale assessments: a literature review.pdf",
+    "title": "The use of process data in large-scale assessments: a literature review",
+    "authors": [
+      "Anghel",
+      "LK",
+      "MvD"
+    ],
+    "year": 2024,
+    "doi": "10.1186/s40536-024-00202-1",
+    "venue": "Large-scale Assessments in Education",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "review_article"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This paper is a scoping literature review (topic modeling of abstracts) rather than an analysis of student microdata from PISA/TIMSS/NAEP/PIAAC. Therefore, there is no student-level sampling frame, no analytic dataset of examinees, and no application of complex survey weights or replicate-weight procedures. The only “data” analyzed are the textual abstracts of 221 empirical studies, after study selection and NLP cleaning steps (e.g., removing citations/headings, expanding acronyms, lowercasing, stopword removal, stemming). As a result, weighting variables (e.g., W_FSTUWT/TOTWGT) and replicate methods (BRR/jackknife) are not applicable."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "Plausible values (PVs) are not applicable because the study does not model cognitive achievement outcomes from ILSA/PV-based test scores. Instead, it applies unsupervised topic modeling to abstracts of prior empirical studies to identify recurring themes and theories. Missing-data handling in the sense of imputing incomplete student responses is therefore not part of the analysis; the paper reports study-selection and text-preprocessing steps rather than PV- or item-level missingness imputation.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [],
+      "sample_filtering_criteria": "This is not an ILSA microdata study. The “sample” consists of 232 articles initially identified through database searches (Scopus, ERIC, Google Scholar) and reference chasing, then reduced to 221 articles included in the topic model after excluding papers without abstracts and applying text-cleaning steps (e.g., removing citations/structured-abstract headings, expanding contractions, spelling out acronyms except test names). Inclusion required empirical components and at least one type of process/log-file data used in the context of large-scale assessments; the review focused on reading, mathematics/numeracy, science, and also included complex problem-solving due to its ubiquity."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "PISA",
+        "target_variable": "problem-solving",
+        "top_predictors": [],
+        "performance_metrics": "Not reported",
+        "standardized_conclusion": "Using PISA the study leveraged the reported predictors to predict problem-solving, finding that This scoping review used structural topic modeling (STM) on the abstracts of 221 empirical studies to identify recurring themes in the use of process/log-file data in large-scale assessments. The authors found six overarching topics: response time models, response time-general, aberrant test-taking behavior, action sequences, complex problem-solving, and digital writing. They also documented prominent theories used across these topic areas (e.g., expectancy-value theory, demands-capacity model, dual-processing theory) and discussed methodological and conceptual gaps, such as limited use of other timing metrics and limited theory integration in some strands of the literature. Because the study is a literature review rather than a predictive modeling study on student outcomes, it does not report ML performance metrics (e.g., accuracy/AUC) for an examinee-level target. This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "This scoping review used structural topic modeling (STM) on the abstracts of 221 empirical studies to identify recurring themes in the use of process/log-file data in large-scale assessments. The authors found six overarching topics: response time models, response time-general, aberrant test-taking behavior, action sequences, complex problem-solving, and digital writing. They also documented prominent theories used across these topic areas (e.g., expectancy-value theory, demands-capacity model, dual-processing theory) and discussed methodological and conceptual gaps, such as limited use of other timing metrics and limited theory integration in some strands of the literature. Because the study is a literature review rather than a predictive modeling study on student outcomes, it does not report ML performance metrics (e.g., accuracy/AUC) for an examinee-level target.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "This record is a systematic scoping literature review using topic modeling on abstracts, not an empirical analysis of student-level ILSA microdata. Consequently, there is no student analytic sample (total_students), no country-level sample sizes, no PV-based achievement outcome, and no supervised ML prediction task with reported accuracy/R²/AUC. The review’s “ML” component is topic modeling for literature theme extraction, which is not represented in the schema’s supervised ML algorithm list for predictive modeling."
+  }
+}

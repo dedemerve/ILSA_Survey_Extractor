@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "file_name": "105. Stiff et al. (2023). Research engagement in the Progress in International Reading Literacy Study: A systematic review.pdf",
+    "title": "Research engagement in the Progress in International Reading Literacy Study: A systematic review",
+    "authors": [
+      "Jamie Stiff",
+      "Jenny Lenkeit",
+      "Therese Hopfenbeck",
+      "Heather Kayton",
+      "Joshua McGrane"
+    ],
+    "year": 2023,
+    "doi": "10.1016/j.edurev.2023.100547",
+    "venue": "Educational Research Review",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "review_article"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This paper is a systematic review of PIRLS-related research articles rather than an analysis of PIRLS microdata. The authors describe a literature search across ERIC, PsycINFO, Scopus, Web of Science, and Zetoc, followed by screening and coding of included peer-reviewed journal articles. Because no student-level dataset is analyzed, there is no application of PIRLS sampling weights, replicate weights, or any complex survey design adjustments. Consequently, weight variables (e.g., W_FSTUWT/TOTWGT) are not applicable to the review’s methodology."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "Plausible values (PVs) are not applicable because this study does not perform predictive modeling on PIRLS achievement outcomes; it synthesizes and categorizes findings from previously published PIRLS-related articles. The review’s unit of analysis is the included publication (coded by review foci), not student responses with PV-based reading achievement scores. Missing-data handling therefore refers to the review screening/coding process rather than imputation/deletion of missing values in an ILSA dataset, and no PV/missing-data strategy is described for microdata.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [
+        {
+          "country_code": "DEU",
+          "n_students": null
+        },
+        {
+          "country_code": "USA",
+          "n_students": null
+        },
+        {
+          "country_code": "SWE",
+          "n_students": null
+        },
+        {
+          "country_code": "ESP",
+          "n_students": null
+        },
+        {
+          "country_code": "GBR",
+          "n_students": null
+        },
+        {
+          "country_code": "ZAF",
+          "n_students": null
+        },
+        {
+          "country_code": "HKG",
+          "n_students": null
+        },
+        {
+          "country_code": "TUR",
+          "n_students": null
+        },
+        {
+          "country_code": "COL",
+          "n_students": null
+        },
+        {
+          "country_code": "TWN",
+          "n_students": null
+        },
+        {
+          "country_code": "QAT",
+          "n_students": null
+        },
+        {
+          "country_code": "KWT",
+          "n_students": null
+        },
+        {
+          "country_code": "KOR",
+          "n_students": null
+        },
+        {
+          "country_code": "NOR",
+          "n_students": null
+        },
+        {
+          "country_code": "ISR",
+          "n_students": null
+        },
+        {
+          "country_code": "CAN",
+          "n_students": null
+        },
+        {
+          "country_code": "NZL",
+          "n_students": null
+        },
+        {
+          "country_code": "SGP",
+          "n_students": null
+        },
+        {
+          "country_code": "BGR",
+          "n_students": null
+        },
+        {
+          "country_code": "HUN",
+          "n_students": null
+        },
+        {
+          "country_code": "GRC",
+          "n_students": null
+        },
+        {
+          "country_code": "ROU",
+          "n_students": null
+        },
+        {
+          "country_code": "MKD",
+          "n_students": null
+        },
+        {
+          "country_code": "LVA",
+          "n_students": null
+        },
+        {
+          "country_code": "LTU",
+          "n_students": null
+        },
+        {
+          "country_code": "MAC",
+          "n_students": null
+        },
+        {
+          "country_code": "CHN",
+          "n_students": null
+        }
+      ],
+      "sample_filtering_criteria": "Not applicable to student-level sampling. The review identifies PIRLS-related peer-reviewed journal articles published between 2004 and 2022 by searching multiple bibliographic databases (ERIC, PsycINFO, Scopus, Web of Science, Zetoc) using PIRLS-related terms, restricting the date range for the update (Jan 2015–May 2022), removing duplicates, and then applying exclusion criteria: only English-language peer-reviewed journal articles were retained; conference proceedings were excluded; articles were excluded if PIRLS was not a main data source/topic based on abstract and full-text term checks; and articles using PIRLS materials on smaller independent samples or providing commentaries were excluded."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [
+      {
+        "dataset_used": "PIRLS",
+        "target_variable": "Reading Literacy",
+        "top_predictors": [],
+        "performance_metrics": "Not reported",
+        "standardized_conclusion": "Using PIRLS the study leveraged the reported predictors to predict Reading Literacy, finding that This paper is a systematic review that synthesizes how PIRLS has been used in peer-reviewed research, rather than training or evaluating machine learning models on PIRLS student data. The authors report descriptive trends in the number and types of PIRLS-related articles over time (e.g., increased research engagement, especially after the 2011 cycle) and summarize qualitative themes in three areas: teacher characteristics and instruction practices, socioeconomic predictors of reading outcomes, and critiques of PIRLS scaling/IRT practices. They find that the proportion of secondary data analysis articles has increased since 2015, with a reduction in critique articles, while major topic areas remain relatively stable. No predictive performance metrics (e.g., accuracy/AUC/RMSE) are reported because the study does not conduct an empirical ML analysis. This indicates that ith a reduction in critique articles, while major topic areas remain relatively stable. No predictive performance metrics (e.g., accuracy/AUC/RMSE) are reported because the study does not conduct an empirical ML analysis."
+      }
+    ],
+    "outcome_summary": "This paper is a systematic review that synthesizes how PIRLS has been used in peer-reviewed research, rather than training or evaluating machine learning models on PIRLS student data. The authors report descriptive trends in the number and types of PIRLS-related articles over time (e.g., increased research engagement, especially after the 2011 cycle) and summarize qualitative themes in three areas: teacher characteristics and instruction practices, socioeconomic predictors of reading outcomes, and critiques of PIRLS scaling/IRT practices. They find that the proportion of secondary data analysis articles has increased since 2015, with a reduction in critique articles, while major topic areas remain relatively stable. No predictive performance metrics (e.g., accuracy/AUC/RMSE) are reported because the study does not conduct an empirical ML analysis.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "This is a systematic review of PIRLS-related publications and does not analyze PIRLS microdata with predictive modeling. Therefore, there is no student analytic sample size, no PV-based achievement modeling, no ML algorithm evaluation, and no survey-weighting or missing-data imputation strategy for student responses. The extracted country information reflects where first authors are affiliated or where example studies are situated, not a pooled student-level dataset."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "file_name": "68. Peters et al. (2025). Review of Text-Based Approaches to Item Difficulty Modeling in Large-Scale Assessments.pdf",
+    "title": "Review of Text-Based Approaches to Item Difficulty Modeling in Large-Scale Assessments",
+    "authors": [
+      "Sydney Peters",
+      "Nan Zhang",
+      "Hong Jiao",
+      "Ming Li",
+      "Tianyi Zhou"
+    ],
+    "year": 2025,
+    "doi": null,
+    "venue": "Proceedings of the Artificial Intelligence in Measurement and Education Conference (AIME-Con) – Volume 3: Coordinated Session Papers",
+    "publication_type": "conference",
+    "open_access": null,
+    "source_category": "review_article"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": null,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "This paper is a literature review that synthesizes 37 articles (46 studies) on automated item difficulty prediction in large-scale assessments. It does not analyze an original student-level dataset, does not report any sampling frame, and therefore does not describe or apply complex survey weights or replicate-weight procedures. Because there is no empirical micro-data analysis in this review, student weights and replicate weights are not applicable. The review’s “data preparation” consists of screening and coding included studies (e.g., extracting dataset names, difficulty parameters, model inputs, and evaluation metrics) rather than weighting a sampled population."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "not_reported",
+    "handling_not_reported_explanation": "This is a systematic literature review rather than an empirical analysis of ILSA student responses. The paper does not estimate cognitive achievement using ILSA-generated plausible values (PVs), nor does it implement a missing-data strategy for PV-based outcomes. Therefore, PV handling and missing-data handling are not applicable to the review’s methodology, and missing-data handling is not reported because no original dataset is analyzed.",
+    "sample_details": {
+      "total_students": null,
+      "countries": [],
+      "sample_filtering_criteria": "Not applicable: the study is a review. The authors screened 93 articles, excluded 17 at the abstract/keyword stage, excluded 52 at full-text screening using criteria (e.g., not large-scale, not item difficulty, not automated prediction, review articles, or difficulty not obtained from human test-takers), and then forward hand-searched to reach 37 coded articles (46 studies)."
+    },
+    "ml_techniques": {
+      "primary": null,
+      "all_techniques": []
+    },
+    "confounders_identified": [],
+    "main_findings": [],
+    "outcome_summary": "This paper is a review of text-based approaches to automated item difficulty modeling in large-scale assessments, synthesizing 37 articles (46 studies). It reports descriptive trends rather than training/evaluating ML models on a new dataset: most studies predict continuous item difficulty parameters (e.g., IRT b-parameter, transformed p-values), and transformer-based language models and embedding-based features are increasingly used. Across the reviewed literature, common regression metrics include RMSE and Pearson correlation, while classification metrics include exact accuracy and adjacent accuracy. The review also highlights limitations in the underlying literature, including potential bias from overrepresentation of the BEA shared task and limited comparability of metrics across different difficulty parameters and domains.",
+    "research_design_type": "exploratory",
+    "null_fields_interpretation": "The record is a systematic review with no original student-level or item-level dataset analyzed by the authors. Consequently, there is no analytic sample size, no country-level sample breakdown, no PV generation/combining, no missing-data handling procedure, and no ML model training/evaluation performed in the paper itself. The ML-related content is descriptive (summarizing models used in included studies), so fields like ml_techniques.primary/all_techniques and main_findings are not applicable."
+  }
+}

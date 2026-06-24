@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "file_name": "96. Li et al. (2025). Exploring the Evidence to Interpret Differential Item Functioning via Response Process Data.pdf",
+    "title": "Exploring the Evidence to Interpret Differential Item Functioning via Response Process Data",
+    "authors": [
+      "Ziying Li",
+      "Huan Kuang"
+    ],
+    "year": 2025,
+    "doi": "10.1177/00131644241298975",
+    "venue": "Educational and Psychological Measurement",
+    "publication_type": "journal",
+    "open_access": null,
+    "source_category": "peer_reviewed_research"
+  },
+  "data": {
+    "survey_design": {
+      "student_weights_used": false,
+      "replicate_weights_used": null,
+      "weight_variable_name": null,
+      "weight_fields_interpretation": "The study uses the PIAAC 2012 computer-based numeracy assessment dataset for the United States and restricts the analytic sample to open-ended numeracy items, examinees with available process-data log files, and examinees with responses to specified background questions in the PIAAC U.S. Public Use File 2012. To mitigate DIF detection bias from missingness, the authors excluded 22 items with response missing rates larger than 55% and then applied MICE with 10 imputations to create completed datasets for DIF detection. The manuscript does not report the use of PIAAC complex survey weights (e.g., sampling/design weights) or replicate weights; instead, it applies supervised ML models (Random Forest and ridge logistic regression) using scikit-learn and uses SMOTE only for class balancing within training data. Given the ML-focused pipeline and the absence of any stated weighting/replication procedure, the analysis is treated as unweighted with respect to survey design."
+    },
+    "plausible_values_handling": "not_applicable",
+    "missing_data_handling": "multiple_imputation",
+    "handling_not_reported_explanation": "plausible_values_handling is 'not_applicable' — the study likely does not analyze cognitive achievement PVs (e.g., it may focus on affective/attitudinal outcomes, curriculum data, or non-ILSA micro-data).",
+    "sample_details": {
+      "total_students": 1675,
+      "countries": [
+        {
+          "country_code": "USA",
+          "n_students": 1675
+        }
+      ],
+      "sample_filtering_criteria": "Used PIAAC 2012 computer-based numeracy assessment data for the United States. Restricted to open-ended response item format (31 open-ended items) and excluded 22 items with response missing rates >55%. Selected examinees who (i) were recorded in the process-data log file and (ii) provided responses to certain background questions in the PIAAC U.S. Public Use File 2012. After DIF detection labeling via Mantel–Haenszel with iterative purification across 10 MICE-imputed datasets, the final dataset used for classifier modeling contained nine dichotomous numeracy items and 1,675 examinees (55.40% women, 44.60% men)."
+    },
+    "ml_techniques": {
+      "primary": "Random Forest",
+      "all_techniques": [
+        "Random Forest",
+        "Logistic Regression"
+      ]
+    },
+    "confounders_identified": [
+      {
+        "variable_code": "gender",
+        "variable_name": "Gender (women vs men)",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "native_language_match",
+        "variable_name": "Language match (test vs native)",
+        "category": "demographic"
+      },
+      {
+        "variable_code": "highest_formal_education",
+        "variable_name": "Highest formal education",
+        "category": "socioeconomic"
+      },
+      {
+        "variable_code": "chart_graph_table_preparation",
+        "variable_name": "Work chart/graph/table preparation",
+        "category": "student_behavior"
+      }
+    ],
+    "main_findings": [
+      {
+        "dataset_used": "PIAAC 2012 Computer-based Numeracy (United States), open-ended items",
+        "target_variable": "Gender DIF item label (DIF vs DIF-free)",
+        "top_predictors": [
+          "Betweenness centrality (SNA action sequence)",
+          "FIRST_TIMING (initial action timing)",
+          "Item response time (RT)",
+          "Action-sequence density (SNA)",
+          "Number of nodes (SNA)"
+        ],
+        "performance_metrics": "Random Forest: Accuracy=0.761, AUC=0.860, Precision=0.621, Recall=0.651, F1=0.636. Ridge logistic regression: Accuracy=0.731, AUC=0.849, Precision=0.554, Recall=0.817, F1=0.660. RF and LR differences were small for Accuracy (0.03), AUC (0.01), and F1 (0.02).",
+        "standardized_conclusion": "Using PIAAC 2012 Computer-based Numeracy (United States) the study leveraged response-process timing features (RT, FIRST_TIMING) and action-sequence features (betweenness centrality, density, number of nodes) to predict whether an item was labeled as gender DIF versus DIF-free, finding that the combination of timing and action-sequence features was most informative and that Random Forest and ridge logistic regression achieved comparable overall discrimination (AUC≈0.85–0.86) with acceptable classification performance (all metrics >0.60 except LR precision). This indicates that these patterns have implications for educational policy and instructional practice, though cross-sectional ILSA designs cannot establish causality."
+      }
+    ],
+    "outcome_summary": "The study used PIAAC 2012 computer-based numeracy data for the United States, focusing on open-ended items and labeling nine items as gender DIF vs DIF-free using Mantel–Haenszel DIF detection with iterative purification across 10 MICE-imputed datasets. It then trained Random Forest and ridge logistic regression classifiers to model the association between DIF item status and response-process features, using 10-fold cross-validation and SMOTE to balance the DIF-free vs DIF item classes in training. Random Forest and ridge logistic regression showed similar performance: RF achieved Accuracy=0.761 and AUC=0.860, while ridge logistic regression achieved Accuracy=0.731 and AUC=0.849; F1 was also similar (RF=0.636 vs LR=0.660). Feature-importance results converged on four key process features—RT, FIRST_TIMING, betweenness centrality, and action-sequence density—suggesting DIF is linked to response efficiency and exploration rather than item scores alone. The authors explicitly frame the results as correlational (not causal) and do not report survey-weight or replicate-weight usage for the ML stage.",
+    "research_design_type": "predictive",
+    "null_fields_interpretation": null
+  }
+}
