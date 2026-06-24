@@ -80,13 +80,15 @@
       min-height: 100vh; background: var(--ink);
       display: flex; flex-direction: column; justify-content: flex-end;
       padding: 0 40px 60px; position: relative; overflow: hidden;
+      padding-top: 80px;
     }
     .hero-bg-text {
-      position: absolute; top: 52px; right: -20px; bottom: 0;
+      position: absolute; top: 0; right: -20px; bottom: 0;
       font-size: clamp(180px, 22vw, 340px); font-weight: 800;
       color: rgba(255,255,255,.025); line-height: .9;
       letter-spacing: -.06em; pointer-events: none; user-select: none;
-      display: flex; flex-direction: column; justify-content: center;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      width: 50%; right: 0; left: auto;
     }
     .hero-eyebrow {
       display: flex; align-items: center; gap: 10px; margin-bottom: 28px;
